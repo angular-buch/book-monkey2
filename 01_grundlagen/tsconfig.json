@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    "emitDecoratorMetadata": true,
+    "sourceMap": true,
+    "experimentalDecorators": true,
+    "newLine": "LF"
+  },
+  "filesGlob": [
+    "./**/*.ts",
+    "../node_modules/angular2/bundles/typings/**/*.ts"
+  ],
+  "files": [
+    "app/app.ts",
+    "app/MyAppComponent.ts",
+    "../node_modules/angular2/bundles/typings/angular2/angular2.d.ts",
+    "../node_modules/angular2/bundles/typings/angular2/http.d.ts",
+    "../node_modules/angular2/bundles/typings/angular2/router.d.ts",
+    "../node_modules/angular2/bundles/typings/angular2/testing.d.ts",
+    "../node_modules/angular2/bundles/typings/es6-shim/es6-shim.d.ts",
+    "../node_modules/angular2/bundles/typings/jasmine/jasmine.d.ts"
+  ],
+  "exclude": []
+}

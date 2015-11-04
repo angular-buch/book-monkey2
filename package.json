@@ -1,0 +1,17 @@
+{
+  "name": "book-monkey2",
+  "version": "0.0.1",
+  "description": "Demo Projekt zum Buch",
+  "dependencies": {
+    "angular2": "2.0.0-alpha.45",
+    "systemjs": "0.19.5",
+    "live-server": "^0.8.2",
+    "es6-shim": "^0.33.9"
+  },
+  "scripts": {
+    "start": "live-server"
+  },
+  "keywords": ["angular2", "typescript", "atom"],
+  "author": "Johannes Hoppe, Danny Koppenhagen, Ferdinand Malcher, Gregor Woiwode",
+  "license": "ISC"
+}
