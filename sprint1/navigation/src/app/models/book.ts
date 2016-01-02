@@ -1,6 +1,6 @@
 export default class Book {
 
-    //isbn - PRIMARY KEY
+    //isbn - identifier
     //title
     //authors
     subtitle: string;
