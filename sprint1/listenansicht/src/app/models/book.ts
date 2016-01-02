@@ -1,15 +1,12 @@
-export class Book {
-    id: number;
-    title: String;
-    subtitle: String;
-    authors: Array<String>;
-    isbn: String;
-    rating: Number;
+export default class Book {
+
+    //isbn - PRIMARY KEY
+    //title
+    //authors
+    subtitle: string;
+    rating: number;
     published: Date;
 
-    constructor(title, authors, isbn){
-        this.title = title;
-        this.authors = authors;
-        this.isbn = isbn;
+    constructor(public isbn: string, public title: string, public authors: string[]) {
     }
 }
