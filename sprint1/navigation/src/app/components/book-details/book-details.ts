@@ -1,6 +1,6 @@
-import {Component} from 'angular2/core';
-import {RouteParams} from 'angular2/router';
-import {Book} from '../../models/book';
+import { Component } from 'angular2/core';
+import { RouteParams } from 'angular2/router';
+import Book from '../../models/book';
 
 @Component({
   selector: 'book-details',
@@ -19,11 +19,11 @@ export default class BookDetails {
 
   constructor(private params: RouteParams) {
     var books = [
-      new Book('Angular 2', ['Gregor Woiwode', 'Johannes Hoppe', 'Danny Koppenhagen', 'Ferdinand Malcher'], 'ISBN1234567890'),
-      new Book('AngularJS: Eine praktische Einführung', ['Philipp Tarasiewicz', 'Robin Böhm'], '978-3864901546'),
-      new Book('JavaScript für Enterprise-Entwickler', ['Oliver Ochs'], '978-3898647281')
+      new Book('999-9-99999-999-9', 'Angular 2', ['Johannes Hoppe', 'Danny Koppenhagen', 'Ferdinand Malcher', 'Gregor Woiwode']),
+      new Book('978-3864901546', 'AngularJS: Eine praktische Einführung', ['Philipp Tarasiewicz', 'Robin Böhm']),
+      new Book('978-3898647281', 'JavaScript für Enterprise-Entwickler', ['Oliver Ochs'])
     ];
 
-    this.book = books[params.get('id')];
+    this.book = books[params.get('index')];
   }
 }
