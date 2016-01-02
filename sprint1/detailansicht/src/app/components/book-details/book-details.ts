@@ -1,5 +1,5 @@
-import {Component} from 'angular2/core';
-import {Book} from '../../models/book';
+import { Component } from 'angular2/core';
+import Book from '../../models/book';
 
 @Component({
   selector: 'book-details',
@@ -18,14 +18,9 @@ export default class BookDetails {
 
   constructor() {
     this.book = new Book(
+      '999-9-99999-999-9',
       'Angular 2',
-      [
-        'Gregor Woiwode',
-        'Johannes Hoppe',
-        'Danny Koppenhagen',
-        'Ferdinand Malcher'
-      ],
-      'ISBN1234567890'
+      ['Johannes Hoppe', 'Danny Koppenhagen', 'Ferdinand Malcher', 'Gregor Woiwode']
     );
   }
 }

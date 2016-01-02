@@ -1,3 +1,4 @@
+// TODO: update to beta / or delete --- used for 01_grundlagen
 System.config({
   paths: {
     "npm:*": "../node_modules/*",
