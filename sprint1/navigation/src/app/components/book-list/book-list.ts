@@ -8,13 +8,13 @@ import Book from '../../models/book';
   template: `
     <ul>
         <li *ngFor="#book of books; #i=index">
-            {{ i+1 }}) <a [routerLink]="['../Details', {index: i}]">{{ book.title }}</a>
+            {{ i+1 }}) <a [routerLink]="['../Details', {isbn: book.isbn}]">{{ book.title }}</a>
             <small>{{ book.isbn }}</small>
         </li>
     </ul>`
 })
 export default class BookList {
-  books: Array<Book>;
+  books: Book[];
 
   constructor() {
       this.books = [
@@ -23,5 +23,4 @@ export default class BookList {
         new Book('978-3898647281', 'JavaScript für Enterprise-Entwickler', ['Oliver Ochs'])
       ];
   }
-
 }

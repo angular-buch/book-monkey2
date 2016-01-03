@@ -6,7 +6,7 @@ import BookDetails from '../book-details/book-details';
 
 @RouteConfig([
   { path: '/list', name: 'List', component: BookList, useAsDefault: true },
-  { path: '/:index',  name: 'Details', component: BookDetails }
+  { path: '/:isbn',  name: 'Details', component: BookDetails }
 ])
 @Component({
   directives: [RouterOutlet],

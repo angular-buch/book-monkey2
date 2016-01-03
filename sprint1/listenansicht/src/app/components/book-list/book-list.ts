@@ -12,7 +12,7 @@ import Book from '../../models/book';
     </ul>`
 })
 export default class BookList {
-  books: Array<Book>;
+  books: Book[];
 
   constructor() {
       this.books = [

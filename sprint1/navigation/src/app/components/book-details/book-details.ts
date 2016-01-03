@@ -24,6 +24,7 @@ export default class BookDetails {
       new Book('978-3898647281', 'JavaScript für Enterprise-Entwickler', ['Oliver Ochs'])
     ];
 
-    this.book = books[params.get('index')];
+    var isbn = params.get('isbn');
+    this.book = books.find((book) => book.isbn === isbn);
   }
 }
