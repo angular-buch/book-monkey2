@@ -6,7 +6,7 @@ import Book from '../../models/book';
   template: `
     <ul>
         <li *ngFor="#book of books; #i=index">
-            <a href="#">{{ i+1 }}. {{ book.title }}</a>
+            <a href="#">{{ i+1 }}) {{ book.title }}</a>
             <small>{{ book.isbn }}</small>
         </li>
     </ul>`
