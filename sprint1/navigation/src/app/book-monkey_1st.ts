@@ -12,7 +12,7 @@ import Books from './components/books/books';
 @Component({
   selector: 'book-monkey',
   directives: [RouterOutlet, RouterLink],
-  templateUrl: 'app/book-monkey.html'
+  template: '<router-outlet></router-outlet>'
 })
 
 export default class BookMonkey {
