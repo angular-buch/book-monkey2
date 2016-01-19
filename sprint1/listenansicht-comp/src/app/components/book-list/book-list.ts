@@ -7,7 +7,7 @@ import Book from '../../models/book';
   directives: [BookListItem],
   template: `
     <ul>
-        <book-list-item *ngFor="#book of books" [book]="book"></book-list-item>
+        <book-list-item *ngFor="#b of books" [book]="b"></book-list-item>
     </ul>`
 })
 export default class BookList {
