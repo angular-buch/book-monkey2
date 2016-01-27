@@ -1,0 +1,65 @@
+<h2>
+    Buch 
+    <span *ngIf="formMode == 'create'"> hinzufügen</span>
+    <span *ngIf="formMode == 'update'"> bearbeiten</span>
+</h2>
+<form [ngFormModel]="cg"
+      (ngSubmit)="upsert()">
+  <div>
+    <label for="title">Buchtitel*</label>
+    <input
+      ngControl="title"
+      [value]="book?.title">
+  </div>
+  <div>
+    <label for="subtitle">Untertitel</label>
+    <input
+      ngControl="subtitle"
+      [value]="book?.subtitle">
+  </div>
+  <div>
+    <label for="authors">Autoren*</label>
+    <input
+      ngControl="authors"
+      [value]="book?.authors">
+    <label> Eingabe mit ","</label>
+  </div>
+  <div>
+    <label for="isbn">ISBN*</label>
+    <input #isbn="ngForm"
+      ngControl="isbn"
+     [value]="book?.isbn">
+    <span *ngIf="!isbn.valid && isbn.errors.isbn">
+    keine gültige ISBN Nummer
+    </span>
+  </div>
+  <div>
+    <label for="rating">Rating</label>
+    <input #rating="ngForm"
+      ngControl="rating"
+     [value]="book?.rating">
+    <span *ngIf="!rating.valid && rating.errors.rating">
+    Das Rating muss zwischen 1 und 5 liegen
+    </span>
+  </div>
+  <div>
+    <label for="published">Veröffentlicht</label>
+    <input #published="ngForm"
+      ngControl="published"
+      [value]="book?.published | date:'dd.MM.yyyy'">
+    <span *ngIf="!published.valid && published.errors.germanDate">
+    kein deutsches Datum
+    </span>
+  </div>
+  <button type="submit">Buch
+    <span *ngIf="formMode == 'create'"> hinzufügen</span>
+    <span *ngIf="formMode == 'update'"> bearbeiten</span>
+  </button>
+</form>
+<span>* = notwendige Angaben</span>
+
+<div *ngIf="formMode == 'update'">
+  <hr>
+  <h1>Buch löschen</h1>
+  <button (click)="delete()">Löschen</button>
+</div>
