@@ -1,16 +1,21 @@
 <!doctype html>
 <html>
-
 <head>
-  <title>Bookmonkey</title>
+  <meta charset="utf-8">
+  <title>BookMonkey</title>
   <base href=".">
   <script src="vendor/angular2/bundles/angular2-polyfills.js"></script>
+  {{content-for 'head'}}
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+  <book-monkey-app>Loading...</book-monkey-app>
+
   <script src="vendor/systemjs/dist/system.src.js"></script>
   <script src="vendor/rxjs/bundles/Rx.js"></script>
   <script src="vendor/angular2/bundles/angular2.dev.js"></script>
   <script src="vendor/angular2/bundles/http.dev.js"></script>
   <script src="vendor/angular2/bundles/router.dev.js"></script>
-  {{content-for 'head'}}
   <script>
     System.config({
       packages: {
@@ -22,11 +27,5 @@
     });
     System.import('app.js').then(null, console.error.bind(console));
   </script>
-  <link rel="icon" type="image/x-icon" href="favicon.ico" />
-</head>
-
-<body>
-  <book-monkey>Loading...</book-monkey>
 </body>
-
 </html>

@@ -3,14 +3,14 @@ import BookForm from './components/book-form/book-form';
 import Book from './models/book';
 
 @Component({
-  selector: 'book-monkey',
+  selector: 'book-monkey-app',
   directives: [BookForm],
   template: `Dieses Beispiel demonstriert die Validierung eines Formulars.
   Weitere Bestandteile der BookMonkey-App sind aus Gründen der Übersichtlichkeit nicht Bestandteil dieser Demo.
   <hr>
   <book-form [book]="book"></book-form>`
 })
-export default class BookMonkey {
+export default class BookMonkeyApp {
   private book: Book;
 
   constructor(){

@@ -10,11 +10,11 @@ import Books from './components/books/books';
 ])
 
 @Component({
-  selector: 'book-monkey',
+  selector: 'book-monkey-app',
   directives: [RouterOutlet, RouterLink],
   templateUrl: 'app/book-monkey.html'
 })
 
-export default class BookMonkey {
+export default class BookMonkeyApp {
   constructor() { }
 }

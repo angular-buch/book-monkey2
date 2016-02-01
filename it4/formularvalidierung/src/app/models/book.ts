@@ -1,8 +1,12 @@
+import Thumbnail from './thumbnail';
+export { default as Thumbnail } from './thumbnail';
+
 export default class Book {
     //isbn - identifier
     //title
     //authors
     subtitle: string;
+    thumbnails: Thumbnail[];
     rating: number;
     published: Date;
 
