@@ -1,0 +1,63 @@
+<h2>Ein Buch hinzufügen</h2>
+
+<form #f="ngForm"
+      (ngSubmit)="submitForm(f.value)">
+
+  <div>
+    <label for="title">Buchtitel</label>
+    <input ngControl="title">
+  </div>
+
+  <div>
+    <label for="subtitle">Untertitel</label>
+    <input ngControl="subtitle">
+  </div>
+
+  <div>
+    <label for="authors">Autoren:</label>
+    <div ngControlGroup="authors">
+      <div *ngFor="#a of authors; #i = index; #l=last">
+        ({{i+1}})
+        <input ngControl="{{i}}">
+        <span *ngIf="l">
+          <button type="button" (click)="addAuthor()"> + </button>
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <label for="isbn">ISBN</label>
+    <input ngControl="isbn">
+  </div>
+
+  <div>
+    <label for="rating">Rating</label>
+    <input ngControl="rating" type="number">
+  </div>
+
+  <div>
+    <label for="published">Veröffentlicht</label>
+    <input ngControl="published">
+  </div>
+
+  <div>
+    <label for="thumbnails">Bilder:</label>
+    <div ngControlGroup="thumbnails">
+      <div *ngFor="#t of thumbnails; #i = index; #l= last">
+        <span ngControlGroup="{{i}}">({{i+1}})
+          <small for="url">Url:</small>
+          <input ngControl="url">
+          <small for="title">Titel:</small>
+          <input ngControl="title">
+        </span>
+        <span *ngIf="l">
+          <button type="button" (click)="addThumbnail()"> + </button>
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <button type="submit">Buch hinzufügen</button>
+
+</form>
