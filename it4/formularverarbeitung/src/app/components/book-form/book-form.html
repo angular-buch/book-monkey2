@@ -1,7 +1,7 @@
 <h2>Ein Buch hinzufügen</h2>
 
-<form #f="ngForm"
-      (ngSubmit)="submitForm(f.value)">
+<form [ngFormModel]="myForm"
+      (ngSubmit)="submitForm(myForm)">
 
   <div>
     <label for="title">Buchtitel</label>
@@ -16,11 +16,11 @@
   <div>
     <label for="authors">Autoren:</label>
     <div ngControlGroup="authors">
-      <div *ngFor="#a of authors; #i = index; #l=last">
+      <div *ngFor="#control of authorsControlArray.controls; #i = index; #l=last">
         ({{i+1}})
         <input ngControl="{{i}}">
         <span *ngIf="l">
-          <button type="button" (click)="addAuthor()"> + </button>
+          <button type="button" (click)="addAuthorControl()"> + </button>
         </span>
       </div>
     </div>
@@ -44,7 +44,7 @@
   <div>
     <label for="thumbnails">Bilder:</label>
     <div ngControlGroup="thumbnails">
-      <div *ngFor="#t of thumbnails; #i = index; #l=last">
+      <div *ngFor="#control of thumbnailsControlArray.controls; #i = index; #l=last">
         <span ngControlGroup="{{i}}">({{i+1}})
           <small for="url">Url:</small>
           <input ngControl="url">
@@ -52,7 +52,7 @@
           <input ngControl="title">
         </span>
         <span *ngIf="l">
-          <button type="button" (click)="addThumbnail()"> + </button>
+          <button type="button" (click)="addThumbnailControl()"> + </button>
         </span>
       </div>
     </div>
