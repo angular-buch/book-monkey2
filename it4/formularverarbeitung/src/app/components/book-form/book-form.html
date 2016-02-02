@@ -44,7 +44,7 @@
   <div>
     <label for="thumbnails">Bilder:</label>
     <div ngControlGroup="thumbnails">
-      <div *ngFor="#t of thumbnails; #i = index; #l= last">
+      <div *ngFor="#t of thumbnails; #i = index; #l=last">
         <span ngControlGroup="{{i}}">({{i+1}})
           <small for="url">Url:</small>
           <input ngControl="url">

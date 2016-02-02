@@ -1,6 +1,6 @@
 import {Component} from 'angular2/core';
 import {BookForm} from './components/book-form/book-form';
-import Book from './models/book';
+import {Book} from './models/book';
 
 @Component({
   selector: 'book-monkey-app',

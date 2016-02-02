@@ -1,6 +1,6 @@
-import { Component, Input } from 'angular2/core';
-import { ControlGroup, ControlArray, Control } from 'angular2/common';
-import Book from '../../models/book'
+import {Component, Input} from 'angular2/core';
+import {ControlGroup, ControlArray, Control} from 'angular2/common';
+import {Book} from '../../models/book'
 
 @Component({
   selector: 'book-form',
