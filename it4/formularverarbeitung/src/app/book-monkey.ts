@@ -7,6 +7,4 @@ import {Book} from './models/book';
   directives: [BookForm],
   templateUrl: 'app/book-monkey.html'
 })
-export class BookMonkeyApp {
-  private book: Book;
-}
+export class BookMonkeyApp { }
