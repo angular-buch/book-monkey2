@@ -5,7 +5,10 @@
 
   <div>
     <label for="title">Buchtitel</label>
-    <input ngControl="title">
+    <input ngControl="title" #title="ngForm">
+    <span *ngIf="title.dirty && !title.valid && title.errors.isbn">
+      Geben Sie den Titel des Buches an.
+    </span>
   </div>
 
   <div>
@@ -15,21 +18,26 @@
 
   <div>
     <label for="authors">Autoren:</label>
-    <div ngControlGroup="authors">
+    <div ngControlGroup="authors" #authors="ngForm">
       <div *ngFor="#control of authorsControlArray.controls; #i=index; #l=last">
         ({{i+1}})
         <input ngControl="{{i}}">
         <span *ngIf="l">
-          <button type="button" (click)="addAuthorControl()"> + </button>
+          <button type="button"
+                  [disabled]="!authors.valid"
+                  (click)="addAuthorControl()"> + </button>
         </span>
       </div>
+      <span *ngIf="authors.dirty && !authors.valid">
+        Geben Sie mindestens einen Autor an.
+      </span>
     </div>
   </div>
 
   <div>
     <label for="isbn">ISBN</label>
     <input ngControl="isbn" #isbn="ngForm">
-    <span *ngIf="!isbn.valid && isbn.errors.isbn">
+    <span *ngIf="isbn.dirty && !isbn.valid && isbn.errors.isbn">
       Geben Sie eine gültige ISBN an.
     </span>
   </div>
@@ -37,7 +45,7 @@
   <div>
     <label for="rating">Rating</label>
     <input ngControl="rating" type="number" #rating="ngForm"> {{ debug }}
-    <span *ngIf="!rating.valid && rating.errors.rating">
+    <span *ngIf="rating.dirty && !rating.valid && rating.errors.rating">
       Wählen Sie eine Bewertung zwischen 1 und 5.
     </span>
   </div>
@@ -45,7 +53,7 @@
   <div>
     <label for="published">Veröffentlicht</label>
     <input ngControl="published" #published="ngForm">
-    <span *ngIf="!published.valid && published.errors.germanDate">
+    <span *ngIf="published.dirty && !published.valid && published.errors.germanDate">
       Bitte geben Sie das Datum mit folgendem Format ein: dd.MM.yyyy
     </span>
   </div>
@@ -56,12 +64,14 @@
       <div *ngFor="#control of thumbnailsControlArray.controls; #i = index; #l=last">
         <span ngControlGroup="{{i}}">({{i+1}})
           <small for="url">Url:</small>
-          <input ngControl="url">
+          <input ngControl="url" #url="ngForm">
           <small for="title">Titel:</small>
-          <input ngControl="title">
+          <input ngControl="title" #title="ngForm">
         </span>
         <span *ngIf="l">
-          <button type="button" (click)="addThumbnailControl()"> + </button>
+          <button type="button"
+                  [disabled]="!url.valid && !title.valid"
+                  (click)="addThumbnailControl()"> + </button>
         </span>
       </div>
     </div>

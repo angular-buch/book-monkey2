@@ -18,21 +18,19 @@ export class BookForm {
   constructor(private fb: FormBuilder) {
 
     this.myForm = fb.group({
-      title: ['', Validators.required],
-      subtitle: [''],
-      isbn: ['', Validators.compose([
+      title:      ['', Validators.required],
+      rating:     ['', RatingValidator.rating],
+      published:  ['', DateValidator.germanDate],
+      subtitle:   [''],
+      authors:    fb.array([''], Validators.required),
+      thumbnails: fb.array([
+                    fb.group({ url: [''], title: [''] })
+                  ]),
+      isbn:       ['', Validators.compose([
                     Validators.required,
                     IsbnValidator.isbn
-                    /*ASync check if isbn exists*/
-                 ])],
-      authors: fb.array([''], Validators.required),
-      thumbnails: fb.array([
-        fb.group({
-          url: [''],
-          title: [''] })
-      ]),
-      rating: ['', RatingValidator.rating],
-      published: ['', DateValidator.germanDate]
+                    /* TODO Async check if isbn exists */
+                  ])],
     });
 
     // this allows us to manipulate the form at runtime
