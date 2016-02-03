@@ -1,5 +1,5 @@
 import {Component, Input} from 'angular2/core';
-import {ControlGroup, ControlArray, FormBuilder} from 'angular2/common';
+import {ControlGroup, ControlArray, FormBuilder, Validators} from 'angular2/common';
 import {DateValidator} from '../../validators/date.validator'
 import {IsbnValidator} from '../../validators/isbn.validator'
 import {RatingValidator} from '../../validators/rating.validator'
@@ -18,15 +18,21 @@ export class BookForm {
   constructor(private fb: FormBuilder) {
 
     this.myForm = fb.group({
-      title: [''],
+      title: ['', Validators.required],
       subtitle: [''],
-      isbn: [''],
-      authors: fb.array(['']),
+      isbn: ['', Validators.compose([
+                    Validators.required,
+                    IsbnValidator.isbn
+                    /*ASync check if isbn exists*/
+                 ])],
+      authors: fb.array([''], Validators.required),
       thumbnails: fb.array([
-        fb.group({ url: [''], title: [''] })
+        fb.group({
+          url: [''],
+          title: [''] })
       ]),
-      rating: [''],
-      published: ['']
+      rating: ['', RatingValidator.rating],
+      published: ['', DateValidator.germanDate]
     });
 
     // this allows us to manipulate the form at runtime
