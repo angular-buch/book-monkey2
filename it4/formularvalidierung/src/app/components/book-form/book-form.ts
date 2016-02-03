@@ -1,30 +1,48 @@
-import { Component, Input } from 'angular2/core';
-import { Control, ControlGroup, Validators } from 'angular2/common';
-import DateValidator from '../../validators/date.validator'
-import IsbnValidator from '../../validators/isbn.validator'
-import RatingValidator from '../../validators/rating.validator'
-import Book from '../../models/book'
+import {Component, Input} from 'angular2/core';
+import {ControlGroup, ControlArray, FormBuilder} from 'angular2/common';
+import {DateValidator} from '../../validators/date.validator'
+import {IsbnValidator} from '../../validators/isbn.validator'
+import {RatingValidator} from '../../validators/rating.validator'
+import {Book} from '../../models/book'
 
 @Component({
   selector: 'book-form',
-  templateUrl: 'app/components/book-form/book-form.html',
+  templateUrl: 'app/components/book-form/book-form.html'
 })
-export default class BookForm {
-  @Input()book: Book;
-  cg: ControlGroup;
+export class BookForm {
 
-  constructor() {
-    this.cg = new ControlGroup({
-      title:     new Control('', Validators.required),
-      subtitle:  new Control(''),
-      isbn:      new Control('', Validators.compose([
-                    Validators.required,
-                    IsbnValidator.isbn
-                    /*ASync check if isbn exists*/
-                 ])),
-      authors:   new Control('', Validators.required),
-      rating:    new Control('', RatingValidator.rating),
-      published: new Control('', DateValidator.germanDate)
+  myForm: ControlGroup;
+  authorsControlArray: ControlArray;
+  thumbnailsControlArray: ControlArray;
+
+  constructor(private fb: FormBuilder) {
+
+    this.myForm = fb.group({
+      title: [''],
+      subtitle: [''],
+      isbn: [''],
+      authors: fb.array(['']),
+      thumbnails: fb.array([
+        fb.group({ url: [''], title: [''] })
+      ]),
+      rating: [''],
+      published: ['']
     });
+
+    // this allows us to manipulate the form at runtime
+    this.authorsControlArray = <ControlArray>this.myForm.controls['authors'];
+    this.thumbnailsControlArray = <ControlArray>this.myForm.controls['thumbnails'];
+  }
+
+  addAuthorControl(){
+    this.authorsControlArray.push(this.fb.control(''));
+  }
+
+  addThumbnailControl(){
+    this.thumbnailsControlArray.push(this.fb.group({ url: [''], title: ['']} ));
+  }
+
+  submitForm(formData){
+    console.log('submitting values:', formData.value);
   }
 }

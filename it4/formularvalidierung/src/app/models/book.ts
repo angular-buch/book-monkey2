@@ -1,7 +1,7 @@
-import Thumbnail from './thumbnail';
-export { default as Thumbnail } from './thumbnail';
+import {Thumbnail} from './thumbnail';
+export {Thumbnail} from './thumbnail';
 
-export default class Book {
+export class Book {
     //isbn - identifier
     //title
     //authors

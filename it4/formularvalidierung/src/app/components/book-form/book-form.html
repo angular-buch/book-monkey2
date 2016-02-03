@@ -1,65 +1,63 @@
-<h2>
-    Buch 
-    <span *ngIf="formMode == 'create'"> hinzufügen</span>
-    <span *ngIf="formMode == 'update'"> bearbeiten</span>
-</h2>
-<form [ngFormModel]="cg"
-      (ngSubmit)="upsert()">
+<h2>Ein Buch hinzufügen</h2>
+
+<form [ngFormModel]="myForm"
+      (ngSubmit)="submitForm(myForm)">
+
   <div>
-    <label for="title">Buchtitel*</label>
-    <input
-      ngControl="title"
-      [value]="book?.title">
+    <label for="title">Buchtitel</label>
+    <input ngControl="title">
   </div>
+
   <div>
     <label for="subtitle">Untertitel</label>
-    <input
-      ngControl="subtitle"
-      [value]="book?.subtitle">
+    <input ngControl="subtitle">
   </div>
+
   <div>
-    <label for="authors">Autoren*</label>
-    <input
-      ngControl="authors"
-      [value]="book?.authors">
-    <label> Eingabe mit ","</label>
+    <label for="authors">Autoren:</label>
+    <div ngControlGroup="authors">
+      <div *ngFor="#control of authorsControlArray.controls; #i = index; #l=last">
+        ({{i+1}})
+        <input ngControl="{{i}}">
+        <span *ngIf="l">
+          <button type="button" (click)="addAuthorControl()"> + </button>
+        </span>
+      </div>
+    </div>
   </div>
+
   <div>
-    <label for="isbn">ISBN*</label>
-    <input #isbn="ngForm"
-      ngControl="isbn"
-     [value]="book?.isbn">
-    <span *ngIf="!isbn.valid && isbn.errors.isbn">
-    keine gültige ISBN Nummer
-    </span>
+    <label for="isbn">ISBN</label>
+    <input ngControl="isbn">
   </div>
+
   <div>
     <label for="rating">Rating</label>
-    <input #rating="ngForm"
-      ngControl="rating"
-     [value]="book?.rating">
-    <span *ngIf="!rating.valid && rating.errors.rating">
-    Das Rating muss zwischen 1 und 5 liegen
-    </span>
+    <input ngControl="rating" type="number">
   </div>
+
   <div>
     <label for="published">Veröffentlicht</label>
-    <input #published="ngForm"
-      ngControl="published"
-      [value]="book?.published | date:'dd.MM.yyyy'">
-    <span *ngIf="!published.valid && published.errors.germanDate">
-    kein deutsches Datum
-    </span>
+    <input ngControl="published">
   </div>
-  <button type="submit">Buch
-    <span *ngIf="formMode == 'create'"> hinzufügen</span>
-    <span *ngIf="formMode == 'update'"> bearbeiten</span>
-  </button>
-</form>
-<span>* = notwendige Angaben</span>
 
-<div *ngIf="formMode == 'update'">
-  <hr>
-  <h1>Buch löschen</h1>
-  <button (click)="delete()">Löschen</button>
-</div>
+  <div>
+    <label for="thumbnails">Bilder:</label>
+    <div ngControlGroup="thumbnails">
+      <div *ngFor="#control of thumbnailsControlArray.controls; #i = index; #l=last">
+        <span ngControlGroup="{{i}}">({{i+1}})
+          <small for="url">Url:</small>
+          <input ngControl="url">
+          <small for="title">Titel:</small>
+          <input ngControl="title">
+        </span>
+        <span *ngIf="l">
+          <button type="button" (click)="addThumbnailControl()"> + </button>
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <button type="submit">Buch hinzufügen</button>
+
+</form>

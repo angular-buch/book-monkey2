@@ -1,7 +1,7 @@
-import { Control } from 'angular2/common';
-import { ValidationResult } from './validation-result';
+import {Control} from 'angular2/common';
+import {ValidationResult} from './validation-result';
 
-export default class RatingValidator {
+export class RatingValidator {
   static rating(control: Control): ValidationResult {
 
     let value = parseInt(control.value)
