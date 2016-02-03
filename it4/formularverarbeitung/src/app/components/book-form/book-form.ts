@@ -1,45 +1,45 @@
-import { Component, Input } from 'angular2/core';
-import { ControlGroup, ControlArray, Control } from 'angular2/common';
-import Book from '../../models/book'
+import {Component, Input} from 'angular2/core';
+import {ControlGroup, ControlArray, FormBuilder} from 'angular2/common';
+import {Book} from '../../models/book'
 
 @Component({
   selector: 'book-form',
-  templateUrl: 'app/components/book-form/book-form.html',
+  templateUrl: 'app/components/book-form/book-form.html'
 })
 export class BookForm {
-  @Input()book: Book;
-  form: ControlGroup;
-  authors: [Control];
-  thumbnails: [ControlGroup];
 
-  constructor() {
-    this.authors = [ new Control() ];
-    this.thumbnails = [ new ControlGroup({
-      url: new Control(),
-      title: new Control()
-    }) ];
-    this.form = new ControlGroup({
-      title:     new Control(''),
-      subtitle:  new Control(''),
-      isbn:      new Control(''),
-      authors:   new ControlArray( this.authors ),
-      thumbnails:   new ControlArray( this.thumbnails ),
-      rating:    new Control(''),
-      published: new Control('')
+  myForm: ControlGroup;
+  authorsControlArray: ControlArray;
+  thumbnailsControlArray: ControlArray;
+
+  constructor(private fb: FormBuilder) {
+
+    this.myForm = fb.group({
+      title: [''],
+      subtitle: [''],
+      isbn: [''],
+      authors: fb.array(['']),
+      thumbnails: fb.array([
+        fb.group({ url: [''], title: [''] })
+      ]),
+      rating: [''],
+      published: ['']
     });
+
+    // this allows us to manipulate the form at runtime
+    this.authorsControlArray = <ControlArray>this.myForm.controls['authors'];
+    this.thumbnailsControlArray = <ControlArray>this.myForm.controls['thumbnails'];
   }
 
-  addAuthor(){
-    const authors = <ControlArray>this.form.controls['authors'];
-    authors.push(new Control());
+  addAuthorControl(){
+    this.authorsControlArray.push(this.fb.control(''));
   }
 
-  addThumbnail(){
-    const thumbnails = <ControlArray>this.form.controls['thumbnails'];
-    thumbnails.push(new Control());
+  addThumbnailControl(){
+    this.thumbnailsControlArray.push(this.fb.group({ url: [''], title: ['']} ));
   }
 
   submitForm(formData){
-    console.log('sanding values:', formData);
+    console.log('submitting values:', formData.value);
   }
 }
