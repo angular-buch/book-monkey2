@@ -4,9 +4,10 @@ import Book from '../../models/book';
 @Component({
   selector: 'book-list-item',
   template: `
-  <li>
-    <a href="#">{{ book.title }}</a>
-    <small>{{ book.isbn }}</small>
+  <li class="pure-menu-list">
+    <a href="#" class="pure-menu-link">
+      {{ book.title }} <small>{{ book.isbn }}</small>
+    </a>
   </li>`
 })
 
