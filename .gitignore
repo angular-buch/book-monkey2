@@ -3,6 +3,10 @@
 # ignore webstorms temporary files
 .idea/
 
+# ignore semantic-ui folder except the theme-config
+**/semantic/**/*
+!**/semantic/src/theme.config
+
 # compiled output
 dist/
 tmp/
