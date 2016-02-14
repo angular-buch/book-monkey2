@@ -1,12 +1,6 @@
-<div class="pure-menu pure-menu-horizontal">
-    <ul class="pure-menu-list">
-      <li class="pure-menu-item">
-        <a [routerLink]="['/Home']" class="pure-menu-link">Startseite</a>
-      </li>
-      <li class="pure-menu-item">
-        <a [routerLink]="['/Books', 'List']" class="pure-menu-link">Buchliste</a>
-      </li>
-    </ul>
-</div>
+<ul>
+  <li><a [routerLink]="['/Home']">Startseite</a></li>
+  <li><a [routerLink]="['/Books', 'List']">Buchliste</a></li>
+</ul>
 <hr>
 <router-outlet></router-outlet>

@@ -1,62 +1,63 @@
 <h2>Ein Buch hinzufügen</h2>
 
 <form [ngFormModel]="myForm"
-      (ngSubmit)="submitForm(myForm)"
-      class="pure-form pure-form-aligned">
+      (ngSubmit)="submitForm(myForm)">
 
-  <div class="pure-control-group">
+  <div>
     <label for="title">Buchtitel</label>
     <input ngControl="title">
   </div>
 
-  <div class="pure-control-group">
+  <div>
     <label for="subtitle">Untertitel</label>
     <input ngControl="subtitle">
   </div>
 
-  <div class="pure-control-group">
+  <div>
     <label for="authors">Autoren:</label>
-    <span ngControlGroup="authors">
-      <span *ngFor="#control of authorsControlArray.controls; #i = index; #l=last">
-        <input ngControl="{{i}}" placeholder="Autor {{i+1}}">
+    <div ngControlGroup="authors">
+      <div *ngFor="#control of authorsControlArray.controls; #i = index; #l=last">
+        ({{i+1}})
+        <input ngControl="{{i}}">
         <span *ngIf="l">
-          <button type="button" (click)="addAuthorControl()"  class="pure-button"> + </button>
+          <button type="button" (click)="addAuthorControl()"> + </button>
         </span>
-      </span>
-    </span>
+      </div>
+    </div>
   </div>
 
-  <div class="pure-control-group">
+  <div>
     <label for="isbn">ISBN</label>
     <input ngControl="isbn">
   </div>
 
-  <div class="pure-control-group">
+  <div>
     <label for="rating">Rating</label>
     <input ngControl="rating" type="number">
   </div>
 
-  <div class="pure-control-group">
+  <div>
     <label for="published">Veröffentlicht</label>
     <input ngControl="published">
   </div>
 
-  <div class="pure-control-group">
+  <div>
     <label for="thumbnails">Bilder:</label>
-    <span ngControlGroup="thumbnails">
-      <span *ngFor="#control of thumbnailsControlArray.controls; #i = index; #l=last">
-        <span ngControlGroup="{{i}}">
-          <input ngControl="url" placeholder="Url {{i+1}}">
-          <input ngControl="title" placeholder="Titel {{i+1}}">
+    <div ngControlGroup="thumbnails">
+      <div *ngFor="#control of thumbnailsControlArray.controls; #i = index; #l=last">
+        <span ngControlGroup="{{i}}">({{i+1}})
+          <small for="url">Url:</small>
+          <input ngControl="url">
+          <small for="title">Titel:</small>
+          <input ngControl="title">
         </span>
         <span *ngIf="l">
-          <button type="button" (click)="addThumbnailControl()" class="pure-button"> + </button>
+          <button type="button" (click)="addThumbnailControl()"> + </button>
         </span>
-      </span>
-    </span>
+      </div>
+    </div>
   </div>
-  
-  <div class="pure-controls">
-    <button type="submit" class="pure-button">Buch hinzufügen</button>
-  </div>
+
+  <button type="submit">Buch hinzufügen</button>
+
 </form>

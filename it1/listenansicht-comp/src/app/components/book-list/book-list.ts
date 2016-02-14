@@ -6,8 +6,8 @@ import Book from '../../models/book';
   selector: 'book-list',
   directives: [BookListItem],
   template: `
-    <ul class="pure-menu-list">
-      <book-list-item *ngFor="#b of books" [book]="b"></book-list-item>
+    <ul>
+        <book-list-item *ngFor="#b of books" [book]="b"></book-list-item>
     </ul>`
 })
 export default class BookList {

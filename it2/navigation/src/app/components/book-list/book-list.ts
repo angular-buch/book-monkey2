@@ -6,12 +6,11 @@ import Book from '../../models/book';
   selector: 'book-list',
   directives: [RouterLink],
   template: `
-    <ul class="pure-menu-list">
-      <li *ngFor="#book of books; #i=index" class="pure-menu-item">
-        <a [routerLink]="['../Details', {isbn: book.isbn}]" class="pure-menu-link">
-          {{ i+1 }}) {{ book.title }} <small>{{ book.isbn }}</small>
-        </a>
-      </li>
+    <ul>
+        <li *ngFor="#book of books; #i=index">
+            {{ i+1 }}) <a [routerLink]="['../Details', {isbn: book.isbn}]">{{ book.title }}</a>
+            <small>{{ book.isbn }}</small>
+        </li>
     </ul>`
 })
 export default class BookList {
