@@ -1,82 +1,97 @@
 <h2>Ein Buch hinzufügen</h2>
 
 <form [ngFormModel]="myForm"
-      (ngSubmit)="submitForm(myForm)">
+      (ngSubmit)="submitForm(myForm)"
+      class="ui form">
 
-  <div>
-    <label for="title">Buchtitel</label>
-    <input ngControl="title" #title="ngForm">
-    <span *ngIf="title.dirty && !title.valid && title.errors.isbn">
-      Geben Sie den Titel des Buches an.
-    </span>
-  </div>
-
-  <div>
-    <label for="subtitle">Untertitel</label>
-    <input ngControl="subtitle">
-  </div>
-
-  <div>
-    <label for="authors">Autoren:</label>
-    <div ngControlGroup="authors" #authors="ngForm">
-      <div *ngFor="#control of authorsControlArray.controls; #i=index; #l=last">
-        ({{i+1}})
-        <input ngControl="{{i}}">
-        <span *ngIf="l">
-          <button type="button"
-                  [disabled]="!authors.valid"
-                  (click)="addAuthorControl()"> + </button>
-        </span>
-      </div>
-      <span *ngIf="authors.dirty && !authors.valid">
-        Geben Sie mindestens einen Autor an.
+  <div class="fields">
+    <div class="eight wide field"
+         [ngClass]="{error: myForm.controls['title'].dirty
+                    && !myForm.controls['title'].valid}">
+      <label>Buchtitel</label>
+      <input ngControl="title" #title="ngForm" >
+      <span *ngIf="title.dirty
+                   && !title.valid" class="error">
+        Geben Sie den Titel des Buches an.
       </span>
+    </div>
+    <div class="eight wide field">
+      <label>Untertitel</label>
+      <input ngControl="subtitle">
     </div>
   </div>
 
-  <div>
-    <label for="isbn">ISBN</label>
+  <div class="field">
+    <label>Autoren</label>
+    <div class="two fields"
+         [ngClass]="{error: myForm.controls['authors'].dirty && !myForm.controls['authors'].valid}">
+      <div ngControlGroup="authors"
+           #authors="ngForm"
+           *ngFor="#control of authorsControlArray.controls; #i = index"
+           class="fifteen wide field">
+          <input ngControl="{{i}}" placeholder="Autor {{i+1}}">
+      </div>
+      <div class="one wide field">
+        <button (click)="addAuthorControl()"
+                [disabled]="!myForm.controls['authors'].valid"
+                class="ui button"> + </button>
+      </div>
+    </div>
+    <span *ngIf="myForm.controls['authors'].dirty && !myForm.controls['authors'].valid">
+      Geben Sie mindestens einen Autor an.
+    </span>
+  </div>
+
+  <div class="field"
+       [ngClass]="{error: myForm.controls['isbn'].dirty && !myForm.controls['isbn'].valid}">
+    <label>ISBN</label>
     <input ngControl="isbn" #isbn="ngForm">
     <span *ngIf="isbn.dirty && !isbn.valid && isbn.errors.isbn">
       Geben Sie eine gültige ISBN an.
     </span>
   </div>
 
-  <div>
-    <label for="rating">Rating</label>
+  <div class="field"
+       [ngClass]="{error: myForm.controls['rating'].dirty && !myForm.controls['rating'].valid}">
+    <label>Rating</label>
     <input ngControl="rating" type="number" #rating="ngForm"> {{ debug }}
     <span *ngIf="rating.dirty && !rating.valid && rating.errors.rating">
       Wählen Sie eine Bewertung zwischen 1 und 5.
     </span>
   </div>
 
-  <div>
-    <label for="published">Veröffentlicht</label>
+  <div class="field"
+       [ngClass]="{error: myForm.controls['published'].dirty && !myForm.controls['published'].valid}">
+    <label>Veröffentlicht</label>
     <input ngControl="published" #published="ngForm">
     <span *ngIf="published.dirty && !published.valid && published.errors.germanDate">
       Bitte geben Sie das Datum mit folgendem Format ein: dd.MM.yyyy
     </span>
   </div>
 
-  <div>
-    <label for="thumbnails">Bilder:</label>
-    <div ngControlGroup="thumbnails">
-      <div *ngFor="#control of thumbnailsControlArray.controls; #i = index; #l=last">
-        <span ngControlGroup="{{i}}">({{i+1}})
-          <small for="url">Url:</small>
-          <input ngControl="url" #url="ngForm">
-          <small for="title">Titel:</small>
-          <input ngControl="title" #title="ngForm">
-        </span>
-        <span *ngIf="l">
-          <button type="button"
-                  [disabled]="!url.valid && !title.valid"
-                  (click)="addThumbnailControl()"> + </button>
-        </span>
+  <div class="field">
+    <label>Bilder:</label>
+    <div class="two fields">
+      <div ngControlGroup="thumbnails"
+          *ngFor="#control of thumbnailsControlArray.controls; #i = index"
+          class="fifteen wide field">
+          <div ngControlGroup="{{i}}" class="fields">
+            <div class="ten wide field">
+              <input ngControl="url" placeholder="Bild {{i+1}} Url">
+            </div>
+            <div class="six wide field">
+              <input ngControl="title" placeholder="Bild {{i+1}} Titel">
+            </div>
+          </div>
+      </div>
+      <div class="one wide field">
+        <button (click)="addThumbnailControl()"
+                [disabled]="!myForm.controls['thumbnails'].valid"
+                class="ui button"> + </button>
       </div>
     </div>
   </div>
 
-  <button type="submit" [disabled]="!myForm.valid">Buch hinzufügen</button>
+  <button type="submit" class="ui button" [disabled]="!myForm.valid">Buch hinzufügen</button>
 
 </form>
