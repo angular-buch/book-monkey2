@@ -14,6 +14,7 @@ tmp/
 # dependencies
 node_modules/
 bower_components/
+typings/
 
 # misc
 .sass-cache
