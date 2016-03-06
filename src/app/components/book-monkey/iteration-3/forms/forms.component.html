@@ -1,0 +1,70 @@
+<h2>Ein Buch hinzufügen</h2>
+
+<form [ngFormModel]="myForm"
+      (ngSubmit)="submitForm(myForm)"
+      class="ui form">
+
+  <div class="fields">
+    <div class="eight wide field">
+      <label>Buchtitel</label>
+      <input ngControl="title">
+    </div>
+    <div class="eight wide field">
+      <label>Untertitel</label>
+      <input ngControl="subtitle">
+    </div>
+  </div>
+
+  <div class="field">
+    <label>Autoren</label>
+    <div class="two fields">
+      <div ngControlGroup="authors"
+          *ngFor="#control of authorsControlArray.controls; #i = index"
+          class="fifteen wide field">
+          <input ngControl="{{i}}" placeholder="Autor {{i+1}}">
+      </div>
+      <div class="one wide field">
+        <button (click)="addAuthorControl()" class="ui button"> + </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="field">
+    <label>ISBN</label>
+    <input ngControl="isbn">
+  </div>
+
+  <div class="field">
+    <label>Rating</label>
+    <input ngControl="rating" type="number">
+  </div>
+
+  <div class="field">
+    <label for="published">Veröffentlicht</label>
+    <input ngControl="published">
+  </div>
+
+  <div class="field">
+    <label>Bilder:</label>
+    <div class="two fields">
+      <div ngControlGroup="thumbnails"
+          *ngFor="#control of thumbnailsControlArray.controls; #i = index"
+          class="fifteen wide field">
+          <div ngControlGroup="{{i}}" class="fields">
+            <div class="ten wide field">
+              <input ngControl="url" placeholder="Bild {{i+1}} Url">
+            </div>
+            <div class="six wide field">
+              <input ngControl="title" placeholder="Bild {{i+1}} Titel">
+            </div>
+          </div>
+      </div>
+      <div class="one wide field">
+        <button (click)="addThumbnailControl()" class="ui button"> + </button>
+      </div>
+    </div>
+  </div>
+
+  <button type="submit" class="ui button">Buch hinzufügen</button>
+
+</form>

@@ -2,6 +2,7 @@ import {Component} from 'angular2/core';
 import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
 import {IterationOneComponent} from './components/book-monkey/iteration-1/iteration-1.component';
 import {IterationTwoComponent} from './components/book-monkey/iteration-2/iteration-2.component';
+import {IterationThreeComponent} from './components/book-monkey/iteration-3/iteration-3.component';
 
 @Component({
   selector: 'samples-app',
@@ -20,5 +21,10 @@ import {IterationTwoComponent} from './components/book-monkey/iteration-2/iterat
   path: 'iteration-2/...',
   name: 'Iteration-2',
   component: IterationTwoComponent
+},
+{
+  path: 'iteration-3/...',
+  name: 'Iteration-3',
+  component: IterationThreeComponent
 }])
 export class SamplesApp { }
