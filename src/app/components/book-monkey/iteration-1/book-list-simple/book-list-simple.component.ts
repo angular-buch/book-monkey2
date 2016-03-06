@@ -3,7 +3,7 @@ import {Book} from '../domain/book';
 
 @Component({
   selector: 'it1-book-list-simple',
-  templateUrl: 'app/components/book-monkey/iteration-1/book-list/book-list.html'
+  templateUrl: 'app/components/book-monkey/iteration-1/book-list-simple/book-list-simple.html'
 })
 export class BookListSimpleComponent {
   books: Book[];
