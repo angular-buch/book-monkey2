@@ -1,1 +1,0 @@
-{"version":3,"file":"book.js","sourceRoot":"/","sources":["app/models/book.ts"],"names":["Book","Book.constructor"],"mappings":";;;;;;;;;;YAGA;gBASIA,cAAmBA,IAAYA,EAASA,KAAaA,EAASA,OAAiBA;oBAA5DC,SAAIA,GAAJA,IAAIA,CAAQA;oBAASA,UAAKA,GAALA,KAAKA,CAAQA;oBAASA,YAAOA,GAAPA,OAAOA,CAAUA;gBAAIA,CAACA;gBACxFD,WAACA;YAADA,CAACA,AAVD,IAUC;YAVD,uBAUC,CAAA"}

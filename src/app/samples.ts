@@ -12,10 +12,4 @@ import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
 @RouteConfig([
 
 ])
-export class SamplesApp {
-  defaultMeaning: number = 42;
-  
-  meaningOfLife(meaning?: number) {
-    return `The meaning of life is ${meaning || this.defaultMeaning}`;
-  }
-}
+export class SamplesApp { }
