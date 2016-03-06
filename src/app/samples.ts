@@ -3,6 +3,7 @@ import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
 import {IterationOneComponent} from './components/book-monkey/iteration-1/iteration-1.component';
 import {IterationTwoComponent} from './components/book-monkey/iteration-2/iteration-2.component';
 import {IterationThreeComponent} from './components/book-monkey/iteration-3/iteration-3.component';
+import {IterationFourComponent} from './components/book-monkey/iteration-4/iteration-4.component';
 
 @Component({
   selector: 'samples-app',
@@ -26,5 +27,10 @@ import {IterationThreeComponent} from './components/book-monkey/iteration-3/iter
   path: 'iteration-3/...',
   name: 'Iteration-3',
   component: IterationThreeComponent
+},
+{
+  path: 'iteration-4/...',
+  name: 'Iteration-4',
+  component: IterationFourComponent
 }])
 export class SamplesApp { }
