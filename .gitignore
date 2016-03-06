@@ -1,31 +1,26 @@
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 
-# ignore webstorms temporary files
-.idea/
-
-# ignore semantic-ui folder except the theme-config
-**/semantic/**/*
-!**/semantic/src/theme.config
-
 # compiled output
-dist/
-tmp/
+/dist
+/tmp
 
 # dependencies
-node_modules/
-bower_components/
-typings/
+/node_modules
+/bower_components
+
+# IDEs and editors
+/.idea
 
 # misc
-.sass-cache
-connect.lock
-coverage/*
-libpeerconnection.log
+/.sass-cache
+/connect.lock
+/coverage/*
+/libpeerconnection.log
 npm-debug.log
 testem.log
-.DS_Store
+/typings
 
+# e2e
+/e2e/*.js
+/e2e/*.map
 
-# some .js files
-**/src/**/*.js
-*.map

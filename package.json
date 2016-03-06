@@ -1,17 +1,45 @@
 {
-  "name": "book-monkey2",
-  "version": "0.0.1",
-  "description": "Demo Projekt zum Buch",
-  "dependencies": {
-    "angular2": "2.0.0-alpha.45",
-    "systemjs": "0.19.5",
-    "live-server": "^0.8.2",
-    "es6-shim": "^0.33.9"
+  "name": "samples",
+  "version": "0.0.0",
+  "license": "Apache-2.0",
+  "angular-cli": {
+    "notifications": {
+      "enabled": true,
+      "playSound": false
+    }
   },
   "scripts": {
-    "start": "live-server"
+    "start": "ng server",
+    "postinstall": "typings install --ambient",
+    "lint": "tslint src/**/*.ts",
+    "format": "clang-format -i -style=file --glob=src/**/*.ts",
+    "pree2e": "webdriver-manager update",
+    "e2e": "protractor"
   },
-  "keywords": ["angular2", "typescript", "atom"],
-  "author": "Johannes Hoppe, Danny Koppenhagen, Ferdinand Malcher, Gregor Woiwode",
-  "license": "ISC"
+  "private": true,
+  "dependencies": {
+    "angular2": "2.0.0-beta.8 ",
+    "clang-format": "^1.0.35",
+    "es6-promise": "^3.0.2",
+    "es6-shim": "^0.33.3",
+    "reflect-metadata": "0.1.2",
+    "rxjs": "5.0.0-beta.2",
+    "systemjs": "0.19.20"
+  },
+  "devDependencies": {
+    "angular-cli": "0.0.*",
+    "angular-cli-github-pages": "^0.2.0",
+    "ember-cli-inject-live-reload": "^1.3.0",
+    "glob": "^6.0.4",
+    "jasmine-core": "^2.3.4",
+    "jasmine-spec-reporter": "^2.4.0",
+    "karma": "^0.13.15",
+    "karma-chrome-launcher": "^0.2.1",
+    "karma-jasmine": "^0.3.6",
+    "protractor": "^3.0.0",
+    "tslint": "^3.3.0",
+    "typescript": "^1.8.2",
+    "typings": "^0.6.6",
+    "ts-node": "^0.5.5"
+  }
 }
