@@ -1,16 +1,14 @@
-/// <reference path="../typings/main.d.ts" />
+import { TestAppPage } from './app.po';
 
-import { SamplesPage } from './app.po';
-
-describe('samples App', function() {
-  let page: SamplesPage;
+describe('test-app App', function() {
+  let page: TestAppPage;
 
   beforeEach(() => {
-    page = new SamplesPage();
+    page = new TestAppPage();
   })
 
   it('should display message saying app works', () => {
-    page.navigateTo()
-    expect(page.getParagraphText()).toEqual('samples Works!');
+    page.navigateTo();
+    expect(page.getParagraphText()).toEqual('test-app Works!');
   });
 });

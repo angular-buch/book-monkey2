@@ -1,4 +1,9 @@
-export class SamplesPage {
-  navigateTo() { return browser.get('/'); }
-  getParagraphText() { return element(by.css('Samples-app p')).getText(); }
+export class TestAppPage {
+  navigateTo() {
+    return browser.get('/');
+  }
+
+  getParagraphText() {
+    return element(by.css('test-app-app p')).getText();
+  }
 }
