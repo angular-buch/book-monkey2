@@ -5,10 +5,7 @@ import {Book} from '../domain/book';
 @Component({
   selector: 'it1-book-list',
   directives: [BookListItem],
-  template: `
-    <ul>
-      <it1-book-list-item *ngFor="#b of books" [book]="b"></it1-book-list-item>
-    </ul>`
+  templateUrl: '/app/book-monkey/iteration-1/book-list/book-list.component.html'
 })
 export class BookListComponent {
   books: Book[];
