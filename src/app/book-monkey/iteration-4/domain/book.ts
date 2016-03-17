@@ -5,6 +5,7 @@ export class Book {
   subtitle: string;
   rating: number;
   published: Date;
+  description: string;
   thumbnails: Thumbnail[];
 
   constructor(
