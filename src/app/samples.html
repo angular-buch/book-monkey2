@@ -1,3 +1,17 @@
-<h1>Samples</h1>
-
-<router-outlet></router-outlet>
+<div class="ui container">
+  <div class="ui menu">
+    <a [routerLink]="['Iteration-1']" class="item">
+      Iteration 1
+    </a>
+    <a [routerLink]="['Iteration-2']" class="item">
+      Iteration 2
+    </a>
+    <a [routerLink]="['Iteration-3']" class="item">
+      Iteration 3
+    </a>
+    <a [routerLink]="['Iteration-4']" class="item">
+      Iteration 4
+    </a>
+  </div>
+  <router-outlet></router-outlet>
+</div>

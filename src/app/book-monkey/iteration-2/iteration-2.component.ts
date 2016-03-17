@@ -1,16 +1,21 @@
 import {Component} from 'angular2/core';
-import {RouteConfig, RouterOutlet} from 'angular2/router';
+import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
 import {BookListComponent} from './di/book-list/book-list.component';
 import {BooksComponent} from './navigation/books/books.component';
 
 @Component({
   selector: 'iteration-2',
   template: `
-    <h2>Iteration 2</h2>
-    <hr>
-    <router-outlet></router-outlet>
+  <div class="ui medium header">Iteration 2</div>
+  <div class="ui large breadcrumb">
+    <a [routerLink]="['Dependency-Injection']" class="section">Dependency-Injection</a>
+    >
+    <a [routerLink]="['Navigation']" class="section">Navigation (Routing)</a>
+  </div>
+  <hr>
+  <router-outlet></router-outlet>
   `,
-  directives: [RouterOutlet]
+  directives: [ROUTER_DIRECTIVES]
 })
 @RouteConfig([
   {path: 'dependency-injection/', name: 'Dependency-Injection', component: BookListComponent, useAsDefault: true},

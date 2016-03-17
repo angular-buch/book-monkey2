@@ -1,16 +1,19 @@
 import {Component} from 'angular2/core';
 import {HTTP_PROVIDERS} from 'angular2/http';
-import {RouteConfig, RouterOutlet} from 'angular2/router';
+import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
 import {BookListComponent} from './book-list/book-list.component';
 
 @Component({
   selector: 'iteration-4',
   template: `
-    <h2>Iteration 4</h2>
-    <hr>
-    <router-outlet></router-outlet>
+  <div class="ui medium header">Iteration 3</div>
+  <div class="ui large breadcrumb">
+    <a [routerLink]="['Http']" class="section">Http</a>
+  </div>
+  <hr>
+  <router-outlet></router-outlet>
   `,
-  directives: [RouterOutlet],
+  directives: [ROUTER_DIRECTIVES],
   providers: [HTTP_PROVIDERS]
 })
 @RouteConfig([
