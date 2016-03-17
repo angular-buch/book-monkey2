@@ -1,6 +1,6 @@
 <div class="ui grid">
   <div class="four wide column">
-    <img class="ui large image" src="//placekitten.com/450/450">
+    <img class="ui large image" src="{{book?.thumbnails[0].url}}">
   </div>
   <div class="twelve wide column" *ngIf="book">
     <h1 class="ui header">{{ book?.title }}</h1>
@@ -24,6 +24,7 @@
       <div class="four wide column">
         <h4 class="ui header">Rating</h4>
         {{ book?.rating }}
+        <i class="yellow star icon"></i>
       </div>
     </div>
   </div>
@@ -33,9 +34,7 @@
   </div>
   <div class="sixteen wide column">
     <div class="ui small images">
-      <!--<img *ngFor="#thumbnail of book?.thumbnails" src="{{thumbnail.url}}">-->
-      <img src="//placekitten.com/150/150" alt="">
-      <img src="//placekitten.com/150/150" alt="">
+      <img *ngFor="#thumbnail of book?.thumbnails" src="{{thumbnail.url}}">
     </div>
   </div>
 </div>
