@@ -3,11 +3,7 @@ import {Book} from '../domain/book';
 
 @Component({
   selector: 'it1-book-list-item',
-  template: `
-  <li>
-    <a href="#">{{ book.title }}</a>
-    <small>{{ book.isbn }}</small>
-  </li>`
+  templateUrl: '/app/book-monkey/iteration-1/book-list/book-list-item.component.html'
 })
 
 export class BookListItem {

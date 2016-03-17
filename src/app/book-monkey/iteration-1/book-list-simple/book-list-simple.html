@@ -1,6 +1,6 @@
 <div class="ui middle aligned selection divided list">
   <div *ngFor="#book of books" class="item">
-    <img class="ui image" src="//lorempixel.com/80/80/">
+    <img class="ui tiny image" src="{{ book?.thumbnails[0].url }}">
     <div class="content">
       <div class="header">{{ book?.title }}</div>
       <div class="description"> {{ book?.subtitle }} </div>
@@ -14,7 +14,7 @@
     <div class="right floated content">
       <div class="ui massive icon input">
         <input type="number" min="0" max="5" placeholder="3">
-        <i class="star icon"></i>
+        <i class="yellow star icon"></i>
       </div>
     </div>
   </div>
