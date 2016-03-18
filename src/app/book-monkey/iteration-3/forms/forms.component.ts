@@ -23,7 +23,8 @@ export class FormsComponent {
         fb.group({ url: [''], title: [''] })
       ]),
       rating: [''],
-      published: ['']
+      published: [''],
+      description: ['']
     });
 
     // this allows us to manipulate the form at runtime
