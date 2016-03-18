@@ -7,7 +7,7 @@ import {Book} from '../domain/book'
 
 @Component({
   selector: 'it3-book-form',
-  templateUrl: 'app/book-monkey/iteration-3/validation/validation/validation.component.html'
+  templateUrl: 'app/book-monkey/iteration-3/validation/validation.component.html'
 })
 export class ValidationComponent {
 
