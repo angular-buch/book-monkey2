@@ -18,7 +18,7 @@ import {FormsComponent} from './forms/forms.component';
   directives: [ROUTER_DIRECTIVES]
 })
 @RouteConfig([
-  {path: 'validation/', name: 'Form-Validation', component: ValidationComponent, useAsDefault: true},
-  {path: 'form/', name: 'Forms', component: FormsComponent}
+  {path: 'form/', name: 'Forms', component: FormsComponent, useAsDefault: true},
+  {path: 'validation/', name: 'Form-Validation', component: ValidationComponent}
 ])
 export class IterationThreeComponent {}
