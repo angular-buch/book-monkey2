@@ -1,6 +1,3 @@
-<h1>Bücherliste</h1>
-<ul>
-    <li *ngFor="#book of books">
-        {{ book.title }} <small>{{ book.isbn }}</small>
-    </li>
-</ul>
+<div class="ui middle aligned selection divided list">
+  <div class="book-list-item item" *ngFor="#b of books" [book]="b"></div>
+</div>

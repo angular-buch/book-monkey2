@@ -1,16 +1,30 @@
 import {Injectable} from 'angular2/core';
-import {Book} from '../../../domain/book';
+import {Book, Thumbnail} from '../../../domain/book';
 
 @Injectable()
 export class BookStoreService {
   books: Array<Book>;
 
   constructor() {
-      this.books = [
-          new Book('ISBN1234567890', 'Angular 2', ['Gregor Woiwode', 'Johannes Hoppe', 'Danny Koppenhagen', 'Ferdinand Malcher']),
-          new Book('978-3864901546', 'AngularJS: Eine praktische Einführung', ['Philipp Tarasiewicz', 'Robin Böhm']),
-          new Book('978-3898647281', 'JavaScript für Enterprise-Entwickler', ['Oliver Ochs'])
-      ];
+    let book1 = new Book(
+      '999-9-99999-999-9',
+      'Angular 2',
+      ['Johannes Hoppe', 'Danny Koppenhagen', 'Ferdinand Malcher', 'Gregor Woiwode']
+    );
+    book1.subtitle = 'Einstieg in die komponentenbasierte Entwicklung von Web- und Mobile-Anwendungen';
+    book1.thumbnails = [ new Thumbnail('http://goo.gl/nDi0Fc','Buchcover')];
+
+    let book2 = new Book(
+      '978-3864901546',
+      'AngularJS',
+      ['Philipp Tarasiewicz', 'Robin Böhm']
+    )
+    book2.subtitle = 'Eine praktische Einführung';
+    book2.thumbnails = [ new Thumbnail('https://goo.gl/Y5lFVE','Buchcover')];
+
+    this.books = [
+      book1, book2
+    ];
   }
 
   getAll(){
