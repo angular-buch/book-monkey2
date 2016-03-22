@@ -1,5 +1,6 @@
 import {Component} from 'angular2/core';
 import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
+import {Home} from './home/home';
 import {IterationOneComponent} from './book-monkey/iteration-1/iteration-1.component';
 import {IterationTwoComponent} from './book-monkey/iteration-2/iteration-2.component';
 import {IterationThreeComponent} from './book-monkey/iteration-3/iteration-3.component';
@@ -13,6 +14,12 @@ import {IterationFourComponent} from './book-monkey/iteration-4/iteration-4.comp
   pipes: []
 })
 @RouteConfig([
+{
+  path: '/',
+  name: 'Home',
+  component: Home,
+  useAsDefault: true
+},
 {
   path: 'iteration-1/...',
   name: 'Iteration-1',
