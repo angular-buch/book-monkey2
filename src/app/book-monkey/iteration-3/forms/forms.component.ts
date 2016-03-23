@@ -18,13 +18,13 @@ export class FormsComponent {
       title: [''],
       subtitle: [''],
       isbn: [''],
+      description: [''],
       authors: fb.array(['']),
       thumbnails: fb.array([
         fb.group({ url: [''], title: [''] })
       ]),
       rating: [''],
-      published: [''],
-      description: ['']
+      published: ['']
     });
 
     // this allows us to manipulate the form at runtime

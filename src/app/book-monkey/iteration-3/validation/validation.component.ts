@@ -22,15 +22,21 @@ export class ValidationComponent {
       rating:     ['', RatingValidator.rating],
       published:  ['', DateValidator.germanDate],
       subtitle:   [''],
-      authors:    fb.array([''], Validators.required),
+      description:[''],
+      authors:    fb.array([
+                    fb.control('', Validators.required)
+                  ]),
       thumbnails: fb.array([
-                    fb.group({ url: [''], title: [''] })
+                    fb.group({
+                      url:   ['', Validators.required],
+                      title: ['']
+                    })
                   ]),
       isbn:       ['', Validators.compose([
                     Validators.required,
                     IsbnValidator.isbn
                     /* TODO Async check if isbn exists */
-                  ])],
+                  ])]
     });
 
     // this allows us to manipulate the form at runtime
