@@ -1,7 +1,7 @@
 {
   "name": "test-app",
   "version": "0.0.0",
-  "license": "Apache-2.0",
+  "license": "MIT",
   "angular-cli": {},
   "scripts": {
     "start": "ng server",
@@ -14,30 +14,27 @@
   "private": true,
   "dependencies": {
     "angular2": "2.0.0-beta.11",
-    "clang-format": "^1.0.35",
-    "es6-promise": "^3.0.2",
     "es6-shim": "^0.35.0",
     "reflect-metadata": "0.1.2",
     "rxjs": "5.0.0-beta.2",
     "semantic-ui-css": "^2.1.8",
     "systemjs": "0.19.20",
-    "zone.js": "0.6.4"
+    "zone.js": "^0.6.4"
   },
   "devDependencies": {
     "angular-cli": "0.0.*",
     "angular-cli-github-pages": "^0.2.0",
+    "clang-format": "^1.0.35",
     "ember-cli-inject-live-reload": "^1.3.0",
-    "glob": "^6.0.4",
     "jasmine-core": "^2.3.4",
     "jasmine-spec-reporter": "^2.4.0",
     "karma": "^0.13.15",
     "karma-chrome-launcher": "^0.2.1",
     "karma-jasmine": "^0.3.6",
     "protractor": "^3.0.0",
-    "silent-error": "^1.0.0",
-    "tslint": "^3.3.0",
+    "ts-node": "^0.5.5",
+    "tslint": "^3.6.0",
     "typescript": "^1.8.7",
-    "typings": "^0.6.6",
-    "ts-node": "^0.5.5"
+    "typings": "^0.6.6"
   }
 }
