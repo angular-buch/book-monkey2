@@ -9,7 +9,7 @@ import {FormsComponent} from './forms/forms.component';
   <div class="ui medium header">Iteration 3</div>
   <div class="ui large breadcrumb">
     <a [routerLink]="['Forms']" class="section">Formulare</a>
-    >
+    |
     <a [routerLink]="['Form-Validation']" class="section">Formularvalidierung</a>
   </div>
   <hr>

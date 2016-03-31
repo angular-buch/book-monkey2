@@ -10,9 +10,9 @@ import {BookListComponent} from './book-list/book-list.component';
     <div class="ui medium header">Iteration 1</div>
     <div class="ui large breadcrumb">
       <a [routerLink]="['BookDetails']" class="section">Detailansicht</a>
-      >
+      |
       <a [routerLink]="['BookListSimple']" class="section">Listenansicht</a>
-      >
+      |
       <a [routerLink]="['BookList']" class="section">Verbesserte Listenansicht</a>
     </div>
     <hr>

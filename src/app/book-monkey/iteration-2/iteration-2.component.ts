@@ -9,7 +9,7 @@ import {BooksComponent} from './navigation/books/books.component';
   <div class="ui medium header">Iteration 2</div>
   <div class="ui large breadcrumb">
     <a [routerLink]="['Dependency-Injection']" class="section">Dependency-Injection</a>
-    >
+    |
     <a [routerLink]="['Navigation']" class="section">Navigation (Routing)</a>
   </div>
   <hr>
