@@ -12,7 +12,7 @@ export class BookListComponent {
 
   constructor() {
     let book1 = new Book(
-      '999-9-99999-999-9',
+      '978-3864903571',
       'Angular 2',
       ['Johannes Hoppe', 'Danny Koppenhagen', 'Ferdinand Malcher', 'Gregor Woiwode']
     );
