@@ -10,10 +10,10 @@ import {BooksComponent} from './books/books.component';
 
 @Component({
   selector: 'navigation-app',
-  templateUrl: '/app/book-monkey/iteration-2/navigation/navigation.component.html',
+  template: `<router-outlet></router-outlet>`,
   directives: [ROUTER_DIRECTIVES]
 })
 
 export class NavigationApp {
-  constructor(private router: Router){}
+  constructor(){}
 }
