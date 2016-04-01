@@ -1,5 +1,5 @@
 import {Component} from 'angular2/core';
-import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
+import {Router, RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
 import {ValidationComponent} from './validation/validation.component';
 import {FormsComponent} from './forms/forms.component';
 
@@ -13,12 +13,16 @@ import {FormsComponent} from './forms/forms.component';
     </div>
   </h1>
   <div class="ui small ordered steps">
-    <a [routerLink]="['Forms']" class="step">
+    <a [routerLink]="['Forms']"
+       [class.active]="router.isRouteActive(router.generate(['./Forms']))"
+       class="step">
       <div class="content">
         <div class="title">Formulare</div>
       </div>
     </a>
-    <a [routerLink]="['Form-Validation']" class="step">
+    <a [routerLink]="['Form-Validation']"
+       [class.active]="router.isRouteActive(router.generate(['./Form-Validation']))"
+       class="step">
       <div class="content">
         <div class="title">Formularvalidierung</div>
       </div>
@@ -34,4 +38,6 @@ import {FormsComponent} from './forms/forms.component';
   {path: 'form/', name: 'Forms', component: FormsComponent, useAsDefault: true},
   {path: 'validation/', name: 'Form-Validation', component: ValidationComponent}
 ])
-export class IterationThreeComponent {}
+export class IterationThreeComponent {
+  constructor(private router: Router){}
+}

@@ -1,6 +1,6 @@
 import {Component} from 'angular2/core';
 import {HTTP_PROVIDERS} from 'angular2/http';
-import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
+import {Router, RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
 import {BookListComponent} from './book-list/book-list.component';
 
 @Component({
@@ -13,7 +13,9 @@ import {BookListComponent} from './book-list/book-list.component';
     </div>
   </h1>
   <div class="ui small ordered steps">
-    <a [routerLink]="['Http']" class="step">
+    <a [routerLink]="['Http']"
+       [class.active]="router.isRouteActive(router.generate(['./Http']))"
+       class="step">
       <div class="content">
         <div class="title">Http</div>
       </div>
@@ -29,4 +31,6 @@ import {BookListComponent} from './book-list/book-list.component';
 @RouteConfig([
   {path: 'http/', name: 'Http', component: BookListComponent, useAsDefault: true},
 ])
-export class IterationFourComponent {}
+export class IterationFourComponent {
+  constructor(private router: Router){}
+}

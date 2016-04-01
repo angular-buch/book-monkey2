@@ -1,15 +1,23 @@
 <div class="ui container">
   <div class="ui red four item menu">
-    <a [routerLink]="['Iteration-1']" class="item">
+    <a [routerLink]="['Iteration-1']"
+       [class.active]="router.isRouteActive(router.generate(['./Iteration-1']))"
+       class="item">
       Iteration 1
     </a>
-    <a [routerLink]="['Iteration-2']" class="item">
+    <a [routerLink]="['Iteration-2']"
+       [class.active]="router.isRouteActive(router.generate(['./Iteration-2']))"
+       class="item">
       Iteration 2
     </a>
-    <a [routerLink]="['Iteration-3']" class="item">
+    <a [routerLink]="['Iteration-3']"
+       [class.active]="router.isRouteActive(router.generate(['./Iteration-3']))"
+       class="item">
       Iteration 3
     </a>
-    <a [routerLink]="['Iteration-4']" class="item">
+    <a [routerLink]="['Iteration-4']"
+       [class.active]="router.isRouteActive(router.generate(['./Iteration-4']))" 
+       class="item">
       Iteration 4
     </a>
   </div>

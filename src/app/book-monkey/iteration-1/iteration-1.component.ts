@@ -1,5 +1,5 @@
 import {Component} from 'angular2/core';
-import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
+import {Router, RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
 import {BookDetailsComponent} from './book-details/book-details.component';
 import {BookListSimpleComponent} from './book-list-simple/book-list-simple.component';
 import {BookListComponent} from './book-list/book-list.component';
@@ -14,17 +14,23 @@ import {BookListComponent} from './book-list/book-list.component';
       </div>
     </h1>
     <div class="ui small ordered steps">
-      <a [routerLink]="['BookDetails']" class="step">
+      <a [routerLink]="['BookDetails']"
+         [class.active]="router.isRouteActive(router.generate(['./BookDetails']))"
+         class="step">
         <div class="content">
           <div class="title">Detailansicht</div>
         </div>
       </a>
-      <a [routerLink]="['BookListSimple']" class="step">
+      <a [routerLink]="['BookListSimple']"
+         [class.active]="router.isRouteActive(router.generate(['./BookListSimple']))"
+         class="step">
         <div class="content">
           <div class="title">Listenansicht</div>
         </div>
       </a>
-      <a [routerLink]="['BookList']" class="step">
+      <a [routerLink]="['BookList']"
+         [class.active]="router.isRouteActive(router.generate(['./BookList']))"
+         class="step">
         <div class="content">
           <div class="title">Verbesserte Listenansicht</div>
         </div>
@@ -41,4 +47,6 @@ import {BookListComponent} from './book-list/book-list.component';
   {path: '/book-list-simple', name: 'BookListSimple', component: BookListSimpleComponent},
   {path: '/book-list',        name: 'BookList', component: BookListComponent}
 ])
-export class IterationOneComponent {}
+export class IterationOneComponent {
+  constructor(private router: Router){}
+}

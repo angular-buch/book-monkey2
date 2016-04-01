@@ -1,5 +1,5 @@
 import {Component} from 'angular2/core';
-import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
+import {Router, RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
 import {BookListComponent} from './di/book-list/book-list.component';
 import {NavigationComponent} from './navigation/navigation.component';
 
@@ -13,12 +13,16 @@ import {NavigationComponent} from './navigation/navigation.component';
     </div>
   </h1>
   <div class="ui small ordered steps">
-    <a [routerLink]="['Dependency-Injection']" class="step">
+    <a [routerLink]="['Dependency-Injection']"
+       [class.active]="router.isRouteActive(router.generate(['./Dependency-Injection']))"
+       class="step">
       <div class="content">
         <div class="title">Dependency-Injection</div>
       </div>
     </a>
-    <a [routerLink]="['Navigation']" class="step">
+    <a [routerLink]="['Navigation']"
+       [class.active]="router.isRouteActive(router.generate(['./Navigation']))"
+       class="step">
       <div class="content">
         <div class="title">Navigation</div>
       </div>
@@ -34,4 +38,6 @@ import {NavigationComponent} from './navigation/navigation.component';
   {path: 'dependency-injection/', name: 'Dependency-Injection', component: BookListComponent, useAsDefault: true},
   {path: 'navigation/...', name: 'Navigation', component: NavigationComponent}
 ])
-export class IterationTwoComponent {}
+export class IterationTwoComponent {
+  constructor(private router: Router){}
+}
