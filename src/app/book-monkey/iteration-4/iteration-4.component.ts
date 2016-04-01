@@ -6,13 +6,7 @@ import {BookListComponent} from './book-list/book-list.component';
 @Component({
   selector: 'iteration-4',
   template: `
-  <h1 class="ui red header">
-    <i class="book icon"></i>
-    <div class="content">
-      Iteration 4
-    </div>
-  </h1>
-  <div class="ui small ordered steps">
+    <div class="ui one small ordered steps">
     <a [routerLink]="['Http']"
        [class.active]="router.isRouteActive(router.generate(['./Http']))"
        class="step">
