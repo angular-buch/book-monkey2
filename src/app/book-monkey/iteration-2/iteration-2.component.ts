@@ -6,14 +6,27 @@ import {NavigationComponent} from './navigation/navigation.component';
 @Component({
   selector: 'iteration-2',
   template: `
-  <div class="ui medium header">Iteration 2</div>
-  <div class="ui large breadcrumb">
-    <a [routerLink]="['Dependency-Injection']" class="section">Dependency-Injection</a>
-    |
-    <a [routerLink]="['Navigation']" class="section">Navigation (Routing)</a>
+  <h1 class="ui red header">
+    <i class="book icon"></i>
+    <div class="content">
+      Iteration 2
+    </div>
+  </h1>
+  <div class="ui small ordered steps">
+    <a [routerLink]="['Dependency-Injection']" class="step">
+      <div class="content">
+        <div class="title">Dependency-Injection</div>
+      </div>
+    </a>
+    <a [routerLink]="['Navigation']" class="step">
+      <div class="content">
+        <div class="title">Navigation</div>
+      </div>
+    </a>
   </div>
-  <hr>
-  <router-outlet></router-outlet>
+  <div class="ui raised padded container segment">
+    <router-outlet></router-outlet>
+  </div>
   `,
   directives: [ROUTER_DIRECTIVES]
 })

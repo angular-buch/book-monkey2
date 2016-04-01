@@ -6,14 +6,27 @@ import {FormsComponent} from './forms/forms.component';
 @Component({
   selector: 'iteration-3',
   template: `
-  <div class="ui medium header">Iteration 3</div>
-  <div class="ui large breadcrumb">
-    <a [routerLink]="['Forms']" class="section">Formulare</a>
-    |
-    <a [routerLink]="['Form-Validation']" class="section">Formularvalidierung</a>
+  <h1 class="ui red header">
+    <i class="book icon"></i>
+    <div class="content">
+      Iteration 3
+    </div>
+  </h1>
+  <div class="ui small ordered steps">
+    <a [routerLink]="['Forms']" class="step">
+      <div class="content">
+        <div class="title">Formulare</div>
+      </div>
+    </a>
+    <a [routerLink]="['Form-Validation']" class="step">
+      <div class="content">
+        <div class="title">Formularvalidierung</div>
+      </div>
+    </a>
   </div>
-  <hr>
-  <router-outlet></router-outlet>
+  <div class="ui raised padded container segment">
+    <router-outlet></router-outlet>
+  </div>
   `,
   directives: [ROUTER_DIRECTIVES]
 })

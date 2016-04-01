@@ -6,12 +6,22 @@ import {BookListComponent} from './book-list/book-list.component';
 @Component({
   selector: 'iteration-4',
   template: `
-  <div class="ui medium header">Iteration 3</div>
-  <div class="ui large breadcrumb">
-    <a [routerLink]="['Http']" class="section">Http</a>
+  <h1 class="ui red header">
+    <i class="book icon"></i>
+    <div class="content">
+      Iteration 4
+    </div>
+  </h1>
+  <div class="ui small ordered steps">
+    <a [routerLink]="['Http']" class="step">
+      <div class="content">
+        <div class="title">Http</div>
+      </div>
+    </a>
   </div>
-  <hr>
-  <router-outlet></router-outlet>
+  <div class="ui raised padded container segment">
+    <router-outlet></router-outlet>
+  </div>
   `,
   directives: [ROUTER_DIRECTIVES],
   providers: [HTTP_PROVIDERS]
