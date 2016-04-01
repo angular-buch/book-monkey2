@@ -9,7 +9,7 @@ import {BooksComponent} from './books/books.component';
 ])
 
 @Component({
-  selector: 'navigation',
+  selector: 'navigation-app',
   template: `
   <div>
   <a [routerLink]="['./Home']">Home</a>
@@ -20,4 +20,4 @@ import {BooksComponent} from './books/books.component';
   directives: [ROUTER_DIRECTIVES]
 })
 
-export class NavigationComponent {}
+export class NavigationApp {}
