@@ -6,13 +6,7 @@ import {FormsComponent} from './forms/forms.component';
 @Component({
   selector: 'iteration-3',
   template: `
-  <h1 class="ui red header">
-    <i class="book icon"></i>
-    <div class="content">
-      Iteration 3
-    </div>
-  </h1>
-  <div class="ui small ordered steps">
+    <div class="ui two small ordered steps">
     <a [routerLink]="['Forms']"
        [class.active]="router.isRouteActive(router.generate(['./Forms']))"
        class="step">
