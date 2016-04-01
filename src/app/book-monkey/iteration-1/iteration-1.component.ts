@@ -1,5 +1,5 @@
 import {Component} from 'angular2/core';
-import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
+import {Router, RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
 import {BookDetailsComponent} from './book-details/book-details.component';
 import {BookListSimpleComponent} from './book-list-simple/book-list-simple.component';
 import {BookListComponent} from './book-list/book-list.component';
@@ -7,16 +7,38 @@ import {BookListComponent} from './book-list/book-list.component';
 @Component({
   selector: 'iteration-1',
   template: `
-    <div class="ui medium header">Iteration 1</div>
-    <div class="ui large breadcrumb">
-      <a [routerLink]="['BookDetails']" class="section">Detailansicht</a>
-      |
-      <a [routerLink]="['BookListSimple']" class="section">Listenansicht</a>
-      |
-      <a [routerLink]="['BookList']" class="section">Verbesserte Listenansicht</a>
+    <h1 class="ui red header">
+      <i class="book icon"></i>
+      <div class="content">
+        Iteration 1
+      </div>
+    </h1>
+    <div class="ui small ordered steps">
+      <a [routerLink]="['BookDetails']"
+         [class.active]="router.isRouteActive(router.generate(['./BookDetails']))"
+         class="step">
+        <div class="content">
+          <div class="title">Detailansicht</div>
+        </div>
+      </a>
+      <a [routerLink]="['BookListSimple']"
+         [class.active]="router.isRouteActive(router.generate(['./BookListSimple']))"
+         class="step">
+        <div class="content">
+          <div class="title">Listenansicht</div>
+        </div>
+      </a>
+      <a [routerLink]="['BookList']"
+         [class.active]="router.isRouteActive(router.generate(['./BookList']))"
+         class="step">
+        <div class="content">
+          <div class="title">Verbesserte Listenansicht</div>
+        </div>
+      </a>
     </div>
-    <hr>
-    <router-outlet></router-outlet>
+    <div class="ui raised padded container segment">
+      <router-outlet></router-outlet>
+    </div>
   `,
   directives: [ROUTER_DIRECTIVES]
 })
@@ -25,4 +47,6 @@ import {BookListComponent} from './book-list/book-list.component';
   {path: '/book-list-simple', name: 'BookListSimple', component: BookListSimpleComponent},
   {path: '/book-list',        name: 'BookList', component: BookListComponent}
 ])
-export class IterationOneComponent {}
+export class IterationOneComponent {
+  constructor(private router: Router){}
+}
