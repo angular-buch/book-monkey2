@@ -1,5 +1,5 @@
-import {Directive, ElementRef, Input, HostBinding} from 'angular2/core';
-import {Router, RouterLink} from 'angular2/router';
+import {Directive, Input, HostBinding} from 'angular2/core';
+import {Router} from 'angular2/router';
 
 
 @Directive({
@@ -8,7 +8,7 @@ import {Router, RouterLink} from 'angular2/router';
 
 export class ActiveClassDirective {
 
-  @Input() activeClass: string;
+  @Input() activeClass: string; //not used as actual CSS class at the moment
   @Input() routerLink: any;
 
   constructor(private _router: Router){ }
