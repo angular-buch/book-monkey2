@@ -5,7 +5,7 @@ import {BookStoreService} from '../services/books/book-store.service';
 
 @Component({
   selector: 'book-details',
-  templateUrl: '/app/book-monkey/iteration-1/book-details/book-details.html',
+  templateUrl: '/app/book-monkey/iteration-2/book-details/book-details.html',
   providers: [BookStoreService]
 })
 export class BookDetailsComponent {
