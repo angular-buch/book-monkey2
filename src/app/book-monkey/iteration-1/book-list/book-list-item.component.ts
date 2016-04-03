@@ -8,7 +8,4 @@ import {Book} from '../domain/book';
 
 export class BookListItem {
   @Input() book: Book;
-
-  constructor() {}
-
 }

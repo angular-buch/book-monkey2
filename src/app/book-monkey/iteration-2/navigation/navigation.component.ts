@@ -19,5 +19,4 @@ import {BooksComponent} from './books/books.component';
   ],
   directives: [ROUTER_DIRECTIVES]
 })
-
 export class NavigationApp { }

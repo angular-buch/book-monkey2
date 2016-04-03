@@ -12,6 +12,6 @@ export class BookDetailsComponent {
   book: Book;
 
   constructor(private params: RouteParams, private bs: BookStoreService) {
-    this.book = bs.getById(params.get('isbn'));
+    this.book = bs.getSingle(params.get('isbn'));
   }
 }

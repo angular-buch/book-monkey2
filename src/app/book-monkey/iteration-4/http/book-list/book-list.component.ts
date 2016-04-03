@@ -13,10 +13,9 @@ import {BookStoreService} from '../services/books/book-store.service';
 export class BookListComponent {
   books: Book[];
 
-  constructor(private bookStore: BookStoreService) { }
+  constructor(private bs: BookStoreService) { }
 
   ngOnInit(){
-    this.bookStore.getAll()
-      .subscribe(res => this.books = res);
+    this.bs.getAll().subscribe(res => this.books = res);
   }
 }
