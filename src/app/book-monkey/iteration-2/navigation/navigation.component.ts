@@ -1,5 +1,5 @@
 import {Component} from 'angular2/core';
-import {Router, RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
+import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
 import {HomeComponent} from './home/home.component';
 import {BooksComponent} from './books/books.component';
 
@@ -11,9 +11,13 @@ import {BooksComponent} from './books/books.component';
 @Component({
   selector: 'navigation-app',
   templateUrl: '/app/book-monkey/iteration-2/navigation/navigation.component.html',
+  styles: [
+    `.router-link-active {
+      color: #ffffff !important;
+      background: #DB282C !important;
+    }`
+  ],
   directives: [ROUTER_DIRECTIVES]
 })
 
-export class NavigationApp {
-  constructor(private router: Router){}
-}
+export class NavigationApp { }

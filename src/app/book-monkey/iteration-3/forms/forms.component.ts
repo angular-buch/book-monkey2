@@ -1,5 +1,5 @@
 import {Component} from 'angular2/core';
-import {Router, RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
+import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
 import {HomeComponent} from './home/home.component';
 import {BooksComponent} from './books/books.component';
 import {FormComponent} from './form/form.component';
@@ -13,9 +13,13 @@ import {FormComponent} from './form/form.component';
 @Component({
   selector: 'navigation-app',
   templateUrl: '/app/book-monkey/iteration-3/forms/forms.component.html',
+  styles: [
+    `.router-link-active {
+      color: #ffffff !important;
+      background: #DB282C !important;
+    }`
+  ],
   directives: [ROUTER_DIRECTIVES]
 })
 
-export class FormsApp {
-  constructor(private router: Router){}
-}
+export class FormsApp { }

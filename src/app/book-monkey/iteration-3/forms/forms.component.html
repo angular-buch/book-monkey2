@@ -1,16 +1,13 @@
 <div class="ui three item tabs menu">
   <a [routerLink]="['./Home']"
-     [class.active]="router.isRouteActive(router.generate(['./Home']))"
      class="item">
     Home
   </a>
   <a [routerLink]="['./Books']"
-     [class.active]="router.isRouteActive(router.generate(['./Books']))"
      class="item">
     Bücher
   </a>
   <a [routerLink]="['./Admin']"
-     [class.active]="router.isRouteActive(router.generate(['./Admin']))"
      class="item">
     Administration
   </a>
