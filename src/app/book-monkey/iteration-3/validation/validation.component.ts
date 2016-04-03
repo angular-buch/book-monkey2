@@ -1,58 +1,25 @@
-import {Component, Input} from 'angular2/core';
-import {ControlGroup, ControlArray, FormBuilder, Validators} from 'angular2/common';
-import {DateValidator} from './validators/date.validator'
-import {IsbnValidator} from './validators/isbn.validator'
-import {RatingValidator} from './validators/rating.validator'
-import {Book} from '../domain/book'
+import {Component} from 'angular2/core';
+import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
+import {HomeComponent} from './home/home.component';
+import {BooksComponent} from './books/books.component';
+import {FormComponent} from './form/form.component';
+
+@RouteConfig([
+  {path: 'home/', name: 'Home', component: HomeComponent, useAsDefault: true},
+  {path: 'books/...', name: 'Books', component: BooksComponent},
+  {path: 'admin/', name: 'Admin', component: FormComponent}
+])
 
 @Component({
-  selector: 'it3-book-form',
-  templateUrl: 'app/book-monkey/iteration-3/validation/validation.component.html'
+  selector: 'navigation-app',
+  templateUrl: '/app/book-monkey/iteration-3/validation/validation.component.html',
+  styles: [
+    `.router-link-active {
+      color: #ffffff !important;
+      background: #DB282C !important;
+    }`
+  ],
+  directives: [ROUTER_DIRECTIVES]
 })
-export class ValidationComponent {
 
-  myForm: ControlGroup;
-  authorsControlArray: ControlArray;
-  thumbnailsControlArray: ControlArray;
-
-  constructor(private fb: FormBuilder) {
-
-    this.myForm = fb.group({
-      title:      ['', Validators.required],
-      rating:     ['', RatingValidator.rating],
-      published:  ['', DateValidator.germanDate],
-      subtitle:   [''],
-      description:[''],
-      authors:    fb.array([
-                    fb.control('', Validators.required)
-                  ]),
-      thumbnails: fb.array([
-                    fb.group({
-                      url:   ['', Validators.required],
-                      title: ['']
-                    })
-                  ]),
-      isbn:       ['', Validators.compose([
-                    Validators.required,
-                    IsbnValidator.isbn
-                    /* TODO Async check if isbn exists */
-                  ])]
-    });
-
-    // this allows us to manipulate the form at runtime
-    this.authorsControlArray = <ControlArray>this.myForm.controls['authors'];
-    this.thumbnailsControlArray = <ControlArray>this.myForm.controls['thumbnails'];
-  }
-
-  addAuthorControl(){
-    this.authorsControlArray.push(this.fb.control(''));
-  }
-
-  addThumbnailControl(){
-    this.thumbnailsControlArray.push(this.fb.group({ url: [''], title: ['']} ));
-  }
-
-  submitForm(formData){
-    console.log('submitting values:', formData.value);
-  }
-}
+export class ValidationApp { }
