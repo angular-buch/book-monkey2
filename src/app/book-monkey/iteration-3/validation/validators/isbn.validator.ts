@@ -3,11 +3,10 @@ import {ValidationResult} from './validation-result';
 
 export class IsbnValidator {
   static isbn(control: Control): ValidationResult {
-    let isbnPattern = /^(?=[-0-9xX ]{13}$)(?:[0-9]+[- ]){3}[0-9]*[xX0-9]$/;
-
-    if (!control.value.match(isbnPattern))
+    let isolatedNumbers = control.value.replace(/\D/g, '');
+    let isbnPattern = /(^\d{10}$)|(^\d{13}$)/g;
+    if (!isolatedNumbers.match(isbnPattern))
       return { "isbn": true };
-
-    return null;
+    return { "isbn": false };
   }
 }
