@@ -4,10 +4,12 @@ import {DateValidator} from '../validators/date.validator'
 import {IsbnValidator} from '../validators/isbn.validator'
 import {RatingValidator} from '../validators/rating.validator'
 import {Book} from '../../domain/book'
+import {BookStoreService} from '../services/books/book-store.service'
 
 @Component({
   selector: 'it3-book-form',
-  templateUrl: 'app/book-monkey/iteration-4/http/form/form.component.html'
+  templateUrl: 'app/book-monkey/iteration-4/http/form/form.component.html',
+  providers: [BookStoreService]
 })
 export class FormComponent {
 
@@ -15,11 +17,10 @@ export class FormComponent {
   authorsControlArray: ControlArray;
   thumbnailsControlArray: ControlArray;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private bs: BookStoreService) {
 
     this.myForm = fb.group({
       title:      ['', Validators.required],
-      rating:     ['', RatingValidator.rating],
       published:  ['', DateValidator.germanDate],
       subtitle:   [''],
       description:[''],
@@ -53,6 +54,6 @@ export class FormComponent {
   }
 
   submitForm(formData){
-    console.log('submitting values:', formData.value);
+    this.bs.create(formData.value).subscribe(res => res);
   }
 }

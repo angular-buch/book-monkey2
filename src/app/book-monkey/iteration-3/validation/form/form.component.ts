@@ -2,7 +2,6 @@ import {Component, Input} from 'angular2/core';
 import {ControlGroup, ControlArray, FormBuilder, Validators} from 'angular2/common';
 import {DateValidator} from '../validators/date.validator'
 import {IsbnValidator} from '../validators/isbn.validator'
-import {RatingValidator} from '../validators/rating.validator'
 import {Book} from '../../domain/book'
 
 @Component({
@@ -19,7 +18,6 @@ export class FormComponent {
 
     this.myForm = fb.group({
       title:      ['', Validators.required],
-      rating:     ['', RatingValidator.rating],
       published:  ['', DateValidator.germanDate],
       subtitle:   [''],
       description:[''],

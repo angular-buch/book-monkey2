@@ -52,7 +52,8 @@
       </div>
     </div>
     <div class="one wide field">
-      <button (click)="addAuthorControl()"
+      <button type="button"
+              (click)="addAuthorControl()"
               [disabled]="!myForm.controls['authors'].valid"
               class="ui button"> + </button>
     </div>
@@ -90,17 +91,19 @@
           </div>
         </div>
     <div class="one wide field">
-      <button (click)="addThumbnailControl()"
-              [disabled]="!myForm.controls['thumbnails'].valid"
-              class="ui button"> + </button>
+      <button type="button" class="ui button"
+              (click)="addThumbnailControl()"
+              [disabled]="!myForm.controls['thumbnails'].valid"> +
+      </button>
     </div>
   </div>
 
   <div class="four wide column"></div>
   <div class="right twelfe wide column">
-    <button [disabled]="!myForm.valid"
-            type="submit"
-            class="ui button">Speichern</button>
+    <button type="submit" class="ui button"
+            [disabled]="!myForm.valid">
+      Speichern
+    </button>
   </div>
 
 </form>
