@@ -64,7 +64,7 @@
   <div class="eleven wide column">
     <input ngControl="isbn" #isbn="ngForm">
     <div class="ui negative message"
-         *ngIf="isbn.dirty && isbn.touched && isbn.errors.isbn">
+         *ngIf="isbn.dirty && isbn.touched && isbn.errors && isbn.errors.isbn">
       Geben Sie eine gültige ISBN an.
     </div>
   </div>

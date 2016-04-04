@@ -7,6 +7,6 @@ export class IsbnValidator {
     let isbnPattern = /(^\d{10}$)|(^\d{13}$)/g;
     if (!isolatedNumbers.match(isbnPattern))
       return { "isbn": true };
-    return { "isbn": false };
+    return null;
   }
 }
