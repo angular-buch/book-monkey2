@@ -8,7 +8,7 @@ export class IsbnPipe implements PipeTransform {
     if (value.length !== 10 && value.length !== 13) return null;
 
     let prefix = '';
-    if (args[0] && args[0]['prefix']) { // add a prefix
+    if (args[0]) { // add prefix?
       prefix = (value.length === 10) ? 'ISBN-10: ' : 'ISBN-13: ';
     }
 
