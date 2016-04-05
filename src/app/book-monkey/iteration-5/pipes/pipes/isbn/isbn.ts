@@ -3,7 +3,7 @@ import {Pipe, PipeTransform} from 'angular2/core';
 @Pipe({
   name: 'isbn'
 })
-export class Isbn implements PipeTransform {
+export class IsbnPipe implements PipeTransform {
   transform(value: string, args?:[string]): string {
     if(value.length !== 10 && value.length !== 13) return null;
     let prefix = ''
