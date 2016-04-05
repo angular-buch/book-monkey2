@@ -26,5 +26,5 @@ import {HttpApp} from './http/http.component';
   {path: 'http/...', name: 'Http', component: HttpApp, useAsDefault: true},
 ])
 export class IterationFourComponent {
-  constructor(private router: Router){}
+  constructor(private router: Router) { }
 }

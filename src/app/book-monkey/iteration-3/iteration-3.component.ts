@@ -33,5 +33,5 @@ import {FormsApp} from './forms/forms.component';
   {path: 'validation/...', name: 'Form-Validation', component: ValidationApp}
 ])
 export class IterationThreeComponent {
-  constructor(private router: Router){}
+  constructor(private router: Router) { }
 }

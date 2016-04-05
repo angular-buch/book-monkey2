@@ -36,7 +36,7 @@ export class FormComponent {
   }
 
   addThumbnailControl(){
-    this.thumbnailsControlArray.push(this.fb.group({ url: [''], title: ['']} ));
+    this.thumbnailsControlArray.push(this.fb.group({url: [''], title: ['']}));
   }
 
   submitForm(formData){
