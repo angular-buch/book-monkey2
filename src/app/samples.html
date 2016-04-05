@@ -1,4 +1,4 @@
-<div class="ui four ordered steps">
+<div class="ui five steps">
   <a [routerLink]="['Iteration-1']"
      [class.active]="router.isRouteActive(router.generate(['./Iteration-1']))"
      class="step">
@@ -29,6 +29,14 @@
     <div class="content">
       <div class="title">Iteration-4</div>
       <div class="description">Http</div>
+    </div>
+  </a>
+  <a [routerLink]="['Iteration-5']"
+     [class.active]="router.isRouteActive(router.generate(['./Iteration-5']))"
+     class="step">
+    <div class="content">
+      <div class="title">Iteration-5</div>
+      <div class="description">Pipes und Direktiven</div>
     </div>
   </a>
 </div>

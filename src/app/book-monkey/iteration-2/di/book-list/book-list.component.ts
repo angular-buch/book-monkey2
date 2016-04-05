@@ -12,7 +12,7 @@ import {BookStoreService} from '../services/books/book-store.service';
 export class BookListComponent {
   books: Book[];
 
-  constructor(bookStore: BookStoreService) {
-    this.books = bookStore.getAll();
+  constructor(private bs: BookStoreService) {
+    this.books = bs.getAll();
   }
 }

@@ -1,7 +1,7 @@
 import {Component} from 'angular2/core';
 import {Router, RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
-import {ValidationComponent} from './validation/validation.component';
-import {FormsComponent} from './forms/forms.component';
+import {ValidationApp} from './validation/validation.component';
+import {FormsApp} from './forms/forms.component';
 
 @Component({
   selector: 'iteration-3',
@@ -29,9 +29,9 @@ import {FormsComponent} from './forms/forms.component';
   directives: [ROUTER_DIRECTIVES]
 })
 @RouteConfig([
-  {path: 'form/', name: 'Forms', component: FormsComponent, useAsDefault: true},
-  {path: 'validation/', name: 'Form-Validation', component: ValidationComponent}
+  {path: 'form/...', name: 'Forms', component: FormsApp, useAsDefault: true},
+  {path: 'validation/...', name: 'Form-Validation', component: ValidationApp}
 ])
 export class IterationThreeComponent {
-  constructor(private router: Router){}
+  constructor(private router: Router) { }
 }

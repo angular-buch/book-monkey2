@@ -1,7 +1,7 @@
 import {Component} from 'angular2/core';
 import {HTTP_PROVIDERS} from 'angular2/http';
 import {Router, RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
-import {BookListComponent} from './book-list/book-list.component';
+import {HttpApp} from './http/http.component';
 
 @Component({
   selector: 'iteration-4',
@@ -23,8 +23,8 @@ import {BookListComponent} from './book-list/book-list.component';
   providers: [HTTP_PROVIDERS]
 })
 @RouteConfig([
-  {path: 'http/', name: 'Http', component: BookListComponent, useAsDefault: true},
+  {path: 'http/...', name: 'Http', component: HttpApp, useAsDefault: true},
 ])
 export class IterationFourComponent {
-  constructor(private router: Router){}
+  constructor(private router: Router) { }
 }

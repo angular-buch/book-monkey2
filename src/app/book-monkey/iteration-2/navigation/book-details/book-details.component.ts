@@ -5,13 +5,13 @@ import {BookStoreService} from '../services/books/book-store.service';
 
 @Component({
   selector: 'book-details',
-  templateUrl: '/app/book-monkey/iteration-1/book-details/book-details.html',
+  templateUrl: '/app/book-monkey/iteration-2/navigation/book-details/book-details.html',
   providers: [BookStoreService]
 })
 export class BookDetailsComponent {
   book: Book;
 
   constructor(private params: RouteParams, private bs: BookStoreService) {
-    this.book = bs.getById(params.get('isbn'));
+    this.book = bs.getSingle(params.get('isbn'));
   }
 }

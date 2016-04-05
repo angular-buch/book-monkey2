@@ -1,46 +1,25 @@
-import {Component, Input} from 'angular2/core';
-import {ControlGroup, ControlArray, FormBuilder} from 'angular2/common';
-import {Book} from '../domain/book'
+import {Component} from 'angular2/core';
+import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
+import {HomeComponent} from './home/home.component';
+import {BooksComponent} from './books/books.component';
+import {FormComponent} from './form/form.component';
+
+@RouteConfig([
+  {path: 'home/', name: 'Home', component: HomeComponent, useAsDefault: true},
+  {path: 'books/...', name: 'Books', component: BooksComponent},
+  {path: 'admin/', name: 'Admin', component: FormComponent}
+])
 
 @Component({
-  selector: 'book-form',
-  templateUrl: 'app/book-monkey/iteration-3/forms/forms.component.html'
+  selector: 'forms-app',
+  templateUrl: '/app/book-monkey/iteration-3/forms/forms.component.html',
+  styles: [
+    `.router-link-active {
+      color: #ffffff !important;
+      background: #DB282C !important;
+    }`
+  ],
+  directives: [ROUTER_DIRECTIVES]
 })
-export class FormsComponent {
 
-  myForm: ControlGroup;
-  authorsControlArray: ControlArray;
-  thumbnailsControlArray: ControlArray;
-
-  constructor(private fb: FormBuilder) {
-
-    this.myForm = fb.group({
-      title: [''],
-      subtitle: [''],
-      isbn: [''],
-      description: [''],
-      authors: fb.array(['']),
-      thumbnails: fb.array([
-        fb.group({ url: [''], title: [''] })
-      ]),
-      rating: [''],
-      published: ['']
-    });
-
-    // this allows us to manipulate the form at runtime
-    this.authorsControlArray = <ControlArray>this.myForm.controls['authors'];
-    this.thumbnailsControlArray = <ControlArray>this.myForm.controls['thumbnails'];
-  }
-
-  addAuthorControl(){
-    this.authorsControlArray.push(this.fb.control(''));
-  }
-
-  addThumbnailControl(){
-    this.thumbnailsControlArray.push(this.fb.group({ url: [''], title: ['']} ));
-  }
-
-  submitForm(formData){
-    console.log('submitting values:', formData.value);
-  }
-}
+export class FormsApp { }

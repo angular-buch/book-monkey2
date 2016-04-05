@@ -1,5 +1,5 @@
 import {Component} from 'angular2/core';
-import {Router, RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
+import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
 import {HomeComponent} from './home/home.component';
 import {BooksComponent} from './books/books.component';
 
@@ -13,7 +13,4 @@ import {BooksComponent} from './books/books.component';
   template: `<router-outlet></router-outlet>`,
   directives: [ROUTER_DIRECTIVES]
 })
-
-export class NavigationApp {
-  constructor(){}
-}
+export class NavigationApp { }

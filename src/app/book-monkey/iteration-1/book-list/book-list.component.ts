@@ -25,7 +25,7 @@ export class BookListComponent {
       ['Philipp Tarasiewicz', 'Robin Böhm']
     )
     book2.subtitle = 'Eine praktische Einführung';
-    book2.thumbnails = [ new Thumbnail('https://goo.gl/Y5lFVE','Buchcover')];
+    book2.thumbnails = [ new Thumbnail('https://goo.gl/Y5lFVE', 'Buchcover')];
 
     this.books = [
       book1, book2
