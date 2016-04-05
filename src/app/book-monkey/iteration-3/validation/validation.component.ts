@@ -11,7 +11,7 @@ import {FormComponent} from './form/form.component';
 ])
 
 @Component({
-  selector: 'navigation-app',
+  selector: 'validation-app',
   templateUrl: '/app/book-monkey/iteration-3/validation/validation.component.html',
   styles: [
     `.router-link-active {

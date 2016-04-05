@@ -11,7 +11,7 @@ import {FormComponent} from './form/form.component';
 ])
 
 @Component({
-  selector: 'navigation-app',
+  selector: 'http-app',
   templateUrl: '/app/book-monkey/iteration-4/http/http.component.html',
   styles: [
     `.router-link-active {
