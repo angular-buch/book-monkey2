@@ -6,7 +6,7 @@ import 'rxjs/add/operator/map';
 
 @Injectable()
 export class BookStoreService {
-  private api: string = 'http://book-monkey2-api.angular2buch.de';
+  private api: string = location.hostname === 'localhost' ? 'http://localhost:3000' : 'http://book-monkey2-api.angular2buch.de';
   private headers: Headers = new Headers();
 
   constructor(private http: Http) {
