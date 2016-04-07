@@ -42,5 +42,5 @@ import {BookListComponent} from './book-list/book-list.component';
   {path: '/book-list',        name: 'BookList', component: BookListComponent}
 ])
 export class IterationOneComponent {
-  constructor(private router: Router){}
+  constructor(private router: Router) { }
 }

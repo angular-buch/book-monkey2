@@ -33,5 +33,5 @@ import {NavigationApp} from './navigation/navigation.component';
   {path: 'navigation/...', name: 'Navigation', component: NavigationApp}
 ])
 export class IterationTwoComponent {
-  constructor(private router: Router){}
+  constructor(private router: Router) { }
 }

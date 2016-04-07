@@ -26,5 +26,5 @@ import {PipesApp} from './pipes/pipes.component';
   {path: 'pipes/...', name: 'Pipes', component: PipesApp, useAsDefault: true},
 ])
 export class IterationFiveComponent {
-  constructor(private router: Router){}
+  constructor(private router: Router) { }
 }
