@@ -6,8 +6,8 @@ module.exports = function(defaults) {
   var app = new Angular2App(defaults, {
     vendorNpmFiles: [
       'semantic-ui-css/semantic.css',
-      'semantic-ui-css/themes/**/*'
+      'semantic-ui-css/themes/**/*'      
     ]
   });
   return app.toTree();
-}
+};
