@@ -1,0 +1,40 @@
+<div class="ui grid" *ngIf="book">
+  <div class="four wide column">
+    <img class="ui large image" src="{{book?.thumbnails[0].url}}">
+  </div>
+  <div class="twelve wide column">
+    <h1 class="ui header">{{ book?.title }}</h1>
+    <h3 class="ui header">{{ book?.subtitle }}</h3>
+    <div class="ui divider"></div>
+    <div class="ui grid">
+      <div class="four wide column">
+        <h4 class="ui header">Autoren</h4>
+        <span *ngFor="#author of book?.authors; #l=last">
+          {{ author }}<span *ngIf="!l">, </span>
+        </span>
+      </div>
+      <div class="four wide column">
+        <h4 class="ui header">ISBN</h4>
+        {{ book?.isbn }}
+      </div>
+      <div class="four wide column">
+        <h4 class="ui header">Erschienen</h4>
+        {{ book?.published }}
+      </div>
+      <div class="four wide column">
+        <h4 class="ui header">Rating</h4>
+        {{ book?.rating }}
+        <i class="yellow star icon"></i>
+      </div>
+    </div>
+  </div>
+  <div class="sixteen wide column">
+    <h3 class="ui header">Beschreibung</h3>
+    {{ book?.description }}
+  </div>
+  <div class="sixteen wide column">
+    <div class="ui small images">
+      <img *ngFor="#thumbnail of book?.thumbnails" src="{{thumbnail.url}}">
+    </div>
+  </div>
+</div>
