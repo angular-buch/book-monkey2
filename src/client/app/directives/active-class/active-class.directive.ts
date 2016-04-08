@@ -16,6 +16,4 @@ export class ActiveClassDirective {
   @HostBinding('class.active') get isRouteActive() : boolean {
     return this._router.isRouteActive(this._router.generate(this.routerLink));
   }
-
-
 }
