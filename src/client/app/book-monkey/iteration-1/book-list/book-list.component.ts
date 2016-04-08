@@ -12,7 +12,7 @@ export class BookListComponent {
 
   constructor() {
     let book1 = new Book(
-      '978-3864903571',
+      '9783864903571',
       'Angular 2',
       ['Johannes Hoppe', 'Danny Koppenhagen', 'Ferdinand Malcher', 'Gregor Woiwode']
     );
@@ -20,7 +20,7 @@ export class BookListComponent {
     book1.thumbnails = [ new Thumbnail('http://goo.gl/nDi0Fc','Buchcover')];
 
     let book2 = new Book(
-      '978-3864901546',
+      '9783864901546',
       'AngularJS',
       ['Philipp Tarasiewicz', 'Robin Böhm']
     )

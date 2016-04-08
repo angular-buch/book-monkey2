@@ -9,7 +9,7 @@ export class BookDetailsComponent {
   book: Book;
 
   constructor() {
-    this.book = new Book('978-3864903571', 'Angular 2', [
+    this.book = new Book('9783864903571', 'Angular 2', [
       'Johannes Hoppe',
       'Danny Koppenhagen',
       'Ferdinand Malcher',
