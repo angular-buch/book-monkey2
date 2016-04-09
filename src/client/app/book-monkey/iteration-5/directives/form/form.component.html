@@ -1,0 +1,109 @@
+<h1>Buchformular</h1>
+<form [ngFormModel]="myForm"
+      (ngSubmit)="submitForm(myForm)"
+      class="grid ui form">
+
+  <div class="four wide column">
+    <h4>Buchtitel</h4>
+  </div>
+  <div class="eleven wide column form">
+    <input ngControl="title" #title="ngForm"/>
+    <div class="ui negative message"
+         *ngIf="title.dirty && !title.valid">
+      Geben Sie den Titel des Buches an.
+    </div>
+  </div>
+
+  <div class="four wide column">
+    <h4>Untertitel</h4>
+  </div>
+  <div class="eleven wide column">
+    <input ngControl="subtitle">
+  </div>
+
+  <div class="four wide column">
+    <h4>Erscheinungsdatum</h4>
+  </div>
+  <div class="eleven wide column">
+    <input ngControl="published" #published="ngForm">
+    <div class="ui message"
+        [ngClass]="{negative: published.touched}"
+         *ngIf="published.dirty && !published.valid">
+      Bitte geben Sie das Datum mit folgendem Format ein: dd.MM.yyyy
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="four wide column">
+      <h4>Autoren</h4>
+    </div>
+    <div class="eleven wide column">
+      <div class="fields">
+        <div ngControlGroup="authors"
+            *ngFor="#control of authorsControlArray.controls; #i = index"
+            class="sixteen wide field">
+            <input ngControl="{{i}}" placeholder="Autor {{i+1}}">
+        </div>
+      </div>
+      <div class="ui negative message"
+           *ngIf="myForm.controls['authors'].dirty
+              && !myForm.controls['authors'].valid">
+        Geben Sie mindestens einen Autor an.
+      </div>
+    </div>
+    <div class="one wide field">
+      <button type="button"
+              (click)="addAuthorControl()"
+              [disabled]="!myForm.controls['authors'].valid"
+              class="ui button"> + </button>
+    </div>
+  </div>
+
+  <div class="four wide column">
+    <h4>ISBN</h4>
+  </div>
+  <div class="eleven wide column">
+    <input ngControl="isbn" #isbn="ngForm">
+    <div class="ui negative message"
+         *ngIf="isbn.dirty && isbn.touched && isbn.errors && isbn.errors.isbn">
+      Geben Sie eine gültige ISBN an.
+    </div>
+  </div>
+
+  <div class="four wide column">
+    <h4>Beschreibung</h4>
+  </div>
+  <div class="eleven wide column">
+    <textarea ngControl="description" rows="3"></textarea>
+  </div>
+
+  <div class="row">
+    <div class="four wide column">
+      <h4>Thumbnails</h4>
+    </div>
+    <div class="eleven wide column">
+        <div ngControlGroup="thumbnails"
+            *ngFor="#control of thumbnailsControlArray.controls; #i = index">
+            <div ngControlGroup="{{i}}" class="inline fields">
+                <input ngControl="url" placeholder="http://bild{{i+1}}_Url">
+                <input ngControl="title" placeholder="Bild {{i+1}} Titel">
+            </div>
+          </div>
+        </div>
+    <div class="one wide field">
+      <button type="button" class="ui button"
+              (click)="addThumbnailControl()"
+              [disabled]="!myForm.controls['thumbnails'].valid"> +
+      </button>
+    </div>
+  </div>
+
+  <div class="four wide column"></div>
+  <div class="right twelfe wide column">
+    <button type="submit" class="ui button"
+            [disabled]="!myForm.valid">
+      Speichern
+    </button>
+  </div>
+
+</form>
