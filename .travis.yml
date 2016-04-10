@@ -1,0 +1,12 @@
+language: node_js
+
+node_js:
+  - '4.0'
+
+install:
+- npm install
+
+script:
+- npm run ng build --environment=production
+- echo "book-monkey2.angular2buch.de" > dist/CNAME
+- npm run ng ghpages

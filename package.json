@@ -9,7 +9,8 @@
     "lint": "tslint src/**/*.ts",
     "format": "clang-format -i -style=file --glob=src/**/*.ts",
     "pree2e": "webdriver-manager update",
-    "e2e": "protractor"
+    "e2e": "protractor",
+    "ng": "ng"
   },
   "private": true,
   "dependencies": {
@@ -37,6 +38,7 @@
     "tslint": "^3.6.0",
     "typescript": "^1.8.7",
     "typings": "^0.6.6",
-    "book-monkey2-api": "*"
+    "book-monkey2-api": "*",
+    "angular-cli-ghpages": "*"
   }
 }
