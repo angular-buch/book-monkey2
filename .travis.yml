@@ -9,7 +9,7 @@ install:
 script:
 - npm run ng build --environment=production
 - echo "book-monkey2.angular2buch.de" > dist/CNAME
-- printf '%s\n' '---' 'permalink: /index.html' '---' > dist/404.md
+- cp 404.md dist/404.md
 - npm run ng -- ghpages --repo=https://REPO_USER_AND_PASS@github.com/Angular2Buch/book-monkey2-public.git --name="The Buildbot" --email=buildbot@angular2buch.de
 
 # node-gyp: Node.js v4 (or io.js v3) compiler requirements
