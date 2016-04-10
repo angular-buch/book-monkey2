@@ -1,4 +1,5 @@
 # Book-Monkey 2
+[![Build Status](https://travis-ci.org/Angular2Buch/book-monkey2.svg)](https://travis-ci.org/Angular2Buch/book-monkey2)
 
 ![Monkey](public/images/monkey-thinking.png)
 
