@@ -1,15 +1,17 @@
 import {Component} from 'angular2/core';
 import {bootstrap} from 'angular2/platform/browser';
-import {Car} from './car';
+import {Car} from './my-component';
 
 @Component({
   selector: 'app',
-  directives: [Car],
-  template: `<car id="car1" (damaged)="report($event)"></car>`
+  directives: [MyComponent],
+  template: `
+    <my-component (onRaisedEvent)="handle($event)"></my-component>
+  `
 })
 class App {
-  report(damage:string) {
-    console.log("Damage:", damage);
+  handle(message:string) {
+    console.log("Message:", message);
   }
 }
 
