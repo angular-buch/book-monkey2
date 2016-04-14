@@ -8,6 +8,6 @@ export class MyComponent {
   @Output() onRaisedEvent:EventEmitter<string> = new EventEmitter();
 
   raiseEvent() {
-    this.onRaisedEvent.emit(this.id);
+    this.onRaisedEvent.emit('event');
   }
 }

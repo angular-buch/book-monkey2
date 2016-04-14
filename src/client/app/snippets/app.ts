@@ -1,6 +1,6 @@
 import {Component} from 'angular2/core';
 import {bootstrap} from 'angular2/platform/browser';
-import {Car} from './my-component';
+import {MyComponent} from './my-component';
 
 @Component({
   selector: 'app',
