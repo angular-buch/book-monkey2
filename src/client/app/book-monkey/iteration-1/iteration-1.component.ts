@@ -1,8 +1,8 @@
 import {Component} from 'angular2/core';
 import {Router, RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
 import {BookDetailsComponent} from './book-details/book-details.component';
-import {BookListSimpleComponent} from './book-list-simple/book-list-simple.component';
 import {BookListComponent} from './book-list/book-list.component';
+import {BookListComponent as BookListComponentRefactored} from './book-list-refactored/book-list.component';
 
 @Component({
   selector: 'iteration-1',
@@ -15,15 +15,15 @@ import {BookListComponent} from './book-list/book-list.component';
           <div class="title">Detailansicht</div>
         </div>
       </a>
-      <a [routerLink]="['BookListSimple']"
-         [class.active]="router.isRouteActive(router.generate(['./BookListSimple']))"
+      <a [routerLink]="['BookList']"
+         [class.active]="router.isRouteActive(router.generate(['./BookList']))"
          class="step">
         <div class="content">
           <div class="title">Listenansicht</div>
         </div>
       </a>
-      <a [routerLink]="['BookList']"
-         [class.active]="router.isRouteActive(router.generate(['./BookList']))"
+      <a [routerLink]="['BookListRefactored']"
+         [class.active]="router.isRouteActive(router.generate(['./BookListRefactored']))"
          class="step">
         <div class="content">
           <div class="title">Verbesserte Listenansicht</div>
@@ -37,9 +37,9 @@ import {BookListComponent} from './book-list/book-list.component';
   directives: [ROUTER_DIRECTIVES]
 })
 @RouteConfig([
-  {path: '/book-details',     name: 'BookDetails',    component: BookDetailsComponent, useAsDefault: true},
-  {path: '/book-list-simple', name: 'BookListSimple', component: BookListSimpleComponent},
-  {path: '/book-list',        name: 'BookList', component: BookListComponent}
+  {path: '/book-details',         name: 'BookDetails',        component: BookDetailsComponent, useAsDefault: true},
+  {path: '/book-list',            name: 'BookList',           component: BookListComponent},
+  {path: '/book-list-refactored', name: 'BookListRefactored', component: BookListComponentRefactored}
 ])
 export class IterationOneComponent {
   constructor(private router: Router) { }
