@@ -3,7 +3,7 @@ import {BookListItem} from '../book-list-item/book-list-item.component';
 import {Book, Thumbnail} from '../../domain/book';
 
 @Component({
-  selector: 'it1-book-list',
+  selector: 'book-list',
   directives: [BookListItem],
   moduleId: module.id,
   templateUrl: 'book-list.component.html'
