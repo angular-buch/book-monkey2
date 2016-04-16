@@ -11,8 +11,9 @@ import {FormComponent} from './form/form.component';
 ])
 
 @Component({
-  selector: 'validation-app',
-  templateUrl: '/app/book-monkey/iteration-3/validation/validation.component.html',
+  selector: 'book-monkey-app',
+  moduleId: module.id,
+  templateUrl: 'validation.app.html',
   styles: [
     `.router-link-active {
       color: #ffffff !important;
@@ -21,4 +22,4 @@ import {FormComponent} from './form/form.component';
   ],
   directives: [ROUTER_DIRECTIVES]
 })
-export class ValidationApp { }
+export class BookMonkeyApp { }

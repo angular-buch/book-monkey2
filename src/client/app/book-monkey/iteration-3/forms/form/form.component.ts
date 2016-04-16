@@ -4,7 +4,8 @@ import {Book} from '../../domain/book'
 
 @Component({
   selector: 'book-form',
-  templateUrl: 'app/book-monkey/iteration-3/forms/form/form.component.html'
+  moduleId: module.id,
+  templateUrl: 'form.component.html'
 })
 export class FormComponent {
   myForm: ControlGroup;

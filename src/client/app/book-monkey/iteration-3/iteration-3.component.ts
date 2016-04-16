@@ -1,7 +1,7 @@
 import {Component} from 'angular2/core';
 import {Router, RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
-import {ValidationApp} from './validation/validation.component';
-import {FormsApp} from './forms/forms.component';
+import {BookMonkeyApp as FormsApp} from './forms/forms.app';
+import {BookMonkeyApp as ValidationApp} from './validation/validation.app';
 
 @Component({
   selector: 'iteration-3',
