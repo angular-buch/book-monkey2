@@ -4,7 +4,8 @@ import {IsbnPipe} from '../pipes/isbn-pipe/isbn-pipe';
 
 @Component({
   selector: '.book-list-item',
-  templateUrl: '/app/book-monkey/iteration-5/pipes/book-list/book-list-item.component.html',
+  moduleId: module.id,
+  templateUrl: 'book-list-item.component.html',
   pipes: [IsbnPipe]
 })
 

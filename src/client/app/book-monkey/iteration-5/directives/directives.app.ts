@@ -3,6 +3,7 @@ import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
 import {HomeComponent} from './home/home.component';
 import {BooksComponent} from './books/books.component';
 import {FormComponent} from './form/form.component';
+import {ActiveClassDirective} from './directives/active-class/active-class.directive'
 
 @RouteConfig([
   {path: 'home/', name: 'Home', component: HomeComponent, useAsDefault: true},
@@ -11,14 +12,9 @@ import {FormComponent} from './form/form.component';
 ])
 
 @Component({
-  selector: 'pipes-app',
-  templateUrl: '/app/book-monkey/iteration-5/pipes/pipes.component.html',
-  styles: [
-    `.router-link-active {
-      color: #ffffff !important;
-      background: #DB282C !important;
-    }`
-  ],
-  directives: [ROUTER_DIRECTIVES]
+  selector: 'book-monkey-app',
+  moduleId: module.id,
+  templateUrl: 'directives.app.html',
+  directives: [ROUTER_DIRECTIVES, ActiveClassDirective]
 })
-export class PipesApp { }
+export class BookMonkeyApp { }

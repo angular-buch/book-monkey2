@@ -1,8 +1,8 @@
 import {Component} from 'angular2/core';
 import {HTTP_PROVIDERS} from 'angular2/http';
 import {Router, RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
-import {PipesApp} from './pipes/pipes.component';
-import {DirectivesApp} from './directives/directives.component';
+import {BookMonkeyApp as PipesApp} from './pipes/pipes.app';
+import {BookMonkeyApp as DirectivesApp} from './directives/directives.app';
 
 @Component({
   selector: 'iteration-5',
