@@ -25,4 +25,8 @@ export class BookDetailsComponent {
       new Thumbnail('https://goo.gl/LnYTQD','Angular 2 Logo')
     ];
   }
+
+  getRating(num: number){
+    return new Array(num);
+  }
 }

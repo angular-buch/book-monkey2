@@ -11,6 +11,7 @@ export class BookStoreService {
       'Angular 2',
       ['Johannes Hoppe', 'Danny Koppenhagen', 'Ferdinand Malcher', 'Gregor Woiwode']
     );
+    book1.rating = 5;
     book1.subtitle = 'Einstieg in die komponentenbasierte Entwicklung von Web- und Mobile-Anwendungen';
     book1.thumbnails = [ new Thumbnail('http://goo.gl/nDi0Fc', 'Buchcover')];
 
@@ -19,6 +20,7 @@ export class BookStoreService {
       'AngularJS',
       ['Philipp Tarasiewicz', 'Robin Böhm']
     )
+    book2.rating = 5;
     book2.subtitle = 'Eine praktische Einführung';
     book2.thumbnails = [ new Thumbnail('https://goo.gl/Y5lFVE', 'Buchcover')];
 

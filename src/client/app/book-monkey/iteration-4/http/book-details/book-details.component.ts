@@ -18,4 +18,8 @@ export class BookDetailsComponent {
     this.bs.getSingle(this.params.get('isbn'))
       .subscribe(res => this.book = res);
   }
+
+  getRating(num: number){
+    return new Array(num);
+  }
 }

@@ -15,4 +15,8 @@ export class BookDetailsComponent {
   constructor(private params: RouteParams, private bs: BookStoreService) {
     this.book = bs.getSingle(params.get('isbn'));
   }
+  
+  getRating(num: number){
+    return new Array(num);
+  }
 }
