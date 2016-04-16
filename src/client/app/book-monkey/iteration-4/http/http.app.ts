@@ -11,8 +11,9 @@ import {FormComponent} from './form/form.component';
 ])
 
 @Component({
-  selector: 'http-app',
-  templateUrl: '/app/book-monkey/iteration-4/http/http.component.html',
+  selector: 'book-monkey-app',
+  moduleId: module.id,
+  templateUrl: 'http.app.html',
   styles: [
     `.router-link-active {
       color: #ffffff !important;
@@ -21,4 +22,4 @@ import {FormComponent} from './form/form.component';
   ],
   directives: [ROUTER_DIRECTIVES]
 })
-export class HttpApp { }
+export class BookMonkeyApp { }
