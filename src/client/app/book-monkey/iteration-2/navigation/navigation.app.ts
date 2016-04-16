@@ -9,9 +9,9 @@ import {BooksComponent} from './books/books.component';
 ])
 
 @Component({
-  selector: 'navigation-app',
+  selector: 'book-monkey-app',
   moduleId: module.id,
-  templateUrl: 'navigation.component.html',
+  templateUrl: 'navigation.app.html',
   styles: [
     `.router-link-active {
       color: #ffffff !important;

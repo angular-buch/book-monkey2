@@ -1,7 +1,7 @@
 import {Component} from 'angular2/core';
 import {Router, RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
 import {BookMonkeyApp as diApp} from './di/di.app';
-import {BookMonkeyApp as NavigationApp} from './navigation/navigation.component';
+import {BookMonkeyApp as NavigationApp} from './navigation/navigation.app';
 
 @Component({
   selector: 'iteration-2',
