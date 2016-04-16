@@ -1,8 +1,8 @@
 import {Component} from 'angular2/core';
 import {Router, RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
-import {BookDetailsComponent} from './book-details/book-details/book-details.component';
-import {BookListComponent} from './book-list/book-list/book-list.component';
-import {BookListComponent as BookListComponentRefactored} from './book-list-refactored/book-list/book-list.component';
+import {BookMonkeyApp as BookDetailsApp} from './book-details/book-details.app';
+import {BookMonkeyApp as BookListApp} from './book-list/book-list.app';
+import {BookMonkeyApp as BookListRefactoredApp} from './book-list-refactored/book-list-refactored.app';
 
 @Component({
   selector: 'iteration-1',
@@ -37,9 +37,9 @@ import {BookListComponent as BookListComponentRefactored} from './book-list-refa
   directives: [ROUTER_DIRECTIVES]
 })
 @RouteConfig([
-  {path: '/book-details',         name: 'BookDetails',        component: BookDetailsComponent, useAsDefault: true},
-  {path: '/book-list',            name: 'BookList',           component: BookListComponent},
-  {path: '/book-list-refactored', name: 'BookListRefactored', component: BookListComponentRefactored}
+  {path: '/book-details',         name: 'BookDetails',        component: BookDetailsApp, useAsDefault: true},
+  {path: '/book-list',            name: 'BookList',           component: BookListApp},
+  {path: '/book-list-refactored', name: 'BookListRefactored', component: BookListRefactoredApp}
 ])
 export class IterationOneComponent {
   constructor(private router: Router) { }
