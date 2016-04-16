@@ -10,7 +10,8 @@ import {BooksComponent} from './books/books.component';
 
 @Component({
   selector: 'navigation-app',
-  templateUrl: '/app/book-monkey/iteration-2/navigation/navigation.component.html',
+  moduleId: module.id,
+  templateUrl: 'navigation.component.html',
   styles: [
     `.router-link-active {
       color: #ffffff !important;
@@ -19,4 +20,4 @@ import {BooksComponent} from './books/books.component';
   ],
   directives: [ROUTER_DIRECTIVES]
 })
-export class NavigationApp { }
+export class BookMonkeyApp { }

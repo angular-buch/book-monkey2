@@ -1,7 +1,7 @@
 import {Component} from 'angular2/core';
 import {Router, RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
-import {BookListComponent} from './di/book-list/book-list.component';
-import {NavigationApp} from './navigation/navigation.component';
+import {BookMonkeyApp as diApp} from './di/di.app';
+import {BookMonkeyApp as NavigationApp} from './navigation/navigation.component';
 
 @Component({
   selector: 'iteration-2',
@@ -29,7 +29,7 @@ import {NavigationApp} from './navigation/navigation.component';
   directives: [ROUTER_DIRECTIVES]
 })
 @RouteConfig([
-  {path: 'dependency-injection/', name: 'Dependency-Injection', component: BookListComponent, useAsDefault: true},
+  {path: 'dependency-injection/', name: 'Dependency-Injection', component: diApp, useAsDefault: true},
   {path: 'navigation/...', name: 'Navigation', component: NavigationApp}
 ])
 export class IterationTwoComponent {
