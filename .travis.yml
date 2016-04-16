@@ -26,3 +26,8 @@ addons:
 # a build will finish as soon as a job has failed      
 matrix:
   fast_finish: true      
+
+#only building specific branches  
+branches:
+  only:
+    - master
