@@ -1,8 +1,8 @@
 import {Component} from 'angular2/core';
 import {Router, RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
-import {BookDetailsComponent} from './book-details/book-details.component';
-import {BookListComponent} from './book-list/book-list.component';
-import {BookListComponent as BookListComponentRefactored} from './book-list-refactored/book-list.component';
+import {BookDetailsComponent} from './book-details/book-details/book-details.component';
+import {BookListComponent} from './book-list/book-list/book-list.component';
+import {BookListComponent as BookListComponentRefactored} from './book-list-refactored/book-list/book-list.component';
 
 @Component({
   selector: 'iteration-1',

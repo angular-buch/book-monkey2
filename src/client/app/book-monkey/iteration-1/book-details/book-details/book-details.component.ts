@@ -1,9 +1,10 @@
 import {Component} from 'angular2/core';
-import {Book, Thumbnail} from '../domain/book';
+import {Book, Thumbnail} from '../../domain/book';
 
 @Component({
   selector: 'book-details',
-  templateUrl: '/app/book-monkey/iteration-1/book-details/book-details.html'
+  moduleId: module.id,
+  templateUrl: 'book-details.html'
 })
 export class BookDetailsComponent {
   book: Book;
