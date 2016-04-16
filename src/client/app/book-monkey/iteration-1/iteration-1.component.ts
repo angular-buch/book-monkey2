@@ -1,29 +1,31 @@
 import {Component} from 'angular2/core';
-import {Router, RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
+import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
 import {BookMonkeyApp as BookDetailsApp} from './book-details/book-details.app';
 import {BookMonkeyApp as BookListApp} from './book-list/book-list.app';
 import {BookMonkeyApp as BookListRefactoredApp} from './book-list-refactored/book-list-refactored.app';
+
+import {ActiveClassDirective} from '../../directives/active-class/active-class.directive';
 
 @Component({
   selector: 'iteration-1',
   template: `
     <div class="ui three small ordered steps">
       <a [routerLink]="['BookDetails']"
-         [class.active]="router.isRouteActive(router.generate(['./BookDetails']))"
+         activeClass="active"
          class="step">
         <div class="content">
           <div class="title">Detailansicht</div>
         </div>
       </a>
       <a [routerLink]="['BookList']"
-         [class.active]="router.isRouteActive(router.generate(['./BookList']))"
+         activeClass="active"
          class="step">
         <div class="content">
           <div class="title">Listenansicht</div>
         </div>
       </a>
       <a [routerLink]="['BookListRefactored']"
-         [class.active]="router.isRouteActive(router.generate(['./BookListRefactored']))"
+         activeClass="active"
          class="step">
         <div class="content">
           <div class="title">Verbesserte Listenansicht</div>
@@ -34,13 +36,11 @@ import {BookMonkeyApp as BookListRefactoredApp} from './book-list-refactored/boo
       <router-outlet></router-outlet>
     </div>
   `,
-  directives: [ROUTER_DIRECTIVES]
+  directives: [ROUTER_DIRECTIVES, ActiveClassDirective]
 })
 @RouteConfig([
   {path: '/book-details',         name: 'BookDetails',        component: BookDetailsApp, useAsDefault: true},
   {path: '/book-list',            name: 'BookList',           component: BookListApp},
   {path: '/book-list-refactored', name: 'BookListRefactored', component: BookListRefactoredApp}
 ])
-export class IterationOneComponent {
-  constructor(private router: Router) { }
-}
+export class IterationOneComponent { }
