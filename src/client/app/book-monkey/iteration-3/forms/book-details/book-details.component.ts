@@ -1,5 +1,5 @@
 import {Component, Input} from 'angular2/core';
-import {RouteParams} from 'angular2/router';
+import {RouteParams, ROUTER_DIRECTIVES} from 'angular2/router';
 import {Book} from '../../domain/book';
 import {BookStoreService} from '../services/books/book-store.service';
 
@@ -7,7 +7,8 @@ import {BookStoreService} from '../services/books/book-store.service';
   selector: 'book-details',
   moduleId: module.id,
   templateUrl: 'book-details.html',
-  providers: [BookStoreService]
+  providers: [BookStoreService],
+  directives: [ROUTER_DIRECTIVES]
 })
 export class BookDetailsComponent {
   book: Book;
