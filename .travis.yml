@@ -44,14 +44,14 @@ script:
   
 deploy:
   # [1] one-app: send compiled version to gh-pages
-  #- if [ "$NAME" == "one-app" ]; then 
-  #    npm run ng -- ghpages --repo="$GITHUB_ORG/$NAME.git" --name="The Buildbot" --email=buildbot@angular2buch.de;
-  #  fi
+  - if [ "$NAME" == "one-app" ]; then 
+      npm run ng -- ghpages --repo="$GITHUB_ORG/$NAME.git" --name="The Buildbot" --email=buildbot@angular2buch.de;
+    fi
 
   # [2] one-app: send uncompiled version to master
-  #- if [ "$NAME" != "one-app" ]; then 
-  #    npm run ng -- ghpages --repo="$GITHUB_ORG/$NAME.git" --name="The Buildbot" --email=buildbot@angular2buch.de --dir=../TMP/BookMonkey --branch=master;
-  #  fi
+  - if [ "$NAME" != "one-app" ]; then 
+      npm run ng -- ghpages --repo="$GITHUB_ORG/$NAME.git" --name="The Buildbot" --email=buildbot@angular2buch.de --dir=../TMP/BookMonkey --branch=master;
+    fi
 
 
 
