@@ -8,9 +8,9 @@ node_js:
   - '4.2'
   
 env:
-  - NAME=one-app
-  - NAME=iteration-1-book-details BLUEPRINT=src/client/app/book-monkey/iteration-1/book-details
-  - NAME=iteration-1-book-list BLUEPRINT=src/client/app/book-monkey/iteration-1/book-list
+  - NAME="one-app"
+  - NAME="iteration-1-book-details" BLUEPRINT="src/client/app/book-monkey/iteration-1/book-details"
+  - NAME="iteration-1-book-list" BLUEPRINT="src/client/app/book-monkey/iteration-1/book-list"
 
 install:
   - npm install
