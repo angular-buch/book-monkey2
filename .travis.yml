@@ -12,30 +12,34 @@ env:
     # node-gyp: Node.js v4 (or io.js v3) compiler requirements
     # https://docs.travis-ci.com/user/languages/javascript-with-nodejs#Node.js-v4-(or-io.js-v3)-compiler-requirements
     - CXX=g++-4.8  
-    
-    - GITHUB_ORG=https://REPO_USER_AND_PASS@github.com/book-monkey2-build
+    - GITHUB_ORG="https://REPO_USER_AND_PASS@github.com/book-monkey2-build"
+    - GITHUB_NAME="The Buildbot"
+    - GITHUB_EMAIL="buildbot@angular2buch.de"
   matrix:
-    - NAME=one-app
-    - NAME=iteration-1-book-details BLUEPRINT=src/client/app/book-monkey/iteration-1/book-details
-    - NAME=iteration-1-book-list BLUEPRINT=src/client/app/book-monkey/iteration-1/book-list
+    - NAME="one-app"
+    - NAME="iteration-1-book-details"  BLUEPRINT="src/client/app/book-monkey/iteration-1/book-details"
+    - NAME="iteration-1-book-list"     BLUEPRINT="src/client/app/book-monkey/iteration-1/book-list"
 
 install:
   - npm install
-    # on nearly all places the global ng-command is avoided, ony exception is `ng ghpages`
-  - npm install -g angular-cli@0.0.30
 
 script:
   - echo $NAME
 
-  # [1] one-app: fills /dist folder and adds CNAME file as well as 404 file for gh-pages
+  # [1] one-app:
+  # - fills /dist folder and adds CNAME file as well as 404 file for gh-pages
+  # - sends compiled version to gh-pages
   # TODO: npm run ng test  
   - if [ "$NAME" == "one-app" ]; then 
       npm run ng build;
       echo "book-monkey2.angular2buch.de" > dist/CNAME;
       cp dist/index.html dist/404.html;
+      npm run ng -- ghpages --repo="$GITHUB_ORG/$NAME.git" --name="$GITHUB_NAME" --email="$GITHUB_EMAIL";
     fi
 
-  # [2] create multiple single apps
+  # [2]
+  # - creates multiple single apps
+  # - sends uncompiled version to master
   - if [ "$NAME" != "one-app" ]; then 
       cd ..;
       mkdir TMP;
@@ -43,21 +47,9 @@ script:
       node "$TRAVIS_BUILD_DIR/node_modules/angular-cli/bin/ng" new BookMonkey;
       cd "$TRAVIS_BUILD_DIR" || exit;
       cp -rf "$BLUEPRINT" ../TMP/BookMonkey/src/client/app;
+      npm run ng -- ghpages --repo="$GITHUB_ORG/$NAME.git" --name="$GITHUB_NAME" --email="$GITHUB_EMAIL" --dir=../TMP/BookMonkey --branch=master;
     fi
   
-deploy:
-  # [1] one-app: send compiled version to gh-pages
-  - if [ "$NAME" == "one-app" ]; then 
-      ng ghpages --repo="$GITHUB_ORG/$NAME.git" --name="The Buildbot" --email=buildbot@angular2buch.de;
-    fi
-
-  # [2] one-app: send uncompiled version to master
-  - if [ "$NAME" != "one-app" ]; then 
-      ng ghpages --repo="$GITHUB_ORG/$NAME.git" --name="The Buildbot" --email=buildbot@angular2buch.de --dir=../TMP/BookMonkey --branch=master;
-    fi
-
-
-
 # ---- boilerplate ----
 
 addons:
