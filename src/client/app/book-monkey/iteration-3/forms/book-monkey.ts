@@ -2,18 +2,18 @@ import {Component} from 'angular2/core';
 import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
 import {HomeComponent} from './home/home.component';
 import {BooksComponent} from './books/books.component';
-import {FormComponent} from './form/form.component';
+import {AdminComponent} from './admin/admin.component';
 
 @RouteConfig([
   {path: 'home/', name: 'Home', component: HomeComponent, useAsDefault: true},
   {path: 'books/...', name: 'Books', component: BooksComponent},
-  {path: 'admin/', name: 'Admin', component: FormComponent}
+  {path: 'admin/...', name: 'Admin', component: AdminComponent}
 ])
 
 @Component({
   selector: 'book-monkey-app',
   moduleId: module.id,
-  templateUrl: 'pipes.app.html',
+  templateUrl: 'book-monkey.html',
   styles: [
     `.router-link-active {
       color: #ffffff !important;
@@ -22,4 +22,5 @@ import {FormComponent} from './form/form.component';
   ],
   directives: [ROUTER_DIRECTIVES]
 })
+
 export class BookMonkeyApp { }

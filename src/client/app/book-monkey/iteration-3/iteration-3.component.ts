@@ -1,7 +1,7 @@
 import {Component} from 'angular2/core';
 import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
-import {BookMonkeyApp as FormsApp} from './forms/forms.app';
-import {BookMonkeyApp as ValidationApp} from './validation/validation.app';
+import {BookMonkeyApp as FormsApp} from './forms/book-monkey';
+import {BookMonkeyApp as ValidationApp} from './validation/book-monkey';
 
 import {ActiveClassDirective} from '../../directives/active-class/active-class.directive';
 

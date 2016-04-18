@@ -13,7 +13,7 @@ import {FormComponent} from './form/form.component';
 @Component({
   selector: 'book-monkey-app',
   moduleId: module.id,
-  templateUrl: 'http.app.html',
+  templateUrl: 'book-monkey.html',
   styles: [
     `.router-link-active {
       color: #ffffff !important;

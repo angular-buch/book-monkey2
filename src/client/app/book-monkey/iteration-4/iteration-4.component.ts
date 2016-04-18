@@ -1,7 +1,7 @@
 import {Component} from 'angular2/core';
 import {HTTP_PROVIDERS} from 'angular2/http';
 import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
-import {BookMonkeyApp as HttpApp} from './http/http.app';
+import {BookMonkeyApp as HttpApp} from './http/book-monkey';
 
 import {ActiveClassDirective} from '../../directives/active-class/active-class.directive';
 

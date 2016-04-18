@@ -1,7 +1,7 @@
 import {Component} from 'angular2/core';
 import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
-import {BookMonkeyApp as diApp} from './di/di.app';
-import {BookMonkeyApp as NavigationApp} from './navigation/navigation.app';
+import {BookMonkeyApp as diApp} from './di/book-monkey';
+import {BookMonkeyApp as NavigationApp} from './navigation/book-monkey';
 
 import {ActiveClassDirective} from '../../directives/active-class/active-class.directive';
 
