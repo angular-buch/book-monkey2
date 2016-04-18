@@ -35,12 +35,12 @@ script:
   
 deploy:
 # [1] one-app: send compiled version to gh-pages
-- test $NAME = "one-app" \
-  && npm run ng -- ghpages --repo="https://REPO_USER_AND_PASS@github.com/book-monkey2-build/$NAME.git" --name="The Buildbot" --email=buildbot@angular2buch.de
+#- test $NAME = "one-app" \
+#  && npm run ng -- ghpages --repo="https://REPO_USER_AND_PASS@github.com/book-monkey2-build/$NAME.git" --name="The Buildbot" --email=buildbot@angular2buch.de
 
 # [2] one-app: send uncompiled version to master
-- test $NAME != "one-app" \
-  && npm run ng -- ghpages --repo="https://REPO_USER_AND_PASS@github.com/book-monkey2-build/$NAME.git" --name="The Buildbot" --email=buildbot@angular2buch.de --dir=TMP/BookMonkey --branch=master
+#- test $NAME != "one-app" \
+#  && npm run ng -- ghpages --repo="https://REPO_USER_AND_PASS@github.com/book-monkey2-build/$NAME.git" --name="The Buildbot" --email=buildbot@angular2buch.de --dir=TMP/BookMonkey --branch=master
 
 
 
