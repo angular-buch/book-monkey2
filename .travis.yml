@@ -8,9 +8,14 @@ node_js:
   - '4.2'
   
 env:
-  - NAME="one-app"
-  - NAME="iteration-1-book-details" BLUEPRINT="src/client/app/book-monkey/iteration-1/book-details"
-  - NAME="iteration-1-book-list" BLUEPRINT="src/client/app/book-monkey/iteration-1/book-list"
+  global:
+    # node-gyp: Node.js v4 (or io.js v3) compiler requirements
+    # https://docs.travis-ci.com/user/languages/javascript-with-nodejs#Node.js-v4-(or-io.js-v3)-compiler-requirements
+    - CXX=g++-4.8  
+  matrix:
+    - NAME=one-app
+    - NAME=iteration-1-book-details BLUEPRINT=src/client/app/book-monkey/iteration-1/book-details
+    - NAME=iteration-1-book-list BLUEPRINT=src/client/app/book-monkey/iteration-1/book-list
 
 install:
   - npm install
@@ -45,10 +50,6 @@ deploy:
 
 # ---- boilerplate ----
 
-# node-gyp: Node.js v4 (or io.js v3) compiler requirements
-# https://docs.travis-ci.com/user/languages/javascript-with-nodejs#Node.js-v4-(or-io.js-v3)-compiler-requirements
-env:
-  - CXX=g++-4.8
 addons:
   apt:
     sources:
@@ -58,9 +59,7 @@ addons:
 
 # a build will finish as soon as a job has failed      
 matrix:
-  fast_finish: true      
-  
-  
+  fast_finish: true       
   
 #only building specific branches  
 branches:
