@@ -24,18 +24,20 @@ script:
   - echo $NAME
 
   # [1] one-app: fills /dist folder and adds CNAME file as well as 404 file for gh-pages
-  # [2] create multiple single apps without any compilations
   # TODO: npm run ng test  
-  - if [ $NAME == "one-app" ];then 
-      npm run ng build
-      echo "book-monkey2.angular2buch.de" > dist/CNAME
-      cp dist/index.html dist/404.html
-    else
-      mkdir TMP
-      cd TMP
-      node ../node_modules/angular-cli/bin/ng new BookMonkey
-      cd $TRAVIS_BUILD_DIR
-      cp -rf $BLUEPRINT TMP/BookMonkey/src/client/app
+  - if [ "$NAME" == "one-app" ]; then 
+      npm run ng build;
+      echo "book-monkey2.angular2buch.de" > dist/CNAME;
+      cp dist/index.html dist/404.html;
+    fi
+
+  # [2] create multiple single apps without any compilations    
+  - if [ "$NAME" != "one-app" ]; then 
+      mkdir TMP;
+      cd TMP || exit;
+      node ../node_modules/angular-cli/bin/ng new BookMonkey;
+      cd "$TRAVIS_BUILD_DIR" || exit;
+      cp -rf "$BLUEPRINT" TMP/BookMonkey/src/client/app;
     fi
   
 deploy:
