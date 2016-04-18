@@ -1,21 +1,23 @@
 import {Component} from 'angular2/core';
-import {Router, RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
-import {BookListComponent} from './di/book-list/book-list.component';
-import {NavigationApp} from './navigation/navigation.component';
+import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
+import {BookMonkeyApp as diApp} from './di/book-monkey';
+import {BookMonkeyApp as NavigationApp} from './navigation/book-monkey';
+
+import {ActiveClassDirective} from '../../directives/active-class/active-class.directive';
 
 @Component({
   selector: 'iteration-2',
   template: `
     <div class="ui two small ordered steps">
     <a [routerLink]="['Dependency-Injection']"
-       [class.active]="router.isRouteActive(router.generate(['./Dependency-Injection']))"
+       activeClass="active"
        class="step">
       <div class="content">
         <div class="title">Dependency-Injection</div>
       </div>
     </a>
     <a [routerLink]="['Navigation']"
-       [class.active]="router.isRouteActive(router.generate(['./Navigation']))"
+       activeClass="active"
        class="step">
       <div class="content">
         <div class="title">Navigation</div>
@@ -26,12 +28,10 @@ import {NavigationApp} from './navigation/navigation.component';
     <router-outlet></router-outlet>
   </div>
   `,
-  directives: [ROUTER_DIRECTIVES]
+  directives: [ROUTER_DIRECTIVES, ActiveClassDirective]
 })
 @RouteConfig([
-  {path: 'dependency-injection/', name: 'Dependency-Injection', component: BookListComponent, useAsDefault: true},
+  {path: 'dependency-injection/', name: 'Dependency-Injection', component: diApp, useAsDefault: true},
   {path: 'navigation/...', name: 'Navigation', component: NavigationApp}
 ])
-export class IterationTwoComponent {
-  constructor(private router: Router) { }
-}
+export class IterationTwoComponent { }

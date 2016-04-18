@@ -5,8 +5,9 @@ import {IsbnValidator} from '../validators/isbn.validator'
 import {Book} from '../../domain/book'
 
 @Component({
-  selector: 'it3-book-form',
-  templateUrl: 'app/book-monkey/iteration-3/validation/form/form.component.html'
+  selector: 'book-form',
+  moduleId: module.id,
+  templateUrl: 'form.component.html'
 })
 export class FormComponent {
 

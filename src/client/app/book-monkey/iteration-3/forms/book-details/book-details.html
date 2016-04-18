@@ -23,8 +23,7 @@
       </div>
       <div class="four wide column">
         <h4 class="ui header">Rating</h4>
-        {{ book?.rating }}
-        <i class="yellow star icon"></i>
+        <i *ngFor="#i of getRating(book?.rating)" class="yellow star icon"></i>
       </div>
     </div>
   </div>
@@ -38,3 +37,5 @@
     </div>
   </div>
 </div>
+
+<a [routerLink]="['../../Admin', 'Update', {isbn: book?.isbn}]">Bearbeiten</a>

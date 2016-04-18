@@ -6,8 +6,9 @@ import {Book} from '../../domain/book'
 import {BookStoreService} from '../services/books/book-store.service'
 
 @Component({
-  selector: 'it3-book-form',
-  templateUrl: 'app/book-monkey/iteration-5/pipes/form/form.component.html',
+  selector: 'book-form',
+  moduleId: module.id,
+  templateUrl: 'form.component.html',
   providers: [BookStoreService]
 })
 export class FormComponent {
