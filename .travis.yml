@@ -18,29 +18,29 @@ install:
 script:
 
 # [1] one-app: fills /dist folder and adds CNAME file as well as 404 file for gh-pages
-- test $NAME = "one-app" \
+- test $NAME = one-app \
   && npm run ng build \
   && npm run ng test \
   && echo "book-monkey2.angular2buch.de" > dist/CNAME \
-  && cp dist/index.html dist/404.html
+  && cp dist/index.html dist/404.html \
 
 # [2] create multiple single apps without any compilation
-- test $NAME != "one-app" \
+- test $NAME != one-app \
   && mkdir TMP \
   && cd TMP \
   && node ../node_modules/angular-cli/bin/ng new BookMonkey \
   && cd $TRAVIS_BUILD_DIR \
-  && cp -rf $BLUEPRINT TMP/BookMonkey/src/client/app
+  && cp -rf $BLUEPRINT TMP/BookMonkey/src/client/app \
   
   
 deploy:
 # [1] one-app: send compiled version to gh-pages
-#- test $NAME = "one-app" \
-#  && npm run ng -- ghpages --repo="https://REPO_USER_AND_PASS@github.com/book-monkey2-build/$NAME.git" --name="The Buildbot" --email=buildbot@angular2buch.de
+#- test $NAME = one-app \
+#  && npm run ng -- ghpages --repo="https://REPO_USER_AND_PASS@github.com/book-monkey2-build/$NAME.git" --name="The Buildbot" --email=buildbot@angular2buch.de \
 
 # [2] one-app: send uncompiled version to master
-#- test $NAME != "one-app" \
-#  && npm run ng -- ghpages --repo="https://REPO_USER_AND_PASS@github.com/book-monkey2-build/$NAME.git" --name="The Buildbot" --email=buildbot@angular2buch.de --dir=TMP/BookMonkey --branch=master
+#- test $NAME != one-app \
+#  && npm run ng -- ghpages --repo="https://REPO_USER_AND_PASS@github.com/book-monkey2-build/$NAME.git" --name="The Buildbot" --email=buildbot@angular2buch.de --dir=TMP/BookMonkey --branch=master \
 
 
 
