@@ -18,10 +18,10 @@ export class FormComponent {
   constructor(private fb: FormBuilder, private routeData: RouteData, private routeParams: RouteParams, private bs: BookStoreService) {
     var formData;
 
-    if(routeData.get('mode') === 'edit'){
+    if(routeData.get('mode') === 'update'){
       var isbn = routeParams.get('isbn');
       var book = bs.getSingle(isbn);
-      formData = this.initFormDataEdit(book);
+      formData = this.initFormDataUpdate(book);
     }else{
       formData = this.initFormDataAdd();
     }
@@ -50,7 +50,7 @@ export class FormComponent {
   }
 
 
-  initFormDataEdit(book: Book){
+  initFormDataUpdate(book: Book){
     return {
       title: [book.title],
       subtitle: [book.subtitle],

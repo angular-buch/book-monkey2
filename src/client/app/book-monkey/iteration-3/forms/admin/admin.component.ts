@@ -4,7 +4,7 @@ import {FormComponent} from '../form/form.component'
 
 @RouteConfig([
   { path: '/add', name: 'Add', component: FormComponent, data: { mode: 'add' }, useAsDefault: true },
-  { path: '/edit/:isbn',  name: 'Edit', component: FormComponent, data: { mode: 'edit'} }
+  { path: '/update/:isbn',  name: 'Update', component: FormComponent, data: { mode: 'update'} }
 ])
 @Component({
   directives: [RouterOutlet],
