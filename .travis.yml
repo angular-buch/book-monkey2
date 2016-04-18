@@ -12,6 +12,7 @@ env:
     # node-gyp: Node.js v4 (or io.js v3) compiler requirements
     # https://docs.travis-ci.com/user/languages/javascript-with-nodejs#Node.js-v4-(or-io.js-v3)-compiler-requirements
     - CXX=g++-4.8  
+    
     - GITHUB_ORG=https://REPO_USER_AND_PASS@github.com/book-monkey2-build
   matrix:
     - NAME=one-app
@@ -20,6 +21,8 @@ env:
 
 install:
   - npm install
+    # on nearly all places the global ng-command is avoided, ony exception is `ng ghpages`
+  - npm install -g angular-cli@0.0.30
 
 script:
   - echo $NAME
@@ -45,12 +48,12 @@ script:
 deploy:
   # [1] one-app: send compiled version to gh-pages
   - if [ "$NAME" == "one-app" ]; then 
-      npm run ng -- ghpages --repo="$GITHUB_ORG/$NAME.git" --name="The Buildbot" --email=buildbot@angular2buch.de;
+      ng ghpages --repo="$GITHUB_ORG/$NAME.git" --name="The Buildbot" --email=buildbot@angular2buch.de;
     fi
 
   # [2] one-app: send uncompiled version to master
   - if [ "$NAME" != "one-app" ]; then 
-      npm run ng -- ghpages --repo="$GITHUB_ORG/$NAME.git" --name="The Buildbot" --email=buildbot@angular2buch.de --dir=../TMP/BookMonkey --branch=master;
+      ng ghpages --repo="$GITHUB_ORG/$NAME.git" --name="The Buildbot" --email=buildbot@angular2buch.de --dir=../TMP/BookMonkey --branch=master;
     fi
 
 
