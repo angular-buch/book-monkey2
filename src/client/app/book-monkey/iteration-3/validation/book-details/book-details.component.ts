@@ -1,5 +1,5 @@
 import {Component, Input} from 'angular2/core';
-import {RouteParams, ROUTER_DIRECTIVES} from 'angular2/router';
+import {Router, RouteParams, ROUTER_DIRECTIVES} from 'angular2/router';
 import {Book} from '../../domain/book';
 import {BookStoreService} from '../services/books/book-store.service';
 
@@ -12,11 +12,18 @@ import {BookStoreService} from '../services/books/book-store.service';
 export class BookDetailsComponent {
   book: Book;
 
-  constructor(private params: RouteParams, private bs: BookStoreService) {
+  constructor(private params: RouteParams, private bs: BookStoreService, private router: Router) {
     this.book = bs.getSingle(params.get('isbn'));
   }
 
   getRating(num: number){
     return new Array(num);
+  }
+
+  deleteBook(){
+    if(confirm("Buch wirklich löschen?")){
+       this.bs.delete(this.params.get('isbn'))
+       this.router.navigate(['../List']);
+    }
   }
 }

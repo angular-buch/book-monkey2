@@ -28,9 +28,7 @@ export class BookFormComponent {
       published: new Date()
     };
 
-    if(routeData.get('mode') === 'update'){
-      book = bs.getSingle(routeParams.get('isbn'));
-    }
+    if(routeData.get('mode') === 'update') book = bs.getSingle(routeParams.get('isbn'));
 
     this.myForm = this.fb.group({
       title: [book.title, Validators.required],
@@ -67,6 +65,6 @@ export class BookFormComponent {
   }
 
   submitForm(formData){
-    console.log('submitting values:', formData.value);
+    this.routeData.get('mode') === 'update' ? this.bs.update(formData) : this.bs.create(formData);
   }
 }

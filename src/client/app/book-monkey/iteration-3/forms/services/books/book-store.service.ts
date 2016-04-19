@@ -30,11 +30,23 @@ export class BookStoreService {
     ]
   }
 
-  getAll(){
+  getAll(): Array<Book> {
     return this.books;
   }
 
-  getSingle(isbn){
+  getSingle(isbn): Book {
     return this.books.find(book => book.isbn === isbn);
+  }
+
+  create(book: Book): void {
+    console.log('creates new book', book);
+  }
+
+  update(book: Book): void {
+    console.log('updates book', book);
+  }
+
+  delete(isbn: string): void {
+    console.log(`deletes book with isbn: ${isbn}`);
   }
 }
