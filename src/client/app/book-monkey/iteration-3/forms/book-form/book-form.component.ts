@@ -7,10 +7,10 @@ import {BookStoreService} from '../services/books/book-store.service'
 @Component({
   selector: 'book-form',
   moduleId: module.id,
-  templateUrl: 'form.component.html',
+  templateUrl: 'book-form.component.html',
   providers: [BookStoreService]
 })
-export class FormComponent {
+export class BookFormComponent {
   myForm: ControlGroup;
   authorsControlArray: ControlArray;
   thumbnailsControlArray: ControlArray;

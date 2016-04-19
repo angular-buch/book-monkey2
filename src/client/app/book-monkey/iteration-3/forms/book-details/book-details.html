@@ -38,4 +38,7 @@
   </div>
 </div>
 
-<a [routerLink]="['../../Admin', 'Update', {isbn: book?.isbn}]">Bearbeiten</a>
+<button [routerLink]="['../../Admin', 'Update', {isbn: book?.isbn}]"
+        class="ui red button">
+  Buch bearbeiten
+</button>
