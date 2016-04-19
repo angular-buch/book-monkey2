@@ -1,5 +1,5 @@
-<div class="ui grid">
-  <div class="four wide column" *ngIf="book">
+<div class="ui grid" *ngIf="book">
+  <div class="four wide column">
     <img class="ui large image" src="{{book?.thumbnails[0].url}}">
   </div>
   <div class="twelve wide column">
@@ -15,7 +15,7 @@
       </div>
       <div class="four wide column">
         <h4 class="ui header">ISBN</h4>
-        {{ book?.isbn | isbn:true }}
+        {{ book?.isbn | isbn: true }}
       </div>
       <div class="four wide column">
         <h4 class="ui header">Erschienen</h4>
@@ -37,3 +37,12 @@
     </div>
   </div>
 </div>
+
+<button class="ui tiny red labeled icon button"
+        (click)="deleteBook()">
+  <i class="remove icon"></i> Buch löschen
+</button>
+<button class="ui tiny yellow labeled icon button"
+        [routerLink]="['../../Admin', 'Update', {isbn: book?.isbn}]">
+  <i class="write icon"></i> Buch bearbeiten
+</button>

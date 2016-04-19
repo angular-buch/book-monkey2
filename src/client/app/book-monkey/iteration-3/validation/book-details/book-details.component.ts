@@ -5,7 +5,8 @@ import {BookStoreService} from '../services/books/book-store.service';
 
 @Component({
   selector: 'book-details',
-  templateUrl: '/app/book-monkey/iteration-3/validation/book-details/book-details.html',
+  moduleId: module.id,
+  templateUrl: 'book-details.html',
   providers: [BookStoreService],
   directives: [ROUTER_DIRECTIVES]
 })

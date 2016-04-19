@@ -19,23 +19,23 @@ export class BookStoreService {
       .map(response => response.json());
   }
 
-  getSingle(isbn: string) {
+  getSingle(isbn: string): Observable<Book>  {
     return this.http
       .get(`${this.api}/book/${isbn}`)
       .map(response => response.json());
   }
 
-  create(book: Book) {
+  create(book: Book): Observable<any>  {
     return this.http
       .post(`${this.api}/book`, JSON.stringify(book), { headers: this.headers })
   }
 
-  update(book: Book) {
+  update(book: Book): Observable<any>  {
     return this.http
       .put(`${this.api}/book/${book.isbn}`, JSON.stringify(book), { headers: this.headers })
   }
 
-  delete(isbn: string) {
+  delete(isbn: string): Observable<any> {
     return this.http
       .delete(`${this.api}/book/${isbn}`);
   }

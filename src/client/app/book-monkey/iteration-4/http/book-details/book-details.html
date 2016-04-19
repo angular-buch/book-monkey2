@@ -37,3 +37,12 @@
     </div>
   </div>
 </div>
+
+<button class="ui tiny red labeled icon button"
+        (click)="deleteBook()">
+  <i class="remove icon"></i> Buch löschen
+</button>
+<button class="ui tiny yellow labeled icon button"
+        [routerLink]="['../../Admin', 'Update', {isbn: book?.isbn}]">
+  <i class="write icon"></i> Buch bearbeiten
+</button>
