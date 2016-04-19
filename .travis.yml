@@ -1,6 +1,6 @@
 # This builds multiple projects
-# 1. the "one-app" of the Book Monkey2 - all components are tied togehter in one big app with explanations
-# 2. single apps for each iteration/increment
+# [1] the "one-app" of the Book Monkey2 - all components are tied togehter in one big app with explanations
+# [2] single apps for each iteration/increment
 
 language: node_js
 
@@ -39,24 +39,41 @@ script:
       npm run ng -- ghpages --repo="$GITHUB_ORG/$NAME.git" --name="$GITHUB_NAME" --email="$GITHUB_EMAIL"  --silent=false;
     fi
 
-  # [2]
-  # - creates multiple single apps
+  # [2] single apps:
+  # - creates multiple single apps by copying file content around
   # - sends uncompiled version to master
   - if [ "$NAME" != "one-app" ]; then 
       cd ..;
       mkdir TMP;
       cd TMP || exit;
       node "$TRAVIS_BUILD_DIR/node_modules/angular-cli/bin/ng" new BookMonkey;
-      cd BookMonkey;
+      cd BookMonkey || exit;
+      export NEW_BOOKMONKEY="$TRAVIS_BUILD_DIR/../TMP/BookMonkey"
       rm -rf .git;
       cd "$TRAVIS_BUILD_DIR" || exit;
       echo "*** DIRECTORY LISTING OF $TRAVIS_BUILD_DIR/$BLUEPRINT ***";
       ls -a "$TRAVIS_BUILD_DIR/$BLUEPRINT";
-      cp -rf "$TRAVIS_BUILD_DIR/$BLUEPRINT/." "$TRAVIS_BUILD_DIR/../TMP/BookMonkey/src/client/app/";
-      echo "*** DIRECTORY LISTING OF $TRAVIS_BUILD_DIR/../TMP/BookMonkey ***";
-      ls -a "$TRAVIS_BUILD_DIR/../TMP/BookMonkey";
+      cp -rf "$TRAVIS_BUILD_DIR/$BLUEPRINT/." "$NEW_BOOKMONKEY/src/client/app/";
+      cp -f angular-cli-build.js "$NEW_BOOKMONKEY/";
+      cp -f package.json "$NEW_BOOKMONKEY/";
+      cp -f src/client/index.html "$$NEW_BOOKMONKEY/";
+      cp -f src/client/tsconfig.json "$NEW_BOOKMONKEY/";
+      cp -f src/client/typings.* "$NEW_BOOKMONKEY/";
+      echo "*** DIRECTORY LISTING OF $NEW_BOOKMONKEY ***";
+      ls -a "$NEW_BOOKMONKEY";
       npm run ng -- ghpages --repo="$GITHUB_ORG/$NAME.git" --name="$GITHUB_NAME" --email="$GITHUB_EMAIL" --dir=../TMP/BookMonkey --branch=master --silent=false;
     fi
+    
+  # [2] single apps:
+  # - compiles single apps
+  # - sends them to gh-pages
+  - if [ "$NAME" != "one-app" ]; then 
+      cd "$NEW_BOOKMONKEY/";
+      npm uninstall book-monkey2-api --save-dev;
+      npm install;
+      npm run ng build;      
+      npm run ng -- ghpages --repo="$GITHUB_ORG/$NAME.git" --name="$GITHUB_NAME" --email="$GITHUB_EMAIL" --silent=false;
+    fi    
   
 # ---- boilerplate ----
 
