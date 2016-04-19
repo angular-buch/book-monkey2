@@ -16,42 +16,21 @@ export class BookFormComponent {
   thumbnailsControlArray: ControlArray;
 
   constructor(private fb: FormBuilder, private routeData: RouteData, private routeParams: RouteParams, private bs: BookStoreService) {
-    var formData;
+    var book = {
+      title: '',
+      subtitle: '',
+      isbn: '',
+      description: '',
+      authors: [''],
+      thumbnails:[{url:'', title:''}],
+      published: new Date()
+    };
 
     if(routeData.get('mode') === 'update'){
-      var isbn = routeParams.get('isbn');
-      var book = bs.getSingle(isbn);
-      formData = this.initFormDataUpdate(book);
-    }else{
-      formData = this.initFormDataAdd();
+      book = bs.getSingle(routeParams.get('isbn'));
     }
 
-    this.myForm = this.fb.group(formData);
-
-    // this allows us to manipulate the form at runtime
-    this.authorsControlArray = <ControlArray>this.myForm.controls['authors'];
-    this.thumbnailsControlArray = <ControlArray>this.myForm.controls['thumbnails'];
-  }
-
-
-  initFormDataAdd(){
-    return {
-      title: [''],
-      subtitle: [''],
-      isbn: [''],
-      description: [''],
-      authors: this.fb.array(['']),
-      thumbnails: this.fb.array([
-        this.fb.group({ url: [''], title: [''] })
-      ]),
-      rating: [''],
-      published: ['']
-    }
-  }
-
-
-  initFormDataUpdate(book: Book){
-    return {
+    this.myForm = this.fb.group({
       title: [book.title],
       subtitle: [book.subtitle],
       isbn: [book.isbn],
@@ -62,11 +41,13 @@ export class BookFormComponent {
           t => this.fb.group({ url: [t.url], title: [t.title] })
         )
       ),
-      rating: [book.rating],
       published: [book.published]
-    }
-  }
+    });
 
+    // this allows us to manipulate the form at runtime
+    this.authorsControlArray = <ControlArray>this.myForm.controls['authors'];
+    this.thumbnailsControlArray = <ControlArray>this.myForm.controls['thumbnails'];
+  }
 
   addAuthorControl(){
     this.authorsControlArray.push(this.fb.control(''));

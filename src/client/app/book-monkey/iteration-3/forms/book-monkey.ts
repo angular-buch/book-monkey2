@@ -22,5 +22,4 @@ import {AdminComponent} from './admin/admin.component';
   ],
   directives: [ROUTER_DIRECTIVES]
 })
-
 export class BookMonkeyApp { }
