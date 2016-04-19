@@ -10,6 +10,6 @@ describe('Book List', () => {
 
   it('should contain two example books', () => {
 
-    expect(bookList.books.lenght).toEqual(2);
+    expect(bookList.books.length).toEqual(2);
   });
 });
