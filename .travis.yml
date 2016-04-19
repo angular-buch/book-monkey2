@@ -12,7 +12,7 @@ env:
     # node-gyp: Node.js v4 (or io.js v3) compiler requirements
     # https://docs.travis-ci.com/user/languages/javascript-with-nodejs#Node.js-v4-(or-io.js-v3)-compiler-requirements
     - CXX=g++-4.8  
-    - GITHUB_ORG="https://REPO_USER_AND_PASS@github.com/book-monkey2-build"
+    - GITHUB_ORG="https://TheBuildbot:GH_TOKEN@github.com/book-monkey2-build"
     - GITHUB_NAME="The Buildbot"
     - GITHUB_EMAIL="buildbot@angular2buch.de"
   matrix:
@@ -21,6 +21,8 @@ env:
     - NAME="iteration-1-book-list"     BLUEPRINT="src/client/app/book-monkey/iteration-1/book-list"
 
 install:
+  # speeds up install time
+  - npm uninstall book-monkey2-api --save-dev
   - npm install
 
 script:
