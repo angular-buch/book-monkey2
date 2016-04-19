@@ -37,3 +37,8 @@
     </div>
   </div>
 </div>
+
+<button [routerLink]="['../../Admin', 'Update', {isbn: book?.isbn}]"
+        class="ui red button">
+  Buch bearbeiten
+</button>
