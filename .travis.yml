@@ -36,7 +36,7 @@ script:
       npm run ng build;
       echo "book-monkey2.angular2buch.de" > dist/CNAME;
       cp dist/index.html dist/404.html;
-      npm run ng -- ghpages --repo="$GITHUB_ORG/$NAME.git" --name="$GITHUB_NAME" --email="$GITHUB_EMAIL"  --silent=false;
+      npm run ng -- ghpages --repo="$GITHUB_ORG/$NAME.git" --name="$GITHUB_NAME" --email="$GITHUB_EMAIL";
     fi
 
   # [2] single apps:
@@ -63,7 +63,7 @@ script:
       cp -f src/client/typings.* "$NEW_BOOKMONKEY/";
       echo "*** DIRECTORY LISTING OF $NEW_BOOKMONKEY ***";
       ls -a "$NEW_BOOKMONKEY";
-      npm run ng -- ghpages --repo="$GITHUB_ORG/$NAME.git" --name="$GITHUB_NAME" --email="$GITHUB_EMAIL" --dir=../TMP/BookMonkey --branch=master --silent=false;
+      npm run ng -- ghpages --repo="$GITHUB_ORG/$NAME.git" --name="$GITHUB_NAME" --email="$GITHUB_EMAIL" --dir=../TMP/BookMonkey --branch=master;
     fi
     
   # [2] single apps:
@@ -74,7 +74,7 @@ script:
       npm uninstall book-monkey2-api --save-dev;
       npm install;
       npm run ng build;      
-      npm run ng -- ghpages --repo="$GITHUB_ORG/$NAME.git" --name="$GITHUB_NAME" --email="$GITHUB_EMAIL" --silent=false;
+      npm run ng -- ghpages --repo="$GITHUB_ORG/$NAME.git" --name="$GITHUB_NAME" --email="$GITHUB_EMAIL";
     fi    
   
 # ---- boilerplate ----
