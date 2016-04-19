@@ -47,6 +47,9 @@ script:
       mkdir TMP;
       cd TMP || exit;
       node "$TRAVIS_BUILD_DIR/node_modules/angular-cli/bin/ng" new BookMonkey;
+      cd BookMonkey;
+      git remote -v;
+      git remote rm origin;
       cd "$TRAVIS_BUILD_DIR" || exit;
       echo "*** DIRECTORY LISTING OF $TRAVIS_BUILD_DIR/$BLUEPRINT ***";
       dir "$TRAVIS_BUILD_DIR/$BLUEPRINT";
