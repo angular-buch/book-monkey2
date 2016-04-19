@@ -46,9 +46,11 @@ script:
       cd TMP || exit;
       node "$TRAVIS_BUILD_DIR/node_modules/angular-cli/bin/ng" new BookMonkey;
       cd "$TRAVIS_BUILD_DIR" || exit;
-      dir "$BLUEPRINT";
-      cp -rf "$BLUEPRINT/." ../TMP/BookMonkey/src/client/app/;
-      dir ../TMP/BookMonkey;
+      echo "*** $TRAVIS_BUILD_DIR/$BLUEPRINT ***";
+      dir "$TRAVIS_BUILD_DIR/$BLUEPRINT";
+      cp -rf "$TRAVIS_BUILD_DIR/$BLUEPRINT/." "$TRAVIS_BUILD_DIR/../TMP/BookMonkey/src/client/app/";
+      echo "*** $TRAVIS_BUILD_DIR/../TMP/BookMonkey ***";
+      dir "$TRAVIS_BUILD_DIR/../TMP/BookMonkey";
       npm run ng -- ghpages --repo="$GITHUB_ORG/$NAME.git" --name="$GITHUB_NAME" --email="$GITHUB_EMAIL" --dir=../TMP/BookMonkey --branch=master;
     fi
   
