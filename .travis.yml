@@ -34,7 +34,7 @@ script:
       npm run ng build;
       echo "book-monkey2.angular2buch.de" > dist/CNAME;
       cp dist/index.html dist/404.html;
-      npm run ng -- ghpages --repo="$GITHUB_ORG/$NAME.git" --name="$GITHUB_NAME" --email="$GITHUB_EMAIL";
+      npm run ng -- ghpages --repo="$GITHUB_ORG/$NAME.git" --name="$GITHUB_NAME" --email="$GITHUB_EMAIL"  --silent=false;
     fi
 
   # [2]
@@ -51,7 +51,7 @@ script:
       cp -rf "$TRAVIS_BUILD_DIR/$BLUEPRINT/." "$TRAVIS_BUILD_DIR/../TMP/BookMonkey/src/client/app/";
       echo "*** $TRAVIS_BUILD_DIR/../TMP/BookMonkey ***";
       dir "$TRAVIS_BUILD_DIR/../TMP/BookMonkey";
-      npm run ng -- ghpages --repo="$GITHUB_ORG/$NAME.git" --name="$GITHUB_NAME" --email="$GITHUB_EMAIL" --dir=../TMP/BookMonkey --branch=master;
+      npm run ng -- ghpages --repo="$GITHUB_ORG/$NAME.git" --name="$GITHUB_NAME" --email="$GITHUB_EMAIL" --dir=../TMP/BookMonkey --branch=master --silent=false;
     fi
   
 # ---- boilerplate ----
