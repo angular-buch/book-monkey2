@@ -38,7 +38,10 @@ export class BookFormComponent {
       authors: this.fb.array(book.authors),
       thumbnails: this.fb.array(
         book.thumbnails.map(
-          t => this.fb.group({ url: [t.url], title: [t.title] })
+          t => this.fb.group({
+            url: this.fb.control(t.url),
+            title: this.fb.control(t.title)
+          })
         )
       ),
       published: [book.published]
