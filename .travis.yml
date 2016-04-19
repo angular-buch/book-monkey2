@@ -48,7 +48,7 @@ script:
       cd TMP || exit;
       node "$TRAVIS_BUILD_DIR/node_modules/angular-cli/bin/ng" new BookMonkey;
       cd BookMonkey || exit;
-      export NEW_BOOKMONKEY="$TRAVIS_BUILD_DIR/../TMP/BookMonkey"
+      export NEW_BOOKMONKEY="$TRAVIS_BUILD_DIR/../TMP/BookMonkey";
       rm -rf .git;
       cd "$TRAVIS_BUILD_DIR" || exit;
       echo "*** DIRECTORY LISTING OF $TRAVIS_BUILD_DIR/$BLUEPRINT ***";
