@@ -5,7 +5,7 @@
 language: node_js
 
 node_js:
-  - '5.1'
+  - '4.2'
   
 env:
   global:
@@ -48,14 +48,13 @@ script:
       cd TMP || exit;
       node "$TRAVIS_BUILD_DIR/node_modules/angular-cli/bin/ng" new BookMonkey;
       cd BookMonkey;
-      git remote -v;
-      git remote rm origin;
+      rm -rf .git;
       cd "$TRAVIS_BUILD_DIR" || exit;
       echo "*** DIRECTORY LISTING OF $TRAVIS_BUILD_DIR/$BLUEPRINT ***";
-      dir "$TRAVIS_BUILD_DIR/$BLUEPRINT";
+      ls -a "$TRAVIS_BUILD_DIR/$BLUEPRINT";
       cp -rf "$TRAVIS_BUILD_DIR/$BLUEPRINT/." "$TRAVIS_BUILD_DIR/../TMP/BookMonkey/src/client/app/";
       echo "*** DIRECTORY LISTING OF $TRAVIS_BUILD_DIR/../TMP/BookMonkey ***";
-      dir "$TRAVIS_BUILD_DIR/../TMP/BookMonkey";
+      ls -a "$TRAVIS_BUILD_DIR/../TMP/BookMonkey";
       npm run ng -- ghpages --repo="$GITHUB_ORG/$NAME.git" --name="$GITHUB_NAME" --email="$GITHUB_EMAIL" --dir=../TMP/BookMonkey --branch=master --silent=false;
     fi
   
