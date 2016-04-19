@@ -48,12 +48,14 @@ script:
       cd TMP || exit;
       node "$TRAVIS_BUILD_DIR/node_modules/angular-cli/bin/ng" new BookMonkey;
       cd BookMonkey || exit;
+      mkdir domain;
       export NEW_BOOKMONKEY="$TRAVIS_BUILD_DIR/../TMP/BookMonkey";
       rm -rf .git;
       cd "$TRAVIS_BUILD_DIR" || exit;
       echo "*** DIRECTORY LISTING OF $TRAVIS_BUILD_DIR/$BLUEPRINT ***";
       ls -a "$TRAVIS_BUILD_DIR/$BLUEPRINT";
       cp -rf "$TRAVIS_BUILD_DIR/$BLUEPRINT/." "$NEW_BOOKMONKEY/src/client/app/";
+      cp -rf "$TRAVIS_BUILD_DIR/$BLUEPRINT/../domain/." "$NEW_BOOKMONKEY/src/client/";
       cp -f angular-cli-build.js "$NEW_BOOKMONKEY/";
       cp -f package.json "$NEW_BOOKMONKEY/";
       cp -f src/client/index.html "$$NEW_BOOKMONKEY/";
