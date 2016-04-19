@@ -55,7 +55,7 @@ script:
       echo "*** DIRECTORY LISTING OF $TRAVIS_BUILD_DIR/$BLUEPRINT ***";
       ls -a "$TRAVIS_BUILD_DIR/$BLUEPRINT";
       cp -rf "$TRAVIS_BUILD_DIR/$BLUEPRINT/." "$NEW_BOOKMONKEY/src/client/app/";
-      cp -rf "$TRAVIS_BUILD_DIR/$BLUEPRINT/../domain/." "$NEW_BOOKMONKEY/src/client/";
+      cp -rf "$TRAVIS_BUILD_DIR/$BLUEPRINT/../../domain/." "$NEW_BOOKMONKEY/src/";
       cp -f angular-cli-build.js "$NEW_BOOKMONKEY/";
       cp -f package.json "$NEW_BOOKMONKEY/";
       cp -f src/client/index.html "$$NEW_BOOKMONKEY/";
