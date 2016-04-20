@@ -120,4 +120,3 @@ matrix:
 branches:
   only:
     - master
-    - refactoring-all-it
