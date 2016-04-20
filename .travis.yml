@@ -71,9 +71,7 @@ script:
 
       cp -f package.json                                "$NEW_BOOKMONKEY/";      
       cp -f angular-cli-build.js                        "$NEW_BOOKMONKEY/";
-      cp -f src/client/index.html                       "$NEW_BOOKMONKEY/src/client/";
-      cp -f src/client/tsconfig.json                    "$NEW_BOOKMONKEY/src/client/";
-      cp -f src/client/typings.*                        "$NEW_BOOKMONKEY/src/client/";
+      cp -f src/client/*                                "$NEW_BOOKMONKEY/src/client/";
       cp -rf "$TRAVIS_BUILD_DIR/$BLUEPRINT/."           "$NEW_BOOKMONKEY/src/client/app/";
       cp -rf "$TRAVIS_BUILD_DIR/$BLUEPRINT/../domain/." "$NEW_BOOKMONKEY/src/client/domain/";
     
