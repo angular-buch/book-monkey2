@@ -16,6 +16,7 @@ env:
     - GITHUB_NAME="The Buildbot"
     - GITHUB_EMAIL="buildbot@angular2buch.de"
   matrix:
+    # remember: each new app requires a new CNAME entry to book-monkey2-build.github.io
     - NAME="one-app"
     - NAME="iteration-1-book-list"             BLUEPRINT="src/client/app/book-monkey/iteration-1/book-list"
     - NAME="iteration-1-book-list-refactored"  BLUEPRINT="src/client/app/book-monkey/iteration-1/book-list-refactored"
@@ -34,7 +35,7 @@ install:
   - npm install
 
 script:
-  - echo $NAME
+  - echo "*** BUILDING $NAME ***"
 
   # [1] one-app:
   # - fills /dist folder and adds CNAME file as well as 404 file for gh-pages
@@ -42,8 +43,10 @@ script:
   # TODO: npm run ng test  
   - if [ "$NAME" == "one-app" ]; then 
       npm run ng build;
+      
       echo "book-monkey2.angular2buch.de" > dist/CNAME;
       cp dist/index.html dist/404.html;
+      
       npm run ng -- ghpages --repo="$GITHUB_ORG/$NAME.git" --name="$GITHUB_NAME" --email="$GITHUB_EMAIL"s;
     fi
 
@@ -85,9 +88,13 @@ script:
   # - sends them to gh-pages
   - if [ "$NAME" != "one-app" ]; then 
       cd "$NEW_BOOKMONKEY/";
-      npm uninstall book-monkey2-api --save-dev;
+
       npm install;
-      npm run ng build;      
+      npm run ng build;   
+      
+      echo "$NAME.angular2buch.de" > dist/CNAME;
+      cp dist/index.html dist/404.html;
+      
       npm run ng -- ghpages --repo="$GITHUB_ORG/$NAME.git" --name="$GITHUB_NAME" --email="$GITHUB_EMAIL";
     fi    
   
