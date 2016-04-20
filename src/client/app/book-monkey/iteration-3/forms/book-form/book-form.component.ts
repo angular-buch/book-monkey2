@@ -1,7 +1,7 @@
 import {Component, Input} from 'angular2/core';
 import {RouteData, RouteParams} from 'angular2/router';
 import {ControlGroup, ControlArray, FormBuilder} from 'angular2/common';
-import {Book} from '../../domain/book'
+import {Book} from '../domain/book'
 import {BookStoreService} from '../services/books/book-store.service'
 
 @Component({

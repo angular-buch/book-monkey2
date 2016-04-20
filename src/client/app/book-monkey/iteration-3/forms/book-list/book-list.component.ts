@@ -1,7 +1,7 @@
 import {Component} from 'angular2/core';
 import {RouterLink} from 'angular2/router';
 import {BookListItem} from '../book-list-item/book-list-item.component';
-import {Book} from '../../domain/book';
+import {Book} from '../domain/book';
 import {BookStoreService} from '../services/books/book-store.service';
 
 @Component({

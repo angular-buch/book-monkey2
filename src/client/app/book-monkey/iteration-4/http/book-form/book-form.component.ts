@@ -3,7 +3,7 @@ import {RouteData, RouteParams} from 'angular2/router';
 import {ControlGroup, ControlArray, FormBuilder, Validators} from 'angular2/common';
 import {DateValidator} from '../validators/date.validator'
 import {IsbnValidator} from '../validators/isbn.validator'
-import {Book} from '../../domain/book'
+import {Book} from '../domain/book'
 import {BookStoreService} from '../services/books/book-store.service'
 
 @Component({

@@ -1,6 +1,6 @@
 import {Component, Input} from 'angular2/core';
 import {Router, RouteParams, ROUTER_DIRECTIVES} from 'angular2/router';
-import {Book} from '../../domain/book';
+import {Book} from '../domain/book';
 import {BookStoreService} from '../services/books/book-store.service';
 
 @Component({
