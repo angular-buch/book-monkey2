@@ -1,60 +1,108 @@
 # This builds multiple projects
-# 1. the "one-app" of the Book Monkey2 - all components are tied togehter in one big app with explanations
-# 2. single apps for each iteration/increment
+# [1] the "one-app" of the Book Monkey2 - all components are tied togehter in one big app with explanations
+# [2] single apps for each iteration/increment
 
 language: node_js
 
 node_js:
   - '4.2'
-
+  
 env:
   global:
     # node-gyp: Node.js v4 (or io.js v3) compiler requirements
     # https://docs.travis-ci.com/user/languages/javascript-with-nodejs#Node.js-v4-(or-io.js-v3)-compiler-requirements
-    - CXX=g++-4.8
-    - GITHUB_ORG=https://REPO_USER_AND_PASS@github.com/book-monkey2-build
+    - CXX=g++-4.8  
+    - GITHUB_ORG="https://GH_TOKEN@github.com/book-monkey2-build"
+    - GITHUB_NAME="The Buildbot"
+    - GITHUB_EMAIL="buildbot@angular2buch.de"
   matrix:
-    - NAME=one-app
-    - NAME=iteration-1-book-details BLUEPRINT=src/client/app/book-monkey/iteration-1/book-details
-    - NAME=iteration-1-book-list BLUEPRINT=src/client/app/book-monkey/iteration-1/book-list
+    # remember: each new app requires a new CNAME entry to book-monkey2-build.github.io
+    - NAME="one-app"
+    - NAME="iteration-1-book-list"             BLUEPRINT="src/client/app/book-monkey/iteration-1/book-list"
+    - NAME="iteration-1-book-list-refactored"  BLUEPRINT="src/client/app/book-monkey/iteration-1/book-list-refactored"
+    - NAME="iteration-1-book-details"          BLUEPRINT="src/client/app/book-monkey/iteration-1/book-details"
+    - NAME="iteration-2-di"                    BLUEPRINT="src/client/app/book-monkey/iteration-2/di"
+    - NAME="iteration-2-navigation"            BLUEPRINT="src/client/app/book-monkey/iteration-2/navigation"
+    - NAME="iteration-3-forms"                 BLUEPRINT="src/client/app/book-monkey/iteration-3/forms"
+    - NAME="iteration-3-validation"            BLUEPRINT="src/client/app/book-monkey/iteration-3/validation"
+    - NAME="iteration-4-http"                  BLUEPRINT="src/client/app/book-monkey/iteration-4/http"
+    - NAME="iteration-5-pipes"                 BLUEPRINT="src/client/app/book-monkey/iteration-5/pipes"
+    - NAME="iteration-5-directives"            BLUEPRINT="src/client/app/book-monkey/iteration-5/directives"
 
 install:
+  # speeds up install time
+  - npm uninstall book-monkey2-api --save-dev
   - npm install
 
 script:
-  - echo $NAME
+  - echo "*** BUILDING $NAME ***"
 
-  # [1] one-app: fills /dist folder and adds CNAME file as well as 404 file for gh-pages
-  # TODO: npm run ng test
-  - if [ "$NAME" == "one-app" ]; then
+  # [1] one-app:
+  # - fills /dist folder and adds CNAME file as well as 404 file for gh-pages
+  # - sends compiled version to gh-pages
+  # TODO: npm run ng test  
+  - if [ "$NAME" == "one-app" ]; then 
       npm run ng build;
+      
       echo "book-monkey2.angular2buch.de" > dist/CNAME;
       cp dist/index.html dist/404.html;
+      
+      npm run ng -- ghpages --repo="$GITHUB_ORG/$NAME.git" --name="$GITHUB_NAME" --email="$GITHUB_EMAIL"s;
     fi
 
-  # [2] create multiple single apps
-  - if [ "$NAME" != "one-app" ]; then
+  # [2] single apps:
+  # - creates multiple single apps by copying file content around
+  # - sends uncompiled version to master
+  - if [ "$NAME" != "one-app" ]; then 
+      
+      export NEW_BOOKMONKEY="$TRAVIS_BUILD_DIR/../TMP/BookMonkey";
+  
       cd ..;
       mkdir TMP;
       cd TMP || exit;
+      
       node "$TRAVIS_BUILD_DIR/node_modules/angular-cli/bin/ng" new BookMonkey;
+      cd "$NEW_BOOKMONKEY" || exit;
+      mkdir -p src/{client,domain};
+
+      rm -rf .git;
+      rm -rf src/client/app/*;
       cd "$TRAVIS_BUILD_DIR" || exit;
-      cp -rf "$BLUEPRINT" ../TMP/BookMonkey/src/client/app;
+      
+      sed "s/_NAME_/${NAME}/g" src/client/index.single.html > tmp;
+      mv tmp src/client/index.single.html;
+
+      cp -f package.json                                "$NEW_BOOKMONKEY/";      
+      cp -f angular-cli-build.js                        "$NEW_BOOKMONKEY/";
+      cp -f src/client/app.single.ts                    "$NEW_BOOKMONKEY/src/client/app.ts";
+      cp -f src/client/index.single.html                "$NEW_BOOKMONKEY/src/client/index.html";
+      cp -f src/client/forkme_light_background.png      "$NEW_BOOKMONKEY/src/client/";
+      cp -f src/client/tsconfig.json                    "$NEW_BOOKMONKEY/src/client/";
+      cp -f src/client/typings.*                        "$NEW_BOOKMONKEY/src/client/";
+      cp -rf "$TRAVIS_BUILD_DIR/$BLUEPRINT/."           "$NEW_BOOKMONKEY/src/client/app/";
+      cp -rf "$TRAVIS_BUILD_DIR/$BLUEPRINT/../domain/." "$NEW_BOOKMONKEY/src/client/domain/";
+    
+      echo "*** DIRECTORY LISTING OF $NEW_BOOKMONKEY ***";
+      ls -a "$NEW_BOOKMONKEY";
+      
+      npm run ng -- ghpages --repo="$GITHUB_ORG/$NAME.git" --name="$GITHUB_NAME" --email="$GITHUB_EMAIL" --dir=../TMP/BookMonkey --branch=master;
     fi
+    
+  # [2] single apps:
+  # - compiles single apps
+  # - sends them to gh-pages
+  - if [ "$NAME" != "one-app" ]; then 
+      cd "$NEW_BOOKMONKEY/";
 
-deploy:
-# [1] one-app: send compiled version to gh-pages
-  - if [ "$NAME" == "one-app" ]; then
-      npm run ng -- ghpages --repo="$GITHUB_ORG/$NAME.git" --name="The Buildbot" --email=buildbot@angular2buch.de;
-    fi
-
-# [2] one-app: send uncompiled version to master
-  - if [ "$NAME" != "one-app" ]; then
-      npm run ng -- ghpages --repo="$GITHUB_ORG/$NAME.git" --name="The Buildbot" --email=buildbot@angular2buch.de --dir=../TMP/BookMonkey --branch=master;
-    fi
-
-
-
+      npm install;
+      npm run ng build;   
+      
+      echo "$NAME.angular2buch.de" > dist/CNAME;
+      cp dist/index.html dist/404.html;
+      
+      npm run ng -- ghpages --repo="$GITHUB_ORG/$NAME.git" --name="$GITHUB_NAME" --email="$GITHUB_EMAIL";
+    fi    
+  
 # ---- boilerplate ----
 
 addons:
@@ -64,11 +112,11 @@ addons:
     packages:
       - g++-4.8
 
-# a build will finish as soon as a job has failed
+# a build will finish as soon as a job has failed      
 matrix:
-  fast_finish: true
-
-#only building specific branches
+  fast_finish: true       
+  
+#only building specific branches  
 branches:
   only:
     - master
