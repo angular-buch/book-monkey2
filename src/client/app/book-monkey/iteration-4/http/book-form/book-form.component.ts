@@ -30,7 +30,7 @@ export class BookFormComponent {
 
     if(routeData.get('mode') === 'create')
       bs.getSingle(routeParams.get('isbn'))
-        .subscribe(res => this.myForm = this.initFormData(book));
+        .subscribe(b => this.myForm = this.initFormData(b));
     else this.myForm = this.initFormData(book);
 
     // this allows us to manipulate the form at runtime
