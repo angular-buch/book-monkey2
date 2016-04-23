@@ -10,13 +10,6 @@ import {ActiveClassDirective} from '../../directives/active-class/active-class.d
   selector: 'iteration-1',
   template: `
     <div class="ui three small ordered steps">
-      <a [routerLink]="['BookDetails']"
-         activeClass="active"
-         class="step">
-        <div class="content">
-          <div class="title">Detailansicht</div>
-        </div>
-      </a>
       <a [routerLink]="['BookList']"
          activeClass="active"
          class="step">
@@ -29,6 +22,13 @@ import {ActiveClassDirective} from '../../directives/active-class/active-class.d
          class="step">
         <div class="content">
           <div class="title">Verbesserte Listenansicht</div>
+        </div>
+      </a>
+      <a [routerLink]="['BookDetails']"
+         activeClass="active"
+         class="step">
+        <div class="content">
+          <div class="title">Detailansicht</div>
         </div>
       </a>
     </div>
