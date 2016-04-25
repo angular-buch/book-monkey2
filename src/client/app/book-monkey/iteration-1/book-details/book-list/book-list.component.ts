@@ -10,7 +10,6 @@ import {Book, Thumbnail} from '../domain/book';
 })
 export class BookListComponent {
   books: Book[];
-
   @Output() showDetailsEvent:EventEmitter<Book> = new EventEmitter();
 
   constructor() {
