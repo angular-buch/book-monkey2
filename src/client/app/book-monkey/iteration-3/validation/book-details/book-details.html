@@ -9,7 +9,7 @@
     <div class="ui grid">
       <div class="four wide column">
         <h4 class="ui header">Autoren</h4>
-        <span *ngFor="#author of book?.authors; #l=last">
+        <span *ngFor="let author of book?.authors; let l=last">
           {{ author }}<span *ngIf="!l">, </span>
         </span>
       </div>
@@ -23,7 +23,7 @@
       </div>
       <div class="four wide column">
         <h4 class="ui header">Rating</h4>
-        <i *ngFor="#i of getRating(book?.rating)" class="yellow star icon"></i>
+        <i *ngFor="let i of getRating(book?.rating)" class="yellow star icon"></i>
       </div>
     </div>
   </div>
@@ -33,7 +33,7 @@
   </div>
   <div class="sixteen wide column">
     <div class="ui small images">
-      <img *ngFor="#thumbnail of book?.thumbnails" src="{{thumbnail.url}}">
+      <img *ngFor="let thumbnail of book?.thumbnails" src="{{thumbnail.url}}">
     </div>
   </div>
 </div>

@@ -6,11 +6,11 @@ import {Pipe, PipeTransform} from 'angular2/core';
 })
 export class IsbnPipe implements PipeTransform {
 
-  transform(value: any, args?: any): any {
+  transform(value: any, addPrefix: any): any {
     if (!value || value.length !== 10 && value.length !== 13) return null;
 
     let prefix = '';
-    if (args[0]) { // add prefix?
+    if (addPrefix) { // add prefix?
       prefix = (value.length === 10) ? 'ISBN-10: ' : 'ISBN-13: ';
     }
 

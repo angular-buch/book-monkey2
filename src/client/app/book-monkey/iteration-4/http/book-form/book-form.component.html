@@ -40,7 +40,7 @@
     <div class="eleven wide column">
       <div class="fields">
         <div ngControlGroup="authors"
-            *ngFor="#control of authorsControlArray.controls; #i = index"
+            *ngFor="let control of authorsControlArray.controls; let i = index"
             class="sixteen wide field">
             <input ngControl="{{i}}" placeholder="Autor {{i+1}}">
         </div>
@@ -83,7 +83,7 @@
     </div>
     <div class="eleven wide column">
         <div ngControlGroup="thumbnails"
-            *ngFor="#control of thumbnailsControlArray.controls; #i = index">
+            *ngFor="let control of thumbnailsControlArray.controls; let i = index">
             <div ngControlGroup="{{i}}" class="inline fields">
                 <input ngControl="url" placeholder="http://bild{{i+1}}_Url">
                 <input ngControl="title" placeholder="Bild {{i+1}} Titel">
