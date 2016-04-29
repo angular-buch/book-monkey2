@@ -5,7 +5,7 @@ import {Book, Thumbnail} from '../domain/book';
 @Component({
   selector: 'book-list',
   directives: [BookListItem],
-  moduleId: module.id,
+  moduleId: __moduleName,
   templateUrl: 'book-list.component.html'
 })
 export class BookListComponent {

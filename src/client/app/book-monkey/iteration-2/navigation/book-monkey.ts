@@ -10,7 +10,7 @@ import {BooksComponent} from './books/books.component';
 
 @Component({
   selector: 'book-monkey-app',
-  moduleId: module.id,
+  moduleId: __moduleName,
   templateUrl: 'book-monkey.html',
   styles: [
     `.router-link-active {

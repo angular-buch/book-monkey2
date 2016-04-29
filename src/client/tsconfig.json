@@ -5,7 +5,7 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "mapRoot": "",
-    "module": "commonjs",
+    "module": "system",
     "moduleResolution": "node",
     "noEmitOnError": true,
     "noImplicitAny": false,

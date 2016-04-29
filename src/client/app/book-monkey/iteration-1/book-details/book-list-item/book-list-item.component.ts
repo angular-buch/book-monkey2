@@ -3,7 +3,7 @@ import {Book} from '../domain/book';
 
 @Component({
   selector: '.book-list-item',
-  moduleId: module.id,
+  moduleId: __moduleName,
   templateUrl: 'book-list-item.component.html'
 })
 

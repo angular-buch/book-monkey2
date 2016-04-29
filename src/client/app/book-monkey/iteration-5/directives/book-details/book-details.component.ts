@@ -6,7 +6,7 @@ import {IsbnPipe} from '../pipes/isbn-pipe/isbn-pipe'
 
 @Component({
   selector: 'book-details',
-  moduleId: module.id,
+  moduleId: __moduleName,
   templateUrl: 'book-details.html',
   providers: [BookStoreService],
   directives: [ROUTER_DIRECTIVES],
