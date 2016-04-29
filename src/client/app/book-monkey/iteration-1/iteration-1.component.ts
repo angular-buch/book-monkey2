@@ -39,8 +39,8 @@ import {ActiveClassDirective} from '../../directives/active-class/active-class.d
   directives: [ROUTER_DIRECTIVES, ActiveClassDirective]
 })
 @RouteConfig([
-  {path: '/book-details',         name: 'BookDetails',        component: BookDetailsApp, useAsDefault: true},
-  {path: '/book-list',            name: 'BookList',           component: BookListApp},
-  {path: '/book-list-refactored', name: 'BookListRefactored', component: BookListRefactoredApp}
+  {path: '/book-list',            name: 'BookList',           component: BookListApp, useAsDefault: true},
+  {path: '/book-list-refactored', name: 'BookListRefactored', component: BookListRefactoredApp},
+  {path: '/book-details',         name: 'BookDetails',        component: BookDetailsApp}
 ])
 export class IterationOneComponent { }
