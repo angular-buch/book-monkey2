@@ -16,7 +16,7 @@ export class BookFormComponent {
   thumbnailsControlArray: ControlArray;
 
   constructor(private fb: FormBuilder, private routeData: RouteData, private routeParams: RouteParams, private bs: BookStoreService) {
-    var book = {
+    let book = {
       title: '',
       subtitle: '',
       isbn: '',

@@ -3,7 +3,7 @@ import { BookListComponent } from './book-list.component';
 
 describe('Book List', () => {
 
-  var bookList;
+  let bookList;
   beforeEach(() => {
     bookList = new BookListComponent();
   });
