@@ -6,7 +6,7 @@ import {Pipe, PipeTransform} from 'angular2/core';
 })
 export class IsbnPipe implements PipeTransform {
 
-  transform(value: any, arg: any): any {
+  transform(value: any, addPrefix: any): any {
     return null;
   }
 
