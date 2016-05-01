@@ -1,7 +1,7 @@
 import {Component} from 'angular2/core';
 import {CORE_DIRECTIVES} from 'angular2/common';
-import {BookListComponent} from './book-list/book-list.component';
-import {BookDetailsComponent} from './book-details/book-details.component';
+import {BookListComponent} from './book-list/index';
+import {BookDetailsComponent} from './book-details/index';
 import {Book} from './domain/book';
 
 

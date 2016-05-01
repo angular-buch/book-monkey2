@@ -6,7 +6,7 @@ import {BookStoreService} from '../services/books/book-store.service';
 @Component({
   selector: 'book-details',
   moduleId: __moduleName,
-  templateUrl: 'book-details.html',
+  templateUrl: 'book-details.component.html',
   providers: [BookStoreService],
   directives: [ROUTER_DIRECTIVES]
 })
@@ -27,7 +27,7 @@ export class BookDetailsComponent {
   deleteBook(){
     if(confirm("Buch wirklich löschen?")){
        this.bs.delete(this.params.get('isbn'))
-              .subscribe(res => this.router.navigate(['../List']));   
+              .subscribe(res => this.router.navigate(['../List']));
     }
   }
 }

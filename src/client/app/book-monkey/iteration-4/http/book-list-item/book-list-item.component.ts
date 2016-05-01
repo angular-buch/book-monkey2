@@ -7,6 +7,6 @@ import {Book} from '../domain/book';
   templateUrl: 'book-list-item.component.html'
 })
 
-export class BookListItem {
+export class BookListItemComponent {
   @Input() book: Book;
 }

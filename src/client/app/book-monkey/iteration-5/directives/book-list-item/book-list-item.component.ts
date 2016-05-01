@@ -9,6 +9,6 @@ import {IsbnPipe} from '../pipes/isbn-pipe/isbn-pipe';
   pipes: [IsbnPipe]
 })
 
-export class BookListItem {
+export class BookListItemComponent {
   @Input() book: Book;
 }

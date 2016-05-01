@@ -1,12 +1,12 @@
 import {Component} from 'angular2/core';
 import {RouterLink} from 'angular2/router';
-import {BookListItem} from '../book-list-item/book-list-item.component';
+import {BookListItemComponent} from '../book-list-item/index';
 import {Book} from '../domain/book';
 import {BookStoreService} from '../services/books/book-store.service';
 
 @Component({
   selector: 'book-list',
-  directives: [BookListItem, RouterLink],
+  directives: [BookListItemComponent, RouterLink],
   moduleId: __moduleName,
   templateUrl: 'book-list.component.html',
   providers: [BookStoreService]

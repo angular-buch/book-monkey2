@@ -4,7 +4,7 @@ import {Book, Thumbnail} from '../domain/book';
 @Component({
   selector: 'book-details',
   moduleId: __moduleName,
-  templateUrl: 'book-details.html'
+  templateUrl: 'book-details.component.html'
 })
 export class BookDetailsComponent {
   @Input() book: Book;

@@ -6,7 +6,7 @@ import {BookStoreService} from '../services/books/book-store.service';
 @Component({
   selector: 'book-details',
   moduleId: __moduleName,
-  templateUrl: 'book-details.html',
+  templateUrl: 'book-details.component.html',
   providers: [BookStoreService]
 })
 export class BookDetailsComponent {
@@ -15,7 +15,7 @@ export class BookDetailsComponent {
   constructor(private params: RouteParams, private bs: BookStoreService) {
     this.book = bs.getSingle(params.get('isbn'));
   }
-  
+
   getRating(num: number){
     return new Array(num);
   }
