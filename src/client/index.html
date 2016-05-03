@@ -29,25 +29,18 @@
   </samples-app>
 
   <script src="vendor/es6-shim/es6-shim.js"></script>
+  <script src="vendor/reflect-metadata/Reflect.js"></script>
+  <script src="vendor/zone.js/dist/zone.js"></script>
   <script src="vendor/systemjs/dist/system-polyfills.js"></script>
-  <script src="vendor/angular2/bundles/angular2-polyfills.js"></script>
   <script src="vendor/systemjs/dist/system.src.js"></script>
-  <script src="vendor/rxjs/bundles/Rx.js"></script>
-
-  <script src="vendor/angular2/bundles/angular2.dev.js"></script>
-  <script src="vendor/angular2/bundles/http.dev.js"></script>
-  <script src="vendor/angular2/bundles/router.dev.js"></script>
 
   <a href="https://github.com/Angular2Buch/book-monkey2"><img style="position: fixed; bottom: 0; right: 0; border: 0;" src="forkme_light_background.png" alt="Fork me on GitHub"></a>
 
-
   <script>
-    System.config({
-      packages: {
-        app: { }
-      }
-    });
-    System.import('app.js').then(null, console.error.bind(console));
+    System.import('system-config.js').then(function () {
+      System.import('main');
+    }).catch(console.error.bind(console));
   </script>
+
 </body>
 </html>

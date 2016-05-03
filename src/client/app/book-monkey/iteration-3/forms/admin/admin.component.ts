@@ -1,13 +1,13 @@
-import {Component} from 'angular2/core';
-import {RouteConfig, RouterOutlet} from 'angular2/router';
+import {Component} from '@angular/core';
+import {Routes, ROUTER_DIRECTIVES} from '@angular/router';
 import {BookFormComponent} from '../book-form/index'
 
-@RouteConfig([
-  { path: 'books/', name: 'Add', component: BookFormComponent, data: { mode: 'add' }, useAsDefault: true },
-  { path: 'books/:isbn',  name: 'Update', component: BookFormComponent, data: { mode: 'update'} }
+@Routes([
+  { path: 'books/',      component: BookFormComponent},
+  { path: 'books/:isbn', component: BookFormComponent}
 ])
 @Component({
-  directives: [RouterOutlet],
+  directives: [ROUTER_DIRECTIVES],
   template: '<router-outlet></router-outlet>'
 })
 export class AdminComponent { }

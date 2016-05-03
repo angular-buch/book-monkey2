@@ -1,6 +1,6 @@
-import {Component, Input} from 'angular2/core';
-import {RouteData, RouteParams} from 'angular2/router';
-import {ControlGroup, ControlArray, FormBuilder, Validators} from 'angular2/common';
+import {Component, Input} from '@angular/core';
+import {RouteData, UrlSegment} from '@angular/router';
+import {ControlGroup, ControlArray, FormBuilder, Validators} from '@angular/common';
 import {DateValidator} from '../validators/date.validator'
 import {IsbnValidator} from '../validators/isbn.validator'
 import {Book} from '../domain/book'
@@ -17,7 +17,7 @@ export class BookFormComponent {
   authorsControlArray: ControlArray;
   thumbnailsControlArray: ControlArray;
 
-  constructor(private fb: FormBuilder, private routeData: RouteData, private routeParams: RouteParams, private bs: BookStoreService) {
+  constructor(private fb: FormBuilder, private routeData: RouteData, private UrlSegment: UrlSegment, private bs: BookStoreService) {
     let book = {
       title: '',
       subtitle: '',
@@ -28,7 +28,7 @@ export class BookFormComponent {
       published: new Date()
     };
 
-    if(routeData.get('mode') === 'update') book = bs.getSingle(routeParams.get('isbn'));
+    if(routeData.get('mode') === 'update') book = bs.getSingle(UrlSegment.segment('isbn'));
 
     this.myForm = this.fb.group({
       title: [book.title, Validators.required],

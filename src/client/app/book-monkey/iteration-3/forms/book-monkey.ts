@@ -1,13 +1,13 @@
-import {Component} from 'angular2/core';
-import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
+import {Component} from '@angular/core';
+import {Routes, ROUTER_DIRECTIVES} from '@angular/router';
 import {HomeComponent} from './home/index';
 import {BooksComponent} from './books/index';
 import {AdminComponent} from './admin/index';
 
-@RouteConfig([
-  {path: 'home/', name: 'Home', component: HomeComponent, useAsDefault: true},
-  {path: 'books/...', name: 'Books', component: BooksComponent},
-  {path: 'admin/...', name: 'Admin', component: AdminComponent}
+@Routes([
+  {path: 'home/',     component: HomeComponent},
+  {path: 'books/...', component: BooksComponent},
+  {path: 'admin/...', component: AdminComponent}
 ])
 
 @Component({

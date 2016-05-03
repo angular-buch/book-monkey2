@@ -1,5 +1,5 @@
-import {Component} from 'angular2/core';
-import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
+import {Component} from '@angular/core';
+import {Routes, ROUTER_DIRECTIVES} from '@angular/router';
 import {BookMonkeyApp as FormsApp} from './forms/book-monkey';
 import {BookMonkeyApp as ValidationApp} from './validation/book-monkey';
 
@@ -9,14 +9,14 @@ import {ActiveClassDirective} from '../../directives/active-class/active-class.d
   selector: 'iteration-3',
   template: `
     <div class="ui two small ordered steps">
-    <a [routerLink]="['Forms']"
+    <a [routerLink]="['form']"
        activeClass="active"
        class="step">
       <div class="content">
         <div class="title">Formulare</div>
       </div>
     </a>
-    <a [routerLink]="['Form-Validation']"
+    <a [routerLink]="['validation']"
        activeClass="active"
        class="step">
       <div class="content">
@@ -30,8 +30,8 @@ import {ActiveClassDirective} from '../../directives/active-class/active-class.d
   `,
   directives: [ROUTER_DIRECTIVES, ActiveClassDirective]
 })
-@RouteConfig([
-  {path: 'form/...', name: 'Forms', component: FormsApp, useAsDefault: true},
-  {path: 'validation/...', name: 'Form-Validation', component: ValidationApp}
+@Routes([
+  {path: 'form/...',       component: FormsApp},
+  {path: 'validation/...', component: ValidationApp}
 ])
 export class IterationThreeComponent { }

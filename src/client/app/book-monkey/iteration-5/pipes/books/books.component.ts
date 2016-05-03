@@ -1,14 +1,14 @@
-import {Component} from 'angular2/core';
-import {RouteConfig, RouterOutlet} from 'angular2/router';
+import {Component} from '@angular/core';
+import {Routes, ROUTER_DIRECTIVES} from '@angular/router';
 import {BookListComponent} from '../book-list/index';
 import {BookDetailsComponent} from '../book-details/index';
 
-@RouteConfig([
-  { path: '/list', name: 'List', component: BookListComponent, useAsDefault: true },
-  { path: '/:isbn',  name: 'Details', component: BookDetailsComponent }
+@Routes([
+  { path: '/list',  component: BookListComponent},
+  { path: '/:isbn', component: BookDetailsComponent }
 ])
 @Component({
-  directives: [RouterOutlet],
+  directives: [ROUTER_DIRECTIVES],
   template: '<router-outlet></router-outlet>'
 })
 export class BooksComponent { }

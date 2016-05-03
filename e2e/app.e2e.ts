@@ -1,14 +1,14 @@
-import { TestAppPage } from './app.po';
+import { BookMonkeyPage } from './app.po';
 
-describe('test-app App', function() {
-  let page: TestAppPage;
+describe('BookMonkey App', function() {
+  let page: BookMonkeyPage;
 
   beforeEach(() => {
-    page = new TestAppPage();
+    page = new BookMonkeyPage();
   })
 
   it('should display message saying app works', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('test-app Works!');
+    expect(page.getParagraphText()).toEqual('BookMonkey works!');
   });
 });

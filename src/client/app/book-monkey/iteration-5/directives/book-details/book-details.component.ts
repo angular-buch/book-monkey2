@@ -1,5 +1,5 @@
-import {Component, Input} from 'angular2/core';
-import {Router, RouteParams, ROUTER_DIRECTIVES} from 'angular2/router';
+import {Component, Input} from '@angular/core';
+import {Router, UrlSegment, ROUTER_DIRECTIVES} from '@angular/router';
 import {Book} from '../domain/book';
 import {BookStoreService} from '../services/books/book-store.service';
 import {IsbnPipe} from '../pipes/isbn-pipe/isbn-pipe'
@@ -15,10 +15,10 @@ import {IsbnPipe} from '../pipes/isbn-pipe/isbn-pipe'
 export class BookDetailsComponent {
   book: Book;
 
-  constructor(private params: RouteParams, private bs: BookStoreService, private router: Router) {}
+  constructor(private params: UrlSegment, private bs: BookStoreService, private router: Router) {}
 
   ngOnInit(){
-    this.bs.getSingle(this.params.get('isbn'))
+    this.bs.getSingle(this.params.segment('isbn'))
       .subscribe(res => this.book = res);
   }
 
@@ -28,7 +28,7 @@ export class BookDetailsComponent {
 
   deleteBook(){
     if(confirm("Buch wirklich löschen?")){
-       this.bs.delete(this.params.get('isbn'))
+       this.bs.delete(this.params.segment('isbn'))
               .subscribe(res => this.router.navigate(['../List']));
     }
   }

@@ -1,5 +1,5 @@
-import {Component} from 'angular2/core';
-import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
+import {Component} from '@angular/core';
+import {Routes, ROUTER_DIRECTIVES} from '@angular/router';
 import {BookMonkeyApp as HttpApp} from './http/book-monkey';
 
 import {ActiveClassDirective} from '../../directives/active-class/active-class.directive';
@@ -8,7 +8,7 @@ import {ActiveClassDirective} from '../../directives/active-class/active-class.d
   selector: 'iteration-4',
   template: `
     <div class="ui one small ordered steps">
-    <a [routerLink]="['Http']"
+    <a [routerLink]="['http']"
        activeClass="active"
        class="step">
       <div class="content">
@@ -22,7 +22,7 @@ import {ActiveClassDirective} from '../../directives/active-class/active-class.d
   `,
   directives: [ROUTER_DIRECTIVES, ActiveClassDirective]
 })
-@RouteConfig([
-  {path: 'http/...', name: 'Http', component: HttpApp, useAsDefault: true},
+@Routes([
+  {path: 'http/...', component: HttpApp},
 ])
 export class IterationFourComponent { }

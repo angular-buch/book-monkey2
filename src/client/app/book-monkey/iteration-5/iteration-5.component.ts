@@ -1,5 +1,5 @@
-import {Component} from 'angular2/core';
-import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
+import {Component} from '@angular/core';
+import {Routes, ROUTER_DIRECTIVES} from '@angular/router';
 import {BookMonkeyApp as PipesApp} from './pipes/book-monkey';
 import {BookMonkeyApp as DirectivesApp} from './directives/book-monkey';
 
@@ -9,14 +9,14 @@ import {ActiveClassDirective} from '../../directives/active-class/active-class.d
   selector: 'iteration-5',
   template: `
     <div class="ui two small ordered steps">
-    <a [routerLink]="['Pipes']"
+    <a [routerLink]="['pipes']"
        activeClass="active"
        class="step">
       <div class="content">
         <div class="title">Pipes</div>
       </div>
     </a>
-    <a [routerLink]="['Directives']"
+    <a [routerLink]="['directives']"
        activeClass="active"
        class="step">
       <div class="content">
@@ -30,8 +30,8 @@ import {ActiveClassDirective} from '../../directives/active-class/active-class.d
   `,
   directives: [ROUTER_DIRECTIVES, ActiveClassDirective]
 })
-@RouteConfig([
-  {path: 'pipes/...', name: 'Pipes', component: PipesApp, useAsDefault: true},
-  {path: 'directives/...', name: 'Directives', component: DirectivesApp}
+@Routes([
+  {path: 'pipes/...',      component: PipesApp},
+  {path: 'directives/...', component: DirectivesApp}
 ])
 export class IterationFiveComponent { }

@@ -1,7 +1,8 @@
 import {bootstrap} from '@angular/platform-browser-dynamic';
-import {BookMonkey} from './app/book-monkey';
 import {ROUTER_PROVIDERS} from '@angular/router';
 
-bootstrap(NavigationApp, [
+import {SamplesAppComponent} from './app/';
+
+bootstrap(SamplesAppComponent, [
   ROUTER_PROVIDERS
 ]);
