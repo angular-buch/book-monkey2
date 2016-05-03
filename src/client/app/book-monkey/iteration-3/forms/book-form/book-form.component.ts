@@ -6,7 +6,7 @@ import {BookStoreService} from '../services/books/book-store.service'
 
 @Component({
   selector: 'book-form',
-  moduleId: __moduleName,
+  moduleId: module.id,
   templateUrl: 'book-form.component.html',
   providers: [BookStoreService]
 })

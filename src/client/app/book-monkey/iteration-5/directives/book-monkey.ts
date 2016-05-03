@@ -15,7 +15,7 @@ import {ActiveClassDirective} from './directives/active-class/active-class.direc
 
 @Component({
   selector: 'book-monkey-app',
-  moduleId: __moduleName,
+  moduleId: module.id,
   templateUrl: 'book-monkey.html',
   directives: [ROUTER_DIRECTIVES, ActiveClassDirective],
   providers: [HTTP_PROVIDERS]

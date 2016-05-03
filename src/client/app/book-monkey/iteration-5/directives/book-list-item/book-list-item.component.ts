@@ -4,7 +4,7 @@ import {IsbnPipe} from '../pipes/isbn-pipe/isbn-pipe';
 
 @Component({
   selector: '.book-list-item',
-  moduleId: __moduleName,
+  moduleId: module.id,
   templateUrl: 'book-list-item.component.html',
   pipes: [IsbnPipe]
 })

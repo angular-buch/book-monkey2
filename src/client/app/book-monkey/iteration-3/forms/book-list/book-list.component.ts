@@ -7,7 +7,7 @@ import {BookStoreService} from '../services/books/book-store.service';
 @Component({
   selector: 'book-list',
   directives: [BookListItemComponent, RouterLink],
-  moduleId: __moduleName,
+  moduleId: module.id,
   templateUrl: 'book-list.component.html',
   providers: [BookStoreService]
 })
