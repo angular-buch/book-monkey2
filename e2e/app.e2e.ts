@@ -1,6 +1,6 @@
 import { BookMonkeyPage } from './app.po';
 
-describe('BookMonkey App', function() {
+describe('book-monkey App', function() {
   let page: BookMonkeyPage;
 
   beforeEach(() => {
@@ -9,6 +9,6 @@ describe('BookMonkey App', function() {
 
   it('should display message saying app works', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('BookMonkey works!');
+    expect(page.getParagraphText()).toEqual('book-monkey works!');
   });
 });

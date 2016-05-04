@@ -1,10 +1,10 @@
 {
   "project": {
-    "version": "0.0.1",
-    "name": "BookMonkey"
+    "version": "0.0.37",
+    "name": "book-monkey"
   },
   "apps": [
-    {"main": "src/client/main.ts", "tsconfig": "src/client/tsconfig.json"}
+    {"main": "src/main.ts", "tsconfig": "src/tsconfig.json"}
   ],
   "addons": [],
   "packages": [],
@@ -19,7 +19,7 @@
     }
   },
   "defaults": {
-    "prefix": "",
-    "sourceDir": "src/client"
+    "prefix": "app",
+    "sourceDir": "src"
   }
 }
