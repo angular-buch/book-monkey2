@@ -4,7 +4,7 @@ import {Routes, ROUTER_DIRECTIVES} from '@angular/router';
 import {HomeComponent} from './home/index';
 import {BooksComponent} from './books/index';
 import {AdminComponent} from './admin/index';
-import {ActiveClassDirective} from './directives/active-class/active-class.directive';
+//import {ActiveClassDirective} from './directives/active-class/active-class.directive';
 
 
 @Routes([
@@ -17,7 +17,7 @@ import {ActiveClassDirective} from './directives/active-class/active-class.direc
   selector: 'book-monkey-app',
   moduleId: module.id,
   templateUrl: 'book-monkey.html',
-  directives: [ROUTER_DIRECTIVES, ActiveClassDirective],
+  directives: [ROUTER_DIRECTIVES /*, ActiveClassDirective*/],
   providers: [HTTP_PROVIDERS]
 })
 export class BookMonkeyApp { }

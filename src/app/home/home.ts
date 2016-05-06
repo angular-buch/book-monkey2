@@ -6,6 +6,4 @@ import {ROUTER_DIRECTIVES} from '@angular/router';
   templateUrl: 'app/home/home.html',
   directives: [ROUTER_DIRECTIVES]
 })
-export class Home {
-  constructor(){}
-}
+export class Home { }
