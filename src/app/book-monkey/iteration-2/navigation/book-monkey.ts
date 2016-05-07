@@ -4,6 +4,7 @@ import {HomeComponent} from './home/index';
 import {BooksComponent} from './books/index';
 
 @Routes([
+  {path: '/',      component: HomeComponent},
   {path: '/home',  component: HomeComponent},
   {path: '/books', component: BooksComponent}
 ])

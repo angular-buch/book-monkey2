@@ -5,6 +5,7 @@ import {BooksComponent} from './books/index';
 import {AdminComponent} from './admin/index';
 
 @Routes([
+  {path: '/',      component: HomeComponent},
   {path: '/home',  component: HomeComponent},
   {path: '/books', component: BooksComponent},
   {path: '/admin', component: AdminComponent}
