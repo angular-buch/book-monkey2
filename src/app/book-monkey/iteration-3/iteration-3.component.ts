@@ -31,7 +31,8 @@ import {ActiveClassDirective} from '../../directives/active-class/active-class.d
   directives: [ROUTER_DIRECTIVES, ActiveClassDirective]
 })
 @Routes([
-  {path: 'form/...',       component: FormsApp},
-  {path: 'validation/...', component: ValidationApp}
+  {path: '/',           component: FormsApp},
+  {path: '/form',       component: FormsApp},
+  {path: '/validation', component: ValidationApp}
 ])
 export class IterationThreeComponent { }

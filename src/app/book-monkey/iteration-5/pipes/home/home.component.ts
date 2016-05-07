@@ -6,10 +6,10 @@ import {ROUTER_DIRECTIVES} from '@angular/router';
   <div class="ui container">
     <h1>Home</h1>
     <p>Das ist der BookMonkey.</p>
-    <div [routerLink]="['../Books']" class="ui red button">
+    <a [routerLink]="['../books']" class="ui red button">
       Buchliste ansehen
       <i class="right arrow icon"></i>
-    </div>
+    </a>
   </div>
   `,
   directives: [ROUTER_DIRECTIVES]

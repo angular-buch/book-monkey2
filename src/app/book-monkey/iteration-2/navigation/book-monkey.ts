@@ -4,8 +4,8 @@ import {HomeComponent} from './home/index';
 import {BooksComponent} from './books/index';
 
 @Routes([
-  {path: 'home/',     component: HomeComponent},
-  {path: 'books/...', component: BooksComponent}
+  {path: '/home',  component: HomeComponent},
+  {path: '/books', component: BooksComponent}
 ])
 
 @Component({

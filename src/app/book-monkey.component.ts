@@ -21,23 +21,23 @@ import {IterationFiveComponent} from './book-monkey/iteration-5/iteration-5.comp
   component: Home,
 },
 {
-  path: 'iteration-1/...',
+  path: '/iteration-1',
   component: IterationOneComponent
 },
 {
-  path: 'iteration-2/...',
+  path: '/iteration-2',
   component: IterationTwoComponent
 },
 {
-  path: 'iteration-3/...',
+  path: '/iteration-3',
   component: IterationThreeComponent
 },
 {
-  path: 'iteration-4/...',
+  path: '/iteration-4',
   component: IterationFourComponent
 },
 {
-  path: 'iteration-5/...',
+  path: '/iteration-5',
   component: IterationFiveComponent
 }])
 export class BookMonkeyAppComponent { }

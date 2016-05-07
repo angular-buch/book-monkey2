@@ -39,6 +39,7 @@ import {ActiveClassDirective} from '../../directives/active-class/active-class.d
   directives: [ROUTER_DIRECTIVES, ActiveClassDirective]
 })
 @Routes([
+  {path: '/',                     component: BookListApp},
   {path: '/book-list',            component: BookListApp},
   {path: '/book-list-refactored', component: BookListRefactoredApp},
   {path: '/book-details',         component: BookDetailsApp}

@@ -31,7 +31,8 @@ import {ActiveClassDirective} from '../../directives/active-class/active-class.d
   directives: [ROUTER_DIRECTIVES, ActiveClassDirective]
 })
 @Routes([
-  {path: 'dependency-injection/', component: diApp},
-  {path: 'navigation/...',        component: NavigationApp}
+  {path: '/',                     component: diApp},
+  {path: '/dependency-injection', component: diApp},
+  {path: '/navigation',           component: NavigationApp}
 ])
 export class IterationTwoComponent { }
