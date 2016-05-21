@@ -1,5 +1,5 @@
 import {Component, Input} from '@angular/core';
-import {UrlSegment} from '@angular/router';
+import {OnActivate, RouteSegment, RouteTree} from '@angular/router';
 import {Book} from '../domain/book';
 import {BookStoreService} from '../services/books/book-store.service';
 
@@ -9,11 +9,14 @@ import {BookStoreService} from '../services/books/book-store.service';
   templateUrl: 'book-details.component.html',
   providers: [BookStoreService]
 })
-export class BookDetailsComponent {
+export class BookDetailsComponent implements OnActivate {
   book: Book;
 
-  constructor(private params: UrlSegment, private bs: BookStoreService) {
-    this.book = bs.getSingle(params.segment('isbn'));
+  constructor(private bs: BookStoreService) { }
+
+  routerOnActivate(curr: RouteSegment):void {
+    var isbn = curr.getParam('isbn');
+    this.book = this.bs.getSingle(isbn);
   }
 
   getRating(num: number){
