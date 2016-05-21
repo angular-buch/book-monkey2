@@ -31,7 +31,6 @@ import {ActiveClassDirective} from '../../directives/active-class/active-class.d
   directives: [ROUTER_DIRECTIVES, ActiveClassDirective]
 })
 @Routes([
-  {path: '/',           component: PipesApp},
   {path: '/pipes',      component: PipesApp},
   {path: '/directives', component: DirectivesApp}
 ])

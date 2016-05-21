@@ -16,7 +16,7 @@ import {ActiveClassDirective} from '../../directives/active-class/active-class.d
         <div class="title">Dependency-Injection</div>
       </div>
     </a>
-    <a [routerLink]="['navigation']"
+    <a [routerLink]="['navigation','home']"
        activeClass="active"
        class="step">
       <div class="content">
@@ -31,7 +31,6 @@ import {ActiveClassDirective} from '../../directives/active-class/active-class.d
   directives: [ROUTER_DIRECTIVES, ActiveClassDirective]
 })
 @Routes([
-  {path: '/',                     component: diApp},
   {path: '/dependency-injection', component: diApp},
   {path: '/navigation',           component: NavigationApp}
 ])

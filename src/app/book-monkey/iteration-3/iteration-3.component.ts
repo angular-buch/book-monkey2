@@ -9,14 +9,14 @@ import {ActiveClassDirective} from '../../directives/active-class/active-class.d
   selector: 'iteration-3',
   template: `
     <div class="ui two small ordered steps">
-    <a [routerLink]="['form']"
+    <a [routerLink]="['form','home']"
        activeClass="active"
        class="step">
       <div class="content">
         <div class="title">Formulare</div>
       </div>
     </a>
-    <a [routerLink]="['validation']"
+    <a [routerLink]="['validation','home']"
        activeClass="active"
        class="step">
       <div class="content">
@@ -31,7 +31,6 @@ import {ActiveClassDirective} from '../../directives/active-class/active-class.d
   directives: [ROUTER_DIRECTIVES, ActiveClassDirective]
 })
 @Routes([
-  {path: '/',           component: FormsApp},
   {path: '/form',       component: FormsApp},
   {path: '/validation', component: ValidationApp}
 ])

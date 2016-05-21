@@ -23,7 +23,6 @@ import {ActiveClassDirective} from '../../directives/active-class/active-class.d
   directives: [ROUTER_DIRECTIVES, ActiveClassDirective]
 })
 @Routes([
-  {path: '/',     component: HttpApp},
   {path: '/http', component: HttpApp},
 ])
 export class IterationFourComponent { }

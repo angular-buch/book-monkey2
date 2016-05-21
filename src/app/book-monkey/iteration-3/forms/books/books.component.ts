@@ -4,7 +4,7 @@ import {BookListComponent} from '../book-list/book-list.component';
 import {BookDetailsComponent} from '../book-details/book-details.component';
 
 @Routes([
-  { path: '/list',  component: BookListComponent},
+  { path: '/',      component: BookListComponent},
   { path: '/:isbn', component: BookDetailsComponent }
 ])
 @Component({
