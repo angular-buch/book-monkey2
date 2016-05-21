@@ -1,9 +1,9 @@
-export class TestAppPage {
+export class BookMonkeyPage {
   navigateTo() {
     return browser.get('/');
   }
 
   getParagraphText() {
-    return element(by.css('test-app-app p')).getText();
+    return element(by.css('book-monkey-app h1')).getText();
   }
 }

@@ -18,16 +18,16 @@ env:
   matrix:
     # remember: each new app requires a new CNAME entry to book-monkey2-build.github.io
     - NAME="one-app"
-    - NAME="iteration-1-book-list"             BLUEPRINT="src/client/app/book-monkey/iteration-1/book-list"
-    - NAME="iteration-1-book-list-refactored"  BLUEPRINT="src/client/app/book-monkey/iteration-1/book-list-refactored"
-    - NAME="iteration-1-book-details"          BLUEPRINT="src/client/app/book-monkey/iteration-1/book-details"
-    - NAME="iteration-2-di"                    BLUEPRINT="src/client/app/book-monkey/iteration-2/di"
-    - NAME="iteration-2-navigation"            BLUEPRINT="src/client/app/book-monkey/iteration-2/navigation"
-    - NAME="iteration-3-forms"                 BLUEPRINT="src/client/app/book-monkey/iteration-3/forms"
-    - NAME="iteration-3-validation"            BLUEPRINT="src/client/app/book-monkey/iteration-3/validation"
-    - NAME="iteration-4-http"                  BLUEPRINT="src/client/app/book-monkey/iteration-4/http"
-    - NAME="iteration-5-pipes"                 BLUEPRINT="src/client/app/book-monkey/iteration-5/pipes"
-    - NAME="iteration-5-directives"            BLUEPRINT="src/client/app/book-monkey/iteration-5/directives"
+    - NAME="iteration-1-book-list"             BLUEPRINT="src/app/book-monkey/iteration-1/book-list"
+    - NAME="iteration-1-book-list-refactored"  BLUEPRINT="src/app/book-monkey/iteration-1/book-list-refactored"
+    - NAME="iteration-1-book-details"          BLUEPRINT="src/app/book-monkey/iteration-1/book-details"
+    - NAME="iteration-2-di"                    BLUEPRINT="src/app/book-monkey/iteration-2/di"
+    - NAME="iteration-2-navigation"            BLUEPRINT="src/app/book-monkey/iteration-2/navigation"
+    - NAME="iteration-3-forms"                 BLUEPRINT="src/app/book-monkey/iteration-3/forms"
+    - NAME="iteration-3-validation"            BLUEPRINT="src/app/book-monkey/iteration-3/validation"
+    - NAME="iteration-4-http"                  BLUEPRINT="src/app/book-monkey/iteration-4/http"
+    - NAME="iteration-5-pipes"                 BLUEPRINT="src/app/book-monkey/iteration-5/pipes"
+    - NAME="iteration-5-directives"            BLUEPRINT="src/app/book-monkey/iteration-5/directives"
 
 install:
   # speeds up install time
@@ -63,24 +63,24 @@ script:
 
       node "$TRAVIS_BUILD_DIR/node_modules/angular-cli/bin/ng" new BookMonkey;
       cd "$NEW_BOOKMONKEY" || exit;
-      mkdir -p src/{client,domain};
+      mkdir -p src/{domain};
 
       rm -rf .git;
-      rm -rf src/client/app/*;
+      rm -rf src/app/*;
       cd "$TRAVIS_BUILD_DIR" || exit;
 
-      sed "s/_NAME_/${NAME}/g" src/client/index.single.html > tmp;
-      mv tmp src/client/index.single.html;
+      sed "s/_NAME_/${NAME}/g" src/index.single.html > tmp;
+      mv tmp src/index.single.html;
 
-      cp -f package.json                                "$NEW_BOOKMONKEY/";
-      cp -f angular-cli-build.js                        "$NEW_BOOKMONKEY/";
-      cp -f src/client/app.single.ts                    "$NEW_BOOKMONKEY/src/client/app.ts";
-      cp -f src/client/index.single.html                "$NEW_BOOKMONKEY/src/client/index.html";
-      cp -f src/client/forkme_light_background.png      "$NEW_BOOKMONKEY/src/client/";
-      cp -f src/client/tsconfig.json                    "$NEW_BOOKMONKEY/src/client/";
-      cp -f src/client/typings.*                        "$NEW_BOOKMONKEY/src/client/";
-      cp -rf "$TRAVIS_BUILD_DIR/$BLUEPRINT/."           "$NEW_BOOKMONKEY/src/client/app/";
-    
+      cp -f package.json                         "$NEW_BOOKMONKEY/";
+      cp -f angular-cli-build.js                 "$NEW_BOOKMONKEY/";
+      cp -f src/app.single.ts                    "$NEW_BOOKMONKEY/src/main.ts";
+      cp -f src/index.single.html                "$NEW_BOOKMONKEY/src/index.html";
+      cp -f src/forkme_light_background.png      "$NEW_BOOKMONKEY/src/";
+      cp -f src/tsconfig.json                    "$NEW_BOOKMONKEY/src/";
+      cp -f src/typings.*                        "$NEW_BOOKMONKEY/src/";
+      cp -rf "$TRAVIS_BUILD_DIR/$BLUEPRINT/."    "$NEW_BOOKMONKEY/src/app/";
+
       echo "*** DIRECTORY LISTING OF $NEW_BOOKMONKEY ***";
       ls -a "$NEW_BOOKMONKEY";
 
