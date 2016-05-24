@@ -1,0 +1,14 @@
+@Component({
+  selector: 'book-monkey-app',
+  directives: [BookListComponent, BookDetailsComponent, CORE_DIRECTIVES],
+  template: `
+    <book-list *ngIf="listOn"></book-list>
+    <book-details *ngIf="detailsOn" [book]="book"></book-details>
+  `
+})
+export class BookMonkeyApp {
+  listOn: boolean = true;
+  detailsOn: boolean = false;
+
+  book: Book;
+}
