@@ -3,7 +3,7 @@ import { Book } from '../domain/book';
 import { IsbnPipe } from '../pipes/isbn-pipe/isbn-pipe';
 
 @Component({
-  selector: '.book-list-item',
+  selector: 'a.book-list-item',
   moduleId: module.id,
   templateUrl: 'book-list-item.component.html',
   pipes: [IsbnPipe]
