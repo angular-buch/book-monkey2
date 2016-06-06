@@ -1,5 +1,5 @@
-import {Injectable} from '@angular/core';
-import {Book, Thumbnail} from '../../domain/book';
+import { Injectable } from '@angular/core';
+import { Book, Thumbnail } from '../../domain/book';
 
 @Injectable()
 export class BookStoreService {

@@ -1,9 +1,9 @@
-import {Component} from '@angular/core';
-import {Routes, ROUTER_DIRECTIVES} from '@angular/router';
-import {BookMonkeyApp as PipesApp} from './pipes/book-monkey';
-import {BookMonkeyApp as DirectivesApp} from './directives/book-monkey';
+import { Component } from '@angular/core';
+import { Routes, ROUTER_DIRECTIVES } from '@angular/router';
+import { BookMonkeyAppComponent as PipesApp } from './pipes/index';
+import { BookMonkeyAppComponent as DirectivesApp } from './directives/index';
 
-import {ActiveClassDirective} from '../../directives/active-class/active-class.directive';
+import { ActiveClassDirective } from '../../directives/active-class/active-class.directive';
 
 @Component({
   selector: 'iteration-5',

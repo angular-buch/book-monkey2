@@ -1,8 +1,8 @@
-import {Component} from '@angular/core';
-import {CORE_DIRECTIVES} from '@angular/common';
-import {BookListComponent} from './book-list/index';
-import {BookDetailsComponent} from './book-details/index';
-import {Book} from './domain/book';
+import { Component } from '@angular/core';
+import { CORE_DIRECTIVES } from '@angular/common';
+import { BookListComponent } from './book-list/index';
+import { BookDetailsComponent } from './book-details/index';
+import { Book } from './domain/book';
 
 @Component({
   selector: 'book-monkey-app',
@@ -12,7 +12,7 @@ import {Book} from './domain/book';
     <book-details *ngIf="detailsOn" (showListEvent)="showList()" [book]="book"></book-details>
   `
 })
-export class BookMonkeyApp {
+export class BookMonkeyAppComponent {
   listOn: boolean = true;
   detailsOn: boolean = false;
 

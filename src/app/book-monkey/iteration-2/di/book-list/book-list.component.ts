@@ -1,7 +1,7 @@
-import {Component, Output, EventEmitter} from '@angular/core';
-import {BookListItemComponent} from '../book-list-item/index';
-import {Book} from '../domain/book';
-import {BookStoreService} from '../services/books/book-store.service';
+import { Component, Output, EventEmitter } from '@angular/core';
+import { BookListItemComponent } from '../book-list-item/index';
+import { Book } from '../domain/book';
+import { BookStoreService } from '../services/books/book-store.service';
 
 @Component({
   selector: 'book-list',

@@ -1,8 +1,8 @@
-import {Component, Input} from '@angular/core';
-import {Router, UrlSegment, ROUTER_DIRECTIVES} from '@angular/router';
-import {Book} from '../domain/book';
-import {BookStoreService} from '../services/books/book-store.service';
-import {IsbnPipe} from '../pipes/isbn-pipe/isbn-pipe'
+import { Component, Input } from '@angular/core';
+import { Router, UrlSegment, ROUTER_DIRECTIVES } from '@angular/router';
+import { Book } from '../domain/book';
+import { BookStoreService } from '../services/books/book-store.service';
+import { IsbnPipe } from '../pipes/isbn-pipe/isbn-pipe'
 
 @Component({
   selector: 'book-details',

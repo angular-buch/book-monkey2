@@ -7,7 +7,7 @@
     "start": "ng server",
     "postinstall": "typings install",
     "lint": "tslint \"src/**/*.ts\"",
-    "format": "clang-format -i -style=file --glob=src/**/*.ts",
+    "test": "ng test",
     "pree2e": "webdriver-manager update",
     "e2e": "protractor"
   },
@@ -29,7 +29,6 @@
   },
   "devDependencies": {
     "angular-cli": "^1.0.0-beta.5",
-    "clang-format": "^1.0.35",
     "codelyzer": "0.0.19",
     "ember-cli-inject-live-reload": "^1.4.0",
     "jasmine-core": "^2.4.1",

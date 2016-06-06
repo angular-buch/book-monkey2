@@ -1,9 +1,9 @@
-import {Component} from '@angular/core';
-import {Routes, ROUTER_DIRECTIVES} from '@angular/router';
-import {BookMonkeyApp as FormsApp} from './forms/book-monkey';
-import {BookMonkeyApp as ValidationApp} from './validation/book-monkey';
+import { Component } from '@angular/core';
+import { Routes, ROUTER_DIRECTIVES } from '@angular/router';
+import { BookMonkeyAppComponent as FormsApp } from './forms/index';
+import { BookMonkeyAppComponent as ValidationApp } from './validation/index';
 
-import {ActiveClassDirective} from '../../directives/active-class/active-class.directive';
+import { ActiveClassDirective } from '../../directives/active-class/active-class.directive';
 
 @Component({
   selector: 'iteration-3',

@@ -1,7 +1,7 @@
-import {Component} from '@angular/core';
-import {Routes, ROUTER_DIRECTIVES} from '@angular/router';
-import {HomeComponent} from './home/index';
-import {BooksComponent} from './books/index';
+import { Component } from '@angular/core';
+import { Routes, ROUTER_DIRECTIVES } from '@angular/router';
+import { HomeComponent } from './home/index';
+import { BooksComponent } from './books/index';
 
 @Routes([
   {path: '/home',  component: HomeComponent},
@@ -11,7 +11,7 @@ import {BooksComponent} from './books/index';
 @Component({
   selector: 'book-monkey-app',
   moduleId: module.id,
-  templateUrl: 'book-monkey.html',
+  templateUrl: 'book-monkey.component.html',
   styles: [
     `.router-link-active {
       color: #ffffff !important;
@@ -20,4 +20,4 @@ import {BooksComponent} from './books/index';
   ],
   directives: [ROUTER_DIRECTIVES]
 })
-export class BookMonkeyApp { }
+export class BookMonkeyAppComponent { }

@@ -1,5 +1,5 @@
-import {Component, Input} from '@angular/core';
-import {Book} from '../domain/book';
+import { Component, Input } from '@angular/core';
+import { Book } from '../domain/book';
 
 @Component({
   selector: '.book-list-item',

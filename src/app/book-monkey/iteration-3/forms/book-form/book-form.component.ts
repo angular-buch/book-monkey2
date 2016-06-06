@@ -1,8 +1,8 @@
-import {Component, Input} from '@angular/core';
-import {UrlSegment} from '@angular/router';
-import {ControlGroup, ControlArray, FormBuilder} from '@angular/common';
-import {Book} from '../domain/book'
-import {BookStoreService} from '../services/books/book-store.service'
+import { Component, Input } from '@angular/core';
+import { UrlSegment } from '@angular/router';
+import { ControlGroup, ControlArray, FormBuilder } from '@angular/common';
+import { Book } from '../domain/book'
+import { BookStoreService } from '../services/books/book-store.service'
 
 @Component({
   selector: 'book-form',

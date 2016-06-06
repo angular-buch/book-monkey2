@@ -1,10 +1,10 @@
-import {Component, Input} from '@angular/core';
-import {UrlSegment} from '@angular/router';
-import {ControlGroup, ControlArray, FormBuilder, Validators} from '@angular/common';
-import {DateValidator} from '../validators/date.validator'
-import {IsbnValidator} from '../validators/isbn.validator'
-import {Book} from '../domain/book'
-import {BookStoreService} from '../services/books/book-store.service'
+import { Component, Input } from '@angular/core';
+import { UrlSegment } from '@angular/router';
+import { ControlGroup, ControlArray, FormBuilder, Validators } from '@angular/common';
+import { DateValidator } from '../validators/date.validator'
+import { IsbnValidator } from '../validators/isbn.validator'
+import { Book } from '../domain/book'
+import { BookStoreService } from '../services/books/book-store.service'
 
 @Component({
   selector: 'book-form',

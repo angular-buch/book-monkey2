@@ -1,8 +1,8 @@
 import {Component} from '@angular/core';
 import {Routes, ROUTER_DIRECTIVES} from '@angular/router';
-import {BookMonkeyApp as BookDetailsApp} from './book-details/book-monkey';
-import {BookMonkeyApp as BookListApp} from './book-list/book-monkey';
-import {BookMonkeyApp as BookListRefactoredApp} from './book-list-refactored/book-monkey';
+import {BookMonkeyAppComponent as BookDetailsApp} from './book-details/index';
+import {BookMonkeyAppComponent as BookListApp} from './book-list/index';
+import {BookMonkeyAppComponent as BookListRefactoredApp} from './book-list-refactored/index';
 
 import {ActiveClassDirective} from '../../directives/active-class/active-class.directive';
 

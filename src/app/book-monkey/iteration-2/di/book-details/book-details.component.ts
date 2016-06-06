@@ -1,5 +1,5 @@
-import {Component, Input, Output, EventEmitter} from '@angular/core';
-import {Book, Thumbnail} from '../domain/book';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Book, Thumbnail } from '../domain/book';
 
 @Component({
   selector: 'book-details',

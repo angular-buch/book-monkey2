@@ -1,1 +1,1 @@
-export {BookFormComponent} from './book-form.component';
+export {BookFormComponent } from './book-form.component';

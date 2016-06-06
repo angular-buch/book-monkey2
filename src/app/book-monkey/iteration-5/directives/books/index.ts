@@ -1,1 +1,1 @@
-export {BooksComponent} from './books.component';
+export {BooksComponent } from './books.component';

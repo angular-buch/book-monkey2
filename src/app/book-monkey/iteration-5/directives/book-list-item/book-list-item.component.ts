@@ -1,6 +1,6 @@
-import {Component, Input} from '@angular/core';
-import {Book} from '../domain/book';
-import {IsbnPipe} from '../pipes/isbn-pipe/isbn-pipe';
+import { Component, Input } from '@angular/core';
+import { Book } from '../domain/book';
+import { IsbnPipe } from '../pipes/isbn-pipe/isbn-pipe';
 
 @Component({
   selector: '.book-list-item',

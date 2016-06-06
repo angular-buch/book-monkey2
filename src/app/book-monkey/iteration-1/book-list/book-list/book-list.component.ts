@@ -1,5 +1,5 @@
-import {Component} from '@angular/core';
-import {Book, Thumbnail} from '../domain/book';
+import { Component } from '@angular/core';
+import { Book, Thumbnail } from '../domain/book';
 
 @Component({
   selector: 'book-list',

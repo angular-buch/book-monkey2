@@ -1,8 +1,8 @@
-import {Component} from '@angular/core';
-import {Routes, ROUTER_DIRECTIVES} from '@angular/router';
-import {BookMonkeyApp as HttpApp} from './http/book-monkey';
+import { Component } from '@angular/core';
+import { Routes, ROUTER_DIRECTIVES } from '@angular/router';
+import { BookMonkeyAppComponent as HttpApp } from './http/index';
 
-import {ActiveClassDirective} from '../../directives/active-class/active-class.directive';
+import { ActiveClassDirective } from '../../directives/active-class/active-class.directive';
 
 @Component({
   selector: 'iteration-4',

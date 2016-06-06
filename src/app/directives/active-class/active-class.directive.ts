@@ -1,5 +1,5 @@
-import {Directive, Input, HostBinding} from '@angular/core';
-import {Router} from '@angular/router';
+import { Directive, Input, HostBinding } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Directive({ selector: '[activeClass]' })
 

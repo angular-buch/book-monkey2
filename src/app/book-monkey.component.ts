@@ -12,7 +12,6 @@ import {IterationFiveComponent} from './book-monkey/iteration-5/iteration-5.comp
   moduleId: module.id,
   selector: 'book-monkey-app',
   templateUrl: 'book-monkey.component.html',
-  styleUrls: ['book-monkey.component.css'],
   directives: [ROUTER_DIRECTIVES]
 })
 @Routes([

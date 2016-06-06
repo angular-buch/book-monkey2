@@ -1,9 +1,9 @@
-import {Component} from '@angular/core';
-import {Routes, ROUTER_DIRECTIVES} from '@angular/router';
-import {BookMonkeyApp as diApp} from './di/book-monkey';
-import {BookMonkeyApp as NavigationApp} from './navigation/book-monkey';
+import { Component } from '@angular/core';
+import { Routes, ROUTER_DIRECTIVES } from '@angular/router';
+import { BookMonkeyAppComponent as diApp } from './di/index';
+import { BookMonkeyAppComponent as NavigationApp } from './navigation/index';
 
-import {ActiveClassDirective} from '../../directives/active-class/active-class.directive';
+import { ActiveClassDirective } from '../../directives/active-class/active-class.directive';
 
 @Component({
   selector: 'iteration-2',

@@ -1,7 +1,7 @@
-import {Component} from '@angular/core';
-import {Routes, ROUTER_DIRECTIVES} from '@angular/router';
-import {BookListComponent} from '../book-list/book-list.component';
-import {BookDetailsComponent} from '../book-details/book-details.component';
+import { Component } from '@angular/core';
+import { Routes, ROUTER_DIRECTIVES } from '@angular/router';
+import { BookListComponent } from '../book-list/book-list.component';
+import { BookDetailsComponent } from '../book-details/book-details.component';
 
 @Routes([
   { path: '/',      component: BookListComponent},

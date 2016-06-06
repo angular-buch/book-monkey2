@@ -1,7 +1,7 @@
-import {Component} from '@angular/core';
-import {Routes, ROUTER_DIRECTIVES} from '@angular/router';
-import {HomeComponent} from './home/index';
-import {BooksComponent} from './books/index';
+import { Component } from '@angular/core';
+import { Routes, ROUTER_DIRECTIVES } from '@angular/router';
+import { HomeComponent } from './home/';
+import { BooksComponent } from './books/';
 
 @Routes([
   {path: 'home/', name: 'Home', component: HomeComponent, useAsDefault: true},
@@ -9,8 +9,8 @@ import {BooksComponent} from './books/index';
 ])
 
 @Component({
-  selector: 'navigation-app',
+  selector: 'book-monkey-app',
   template: `<router-outlet></router-outlet>`,
   directives: [ROUTER_DIRECTIVES]
 })
-export class NavigationApp { }
+export class BookMonkeyAppComponent { }

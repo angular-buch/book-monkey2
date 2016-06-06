@@ -1,6 +1,6 @@
-import {Component} from '@angular/core';
-import {Routes, ROUTER_DIRECTIVES} from '@angular/router';
-import {BookFormComponent} from '../book-form/index'
+import { Component } from '@angular/core';
+import { Routes, ROUTER_DIRECTIVES } from '@angular/router';
+import { BookFormComponent } from '../book-form/index'
 
 @Routes([
   { path: 'books/',      component: BookFormComponent},

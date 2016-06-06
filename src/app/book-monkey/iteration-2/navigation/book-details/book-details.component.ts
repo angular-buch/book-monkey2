@@ -1,7 +1,7 @@
-import {Component, Input} from '@angular/core';
-import {OnActivate, RouteSegment, RouteTree} from '@angular/router';
-import {Book} from '../domain/book';
-import {BookStoreService} from '../services/books/book-store.service';
+import { Component, Input } from '@angular/core';
+import { OnActivate, RouteSegment, RouteTree } from '@angular/router';
+import { Book } from '../domain/book';
+import { BookStoreService } from '../services/books/book-store.service';
 
 @Component({
   selector: 'book-details',

@@ -1,5 +1,5 @@
-import {Control} from '@angular/common';
-import {ValidationResult} from './validation-result';
+import { Control } from '@angular/common';
+import { ValidationResult } from './validation-result';
 
 export class IsbnValidator {
   static isbn(control: Control): ValidationResult {

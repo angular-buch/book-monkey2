@@ -1,0 +1,9 @@
+import { Component } from '@angular/core';
+import { BookList } from './book-list/book-list.component';
+
+@Component({
+  selector: 'book-monkey-app',
+  directives: [BookList],
+  template: `<book-list></book-list>`
+})
+export class BookMonkeyAppComponent { }
