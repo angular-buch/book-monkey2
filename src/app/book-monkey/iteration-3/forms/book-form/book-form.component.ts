@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { UrlSegment } from '@angular/router';
+import { OnActivate, RouteSegment } from '@angular/router';
 import { ControlGroup, ControlArray, FormBuilder } from '@angular/common';
 import { Book } from '../domain/book'
 import { BookStoreService } from '../services/books/book-store.service'
@@ -10,44 +10,45 @@ import { BookStoreService } from '../services/books/book-store.service'
   templateUrl: 'book-form.component.html',
   providers: [BookStoreService]
 })
-export class BookFormComponent {
+export class BookFormComponent implements OnActivate{
   myForm: ControlGroup;
   authorsControlArray: ControlArray;
   thumbnailsControlArray: ControlArray;
 
-  constructor(private fb: FormBuilder, private UrlSegment: UrlSegment, private bs: BookStoreService) {
-    let book = {
-      title: '',
-      subtitle: '',
-      isbn: '',
-      description: '',
-      authors: [''],
-      thumbnails:[{url:'', title:''}],
-      published: new Date()
-    };
+  book: Book;
+
+  constructor(private fb: FormBuilder, private bs: BookStoreService) {
+    this.book = new Book('', '', [], new Date());    
+  }
+
+  routerOnActivate(curr: RouteSegment):void {
+    var isbn = curr.getParam('isbn');
     
-    if(UrlSegment.parameters['mode'] === 'update') book = bs.getSingle(UrlSegment.segment('isbn'));
+    if(isbn) {
+      this.book = this.bs.getSingle(isbn);
+    }
 
     this.myForm = this.fb.group({
-      title: [book.title],
-      subtitle: [book.subtitle],
-      isbn: [book.isbn],
-      description: [book.description],
-      authors: this.fb.array(book.authors),
-      thumbnails: this.fb.array(
-        book.thumbnails.map(
+      title:       [this.book.title],
+      subtitle:    [this.book.subtitle],
+      isbn:        [this.book.isbn],
+      description: [this.book.description],
+      authors:      this.fb.array(this.book.authors),
+      thumbnails:   this.fb.array(
+        this.book.thumbnails.map(
           t => this.fb.group({
             url: this.fb.control(t.url),
             title: this.fb.control(t.title)
           })
         )
       ),
-      published: [book.published]
+      published: [this.book.published]
     });
 
     // this allows us to manipulate the form at runtime
     this.authorsControlArray = <ControlArray>this.myForm.controls['authors'];
     this.thumbnailsControlArray = <ControlArray>this.myForm.controls['thumbnails'];
+
   }
 
   addAuthorControl(){
@@ -59,6 +60,6 @@ export class BookFormComponent {
   }
 
   submitForm(formData){
-    this.UrlSegment.parameters['mode'] === 'update' ? this.bs.update(formData) : this.bs.create(formData);
+    // this.UrlSegment.parameters['mode'] === 'update' ? this.bs.update(formData) : this.bs.create(formData);
   }
 }
