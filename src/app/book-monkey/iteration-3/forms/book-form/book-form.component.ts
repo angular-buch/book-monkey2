@@ -14,8 +14,6 @@ export class BookFormComponent implements OnActivate{
   myForm: ControlGroup;
   authorsControlArray: ControlArray;
   thumbnailsControlArray: ControlArray;
-
-  book: Book;
   isUpdatingBook: boolean;
 
   constructor(private fb: FormBuilder, private bs: BookStoreService) {
@@ -42,25 +40,28 @@ export class BookFormComponent implements OnActivate{
     
     if(isbn) {
       this.isUpdatingBook = true;
-      this.book = this.bs.getSingle(isbn);
-
-      this.myForm = this.fb.group({
-        title:       [this.book.title],
-        subtitle:    [this.book.subtitle],
-        isbn:        [this.book.isbn],
-        description: [this.book.description],
-        authors:      this.fb.array(this.book.authors),
-        thumbnails:   this.fb.array(
-          this.book.thumbnails.map(
-            t => this.fb.group({
-              url: this.fb.control(t.url),
-              title: this.fb.control(t.title)
-            })
-          )
-        ),
-        published: [this.book.published]
-      });
+      let book = this.bs.getSingle(isbn);
+      this.initBook(book)
     }
+  }
+
+  initBook(book:Book){
+    this.myForm = this.fb.group({
+      title:       [book.title],
+      subtitle:    [book.subtitle],
+      isbn:        [book.isbn],
+      description: [book.description],
+      authors:      this.fb.array(book.authors),
+      thumbnails:   this.fb.array(
+        book.thumbnails.map(
+          t => this.fb.group({
+            url: this.fb.control(t.url),
+            title: this.fb.control(t.title)
+          })
+        )
+      ),
+      published: [book.published]
+    });
   }
 
   addAuthorControl(){

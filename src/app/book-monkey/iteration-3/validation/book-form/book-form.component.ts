@@ -16,8 +16,6 @@ export class BookFormComponent implements OnActivate{
   myForm: ControlGroup;
   authorsControlArray: ControlArray;
   thumbnailsControlArray: ControlArray;
-
-  book: Book;
   isUpdatingBook: boolean;
 
 constructor(private fb: FormBuilder, private bs: BookStoreService) {
@@ -44,29 +42,32 @@ constructor(private fb: FormBuilder, private bs: BookStoreService) {
     
     if(isbn) {
       this.isUpdatingBook = true;
-      this.book = this.bs.getSingle(isbn);
-
-      this.myForm = this.fb.group({
-        title: [this.book.title, Validators.required],
-        subtitle: [this.book.subtitle],
-        isbn: [this.book.isbn, Validators.compose([
-          Validators.required,
-          IsbnValidator.isbn
-          /* TODO Async check if isbn exists */
-        ])],
-        description: [this.book.description],
-        authors: this.fb.array(this.book.authors, Validators.required),
-        thumbnails: this.fb.array(
-          this.book.thumbnails.map(
-            t => this.fb.group({
-              url: this.fb.control(t.url, Validators.required),
-              title: this.fb.control(t.title)
-            })
-          )
-        ),
-        published: [this.book.published] // , DateValidator.germanDate
-      });
+      let book = this.bs.getSingle(isbn);
+      this.initBook(book)
     }
+  }
+
+  initBook(book:Book){
+    this.myForm = this.fb.group({
+      title: [book.title, Validators.required],
+      subtitle: [book.subtitle],
+      isbn: [book.isbn, Validators.compose([
+        Validators.required,
+        IsbnValidator.isbn
+        /* TODO Async check if isbn exists */
+      ])],
+      description: [book.description],
+      authors: this.fb.array(book.authors, Validators.required),
+      thumbnails: this.fb.array(
+        book.thumbnails.map(
+          t => this.fb.group({
+            url: this.fb.control(t.url, Validators.required),
+            title: this.fb.control(t.title)
+          })
+        )
+      ),
+      published: [book.published] // , DateValidator.germanDate
+    });
   }
 
   addAuthorControl(){
