@@ -66,7 +66,7 @@ export class BookFormComponent implements OnActivate{
 
   submitForm(formData){
     this.isUpdatingBook 
-      ? this.bs.update(formData) 
-      : this.bs.create(formData);
+      ? this.bs.update(formData.value) 
+      : this.bs.create(formData.value);
   }
 }

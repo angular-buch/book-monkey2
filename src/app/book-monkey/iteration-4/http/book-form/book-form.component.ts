@@ -72,9 +72,9 @@ constructor(private fb: FormBuilder, private bs: BookStoreService) {
 
   submitForm(formData){
     this.isUpdatingBook 
-      ? this.bs.update(formData)
+      ? this.bs.update(formData.value)
                .subscribe(res => res)
-      : this.bs.create(formData)
+      : this.bs.create(formData.value)
                .subscribe(res => res)
   }
 }
