@@ -3,8 +3,8 @@ import { Routes, ROUTER_DIRECTIVES } from '@angular/router';
 import { BookFormComponent } from '../book-form/index'
 
 @Routes([
-  { path: 'books/',      component: BookFormComponent},
-  { path: 'books/:isbn', component: BookFormComponent}
+  { path: '/',      component: BookFormComponent},
+  { path: '/:isbn', component: BookFormComponent}
 ])
 @Component({
   directives: [ROUTER_DIRECTIVES],
