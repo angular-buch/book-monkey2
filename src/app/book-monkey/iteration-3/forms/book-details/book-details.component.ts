@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { ROUTER_DIRECTIVES } from '@angular/router';
-import { OnActivate, RouteSegment, RouteTree, Router } from '@angular/router';
+import { OnActivate, RouteSegment, Router } from '@angular/router';
 import { Book } from '../domain/book';
 import { BookStoreService } from '../services/books/book-store.service';
 
