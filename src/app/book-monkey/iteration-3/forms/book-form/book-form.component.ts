@@ -19,10 +19,6 @@ export class BookFormComponent implements OnActivate{
   constructor(private fb: FormBuilder, private bs: BookStoreService) {
     this.isUpdatingBook = false;
     this.initBook();
-    
-    // this allows us to manipulate the form at runtime
-    this.authorsControlArray = <ControlArray>this.myForm.controls['authors'];
-    this.thumbnailsControlArray = <ControlArray>this.myForm.controls['thumbnails'];
   }
 
   routerOnActivate(curr: RouteSegment):void {
@@ -36,8 +32,8 @@ export class BookFormComponent implements OnActivate{
   }
 
   initBook(book?:Book){
-    if(!book) book = new Book('', '', [], new Date(), '', 0, [], '');
-    
+    if(!book) book = new Book('', '', [''], new Date(), '', 0, [], '');
+
     this.myForm = this.fb.group({
       title:       [book.title],
       subtitle:    [book.subtitle],
@@ -54,6 +50,10 @@ export class BookFormComponent implements OnActivate{
       ),
       published: [book.published]
     });
+
+    // this allows us to manipulate the form at runtime
+    this.authorsControlArray = <ControlArray>this.myForm.controls['authors'];
+    this.thumbnailsControlArray = <ControlArray>this.myForm.controls['thumbnails'];
   }
 
   addAuthorControl(){
