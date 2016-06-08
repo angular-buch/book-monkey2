@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { UrlSegment } from '@angular/router';
+import { OnActivate, RouteSegment } from '@angular/router';
 import { ControlGroup, ControlArray, FormBuilder, Validators } from '@angular/common';
 import { DateValidator } from '../validators/date.validator'
 import { IsbnValidator } from '../validators/isbn.validator'
@@ -12,43 +12,47 @@ import { BookStoreService } from '../services/books/book-store.service'
   templateUrl: 'book-form.component.html',
   providers: [BookStoreService]
 })
-export class BookFormComponent {
+export class BookFormComponent implements OnActivate{
   myForm: ControlGroup;
   authorsControlArray: ControlArray;
   thumbnailsControlArray: ControlArray;
 
-  constructor(private fb: FormBuilder, private UrlSegment: UrlSegment, private bs: BookStoreService) {
-    let book = {
-      title: '',
-      subtitle: '',
-      isbn: '',
-      description: '',
-      authors: [''],
-      thumbnails:[{url:'', title:''}],
-      published: new Date()
-    };
+  book: Book;
+  isUpdatingBook: boolean;
 
-    if(UrlSegment.parameters['mode'] === 'update') book = bs.getSingle(UrlSegment.segment('isbn'));
+  constructor(private fb: FormBuilder, private bs: BookStoreService) {
+    this.book = new Book('', '', [], new Date());
+    this.isUpdatingBook = false;
+  }
+
+  routerOnActivate(curr: RouteSegment):void {
+    var isbn = curr.getParam('isbn');
+     
+
+    if(isbn) {
+      this.isUpdatingBook = true;
+      this.book = this.bs.getSingle(isbn);
+    }
 
     this.myForm = this.fb.group({
-      title: [book.title, Validators.required],
-      subtitle: [book.subtitle],
-      isbn: [book.isbn, Validators.compose([
+      title: [this.book.title, Validators.required],
+      subtitle: [this.book.subtitle],
+      isbn: [this.book.isbn, Validators.compose([
         Validators.required,
         IsbnValidator.isbn
         /* TODO Async check if isbn exists */
       ])],
-      description: [book.description],
-      authors: this.fb.array(book.authors, Validators.required),
+      description: [this.book.description],
+      authors: this.fb.array(this.book.authors, Validators.required),
       thumbnails: this.fb.array(
-        book.thumbnails.map(
+        this.book.thumbnails.map(
           t => this.fb.group({
             url: this.fb.control(t.url, Validators.required),
             title: this.fb.control(t.title)
           })
         )
       ),
-      published: [book.published] // , DateValidator.germanDate
+      published: [this.book.published] // , DateValidator.germanDate
     });
 
     // this allows us to manipulate the form at runtime
@@ -61,10 +65,13 @@ export class BookFormComponent {
   }
 
   addThumbnailControl(){
-    this.thumbnailsControlArray.push(this.fb.group({ url: [''], title: ['']} ));
+    this.thumbnailsControlArray.push(this.fb.group({url: [''], title: ['']}));
   }
 
   submitForm(formData){
-    this.UrlSegment.parameters['mode'] === 'update' ? this.bs.update(formData) : this.bs.create(formData);
+    this.isUpdatingBook 
+      ? this.bs.update(formData) 
+      : this.bs.create(formData);
   }
 }
+
