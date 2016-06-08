@@ -20,17 +20,7 @@ export class BookFormComponent implements OnActivate{
 
 constructor(private fb: FormBuilder, private bs: BookStoreService) {
     this.isUpdatingBook = false;
-    this.myForm = this.fb.group({ //create the form model
-      title:       [],
-      subtitle:    [],
-      isbn:        [],
-      description: [],
-      authors:      this.fb.array(['']),
-      thumbnails:   this.fb.array([
-        this.fb.group({url: '', title: ''})
-      ]),
-      published: []
-    });
+    this.initBook();
     
     // this allows us to manipulate the form at runtime
     this.authorsControlArray = <ControlArray>this.myForm.controls['authors'];
@@ -47,7 +37,9 @@ constructor(private fb: FormBuilder, private bs: BookStoreService) {
     }
   }
 
-  initBook(book:Book){
+  initBook(book?:Book){
+    if(!book) book = new Book('', '', [], new Date(), '', 0, [], '');
+
     this.myForm = this.fb.group({
       title: [book.title, Validators.required],
       subtitle: [book.subtitle],
