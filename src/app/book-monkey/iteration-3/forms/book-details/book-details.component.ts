@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { ROUTER_DIRECTIVES } from '@angular/router';
-import { OnActivate, RouteSegment, RouteTree } from '@angular/router';
+import { OnActivate, RouteSegment, RouteTree, Router } from '@angular/router';
 import { Book } from '../domain/book';
 import { BookStoreService } from '../services/books/book-store.service';
 
@@ -13,12 +13,13 @@ import { BookStoreService } from '../services/books/book-store.service';
 })
 export class BookDetailsComponent implements OnActivate {
   book: Book;
+  curr: RouteSegment;
 
-  constructor(private bs: BookStoreService) { }
+  constructor(private bs: BookStoreService, private router: Router) { }
 
-  routerOnActivate(curr: RouteSegment):void {
-    var isbn = curr.getParam('isbn');
-    this.book = this.bs.getSingle(isbn);
+  routerOnActivate(seg: RouteSegment):void {
+    this.curr = seg;
+    this.book = this.bs.getSingle(this.curr.getParam('isbn'));
   }
 
   getRating(num: number){
@@ -27,8 +28,8 @@ export class BookDetailsComponent implements OnActivate {
 
  deleteBook(){
    if(confirm("Buch wirklich löschen?")) {
-    //  this.bs.delete(this.params.segment('isbn'))
-    //  this.router.navigate(['../List']);
+     this.bs.delete(this.book.isbn);
+     this.router.navigate(['../'], this.curr);
    }
  }
 }
