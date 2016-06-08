@@ -34,7 +34,7 @@ constructor(private fb: FormBuilder, private bs: BookStoreService) {
   }
 
   initBook(book?:Book){
-    if(!book) book = new Book('', '', [''], new Date(), '', 0, [], '');
+    if(!book) book = new Book('', '', [''], new Date(), '', 0, [{url:'', title: ''}], '');
 
     this.myForm = this.fb.group({
       title: [book.title, Validators.required],
