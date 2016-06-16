@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
-import { Routes, ROUTER_DIRECTIVES } from '@angular/router';
-import { BookMonkeyAppComponent as PipesApp } from './pipes/index';
-import { BookMonkeyAppComponent as DirectivesApp } from './directives/index';
+import { ROUTER_DIRECTIVES } from '@angular/router';
 
 import { ActiveClassDirective } from '../../directives/active-class/active-class.directive';
 
@@ -30,8 +28,4 @@ import { ActiveClassDirective } from '../../directives/active-class/active-class
   `,
   directives: [ROUTER_DIRECTIVES, ActiveClassDirective]
 })
-@Routes([
-  {path: '/pipes',      component: PipesApp},
-  {path: '/directives', component: DirectivesApp}
-])
 export class IterationFiveComponent { }

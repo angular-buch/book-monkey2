@@ -1,2 +1,3 @@
 export * from './environment';
-export * from './book-monkey.component';
+export * from './app.component';
+export * from './app.routes';

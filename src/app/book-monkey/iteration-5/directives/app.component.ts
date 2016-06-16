@@ -16,7 +16,7 @@ import { AdminComponent } from './admin/index';
 @Component({
   selector: 'book-monkey-app',
   moduleId: module.id,
-  templateUrl: 'book-monkey.component.html',
+  templateUrl: 'app.component.html',
   directives: [ROUTER_DIRECTIVES /*, ActiveClassDirective*/],
   providers: [HTTP_PROVIDERS]
 })

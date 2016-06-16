@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
-import { Routes, ROUTER_DIRECTIVES } from '@angular/router';
-import { BookMonkeyAppComponent as diApp } from './di/index';
-import { BookMonkeyAppComponent as NavigationApp } from './navigation/index';
+import { ROUTER_DIRECTIVES } from '@angular/router';
 
 import { ActiveClassDirective } from '../../directives/active-class/active-class.directive';
 
@@ -30,8 +28,4 @@ import { ActiveClassDirective } from '../../directives/active-class/active-class
   `,
   directives: [ROUTER_DIRECTIVES, ActiveClassDirective]
 })
-@Routes([
-  {path: '/dependency-injection', component: diApp},
-  {path: '/navigation',           component: NavigationApp}
-])
 export class IterationTwoComponent { }

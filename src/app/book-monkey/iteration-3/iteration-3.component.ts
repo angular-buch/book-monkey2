@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
-import { Routes, ROUTER_DIRECTIVES } from '@angular/router';
-import { BookMonkeyAppComponent as FormsApp } from './forms/index';
-import { BookMonkeyAppComponent as ValidationApp } from './validation/index';
+import { ROUTER_DIRECTIVES } from '@angular/router';
 
 import { ActiveClassDirective } from '../../directives/active-class/active-class.directive';
 
@@ -30,8 +28,4 @@ import { ActiveClassDirective } from '../../directives/active-class/active-class
   `,
   directives: [ROUTER_DIRECTIVES, ActiveClassDirective]
 })
-@Routes([
-  {path: '/form',       component: FormsApp},
-  {path: '/validation', component: ValidationApp}
-])
 export class IterationThreeComponent { }

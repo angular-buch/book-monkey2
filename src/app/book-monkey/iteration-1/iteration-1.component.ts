@@ -1,10 +1,7 @@
-import {Component} from '@angular/core';
-import {Routes, ROUTER_DIRECTIVES} from '@angular/router';
-import {BookMonkeyAppComponent as BookDetailsApp} from './book-details/index';
-import {BookMonkeyAppComponent as BookListApp} from './book-list/index';
-import {BookMonkeyAppComponent as BookListRefactoredApp} from './book-list-refactored/index';
+import { Component } from '@angular/core';
+import { ROUTER_DIRECTIVES } from '@angular/router';
 
-import {ActiveClassDirective} from '../../directives/active-class/active-class.directive';
+import { ActiveClassDirective } from '../../directives/active-class/active-class.directive';
 
 @Component({
   selector: 'iteration-1',
@@ -38,9 +35,4 @@ import {ActiveClassDirective} from '../../directives/active-class/active-class.d
   `,
   directives: [ROUTER_DIRECTIVES, ActiveClassDirective]
 })
-@Routes([
-  {path: '/book-list',            component: BookListApp},
-  {path: '/book-list-refactored', component: BookListRefactoredApp},
-  {path: '/book-details',         component: BookDetailsApp}
-])
 export class IterationOneComponent { }

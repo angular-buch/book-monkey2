@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { Routes, ROUTER_DIRECTIVES } from '@angular/router';
-import { BookMonkeyAppComponent as HttpApp } from './http/index';
+import { ROUTER_DIRECTIVES } from '@angular/router';
 
 import { ActiveClassDirective } from '../../directives/active-class/active-class.directive';
 
@@ -22,7 +21,4 @@ import { ActiveClassDirective } from '../../directives/active-class/active-class
   `,
   directives: [ROUTER_DIRECTIVES, ActiveClassDirective]
 })
-@Routes([
-  {path: '/http', component: HttpApp},
-])
 export class IterationFourComponent { }
