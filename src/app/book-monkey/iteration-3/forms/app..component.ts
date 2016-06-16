@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { ROUTER_DIRECTIVES } from '@angular/router';
 
 @Component({
-  selector: 'book-monkey-app',
+  selector: 'app-root',
   moduleId: module.id,
   templateUrl: 'app.component.html',
   styles: [
@@ -13,4 +13,4 @@ import { ROUTER_DIRECTIVES } from '@angular/router';
   ],
   directives: [ROUTER_DIRECTIVES]
 })
-export class BookMonkeyAppComponent { }
+export class AppComponent { }

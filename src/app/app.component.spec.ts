@@ -6,18 +6,18 @@ import {
   it,
   inject
 } from '@angular/core/testing';
-import { BookMonkeyAppComponent } from '../app/book-monkey.component';
+import { AppComponent } from '../app/book-monkey.component';
 
-beforeEachProviders(() => [BookMonkeyAppComponent]);
+beforeEachProviders(() => [AppComponent]);
 
 describe('App: BookMonkey', () => {
   it('should create the app',
-      inject([BookMonkeyAppComponent], (app: BookMonkeyAppComponent) => {
+      inject([AppComponent], (app: AppComponent) => {
     expect(app).toBeTruthy();
   }));
 
   it('should have as title \'book-monkey works!\'',
-      inject([BookMonkeyAppComponent], (app: BookMonkeyAppComponent) => {
+      inject([AppComponent], (app: AppComponent) => {
     expect(app.title).toEqual('book-monkey works!');
   }));
 });

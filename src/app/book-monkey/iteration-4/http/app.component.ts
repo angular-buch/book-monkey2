@@ -15,4 +15,4 @@ import { ROUTER_DIRECTIVES } from '@angular/router';
   directives: [ROUTER_DIRECTIVES],
   providers: [HTTP_PROVIDERS]
 })
-export class BookMonkeyAppComponent { }
+export class AppComponent { }

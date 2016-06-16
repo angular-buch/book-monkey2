@@ -3,8 +3,8 @@ import {Routes, ROUTER_DIRECTIVES} from '@angular/router';
 
 @Component({
   moduleId: module.id,
-  selector: 'book-monkey-app',
+  selector: 'app-root',
   templateUrl: 'book-monkey.component.html',
   directives: [ROUTER_DIRECTIVES]
 })
-export class BookMonkeyAppComponent { }
+export class AppComponent { }

@@ -1,12 +1,5 @@
 import { Component } from '@angular/core';
-import { Routes, ROUTER_DIRECTIVES } from '@angular/router';
-import { HomeComponent } from './home/index';
-import { BooksComponent } from './books/index';
-
-@Routes([
-  {path: '/home',  component: HomeComponent},
-  {path: '/books', component: BooksComponent}
-])
+import { ROUTER_DIRECTIVES } from '@angular/router';
 
 @Component({
   selector: 'book-monkey-app',
@@ -20,4 +13,4 @@ import { BooksComponent } from './books/index';
   ],
   directives: [ROUTER_DIRECTIVES]
 })
-export class BookMonkeyAppComponent { }
+export class AppComponent { }

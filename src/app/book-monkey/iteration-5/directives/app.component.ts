@@ -4,10 +4,10 @@ import { ROUTER_DIRECTIVES } from '@angular/router';
 //import { ActiveClassDirective } from './directives/active-class/active-class.directive';
 
 @Component({
-  selector: 'book-monkey-app',
+  selector: 'app-root',
   moduleId: module.id,
   templateUrl: 'app.component.html',
   directives: [ROUTER_DIRECTIVES /*, ActiveClassDirective*/],
   providers: [HTTP_PROVIDERS]
 })
-export class BookMonkeyAppComponent { }
+export class AppComponent { }
