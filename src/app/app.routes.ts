@@ -34,18 +34,15 @@ export const AppRoutes: RouterConfig = [
         children: [
             {
                 path: '/book-list',
-                component: BookListApp,
-                children: [ ...BookListAppRoutes ]
+                component: BookListApp
             },
             {
                 path: '/book-list-refactored',
                 component: BookListRefactoredApp
-                children: [ ...BookListRefactoredAppRoutes ]                
             },
             {
                 path: '/book-details',
                 component: BookDetailsApp
-                children: [ ...BookDetailsAppRoutes ]
             }
         ]
     },
@@ -56,11 +53,10 @@ export const AppRoutes: RouterConfig = [
             {
                 path: '/dependency-injection',
                 component: diApp
-                children: [ ...DiAppRoutes ]
             },  
             {
                 path: '/navigation',
-                component: NavigationApp
+                component: NavigationApp,
                 children: [ ...NavigationAppRoutes ]
             }
         ]
@@ -71,12 +67,12 @@ export const AppRoutes: RouterConfig = [
         children: [
             {
                 path: '/form',
-                component: FormsApp
+                component: FormsApp,
                 children: [ ...FormsAppRoutes ]
             },
             {
                 path: '/validation',
-                component: ValidationApp
+                component: ValidationApp,
                 children: [ ...ValidationAppRoutes ]
             }
         ]
@@ -87,7 +83,7 @@ export const AppRoutes: RouterConfig = [
         children: [
             {
                  path: '/http',
-                 component: HttpApp
+                 component: HttpApp,
                 children: [ ...HttpAppRoutes ]
             }
         ]
@@ -98,12 +94,12 @@ export const AppRoutes: RouterConfig = [
         children: [
             {
                 path: '/pipes',
-                component: PipesApp
+                component: PipesApp,
                 children: [ ...PipesAppRoutes ]
             },
             {
                 path: '/directives',
-                component: DirectivesApp
+                component: DirectivesApp,
                 children: [ ...DirectivesAppRoutes ]
             }
         ]
