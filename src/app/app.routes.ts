@@ -34,7 +34,8 @@ export const AppRoutes: RouterConfig = [
         children: [
             {
                 path: '/book-list',
-                component: BookListApp
+                component: BookListApp,
+                index: true
             },
             {
                 path: '/book-list-refactored',
@@ -52,7 +53,8 @@ export const AppRoutes: RouterConfig = [
         children: [
             {
                 path: '/dependency-injection',
-                component: diApp
+                component: diApp,
+                index: true
             },  
             {
                 path: '/navigation',
@@ -68,7 +70,8 @@ export const AppRoutes: RouterConfig = [
             {
                 path: '/form',
                 component: FormsApp,
-                children: [ ...FormsAppRoutes ]
+                children: [ ...FormsAppRoutes ],
+                index: true
             },
             {
                 path: '/validation',
@@ -82,9 +85,10 @@ export const AppRoutes: RouterConfig = [
         component: IterationFourComponent,
         children: [
             {
-                 path: '/http',
-                 component: HttpApp,
-                children: [ ...HttpAppRoutes ]
+                path: '/http',
+                component: HttpApp,
+                children: [ ...HttpAppRoutes ],
+                index: true
             }
         ]
     },
@@ -95,7 +99,8 @@ export const AppRoutes: RouterConfig = [
             {
                 path: '/pipes',
                 component: PipesApp,
-                children: [ ...PipesAppRoutes ]
+                children: [ ...PipesAppRoutes ],
+                index: true
             },
             {
                 path: '/directives',
