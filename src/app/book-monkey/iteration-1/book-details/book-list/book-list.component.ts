@@ -10,7 +10,7 @@ import { Book, Thumbnail } from '../domain/book';
 })
 export class BookListComponent {
   books: Book[];
-  @Output() showDetailsEvent:EventEmitter<Book> = new EventEmitter();
+  @Output() showDetailsEvent:EventEmitter<any> = new EventEmitter();
 
   constructor() {
     this.books = [

@@ -12,7 +12,7 @@ import { BookStoreService } from '../services/books/book-store.service';
 })
 export class BookListComponent {
   books: Book[];
-  @Output() showDetailsEvent:EventEmitter<Book> = new EventEmitter();
+  @Output() showDetailsEvent:EventEmitter<any> = new EventEmitter();
 
   constructor(private bs: BookStoreService) {
     this.books = bs.getAll();
