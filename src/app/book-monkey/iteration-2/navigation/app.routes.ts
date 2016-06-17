@@ -4,16 +4,22 @@ import { BookListComponent } from './book-list/index';
 import { BookDetailsComponent } from './book-details/index';
 
 export const AppRoutes: RouterConfig = [
-  { 
-    path: '/home',  
-    component: HomeComponent, 
-    index: true 
+  {
+    path: '',  
+    redirectTo: 'home'
   },
   { 
-    path: '/books', 
+    path: 'home',  
+    component: HomeComponent 
+  },
+  { 
+    path: 'books', 
     component: BookListComponent, 
     children: [
-      { path: '/:isbn', component: BookDetailsComponent }
+      { 
+        path: ':isbn', 
+        component: BookDetailsComponent 
+      }
     ]
   }
 ]

@@ -21,6 +21,7 @@ export class BookDetailsComponent implements OnInit {
   ) { }
 
   ngOnInit():void {
+    console.log(typeof this.route.params['isbn'])
     this.book = this.bs.getSingle(this.route.params['isbn']);
   }
 

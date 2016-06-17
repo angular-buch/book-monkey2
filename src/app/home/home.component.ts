@@ -3,7 +3,8 @@ import { ROUTER_DIRECTIVES } from '@angular/router';
 
 @Component({
   selector: 'home',
-  templateUrl: 'app/home/home.html',
+  moduleId: module.id,
+  templateUrl: 'home.component.html',
   directives: [ROUTER_DIRECTIVES]
 })
-export class Home { }
+export class HomeComponent { }

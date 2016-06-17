@@ -1,6 +1,6 @@
 import { RouterConfig } from '@angular/router';
 
-import {Home} from './home/home';
+import { HomeComponent } from './home/home.component';
 
 import { IterationOneComponent } from './book-monkey/iteration-1/iteration-1.component';
 import { AppComponent as BookDetailsApp  } from './book-monkey/iteration-1/book-details/index';
@@ -24,86 +24,100 @@ import { AppComponent as DirectivesApp, AppRoutes as DirectivesAppRoutes } from 
 
 export const AppRoutes: RouterConfig = [
     {
-        path: '/',
-        component: Home,
-        index: true
+        path: '',          
+        component: HomeComponent
     },
     {
-        path: '/iteration-1',
+        path: 'iteration-1',
         component: IterationOneComponent,
         children: [
             {
-                path: '/book-list',
-                component: BookListApp,
-                index: true
+                path: '',  
+                redirectTo: 'book-list'
             },
             {
-                path: '/book-list-refactored',
+                path: 'book-list',
+                component: BookListApp,
+            },
+            {
+                path: 'book-list-refactored',
                 component: BookListRefactoredApp
             },
             {
-                path: '/book-details',
+                path: 'book-details',
                 component: BookDetailsApp
             }
         ]
     },
     {
-        path: '/iteration-2',
+        path: 'iteration-2',
         component: IterationTwoComponent,
         children: [
             {
-                path: '/dependency-injection',
+                path: '',  
+                redirectTo: 'dependency-injection'
+            },
+            {
+                path: 'dependency-injection',
                 component: diApp,
-                index: true
             },  
             {
-                path: '/navigation',
+                path: 'navigation',
                 component: NavigationApp,
                 children: [ ...NavigationAppRoutes ]
             }
         ]
     },
     {
-        path: '/iteration-3',
+        path: 'iteration-3',
         component: IterationThreeComponent,
         children: [
             {
-                path: '/form',
-                component: FormsApp,
-                children: [ ...FormsAppRoutes ],
-                index: true
+                path: '',  
+                redirectTo: 'form'
             },
             {
-                path: '/validation',
+                path: 'form',
+                component: FormsApp,
+                children: [ ...FormsAppRoutes ],
+            },
+            {
+                path: 'validation',
                 component: ValidationApp,
                 children: [ ...ValidationAppRoutes ]
             }
         ]
     },
     {
-        path: '/iteration-4',
+        path: 'iteration-4',
         component: IterationFourComponent,
         children: [
             {
-                path: '/http',
+                path: '',  
+                redirectTo: 'http'
+            },
+            {
+                path: 'http',
                 component: HttpApp,
                 children: [ ...HttpAppRoutes ],
-                index: true
             }
         ]
     },
     {
-        path: '/iteration-5',
+        path: 'iteration-5',
         component: IterationFiveComponent,
         children: [
             {
-                path: '/pipes',
-                component: PipesApp,
-                children: [ ...PipesAppRoutes ],
-                index: true
+                path: '',  
+                redirectTo: 'pipes'
             },
             {
-                path: '/directives',
+                path: 'pipes',
+                component: PipesApp,
+                children: [ ...PipesAppRoutes ],
+            },
+            {
+                path: 'directives',
                 component: DirectivesApp,
                 children: [ ...DirectivesAppRoutes ]
             }
