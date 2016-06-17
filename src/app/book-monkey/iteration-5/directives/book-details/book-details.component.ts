@@ -1,6 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ROUTER_DIRECTIVES } from '@angular/router';
-import { OnActivate, RouteSegment, Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Book } from '../domain/book';
 import { BookStoreService } from '../services/books/book-store.service';
 import { IsbnPipe } from '../pipes/isbn-pipe/isbn-pipe'
@@ -13,15 +13,17 @@ import { IsbnPipe } from '../pipes/isbn-pipe/isbn-pipe'
   directives: [ROUTER_DIRECTIVES],
   pipes: [IsbnPipe]
 })
-export class BookDetailsComponent implements OnActivate {
+export class BookDetailsComponent implements OnInit {
   book: Book;
-  curr: RouteSegment;
 
-  constructor(private bs: BookStoreService, private router: Router) { }
+  constructor(
+    private bs: BookStoreService,
+    private router: Router,
+    private route: ActivatedRoute
+  ) { }
 
-  routerOnActivate(seg: RouteSegment):void {
-    this.curr = seg;
-    this.bs.getSingle(this.curr.getParam('isbn'))
+  ngOnInit():void {
+    this.bs.getSingle(this.route.params['isbn'])
       .subscribe(res => this.book = res);
   }
 
@@ -32,7 +34,7 @@ export class BookDetailsComponent implements OnActivate {
  deleteBook(){
    if(confirm("Buch wirklich löschen?")) {
      this.bs.delete(this.book.isbn)
-            .subscribe(res => this.router.navigate(['../'], this.curr));
+            .subscribe(res => this.router.navigate(['../']));
    }
  }
 }

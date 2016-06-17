@@ -1,5 +1,6 @@
-import { Component, Input } from '@angular/core';
-import { OnActivate, RouteSegment, RouteTree } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { ROUTER_DIRECTIVES } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Book } from '../domain/book';
 import { BookStoreService } from '../services/books/book-store.service';
 
@@ -7,16 +8,20 @@ import { BookStoreService } from '../services/books/book-store.service';
   selector: 'book-details',
   moduleId: module.id,
   templateUrl: 'book-details.component.html',
-  providers: [BookStoreService]
+  providers: [BookStoreService],
+  directives: [ROUTER_DIRECTIVES]
 })
-export class BookDetailsComponent implements OnActivate {
+export class BookDetailsComponent implements OnInit {
   book: Book;
 
-  constructor(private bs: BookStoreService) { }
+  constructor(
+    private bs: BookStoreService,
+    private router: Router,
+    private route: ActivatedRoute
+  ) { }
 
-  routerOnActivate(curr: RouteSegment):void {
-    var isbn = curr.getParam('isbn');
-    this.book = this.bs.getSingle(isbn);
+  ngOnInit():void {
+    this.book = this.bs.getSingle(this.route.params['isbn']);
   }
 
   getRating(num: number){

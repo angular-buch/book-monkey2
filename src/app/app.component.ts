@@ -4,7 +4,7 @@ import { ROUTER_DIRECTIVES } from '@angular/router';
 @Component({
   moduleId: module.id,
   selector: 'app-root',
-  templateUrl: 'book-monkey.component.html',
+  templateUrl: 'app.component.html',
   directives: [ROUTER_DIRECTIVES]
 })
 export class AppComponent { }

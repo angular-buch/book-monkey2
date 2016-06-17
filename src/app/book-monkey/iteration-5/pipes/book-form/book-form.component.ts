@@ -1,5 +1,5 @@
-import { Component, Input } from '@angular/core';
-import { OnActivate, RouteSegment } from '@angular/router';
+import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { ControlGroup, ControlArray, FormBuilder, Validators } from '@angular/common';
 import { DateValidator } from '../validators/date.validator'
 import { IsbnValidator } from '../validators/isbn.validator'
@@ -12,19 +12,23 @@ import { BookStoreService } from '../services/books/book-store.service'
   templateUrl: 'book-form.component.html',
   providers: [BookStoreService]
 })
-export class BookFormComponent implements OnActivate{
+export class BookFormComponent implements OnInit{
   myForm: ControlGroup;
   authorsControlArray: ControlArray;
   thumbnailsControlArray: ControlArray;
   isUpdatingBook: boolean;
 
-constructor(private fb: FormBuilder, private bs: BookStoreService) {
+  constructor(
+    private fb: FormBuilder, 
+    private bs: BookStoreService,
+    private route: ActivatedRoute
+  ) {
     this.isUpdatingBook = false;
     this.initBook();
   }
 
-  routerOnActivate(curr: RouteSegment):void {
-    var isbn = curr.getParam('isbn');
+  ngOnInit():void {
+    var isbn = this.route.params['isbn'];
     
     if(isbn) {
       this.isUpdatingBook = true;
@@ -56,7 +60,7 @@ constructor(private fb: FormBuilder, private bs: BookStoreService) {
       ),
       published: [book.published] // , DateValidator.germanDate
     });
- 
+        
     // this allows us to manipulate the form at runtime
     this.authorsControlArray = <ControlArray>this.myForm.controls['authors'];
     this.thumbnailsControlArray = <ControlArray>this.myForm.controls['thumbnails'];

@@ -13,12 +13,12 @@
   <link rel="stylesheet" href="vendor/semantic-ui-css/semantic.min.css">
 </head>
 <body>
-  <book-monkey-app>Loading...</book-monkey-app>
+  <app-root>Loading...</app-root>
       {{#each scripts.polyfills}}<script src="{{.}}"></script>{{/each}}
       <script>
         System.import('system-config.js').then(function () {
           System.import('main');
         }).catch(console.error.bind(console));
       </script>
-  </body>
-  </html>
+</body>
+ </html>
