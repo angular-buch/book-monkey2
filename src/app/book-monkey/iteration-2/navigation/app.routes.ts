@@ -14,12 +14,10 @@ export const AppRoutes: RouterConfig = [
   },
   { 
     path: 'books', 
-    component: BookListComponent, 
-    children: [
-      { 
-        path: ':isbn', 
-        component: BookDetailsComponent 
-      }
-    ]
+    component: BookListComponent
+  }, 
+  {
+    path: 'books/:isbn', 
+    component: BookDetailsComponent 
   }
 ]

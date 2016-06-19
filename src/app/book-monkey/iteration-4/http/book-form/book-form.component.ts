@@ -28,13 +28,15 @@ export class BookFormComponent implements OnInit{
   }
 
   ngOnInit():void {
-    var isbn = this.route.params['isbn'];
+    this.route.params.subscribe(params => {
+      var isbn = params['isbn'];
     
-    if(isbn) {
-      this.isUpdatingBook = true;
-      this.bs.getSingle(isbn)
-        .subscribe(b => this.initBook(b));
-    }
+      if(isbn) {
+        this.isUpdatingBook = true;
+        this.bs.getSingle(isbn)
+          .subscribe(b => this.initBook(b));
+      }
+    });
   }
 
   initBook(book?:Book){

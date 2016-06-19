@@ -23,8 +23,10 @@ export class BookDetailsComponent implements OnInit {
   ) { }
 
   ngOnInit():void {
-    this.bs.getSingle(this.route.params['isbn'])
-      .subscribe(res => this.book = res);
+    this.route.params.subscribe(params => {
+      this.bs.getSingle(params['isbn'])
+        .subscribe(b => this.book = b);
+    });
   }
 
   getRating(num: number){

@@ -15,22 +15,18 @@ export const AppRoutes: RouterConfig = [
   },
   { 
     path: 'books', 
-    component: BookListComponent, 
-    children: [
-      { 
-        path: ':isbn', 
-        component: BookDetailsComponent 
-      }
-    ]
+    component: BookListComponent
+  }, 
+  {
+    path: 'books/:isbn', 
+    component: BookDetailsComponent 
   },
   { 
     path: 'admin', 
     component: BookFormComponent, 
-    children: [
-      { 
-        path: ':isbn', 
-        component: BookFormComponent
-      }
-    ]
+  },
+  { 
+    path: 'admin/:isbn', 
+    component: BookFormComponent
   }
 ]
