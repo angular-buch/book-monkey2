@@ -12,7 +12,7 @@ import { BookStoreService } from '../services/books/book-store.service'
   templateUrl: 'book-form.component.html',
   providers: [BookStoreService]
 })
-export class BookFormComponent implements OnInit{
+export class BookFormComponent implements OnInit {
   myForm: ControlGroup;
   authorsControlArray: ControlArray;
   thumbnailsControlArray: ControlArray;

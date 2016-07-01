@@ -31,10 +31,10 @@ export class BookDetailsComponent implements OnInit {
     return new Array(num);
   }
 
- deleteBook(){
-   if(confirm("Buch wirklich löschen?")) {
-     this.bs.delete(this.book.isbn)
+  deleteBook(){
+    if(confirm("Buch wirklich löschen?")) {
+      this.bs.delete(this.book.isbn)
             .subscribe(res => this.router.navigate(['../']));
-   }
- }
+    }
+  }
 }
