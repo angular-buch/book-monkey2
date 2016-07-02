@@ -1,5 +1,5 @@
 <h1>Buchformular</h1>
-<form [ngFormModel]="myForm"
+<form [formGroup]="myForm"
       (ngSubmit)="submitForm(myForm)"
       class="ui form grid">
 
@@ -7,21 +7,21 @@
     <h4>Buchtitel</h4>
   </div>
   <div class="eleven wide column">
-    <input ngControl="title">
+    <input formControlName="title">
   </div>
 
   <div class="four wide column">
     <h4>Untertitel</h4>
   </div>
   <div class="eleven wide column">
-    <input ngControl="subtitle">
+    <input formControlName="subtitle">
   </div>
 
   <div class="four wide column">
     <h4>Erscheinungsdatum</h4>
   </div>
   <div class="eleven wide column">
-    <input ngControl="published">
+    <input formControlName="published">
   </div>
 
   <div class="row">
@@ -30,10 +30,10 @@
     </div>
     <div class="eleven wide column">
       <div class="fields">
-        <div ngControlGroup="authors"
+        <div formArrayName="authors"
             *ngFor="let control of authorsControlArray.controls; let i = index"
             class="sixteen wide field">
-            <input ngControl="{{i}}" placeholder="Autor {{i+1}}">
+            <input formControlName="{{i}}" placeholder="Autor {{i+1}}">
         </div>
       </div>
     </div>
@@ -46,7 +46,7 @@
     <h4>ISBN</h4>
   </div>
   <div class="eleven wide column">
-    <input ngControl="isbn">
+    <input formControlName="isbn">
   </div>
 
 
@@ -54,7 +54,7 @@
     <h4>Beschreibung</h4>
   </div>
   <div class="eleven wide column">
-    <textarea ngControl="description" rows="3"></textarea>
+    <textarea formControlName="description" rows="3"></textarea>
   </div>
 
   <div class="row">
@@ -62,11 +62,11 @@
       <h4>Thumbnails</h4>
     </div>
     <div class="eleven wide column">
-        <div ngControlGroup="thumbnails"
+        <div formArrayName="thumbnails"
             *ngFor="let control of thumbnailsControlArray.controls; let i = index">
-            <div ngControlGroup="{{i}}" class="inline fields">
-                <input ngControl="url" placeholder="http://bild{{i+1}}_Url">
-                <input ngControl="title" placeholder="Bild {{i+1}} Titel">
+            <div formGroupName="{{i}}" class="inline fields">
+                <input formControlName="url" placeholder="http://bild{{i+1}}_Url">
+                <input formControlName="title" placeholder="Bild {{i+1}} Titel">
             </div>
           </div>
         </div>
