@@ -30,7 +30,7 @@
     "zone.js": "0.6.12"
   },
   "devDependencies": {
-    "angular-cli": "1.0.0-beta.8",
+    "angular-cli": "1.0.0-beta.9",
     "angular-cli-ghpages": "*",
     "book-monkey2-api": "*",
     "codelyzer": "0.0.20",
@@ -41,14 +41,10 @@
     "karma": "0.13.22",
     "karma-chrome-launcher": "0.2.3",
     "karma-jasmine": "0.3.8",
-    "minimatch": "^3.0.2",
-    "object-assign": "^4.1.0",
     "protractor": "3.3.0",
-    "through": "^2.3.8",
     "ts-node": "0.5.5",
     "tslint": "3.11.0",
     "typescript": "1.8.10",
-    "typings": "0.8.1",
-    "walk-sync": "^0.2.6"
+    "typings": "0.8.1"
   }
 }

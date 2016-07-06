@@ -1,15 +1,15 @@
 <h1>Buchformular</h1>
-<form [ngFormModel]="myForm"
+<form [formGroup]="myForm"
       (ngSubmit)="submitForm(myForm)"
-      class="grid ui form">
+      class="ui form grid">
 
   <div class="four wide column">
     <h4>Buchtitel</h4>
   </div>
   <div class="eleven wide column form">
-    <input ngControl="title" #title="ngForm"/>
+    <input formControlName="title"/>
     <div class="ui negative message"
-         *ngIf="title.dirty && !title.valid">
+         *ngIf="myForm.controls.title.dirty && !title.valid">
       Geben Sie den Titel des Buches an.
     </div>
   </div>
@@ -18,17 +18,17 @@
     <h4>Untertitel</h4>
   </div>
   <div class="eleven wide column">
-    <input ngControl="subtitle">
+    <input formControlName="subtitle">
   </div>
 
   <div class="four wide column">
     <h4>Erscheinungsdatum</h4>
   </div>
   <div class="eleven wide column">
-    <input ngControl="published" #published="ngForm">
+    <input formControlName="published">
     <div class="ui message"
-        [ngClass]="{negative: published.touched}"
-         *ngIf="published.dirty && !published.valid">
+        [ngClass]="{negative: myForm.controls.published.touched}"
+         *ngIf="myForm.controls.published.dirty && !myForm.controls.published.valid">
       Bitte geben Sie das Datum mit folgendem Format ein: dd.MM.yyyy
     </div>
   </div>
@@ -39,22 +39,22 @@
     </div>
     <div class="eleven wide column">
       <div class="fields">
-        <div ngControlGroup="authors"
+        <div formArrayName="authors"
             *ngFor="let control of authorsControlArray.controls; let i = index"
             class="sixteen wide field">
-            <input ngControl="{{i}}" placeholder="Autor {{i+1}}">
+            <input formControlName="{{i}}" placeholder="Autor {{i+1}}">
         </div>
       </div>
       <div class="ui negative message"
-           *ngIf="myForm.controls['authors'].dirty
-              && !myForm.controls['authors'].valid">
+           *ngIf="myForm.controls.authors.dirty
+              && !myForm.controls.authors.valid">
         Geben Sie mindestens einen Autor an.
       </div>
     </div>
     <div class="one wide field">
       <button type="button"
               (click)="addAuthorControl()"
-              [disabled]="!myForm.controls['authors'].valid"
+              [disabled]="!myForm.controls.authors.valid"
               class="ui button"> + </button>
     </div>
   </div>
@@ -63,9 +63,9 @@
     <h4>ISBN</h4>
   </div>
   <div class="eleven wide column">
-    <input ngControl="isbn" #isbn="ngForm">
+    <input formControlName="isbn">
     <div class="ui negative message"
-         *ngIf="isbn.dirty && isbn.touched && isbn.errors && isbn.errors.isbn">
+         *ngIf="myForm.controls.isbn.dirty && myForm.controls.isbn.touched && myForm.controls.isbn.errors && myForm.controls.isbn.errors.isbn">
       Geben Sie eine gültige ISBN an.
     </div>
   </div>
@@ -74,7 +74,7 @@
     <h4>Beschreibung</h4>
   </div>
   <div class="eleven wide column">
-    <textarea ngControl="description" rows="3"></textarea>
+    <textarea formControlName="description" rows="3"></textarea>
   </div>
 
   <div class="row">
@@ -82,18 +82,18 @@
       <h4>Thumbnails</h4>
     </div>
     <div class="eleven wide column">
-        <div ngControlGroup="thumbnails"
+        <div formArrayName="thumbnails"
             *ngFor="let control of thumbnailsControlArray.controls; let i = index">
-            <div ngControlGroup="{{i}}" class="inline fields">
-                <input ngControl="url" placeholder="http://bild{{i+1}}_Url">
-                <input ngControl="title" placeholder="Bild {{i+1}} Titel">
+            <div formGroupName="{{i}}" class="inline fields">
+                <input formControlName="url" placeholder="http://bild{{i+1}}_Url">
+                <input formControlName="title" placeholder="Bild {{i+1}} Titel">
             </div>
           </div>
         </div>
     <div class="one wide field">
       <button type="button" class="ui button"
               (click)="addThumbnailControl()"
-              [disabled]="!myForm.controls['thumbnails'].valid"> +
+              [disabled]="!myForm.controls.thumbnails.valid"> +
       </button>
     </div>
   </div>

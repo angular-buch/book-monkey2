@@ -1,21 +1,22 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { ControlGroup, ControlArray, FormBuilder, Validators } from '@angular/common';
-import { DateValidator } from '../validators/date.validator'
-import { IsbnValidator } from '../validators/isbn.validator'
-import { Book } from '../domain/book'
-import { BookStoreService } from '../services/books/book-store.service'
+import { FormBuilder, FormGroup, FormArray, REACTIVE_FORM_DIRECTIVES, Validators } from '@angular/forms';
+import { DateValidator } from '../validators/date.validator';
+import { IsbnValidator } from '../validators/isbn.validator';
+import { Book } from '../domain/book';
+import { BookStoreService } from '../services/books/book-store.service';
 
 @Component({
   selector: 'book-form',
   moduleId: module.id,
   templateUrl: 'book-form.component.html',
-  providers: [BookStoreService]
+  providers: [BookStoreService],
+  directives: [REACTIVE_FORM_DIRECTIVES]
 })
 export class BookFormComponent implements OnInit {
-  myForm: ControlGroup;
-  authorsControlArray: ControlArray;
-  thumbnailsControlArray: ControlArray;
+  myForm: FormGroup;
+  authorsFormArray: FormArray;
+  thumbnailsFormArray: FormArray;
   isUpdatingBook: boolean;
 
   constructor(
@@ -24,7 +25,6 @@ export class BookFormComponent implements OnInit {
     private route: ActivatedRoute
   ) {
     this.isUpdatingBook = false;
-    this.initBook();
   }
 
   ngOnInit():void {
@@ -35,7 +35,7 @@ export class BookFormComponent implements OnInit {
         this.isUpdatingBook = true;
         this.bs.getSingle(isbn)
           .subscribe(b => this.initBook(b));
-      }
+      } else this.initBook();
     });
   }
 
@@ -46,9 +46,11 @@ export class BookFormComponent implements OnInit {
       title: [book.title, Validators.required],
       subtitle: [book.subtitle],
       isbn: [book.isbn, Validators.compose([
-        Validators.required,
-        IsbnValidator.isbn
-        /* TODO Async check if isbn exists */
+        Validators.required
+        /*
+        TODO: Add IsbnValidator.isbn
+        TODO: Add Async check if isbn exists
+        */
       ])],
       description: [book.description],
       authors: this.fb.array(book.authors, Validators.required),
@@ -64,16 +66,16 @@ export class BookFormComponent implements OnInit {
     });
         
     // this allows us to manipulate the form at runtime
-    this.authorsControlArray = <ControlArray>this.myForm.controls['authors'];
-    this.thumbnailsControlArray = <ControlArray>this.myForm.controls['thumbnails'];
+    this.authorsFormArray = <FormArray>this.myForm.controls['authors'];
+    this.thumbnailsFormArray = <FormArray>this.myForm.controls['thumbnails'];
   }
 
   addAuthorControl(){
-    this.authorsControlArray.push(this.fb.control(''));
+    this.authorsFormArray.push(this.fb.control(''));
   }
 
   addThumbnailControl(){
-    this.thumbnailsControlArray.push(this.fb.group({url: [''], title: ['']}));
+    this.thumbnailsFormArray.push(this.fb.group({url: [''], title: ['']}));
   }
 
   submitForm(formData){

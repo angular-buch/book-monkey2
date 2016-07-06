@@ -25,7 +25,6 @@ export class BookFormComponent implements OnInit {
     private route: ActivatedRoute
   ) {
     this.isUpdatingBook = false;
-    this.initBook();
   }
 
   ngOnInit():void {
@@ -36,7 +35,7 @@ export class BookFormComponent implements OnInit {
         this.isUpdatingBook = true;
         let book = this.bs.getSingle(isbn);
         this.initBook(book)
-      }
+      } else this.initBook();
     });
   }
 
