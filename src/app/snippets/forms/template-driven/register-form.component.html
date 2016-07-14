@@ -1,9 +1,9 @@
-<form #form="ngForm" (ngSubmit)="login(form.value)">
+<form #form="ngForm" (ngSubmit)="register(form.value)">
   <label>Benutzername:</label>
   <input type="text" name="username" ngModel>
 
   <label>Passwort:</label>
   <input type="password" name="password" ngModel>
 
-  <button type="submit">Einloggen</button>
+  <button type="submit">Registrieren</button>
 </form>

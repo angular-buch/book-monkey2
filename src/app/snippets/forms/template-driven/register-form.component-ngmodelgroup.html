@@ -1,0 +1,17 @@
+<form #form="ngForm" (ngSubmit)="register(form.value)">
+  <label>Benutzername:</label>
+  <input type="text" name="username" ngModel>
+
+  <label>Passwort:</label>
+  <input type="password" name="password" ngModel>
+
+  <fieldset ngModelGroup="fullname">
+    <label>Vorname:</label>
+    <input type="text" name="prename" ngModel>
+
+    <label>Nachname:</label>
+    <input type="text" name="suranme" ngModel>
+  </fieldset>
+
+  <button type="submit">Registrieren</button>
+</form>
