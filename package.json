@@ -30,7 +30,7 @@
     "zone.js": "0.6.12"
   },
   "devDependencies": {
-    "angular-cli": "1.0.0-beta.9",
+    "angular-cli": "1.0.0-beta.10",
     "angular-cli-ghpages": "*",
     "book-monkey2-api": "*",
     "codelyzer": "0.0.20",
