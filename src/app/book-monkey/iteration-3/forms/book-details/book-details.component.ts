@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ROUTER_DIRECTIVES } from '@angular/router';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Book } from '../domain/book';
-import { BookStoreService } from '../services/books/book-store.service';
+import { Book } from '../shared/book';
+import { BookStoreService } from '../shared/book-store.service';
 
 @Component({
   selector: 'book-details',

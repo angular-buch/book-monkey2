@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, FormArray, REACTIVE_FORM_DIRECTIVES } from '@angular/forms';
-import { Book } from '../domain/book'
-import { BookStoreService } from '../services/books/book-store.service'
+import { Book } from '../shared/book'
+import { BookStoreService } from '../shared/book-store.service'
 
 @Component({
   selector: 'book-form',

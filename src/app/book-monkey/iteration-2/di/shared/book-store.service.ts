@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Book, Thumbnail } from '../../domain/book';
+import { Book, Thumbnail } from './book';
 
 @Injectable()
 export class BookStoreService {
@@ -30,23 +30,7 @@ export class BookStoreService {
     ]
   }
 
-  getAll(): Array<Book> {
+  getAll(){
     return this.books;
-  }
-
-  getSingle(isbn): Book {
-    return this.books.find(book => book.isbn === isbn);
-  }
-
-  create(book: Book): void {
-    console.log('creates new book', book);
-  }
-
-  update(book: Book): void {
-    console.log('updates book', book);
-  }
-
-  delete(isbn: string): void {
-    console.log(`deletes book with isbn: ${isbn}`);
   }
 }

@@ -1,10 +1,10 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, FormArray, REACTIVE_FORM_DIRECTIVES, Validators } from '@angular/forms';
-import { DateValidator } from '../validators/date.validator';
-import { IsbnValidator } from '../validators/isbn.validator';
-import { Book } from '../domain/book';
-import { BookStoreService } from '../services/books/book-store.service';
+import { DateValidator } from '../shared/date.validator';
+import { IsbnValidator } from '../shared/isbn.validator';
+import { Book } from '../shared/book';
+import { BookStoreService } from '../shared/book-store.service';
 
 @Component({
   selector: 'book-form',

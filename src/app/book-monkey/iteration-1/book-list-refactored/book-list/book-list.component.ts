@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { BookListItemComponent } from '../book-list-item/index';
-import { Book, Thumbnail } from '../domain/book';
+import { Book, Thumbnail } from '../shared/book';
 
 @Component({
   selector: 'book-list',
