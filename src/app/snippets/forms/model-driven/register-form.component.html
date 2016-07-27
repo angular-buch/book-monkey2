@@ -1,19 +1,19 @@
-<form>
+<form [formGroup]="registerForm">
   <label>Benutzername:</label>
-  <input type="text">
+  <input formControlName="username" type="text">
 
   <label>Passwort:</label>
-  <input type="password">
+  <input formControlName="password" type="password">
   
-  <fieldset>
+  <fieldset formGroupName="name">
     <label>Vorname:</label>
-    <input type="text">
+    <input formControlName="prename" type="text">
 
     <label>Nachname:</label>
-    <input type="text">
+    <input formControlName="surname" type="text">
   </fieldset>
 
-  <fieldset>
+  <fieldset formArrayName="email">
     <label>E-Mail-Adressen:</label>
     <input type="text">
     <input type="text">

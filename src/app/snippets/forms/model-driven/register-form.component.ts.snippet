@@ -1,0 +1,26 @@
+import { Component } from '@angular/core';
+import { FormGroup, FormArray, FormControl } from '@angular/forms';
+
+@Component({
+  selector: 'register-form',
+  template: 'register-form.component.html'
+})
+class RegisterForm {
+  registerForm = new FormGroup({
+    username: new FormControl(),
+    password: new FormControl(),
+    name: new FormGroup({
+      prename: new FormControl(),
+      surname: new FormControl()
+    }),
+    email: new FormArray([
+      new FormControl(),
+      new FormControl(),
+      new FormControl()
+    ])
+  });
+  
+  register(value: any) {
+    console.log(value);
+  }
+}
