@@ -3,8 +3,9 @@ import { FormBuilder, FormGroup, FormArray, REACTIVE_FORM_DIRECTIVES } from '@an
 
 @Component({
   selector: 'register-form',
-  template: 'register-form.component.html',
-  directives: [REACTIVE_FORM_DIRECTIVES]
+  templateUrl: 'register-form.component.html',
+  styleUrls: [ 'register-form.component.css' ],
+  directives: [ REACTIVE_FORM_DIRECTIVES ]
 })
 class RegisterForm {
   registerForm = new FormGroup({
