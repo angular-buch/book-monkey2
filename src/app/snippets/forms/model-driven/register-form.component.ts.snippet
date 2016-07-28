@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
-import { FormGroup, FormArray, FormControl } from '@angular/forms';
+import { FormBuilder, FormGroup, FormArray, REACTIVE_FORM_DIRECTIVES } from '@angular/forms';
 
 @Component({
   selector: 'register-form',
-  template: 'register-form.component.html'
+  template: 'register-form.component.html',
+  directives: [REACTIVE_FORM_DIRECTIVES]
 })
 class RegisterForm {
   registerForm = new FormGroup({
