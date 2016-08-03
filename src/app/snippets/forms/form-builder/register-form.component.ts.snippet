@@ -1,0 +1,32 @@
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, REACTIVE_FORM_DIRECTIVES } from '@angular/forms';
+
+@Component({
+  selector: 'register-form',
+  templateUrl: 'register-form.component.html',
+  styleUrls: [ 'register-form.component.css' ],
+  directives: [ REACTIVE_FORM_DIRECTIVES ]
+})
+class RegisterForm implements OnInit{
+  registerForm: FormGroup;
+  
+  constructor(private fb: FormBuilder) { }
+
+  ngOnInit() {
+    this.registerForm = this.fb.group({
+      username: [],
+      password: [],
+      name: this.fp.group({
+        firstname: [],
+        lastname: []
+      }),
+      email: this.fb.array([
+        [], [], []
+      ])
+    });
+  }
+
+  register(value: any) {
+    console.log(value);
+  }
+}
