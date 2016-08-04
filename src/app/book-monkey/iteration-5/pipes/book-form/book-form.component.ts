@@ -23,12 +23,12 @@ export class BookFormComponent implements OnInit {
     private fb: FormBuilder, 
     private bs: BookStoreService,
     private route: ActivatedRoute
-  ) {
-    this.isUpdatingBook = false;
-    this.initBook();
-  }
+  ) { }
 
   ngOnInit():void {
+    this.isUpdatingBook = false;
+    this.initBook();
+
     this.route.params.subscribe(params => {
       var isbn = params['isbn'];
     

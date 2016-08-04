@@ -18,11 +18,11 @@ export class BookDetailsComponent implements OnInit {
     private bs: BookStoreService,
     private router: Router,
     private route: ActivatedRoute
-  ) { 
-    this.book = new Book('', '', [''], new Date(), '', 0, [{url:'', title: ''}], '');  
-  }
+  ) { }
 
   ngOnInit():void {
+    this.book = new Book('', '', [''], new Date(), '', 0, [{url:'', title: ''}], '');  
+    
     this.route.params.subscribe(params => {
       this.bs.getSingle(params['isbn'])
         .subscribe(b => this.book = b);

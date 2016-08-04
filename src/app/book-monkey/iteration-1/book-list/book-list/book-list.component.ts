@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Book, Thumbnail } from '../shared/book';
 
 @Component({
@@ -6,10 +6,10 @@ import { Book, Thumbnail } from '../shared/book';
   moduleId: module.id,
   templateUrl: 'book-list.component.html'
 })
-export class BookListComponent {
+export class BookListComponent implements OnInit {
   books: Book[];
 
-  constructor() {
+  ngOnInit(){
     this.books = [
       new Book(
        '9783864903571',
