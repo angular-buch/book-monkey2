@@ -1,12 +1,10 @@
-import { Control } from '@angular/common';
-import { ValidationResult } from './validation-result';
+import { FormControl } from '@angular/forms';
 
-export class IsbnValidator {
-  static isbn(control: Control): ValidationResult {
-    let isolatedNumbers = control.value.replace(/\D/g, '');
-    let isbnPattern = /(^\d{10}$)|(^\d{13}$)/g;
-    if (!isolatedNumbers.match(isbnPattern))
-      return { "isbn": true };
-    return null;
+export function validateIsbn(control: FormControl): {[error: string]:any} {
+  let isolatedNumbers = control.value.replace(/\D/g, '');
+  let isbnPattern = /(^\d{10}$)|(^\d{13}$)/g;
+  
+  return isbnPattern.test(isolatedNumbers) ? null : {
+    validateIsbn: { valid: false }
   }
 }

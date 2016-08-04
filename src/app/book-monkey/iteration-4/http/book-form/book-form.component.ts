@@ -1,8 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, FormArray, REACTIVE_FORM_DIRECTIVES, Validators } from '@angular/forms';
-import { DateValidator } from '../shared/date.validator';
-import { IsbnValidator } from '../shared/isbn.validator';
+import { validateIsbn } from '../shared/isbn.validator';
 import { Book } from '../shared/book';
 import { BookStoreService } from '../shared/book-store.service';
 
@@ -47,11 +46,8 @@ export class BookFormComponent implements OnInit {
       title: [book.title, Validators.required],
       subtitle: [book.subtitle],
       isbn: [book.isbn, Validators.compose([
-        Validators.required
-        /*
-        TODO: Add IsbnValidator.isbn
-        TODO: Add Async check if isbn exists
-        */
+        Validators.required,
+        validateIsbn
       ])],
       description: [book.description],
       authors: this.fb.array(book.authors, Validators.required),
@@ -63,8 +59,11 @@ export class BookFormComponent implements OnInit {
           })
         )
       ),
-      published: [book.published] // , DateValidator.germanDate
-    });
+      published: [
+        book.published, 
+        Validators.pattern('([1-9]|0[1-9]|(1|2)[0-9]|3[0-1])\.([1-9]|0[1-9]|1[0-2])\.[0-9]{4}')
+      ]
+     });
         
     // this allows us to manipulate the form at runtime
     this.authorsFormArray = <FormArray>this.myForm.controls['authors'];
