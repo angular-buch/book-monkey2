@@ -14,15 +14,13 @@ class RegisterForm implements OnInit{
 
   ngOnInit() {
     this.registerForm = this.fb.group({
-      username: [],
-      password: [],
+      username: '',
+      password: '',
       name: this.fp.group({
-        firstname: [],
-        lastname: []
+        firstname: '',
+        lastname: ''
       }),
-      email: this.fb.array([
-        [], [], []
-      ])
+      email: this.fb.array(['', '', ''])
     });
   }
 
