@@ -42,10 +42,10 @@ export class BookFormComponent implements OnInit {
     if(!book) book = new Book('', '', [''], new Date(), '', 0, [{url:'', title: ''}], '');
 
     this.myForm = this.fb.group({
-      title:       [book.title],
-      subtitle:    [book.subtitle],
-      isbn:        [book.isbn],
-      description: [book.description],
+      title:       book.title,
+      subtitle:    book.subtitle,
+      isbn:        book.isbn,
+      description: book.description,
       authors:      this.fb.array(book.authors),
       thumbnails:   this.fb.array(
         book.thumbnails.map(
@@ -55,7 +55,7 @@ export class BookFormComponent implements OnInit {
           })
         )
       ),
-      published: [book.published]
+      published: book.published
     });
 
     // this allows us to manipulate the form at runtime
