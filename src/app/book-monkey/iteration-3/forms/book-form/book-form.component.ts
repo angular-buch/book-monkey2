@@ -13,8 +13,8 @@ import { BookStoreService } from '../shared/book-store.service'
 })
 export class BookFormComponent implements OnInit {
   myForm: FormGroup;
-  authorsControlArray: FormArray;
-  thumbnailsControlArray: FormArray;
+  authors: FormArray;
+  thumbnails: FormArray;
   isUpdatingBook: boolean;
 
   constructor(
@@ -46,29 +46,35 @@ export class BookFormComponent implements OnInit {
       subtitle:    book.subtitle,
       isbn:        book.isbn,
       description: book.description,
-      authors:      this.fb.array(book.authors),
-      thumbnails:   this.fb.array(
-        book.thumbnails.map(
-          t => this.fb.group({
-            url: this.fb.control(t.url),
-            title: this.fb.control(t.title)
-          })
-        )
-      ),
-      published: book.published
+      authors:     this.buildAuthorsArray(book.authors),
+      thumbnails:  this.buildThumbnialsArray(book.thumbnails),
+      published:   book.published
     });
+  }
 
-    // this allows us to manipulate the form at runtime
-    this.authorsControlArray = <FormArray>this.myForm.controls['authors'];
-    this.thumbnailsControlArray = <FormArray>this.myForm.controls['thumbnails'];
+  buildAuthorsArray(authors): FormArray {
+    this.authors = this.fb.array(authors);
+    return this.authors;
+  }
+
+  buildThumbnialsArray(thumbnails): FormArray {
+    this.thumbnails = this.fb.array(
+      thumbnails.map(
+        t => this.fb.group({
+          url: this.fb.control(t.url),
+          title: this.fb.control(t.title)
+        })
+      )
+    );
+    return this.thumbnails;
   }
 
   addAuthorControl(){
-    this.authorsControlArray.push(this.fb.control(''));
+    this.authors.push(this.fb.control(''));
   }
 
   addThumbnailControl(){
-    this.thumbnailsControlArray.push(this.fb.group({url: [''], title: ['']}));
+    this.thumbnails.push(this.fb.group({url: [''], title: ['']}));
   }
 
   submitForm(formData){

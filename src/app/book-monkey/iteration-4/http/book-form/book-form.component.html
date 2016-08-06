@@ -9,7 +9,7 @@
   <div class="eleven wide column form">
     <input formControlName="title"/>
     <div class="ui negative message"
-         *ngIf="myForm.controls.title.dirty && !title.valid">
+         *ngIf="myForm.controls.title.dirty && !myForm.controls.title.valid">
       Geben Sie den Titel des Buches an.
     </div>
   </div>
@@ -40,7 +40,7 @@
     <div class="eleven wide column">
       <div class="fields">
         <div formArrayName="authors"
-            *ngFor="let control of myForm.controls.authors.controls; let i = index"
+            *ngFor="let control of authors.controls; let i = index"
             class="sixteen wide field">
             <input formControlName="{{i}}" placeholder="Autor {{i+1}}">
         </div>
@@ -83,8 +83,8 @@
     </div>
     <div class="eleven wide column">
         <div formArrayName="thumbnails"
-            *ngFor="let control of myForm.controls.thumbnails.controls; let i = index">
-            <div formGroupName="{{i}}" class="inline fields">
+            *ngFor="let control of thumbnails.controls; let i = index">
+            <div [formGroupName]="i" class="inline fields">
                 <input formControlName="url" placeholder="http://bild{{i+1}}_Url">
                 <input formControlName="title" placeholder="Bild {{i+1}} Titel">
             </div>

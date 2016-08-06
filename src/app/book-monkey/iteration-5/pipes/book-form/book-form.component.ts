@@ -14,8 +14,8 @@ import { BookStoreService } from '../shared/book-store.service';
 })
 export class BookFormComponent implements OnInit {
   myForm: FormGroup;
-  authorsFormArray: FormArray;
-  thumbnailsFormArray: FormArray;
+  authors: FormArray;
+  thumbnails: FormArray;
   isUpdatingBook: boolean;
 
   constructor(
@@ -39,7 +39,7 @@ export class BookFormComponent implements OnInit {
     });
   }
 
-  initBook(book?:Book){
+initBook(book?:Book){
     if(!book) book = new Book('', '', [''], new Date(), '', 0, [{url:'', title: ''}], '');
 
     this.myForm = this.fb.group({
@@ -50,32 +50,38 @@ export class BookFormComponent implements OnInit {
         validateIsbn
       ])],
       description: [book.description],
-      authors: this.fb.array(book.authors, Validators.required),
-      thumbnails: this.fb.array(
-        book.thumbnails.map(
-          t => this.fb.group({
-            url: this.fb.control(t.url, Validators.required),
-            title: this.fb.control(t.title)
-          })
-        )
-      ),
+      authors:     this.buildAuthorsArray(book.authors),
+      thumbnails:  this.buildThumbnialsArray(book.thumbnails),
       published: [
         book.published, 
         Validators.pattern('([1-9]|0[1-9]|(1|2)[0-9]|3[0-1])\.([1-9]|0[1-9]|1[0-2])\.[0-9]{4}')
       ]
      });
-        
-    // this allows us to manipulate the form at runtime
-    this.authorsFormArray = <FormArray>this.myForm.controls['authors'];
-    this.thumbnailsFormArray = <FormArray>this.myForm.controls['thumbnails'];
+  }
+
+  buildAuthorsArray(authors): FormArray {
+    this.authors = this.fb.array(authors, Validators.required);
+    return this.authors;
+  }
+
+  buildThumbnialsArray(thumbnails): FormArray {
+    this.thumbnails = this.fb.array(
+      thumbnails.map(
+        t => this.fb.group({
+          url: this.fb.control(t.url, Validators.required),
+          title: this.fb.control(t.title)
+        })
+      )
+    );
+    return this.thumbnails;
   }
 
   addAuthorControl(){
-    this.authorsFormArray.push(this.fb.control(''));
+    this.authors.push(this.fb.control(''));
   }
 
   addThumbnailControl(){
-    this.thumbnailsFormArray.push(this.fb.group({url: [''], title: ['']}));
+    this.thumbnails.push(this.fb.group({url: [''], title: ['']}));
   }
 
   submitForm(formData){
