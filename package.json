@@ -8,7 +8,7 @@
     "ng": "ng",
     "postinstall": "typings install",
     "lint": "tslint \"src/**/*.ts\"",
-    "test": "ng test",
+    "test": "ng build && ng test --build=false",
     "pree2e": "webdriver-manager update",
     "e2e": "protractor"
   },
