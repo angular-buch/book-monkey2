@@ -1,24 +1,13 @@
-/*
-import {
-  beforeEachProviders,
-  describe,
-  expect,
-  it,
-  inject
-} from '@angular/core/testing';
-import { AppComponent } from '../app/book-monkey.component';
-
-beforeEachProviders(() => [AppComponent]);
+import { addProviders, inject } from '@angular/core/testing';
+import { AppComponent } from './app.component';
 
 describe('App: BookMonkey', () => {
+  beforeEach(() => {
+    addProviders([AppComponent]);
+  });
+
   it('should create the app',
       inject([AppComponent], (app: AppComponent) => {
     expect(app).toBeTruthy();
   }));
-
-  it('should have as title \'book-monkey works!\'',
-      inject([AppComponent], (app: AppComponent) => {
-    expect(app.title).toEqual('book-monkey works!');
-  }));
 });
-*/
