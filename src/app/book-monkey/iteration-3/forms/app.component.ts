@@ -3,7 +3,7 @@ import { ROUTER_DIRECTIVES } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  moduleId: module.id,
+  
   templateUrl: 'app.component.html',
   styles: [
     `.router-link-active {

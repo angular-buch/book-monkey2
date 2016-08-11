@@ -6,7 +6,7 @@ import { BookStoreService } from '../shared/book-store.service'
 
 @Component({
   selector: 'book-form',
-  moduleId: module.id,
+  
   templateUrl: 'book-form.component.html',
   providers: [BookStoreService],
   directives: [REACTIVE_FORM_DIRECTIVES]
