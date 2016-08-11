@@ -3,12 +3,12 @@ import { HomeComponent } from './home/home.component';
 
 export const IterationRoutes: RouterConfig = [
     {
-        path: '',          
+        path: '',   
         component: HomeComponent
     },
     {
         path: 'iteration-1',
-        loadChildren: 'app/book-monkey/iteration-1/iteration-1.module#IterationOneModule'
+        loadChildren: './book-monkey/iteration-1/iteration-1.module'
     }
     /*,
     {
