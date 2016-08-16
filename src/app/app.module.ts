@@ -1,22 +1,22 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule  } from '@angular/platform-browser';
-import { AppComponent } from './app.component';
-import { RouterModule } from '@angular/router'
-import { IterationRoutes } from './app.routes'
 
-import { HomeComponent } from './home';
+/* App Root */
+import { AppComponent } from './app.component';
+import { HomeComponent } from './home/';
+
+import { routing } from './app.routing'
+
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HomeComponent
-  ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(IterationRoutes)
+    routing
   ],
-  providers: [],
-  entryComponents: [AppComponent],
-  bootstrap: [AppComponent]
+  declarations: [ 
+    AppComponent, 
+    HomeComponent 
+  ],
+  bootstrap: [ AppComponent ]
 })
 export class AppModule { }

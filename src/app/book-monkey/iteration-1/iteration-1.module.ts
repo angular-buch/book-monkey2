@@ -1,20 +1,9 @@
 import { NgModule } from '@angular/core';
 import { IterationOneComponent } from './iteration-1.component';
-import { RouterModule } from '@angular/router'
-import { IterationRoutes } from './iteration-1.routes'
+import { routing } from './iteration-1.routing'
 
 @NgModule({
-  declarations: [
-    IterationOneComponent
-  ],
-  imports: [
-    RouterModule.forChild(IterationRoutes)
-  ],
-  providers: [],
-  bootstrap: [IterationOneComponent]
+  imports: [ routing ],
+  declarations: [ IterationOneComponent ]
 })
-export class AppModule { 
-  constructor(){
-    console.log('hi there');
-  }
-}
+export default class IterationOneModule { }

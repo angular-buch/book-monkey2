@@ -1,15 +1,10 @@
-import { RouterConfig } from '@angular/router';
-import { HomeComponent } from './home/home.component';
+import { Routes, RouterModule } from '@angular/router';
+import { HomeComponent } from './home/';
 
-export const IterationRoutes: RouterConfig = [
-    {
-        path: '',   
-        component: HomeComponent
-    },
-    {
-        path: 'iteration-1',
-        loadChildren: './book-monkey/iteration-1/iteration-1.module'
-    }
+export const routes: Routes = [
+    { path: '', component: HomeComponent },
+    //{ path: 'iteration-1', loadChildren: 'app/book-monkey/iteration-1/iteration-1.module#IterationOneModule' }
+    { path: 'iteration-1', loadChildren: 'app/book-monkey/iteration-1/book-list/app.module#AppModule' }
     /*,
     {
         path: 'iteration-2',
@@ -28,4 +23,6 @@ export const IterationRoutes: RouterConfig = [
         loadChildren: './book-monkey/iteration-5/iteration-5.module#IterationFiveModule'
     }*/
 ];
+
+export const routing = RouterModule.forRoot(routes);
 

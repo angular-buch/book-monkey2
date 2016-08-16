@@ -3,7 +3,6 @@ import { Book, Thumbnail } from '../shared/book';
 
 @Component({
   selector: 'book-list',
-  
   templateUrl: 'book-list.component.html'
 })
 export class BookListComponent implements OnInit {

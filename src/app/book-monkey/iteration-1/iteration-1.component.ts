@@ -1,10 +1,6 @@
 import { Component } from '@angular/core';
-import { ROUTER_DIRECTIVES } from '@angular/router';
-
-
 
 @Component({
-  selector: 'iteration-1',
   template: `
     <div class="ui three small ordered steps">
       <a [routerLink]="['book-list']"
@@ -29,7 +25,6 @@ import { ROUTER_DIRECTIVES } from '@angular/router';
     <div class="ui raised padded container segment">
       <router-outlet></router-outlet>
     </div>
-  `,
-  directives: [ROUTER_DIRECTIVES]
+  `
 })
 export class IterationOneComponent { }

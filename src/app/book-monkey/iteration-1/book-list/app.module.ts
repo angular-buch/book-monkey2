@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule  } from '@angular/platform-browser';
+import { CommonModule } from '@angular/common';
 import { AppComponent } from './app.component';
 import { BookListComponent } from './book-list';
 
@@ -8,10 +8,7 @@ import { BookListComponent } from './book-list';
     AppComponent,
     BookListComponent
   ],
-  imports: [
-    BrowserModule,
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+  imports: [CommonModule],
+  providers: []
 })
-export class AppModule { }
+export default class AppModule { }
