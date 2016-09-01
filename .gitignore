@@ -33,3 +33,4 @@ testem.log
 Thumbs.db
 
 .vscode/launch.json
+npm-debug.*
