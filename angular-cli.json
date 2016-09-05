@@ -12,10 +12,11 @@
       "main": "main.ts",
       "test": "test.ts",
       "tsconfig": "tsconfig.json",
-      "prefix": "app",
+      "prefix": "bm",
       "mobile": false,
       "styles": [
-        "styles.css"
+        "styles.css",
+        "../node_modules/semantic-ui-css/semantic.css"
       ],
       "scripts": [],
       "environments": {
