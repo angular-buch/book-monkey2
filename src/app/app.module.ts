@@ -12,7 +12,8 @@ import { routing } from './app.routing';
     HomeComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    routing
   ],
   providers: [],
   bootstrap: [AppComponent]
