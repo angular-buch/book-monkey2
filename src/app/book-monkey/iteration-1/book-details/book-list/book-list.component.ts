@@ -4,7 +4,7 @@ import { Book, Thumbnail } from '../shared/book';
 
 @Component({
   selector: 'book-list',
-  moduleId: module.id,
+  
   templateUrl: 'book-list.component.html',
   directives: [BookListItemComponent]  
 })

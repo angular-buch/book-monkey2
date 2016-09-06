@@ -5,7 +5,7 @@ import { BookStoreService } from '../shared/book-store.service';
 
 @Component({
   selector: 'book-list',
-  moduleId: module.id,
+  
   templateUrl: 'book-list.component.html',
   directives: [BookListItemComponent],
   providers: [BookStoreService]

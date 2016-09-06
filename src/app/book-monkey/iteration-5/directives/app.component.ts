@@ -5,7 +5,7 @@ import { ROUTER_DIRECTIVES } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  moduleId: module.id,
+  
   templateUrl: 'app.component.html',
   directives: [ROUTER_DIRECTIVES /*, ActiveClassDirective*/],
   providers: [HTTP_PROVIDERS]

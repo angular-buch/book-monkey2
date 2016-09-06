@@ -3,7 +3,7 @@ import { ROUTER_DIRECTIVES } from '@angular/router';
 
 @Component({
   selector: 'book-monkey-app',
-  moduleId: module.id,
+  
   templateUrl: 'app.component.html',
   styles: [
     `.router-link-active {

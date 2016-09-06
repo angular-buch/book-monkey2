@@ -3,7 +3,7 @@ import { Book, Thumbnail } from '../shared/book';
 
 @Component({
   selector: 'book-details',
-  moduleId: module.id,
+  
   templateUrl: 'book-details.component.html'
 })
 export class BookDetailsComponent {
