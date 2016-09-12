@@ -1,18 +1,15 @@
 import { Component, OnInit, Output, EventEmitter  } from '@angular/core';
-import { BookListItemComponent } from '../book-list-item/index';
 import { Book, Thumbnail } from '../shared/book';
 
 @Component({
   selector: 'book-list',
-  
   templateUrl: 'book-list.component.html',
-  directives: [BookListItemComponent]  
 })
 export class BookListComponent implements OnInit {
   books: Book[];
-  @Output() showDetailsEvent:EventEmitter<any> = new EventEmitter();
+  @Output() showDetailsEvent: EventEmitter<any> = new EventEmitter();
 
-  ngOnInit(){
+  ngOnInit() {
     this.books = [
       new Book(
        '9783864903571',
@@ -37,7 +34,7 @@ export class BookListComponent implements OnInit {
    ];
   }
 
-  showDetails(book: Book){
+  showDetails(book: Book) {
     this.showDetailsEvent.emit(book);
   }
 }

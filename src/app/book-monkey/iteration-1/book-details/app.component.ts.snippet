@@ -1,6 +1,5 @@
 @Component({
   selector: 'app-root',
-  directives: [BookListComponent, BookDetailsComponent, CORE_DIRECTIVES],
   template: `
     <book-list *ngIf="listOn"></book-list>
     <book-details *ngIf="detailsOn" [book]="book"></book-details>

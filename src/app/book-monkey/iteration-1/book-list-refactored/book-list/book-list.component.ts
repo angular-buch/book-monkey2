@@ -1,17 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { BookListItemComponent } from '../book-list-item/index';
 import { Book, Thumbnail } from '../shared/book';
 
 @Component({
   selector: 'book-list',
-  
-  templateUrl: 'book-list.component.html',
-  directives: [BookListItemComponent]  
+  templateUrl: 'book-list.component.html'
 })
 export class BookListComponent implements OnInit {
   books: Book[];
 
-  ngOnInit(){
+  ngOnInit() {
     this.books = [
       new Book(
        '9783864903571',

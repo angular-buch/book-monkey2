@@ -3,7 +3,6 @@ import { Book } from '../shared/book';
 
 @Component({
   selector: 'a.book-list-item',
-  
   templateUrl: 'book-list-item.component.html'
 })
 

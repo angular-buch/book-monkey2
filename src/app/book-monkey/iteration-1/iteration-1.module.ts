@@ -1,9 +1,20 @@
 import { NgModule } from '@angular/core';
-import { IterationOneComponent } from './iteration-1.component';
-import { routing } from './iteration-1.routing'
+
+import { AppModule as AppModule1 } from './book-list/app.module';
+import { AppModule as AppModule2 } from './book-list-refactored/app.module';
+import { AppModule as AppModule3 } from './book-details/app.module';
+
+import { Iteration1Component } from './iteration-1.component';
+import { iteration1Routing } from './iteration-1.routing';
 
 @NgModule({
-  imports: [ routing ],
-  declarations: [ IterationOneComponent ]
+  declarations: [Iteration1Component],
+  imports: [
+    AppModule1,
+    AppModule2,
+    AppModule3,
+    iteration1Routing]
 })
-export default class IterationOneModule { }
+export class Iteration1Module { }
+
+
