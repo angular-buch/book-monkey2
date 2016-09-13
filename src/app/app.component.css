@@ -1,0 +1,13 @@
+.let-space-for-footer {
+  margin-bottom: 170px;
+}
+
+.ui.footer.segment {
+  padding: 1em 0;
+  height: 170px;
+  width: 100%;
+
+  position: fixed;
+  left:0;
+  bottom:0;
+}

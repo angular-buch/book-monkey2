@@ -1,39 +1,53 @@
-<div class="ui five steps">
-  <!--
-  <a [routerLink]="['']" class="step">
-    <div class="content">
-      <div class="title">BookMonkey 2</div>
-    </div>
-  </a>--->
-  <a [routerLink]="['iteration-1']" routerLinkActive="active" class="step">
-    <div class="content">
-      <div class="title">Iteration-1</div>
-      <div class="description">Komponenten</div>
-    </div>
-  </a>
-  <a [routerLink]="['iteration-2']" routerLinkActive="active" class="step">
-    <div class="content">
-      <div class="title">Iteration-2</div>
-      <div class="description">Dependency-Injection und Routing</div>
-    </div>
-  </a>
-  <a [routerLink]="['iteration-3']" routerLinkActive="active" class="step">
-    <div class="content">
-      <div class="title">Iteration-3</div>
-      <div class="description">Formulare und Validierung</div>
-    </div>
-  </a>
-  <a [routerLink]="['iteration-4']" routerLinkActive="active" class="step">
-    <div class="content">
-      <div class="title">Iteration-4</div>
-      <div class="description">Http</div>
-    </div>
-  </a>
-  <a [routerLink]="['iteration-5']" routerLinkActive="active" class="step">
-    <div class="content">
-      <div class="title">Iteration-5</div>
-      <div class="description">Pipes und Direktiven</div>
-    </div>
-  </a>
+<div class="let-space-for-footer">
+
+  <div class="ui six steps">
+    <a [routerLink]="['']" class="step" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+      <i class="home icon"></i>
+    </a>
+    <a [routerLink]="['iteration-1']" routerLinkActive="active" class="step">
+      <div class="content">
+        <div class="title">Iteration-1</div>
+        <div class="description">Komponenten</div>
+      </div>
+    </a>
+    <a [routerLink]="['iteration-2']" routerLinkActive="active" class="step">
+      <div class="content">
+        <div class="title">Iteration-2</div>
+        <div class="description">Dependency-Injection und Routing</div>
+      </div>
+    </a>
+    <a [routerLink]="['iteration-3']" routerLinkActive="active" class="step">
+      <div class="content">
+        <div class="title">Iteration-3</div>
+        <div class="description">Formulare und Validierung</div>
+      </div>
+    </a>
+    <a [routerLink]="['iteration-4']" routerLinkActive="active" class="step">
+      <div class="content">
+        <div class="title">Iteration-4</div>
+        <div class="description">Http</div>
+      </div>
+    </a>
+    <a [routerLink]="['iteration-5']" routerLinkActive="active" class="step">
+      <div class="content">
+        <div class="title">Iteration-5</div>
+        <div class="description">Pipes und Direktiven</div>
+      </div>
+    </a>
+  </div>
+
+  <router-outlet></router-outlet>
 </div>
-<router-outlet></router-outlet>
+
+
+<div class="ui tertiary vertical footer segment">
+  <h2 class="ui center aligned icon header">
+    <a href="{{ repositoryUrl }}" target="_blank">
+      <i class="github icon"></i>
+      <div class="content">
+        {{ repoName }}
+        <div class="sub header">Quelltext auf Github</div>
+      </div>
+    </a>
+  </h2>
+</div>
