@@ -1,9 +1,9 @@
 import { RouterModule, Routes } from '@angular/router';
 
 import { Iteration1Component } from './iteration-1.component';
-import { AppComponent as AppComponent1 } from './book-list/app.component';
-import { AppComponent as AppComponent2 } from './book-list-refactored/app.component';
-import { AppComponent as AppComponent3 } from './book-details/app.component';
+import { AppComponent as AppComponentBookList } from './book-list/app.component';
+import { AppComponent as AppComponentBookListRefactored } from './book-list-refactored/app.component';
+import { AppComponent as AppComponentBookDetails } from './book-details/app.component';
 
 export const IT1_ROUTES: Routes = [
   {
@@ -11,10 +11,10 @@ export const IT1_ROUTES: Routes = [
     component: Iteration1Component,
     children: [
       { path: '', redirectTo: 'book-list', pathMatch: 'full' },
-      { path: 'book-list', component: AppComponent1 },
-      { path: 'book-list-refactored', component: AppComponent2 },
-      { path: 'book-details', component: AppComponent3 }]
+      { path: 'book-list', component: AppComponentBookList },
+      { path: 'book-list-refactored', component: AppComponentBookListRefactored },
+      { path: 'book-details', component: AppComponentBookDetails }]
   }
 ];
 
-export const iteration1Routing = RouterModule.forChild(IT1_ROUTES);
+export const Iteration1Routing = RouterModule.forChild(IT1_ROUTES);
