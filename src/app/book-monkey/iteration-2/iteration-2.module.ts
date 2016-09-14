@@ -13,6 +13,6 @@ import { Iteration2Routing } from './iteration-2.routing';
     AppModuleNavigation,
     Iteration2Routing]
 })
-export class Iteration1Module { }
+export class Iteration2Module { }
 
 

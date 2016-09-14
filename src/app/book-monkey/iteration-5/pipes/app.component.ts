@@ -6,12 +6,6 @@ import { ROUTER_DIRECTIVES } from '@angular/router';
   selector: 'app-root',
   
   templateUrl: 'app.component.html',
-  styles: [
-    `.router-link-active {
-      color: #ffffff !important;
-      background: #DB282C !important;
-    }`
-  ],
   directives: [ROUTER_DIRECTIVES],
   providers: [HTTP_PROVIDERS]
 })

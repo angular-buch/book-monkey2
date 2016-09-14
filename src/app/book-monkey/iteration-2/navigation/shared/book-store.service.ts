@@ -14,7 +14,7 @@ export class BookStoreService {
        new Date(2016, 5, 26),
        'Einstieg in die komponentenbasierte Entwicklung von Web- und Mobile-Anwendungen',
        5,
-       [new Thumbnail('http://goo.gl/nDi0Fc','Buchcover')],
+       [new Thumbnail('http://goo.gl/nDi0Fc', 'Buchcover')],
        'Dieses Buch vermittelt einen Schnelleinstieg in Angular 2...'
      ),
      new Book(
@@ -24,17 +24,17 @@ export class BookStoreService {
        new Date(2014, 5, 29),
        'Eine praktische Einführung',
        5,
-       [new Thumbnail('https://goo.gl/Y5lFVE','Buchcover')],
+       [new Thumbnail('https://goo.gl/Y5lFVE', 'Buchcover')],
        'Dieses Buch führt Sie anhand eines zusammenhängenden Beispielprojekts...'
      )
     ]
   }
 
-  getAll(){
+  getAll() {
     return this.books;
   }
 
-  getSingle(isbn){
+  getSingle(isbn) {
     return this.books.find((book) => book.isbn === isbn);
   }
 }

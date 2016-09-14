@@ -20,12 +20,13 @@ export class AppComponent {
         let url: string = (<any>e).urlAfterRedirects;
 
         if ((url.match(/\//g) || []).length < 2) {
-          this.repoName = '/';
+          this.repoName = '';
         } else {
-          this.repoName = url.replace(/\//g, '-').replace(/^-/, '/');
+          let parts = url.split('/');
+          this.repoName = parts[1] + '/' + parts[2];
         }
 
-        this.repositoryUrl = 'https://github.com/book-monkey2-build' + this.repoName;
+        this.repositoryUrl = 'https://github.com/book-monkey2-build/' + this.repoName;
       });
   }
 }

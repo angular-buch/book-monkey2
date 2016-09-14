@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { Iteration2Component } from './iteration-2.component';
 import { AppComponent as AppComponentDi } from './di/app.component';
 import { AppComponent as AppComponentNavigation } from './navigation/app.component';
+import { routes as routesNavigation } from './navigation/app.routing';
 
 export const IT2_ROUTES: Routes = [
   {
@@ -11,7 +12,11 @@ export const IT2_ROUTES: Routes = [
     children: [
       { path: '', redirectTo: 'dependency-injection', pathMatch: 'full' },
       { path: 'dependency-injection', component: AppComponentDi },
-      { path: 'navigation', component: AppComponentNavigation }]
+      {
+        path: 'navigation',
+        component: AppComponentNavigation,
+        children: routesNavigation
+      }]
   }
 ];
 

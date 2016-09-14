@@ -1,16 +1,7 @@
 import { Component } from '@angular/core';
-import { ROUTER_DIRECTIVES } from '@angular/router';
 
 @Component({
-  selector: 'book-monkey-app',
-  
-  templateUrl: 'app.component.html',
-  styles: [
-    `.router-link-active {
-      color: #ffffff !important;
-      background: #DB282C !important;
-    }`
-  ],
-  directives: [ROUTER_DIRECTIVES]
+  selector: 'app-root',
+  templateUrl: 'app.component.html'
 })
 export class AppComponent { }
