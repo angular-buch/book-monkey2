@@ -1,6 +1,7 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, FormArray, Validators } from '@angular/forms';
+
 import { validateIsbn } from '../shared/isbn.validator';
 import { Book } from '../shared/book';
 import { BookStoreService } from '../shared/book-store.service';
@@ -36,8 +37,10 @@ export class BookFormComponent implements OnInit {
     });
   }
 
-initBook(book?: Book) {
-    if (!book) book = new Book('', '', [''], new Date(), '', 0, [{url: '', title: ''}], '');
+  initBook(book?: Book) {
+    if (!book) {
+      book = new Book('', '', [''], new Date(), '', 0, [{ url: '', title: '' }], '');
+    }
 
     this.myForm = this.fb.group({
       title: [book.title, Validators.required],
@@ -47,13 +50,13 @@ initBook(book?: Book) {
         validateIsbn
       ])],
       description: [book.description],
-      authors:     this.buildAuthorsArray(book.authors),
-      thumbnails:  this.buildThumbnialsArray(book.thumbnails),
+      authors: this.buildAuthorsArray(book.authors),
+      thumbnails: this.buildThumbnialsArray(book.thumbnails),
       published: [
         book.published,
         Validators.pattern('([1-9]|0[1-9]|(1|2)[0-9]|3[0-1])\.([1-9]|0[1-9]|1[0-2])\.[0-9]{4}')
       ]
-     });
+    });
   }
 
   buildAuthorsArray(authors): FormArray {
@@ -78,14 +81,14 @@ initBook(book?: Book) {
   }
 
   addThumbnailControl() {
-    this.thumbnails.push(this.fb.group({url: [''], title: ['']}));
+    this.thumbnails.push(this.fb.group({ url: [''], title: [''] }));
   }
 
   submitForm(formData) {
     this.isUpdatingBook
       ? this.bs.update(formData.value)
-               .subscribe(res => res)
+        .subscribe(res => res)
       : this.bs.create(formData.value)
-               .subscribe(res => res);
+        .subscribe(res => res);
   }
 }

@@ -22,14 +22,14 @@ export class BookDetailsComponent implements OnInit {
     });
   }
 
-  getRating(num: number){
+  getRating(num: number) {
     return new Array(num);
   }
 
-  deleteBook(){
-    if(confirm("Buch wirklich löschen?")) {
+  deleteBook() {
+    if (confirm('Buch wirklich löschen?')) {
       this.bs.delete(this.book.isbn);
       this.router.navigate(['../']);
     }
- }
+  }
 }

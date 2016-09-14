@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+
 import { Book } from '../shared/book';
 import { BookStoreService } from '../shared/book-store.service';
 
 @Component({
-  selector: 'book-details',  
+  selector: 'book-details',
   templateUrl: 'book-details.component.html',
 })
 export class BookDetailsComponent implements OnInit {
@@ -22,14 +23,14 @@ export class BookDetailsComponent implements OnInit {
     });
   }
 
-  getRating(num: number){
+  getRating(num: number) {
     return new Array(num);
   }
 
- deleteBook(){
-   if(confirm("Buch wirklich löschen?")) {
-     this.bs.delete(this.book.isbn);
-     this.router.navigate(['../']);
-   }
- }
+  deleteBook() {
+    if (confirm('Buch wirklich löschen?')) {
+      this.bs.delete(this.book.isbn);
+      this.router.navigate(['../']);
+    }
+  }
 }

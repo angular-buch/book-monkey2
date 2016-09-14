@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+
 import { Book } from '../shared/book';
 import { BookStoreService } from '../shared/book-store.service';
-import { IsbnPipe } from '../shared/isbn-pipe'
+import { IsbnPipe } from '../shared/isbn-pipe';
 
 @Component({
   selector: 'book-details',
@@ -19,22 +20,22 @@ export class BookDetailsComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.book = new Book('', '', [''], new Date(), '', 0, [{url:'', title: ''}], '');  
-    
+    this.book = new Book('', '', [''], new Date(), '', 0, [{ url: '', title: '' }], '');
+
     this.route.params.subscribe(params => {
       this.bs.getSingle(params['isbn'])
         .subscribe(b => this.book = b);
     });
   }
 
-  getRating(num: number){
+  getRating(num: number) {
     return new Array(num);
   }
 
- deleteBook(){
-   if(confirm("Buch wirklich löschen?")) {
-     this.bs.delete(this.book.isbn)
-            .subscribe(res => this.router.navigate(['../']));
-   }
- }
+  deleteBook() {
+    if (confirm('Buch wirklich löschen?')) {
+      this.bs.delete(this.book.isbn)
+        .subscribe(res => this.router.navigate(['../']));
+    }
+  }
 }

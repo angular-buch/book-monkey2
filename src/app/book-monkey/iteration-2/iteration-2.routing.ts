@@ -10,8 +10,8 @@ export const IT2_ROUTES: Routes = [
     path: 'iteration-2',
     component: Iteration2Component,
     children: [
-      { path: '', redirectTo: 'dependency-injection', pathMatch: 'full' },
-      { path: 'dependency-injection', component: AppComponentDi },
+      { path: '', redirectTo: 'di', pathMatch: 'full' },
+      { path: 'di', component: AppComponentDi },
       {
         path: 'navigation',
         component: AppComponentNavigation,

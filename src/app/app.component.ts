@@ -23,7 +23,7 @@ export class AppComponent {
           this.repoName = '';
         } else {
           let parts = url.split('/');
-          this.repoName = parts[1] + '/' + parts[2];
+          this.repoName = parts[1] + '-' + parts[2];
         }
 
         this.repositoryUrl = 'https://github.com/book-monkey2-build/' + this.repoName;

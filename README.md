@@ -69,7 +69,7 @@ Die gezeigten Kommandozeilen-Befehle setzen voraus, dass [Node.js](https://nodej
 
 ```
 git clone https://github.com/Angular2Buch/book-monkey2.git
-cd book-monkey2-api
+cd book-monkey2
 npm install
 npm start
 ```
