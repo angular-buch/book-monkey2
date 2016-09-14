@@ -1,7 +1,7 @@
 # Book-Monkey 2
 [![Build Status](https://travis-ci.org/Angular2Buch/book-monkey2.svg)](https://travis-ci.org/Angular2Buch/book-monkey2)
 
-[![Monkey](public/images/monkey-thinking.png)](http://book-monkey2.angular2buch.de/)
+[![Monkey](src/assets/images/monkey-thinking.png)](http://book-monkey2.angular2buch.de/)
 
 Der __"Book-Monkey"__ ist das Demo Projekt zum Buch ["Angular 2: Einstieg in die komponentenbasierte Entwicklung von Web- und Mobile-Anwendungen"](https://angular2buch.de/). Mithilfe dieses Buches werden Sie Googles neuestes Framework kennen lernen. Wir laden Sie dazu ein, mit den aktuellsten Technologien moderne Single-Page-Anwendungen zu erstellen.
 
@@ -11,7 +11,7 @@ Anhand des Beispielprojekts __"Book-Monkey"__ führen wir Sie schrittweise an di
 
 Lesen Sie mehr auf [angular2buch.de](https://angular2buch.de/).
 
-[![Book](public/images/book-thumbnail.png)](https://angular2buch.de/)
+[![Book](src/assets/images/book-thumbnail.png)](https://angular2buch.de/)
 
 
 # Vollständige Demo
