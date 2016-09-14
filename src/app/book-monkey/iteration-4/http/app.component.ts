@@ -1,12 +1,8 @@
 import { Component } from '@angular/core';
-import { HTTP_PROVIDERS } from '@angular/http';
-import { ROUTER_DIRECTIVES } from '@angular/router';
+//TODO into @NgModule --> import { HTTP_PROVIDERS } from '@angular/http';
 
 @Component({
-  selector: 'book-monkey-app',
-  
+  selector: 'app-root',
   templateUrl: 'app.component.html',
-  directives: [ROUTER_DIRECTIVES],
-  providers: [HTTP_PROVIDERS]
 })
 export class AppComponent { }

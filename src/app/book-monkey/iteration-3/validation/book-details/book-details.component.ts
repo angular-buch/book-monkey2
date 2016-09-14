@@ -1,15 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { ROUTER_DIRECTIVES } from '@angular/router';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Book } from '../shared/book';
 import { BookStoreService } from '../shared/book-store.service';
 
 @Component({
   selector: 'book-details',
-  
   templateUrl: 'book-details.component.html',
-  providers: [BookStoreService],
-  directives: [ROUTER_DIRECTIVES]
 })
 export class BookDetailsComponent implements OnInit {
   book: Book;
@@ -20,7 +16,7 @@ export class BookDetailsComponent implements OnInit {
     private route: ActivatedRoute
   ) { }
 
-  ngOnInit():void {
+  ngOnInit() {
     this.route.params.subscribe(params => {
       this.book = this.bs.getSingle(params['isbn']);
     });

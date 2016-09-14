@@ -37,8 +37,7 @@ describe('[iteration-2/di] Component: BookList', () => {
   selector: 'test',
   template: `
     <book-list></book-list>
-  `,
-  directives: [BookListComponent]
+  `
 })
 class BookListComponentTestController {
 }

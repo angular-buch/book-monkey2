@@ -1,15 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { FormBuilder, FormGroup, FormArray, REACTIVE_FORM_DIRECTIVES } from '@angular/forms';
-import { Book } from '../shared/book'
-import { BookStoreService } from '../shared/book-store.service'
+import { FormBuilder, FormGroup, FormArray } from '@angular/forms';
+import { Book } from '../shared/book';
+import { BookStoreService } from '../shared/book-store.service';
 
 @Component({
   selector: 'book-form',
-  
   templateUrl: 'book-form.component.html',
-  providers: [BookStoreService],
-  directives: [REACTIVE_FORM_DIRECTIVES]
 })
 export class BookFormComponent implements OnInit {
   myForm: FormGroup;
@@ -18,37 +15,39 @@ export class BookFormComponent implements OnInit {
   isUpdatingBook: boolean;
 
   constructor(
-    private fb: FormBuilder, 
+    private fb: FormBuilder,
     private bs: BookStoreService,
     private route: ActivatedRoute
   ) { }
 
-  ngOnInit():void {
+  ngOnInit() {
     this.isUpdatingBook = false;
     this.initBook();
 
     this.route.params.subscribe(params => {
-      var isbn = params['isbn'];
-    
-      if(isbn) {
+      let isbn = params['isbn'];
+
+      if (isbn) {
         this.isUpdatingBook = true;
         let book = this.bs.getSingle(isbn);
-        this.initBook(book)
+        this.initBook(book);
       }
     });
   }
 
-  initBook(book?:Book){
-    if(!book) book = new Book('', '', [''], new Date(), '', 0, [{url:'', title: ''}], '');
+  initBook(book?: Book) {
+    if (!book) {
+      book = new Book('', '', [''], new Date(), '', 0, [{ url: '', title: '' }], '');
+    }
 
     this.myForm = this.fb.group({
-      title:       book.title,
-      subtitle:    book.subtitle,
-      isbn:        book.isbn,
+      title: book.title,
+      subtitle: book.subtitle,
+      isbn: book.isbn,
       description: book.description,
-      authors:     this.buildAuthorsArray(book.authors),
-      thumbnails:  this.buildThumbnialsArray(book.thumbnails),
-      published:   book.published
+      authors: this.buildAuthorsArray(book.authors),
+      thumbnails: this.buildThumbnialsArray(book.thumbnails),
+      published: book.published
     });
   }
 
@@ -69,17 +68,17 @@ export class BookFormComponent implements OnInit {
     return this.thumbnails;
   }
 
-  addAuthorControl(){
+  addAuthorControl() {
     this.authors.push(this.fb.control(''));
   }
 
-  addThumbnailControl(){
-    this.thumbnails.push(this.fb.group({url: [''], title: ['']}));
+  addThumbnailControl() {
+    this.thumbnails.push(this.fb.group({ url: [''], title: [''] }));
   }
 
-  submitForm(formData){
-    this.isUpdatingBook 
-      ? this.bs.update(formData.value) 
+  submitForm(formData) {
+    this.isUpdatingBook
+      ? this.bs.update(formData.value)
       : this.bs.create(formData.value);
   }
 }

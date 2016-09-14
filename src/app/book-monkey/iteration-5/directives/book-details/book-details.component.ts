@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ROUTER_DIRECTIVES } from '@angular/router';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Book } from '../shared/book';
 import { BookStoreService } from '../shared/book-store.service';
@@ -7,10 +6,7 @@ import { IsbnPipe } from '../shared/isbn-pipe'
 
 @Component({
   selector: 'book-details',
-  
   templateUrl: 'book-details.component.html',
-  providers: [BookStoreService],
-  directives: [ROUTER_DIRECTIVES],
   pipes: [IsbnPipe]
 })
 export class BookDetailsComponent implements OnInit {
@@ -22,7 +18,7 @@ export class BookDetailsComponent implements OnInit {
     private route: ActivatedRoute
   ) { }
 
-  ngOnInit():void {
+  ngOnInit() {
     this.book = new Book('', '', [''], new Date(), '', 0, [{url:'', title: ''}], '');  
     
     this.route.params.subscribe(params => {

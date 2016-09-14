@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { ROUTER_DIRECTIVES } from '@angular/router';
 
 @Component({
   template: `
@@ -11,7 +10,6 @@ import { ROUTER_DIRECTIVES } from '@angular/router';
       <i class="right arrow icon"></i>
     </a>
   </div>
-  `,
-  directives: [ROUTER_DIRECTIVES]
+  `
 })
 export class HomeComponent { }
