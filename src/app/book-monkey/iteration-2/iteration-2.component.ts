@@ -3,14 +3,12 @@ import { Component } from '@angular/core';
 @Component({
   template: `
     <div class="ui two small ordered steps">
-    <a [routerLink]="['dependency-injection']" routerLinkActive="active"
-       class="step">
+    <a [routerLink]="['dependency-injection']" routerLinkActive="active" class="step">
       <div class="content">
         <div class="title">Dependency-Injection</div>
       </div>
     </a>
-    <a [routerLink]="['navigation','home']" routerLinkActive="active"
-       class="step">
+    <a [routerLink]="['navigation','home']" routerLinkActive="active" class="step">
       <div class="content">
         <div class="title">Navigation</div>
       </div>
