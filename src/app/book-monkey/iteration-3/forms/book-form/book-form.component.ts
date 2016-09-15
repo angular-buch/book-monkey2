@@ -7,7 +7,7 @@ import { BookStoreService } from '../shared/book-store.service';
 
 @Component({
   selector: 'book-form',
-  templateUrl: 'book-form.component.html',
+  templateUrl: 'book-form.component.html'
 })
 export class BookFormComponent implements OnInit {
   myForm: FormGroup;

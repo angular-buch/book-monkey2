@@ -1,3 +1,5 @@
+// TODO: this SNIPPED IS OUTDATED!!
+
 import { Component } from '@angular/core';
 import { FormGroup, FormArray, FormControl REACTIVE_FORM_DIRECTIVES } from '@angular/forms';
 
@@ -5,7 +7,7 @@ import { FormGroup, FormArray, FormControl REACTIVE_FORM_DIRECTIVES } from '@ang
   selector: 'register-form',
   templateUrl: 'register-form.component.html',
   styleUrls: [ 'register-form.component.css' ],
-  directives: [ REACTIVE_FORM_DIRECTIVES ]
+  // directives: [ REACTIVE_FORM_DIRECTIVES ] --> ngModule
 })
 class RegisterForm {
   registerForm = new FormGroup({
@@ -21,7 +23,7 @@ class RegisterForm {
       new FormControl()
     ])
   });
-  
+
   register(value: any) {
     console.log(value);
   }

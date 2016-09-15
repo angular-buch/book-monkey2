@@ -9,6 +9,7 @@ import { BookStoreService } from '../shared/book-store.service';
 @Component({
   selector: 'book-form',
   templateUrl: 'book-form.component.html',
+  styleUrls: ['book-form.component.css']
 })
 export class BookFormComponent implements OnInit {
   myForm: FormGroup;

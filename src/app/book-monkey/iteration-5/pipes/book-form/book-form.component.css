@@ -1,0 +1,8 @@
+h4.required:after {
+  content: ' *';
+  color: #9F3A38;
+}
+
+.ng-dirty.ng-invalid  {
+  border-color: #9F3A38 !important;
+}

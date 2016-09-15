@@ -18,7 +18,7 @@ export const IT3_ROUTES: Routes = [
         children: routesForms
       },
       {
-        path: 'navigation',
+        path: 'validation',
         component: AppComponentValidationn,
         children: routesValdiation
       }]

@@ -4,7 +4,7 @@
       class="ui form grid">
 
   <div class="four wide column">
-    <h4>Buchtitel</h4>
+    <h4 class="required">Buchtitel</h4>
   </div>
   <div class="eleven wide column form">
     <input formControlName="title"/>
@@ -22,7 +22,7 @@
   </div>
 
   <div class="four wide column">
-    <h4>Erscheinungsdatum</h4>
+    <h4 class="required">Erscheinungsdatum</h4>
   </div>
   <div class="eleven wide column">
     <input formControlName="published">
@@ -35,7 +35,7 @@
 
   <div class="row">
     <div class="four wide column">
-      <h4>Autoren</h4>
+      <h4 class="required">Autoren</h4>
     </div>
     <div class="eleven wide column">
       <div class="fields">
@@ -45,6 +45,7 @@
             <input formControlName="{{i}}" placeholder="Autor {{i+1}}">
         </div>
       </div>
+      <!-- funktioniert nicht!! -->
       <div class="ui negative message"
            *ngIf="myForm.controls.authors.dirty
               && !myForm.controls.authors.valid">
@@ -60,7 +61,7 @@
   </div>
 
   <div class="four wide column">
-    <h4>ISBN</h4>
+    <h4 class="required">ISBN</h4>
   </div>
   <div class="eleven wide column">
     <input formControlName="isbn">
