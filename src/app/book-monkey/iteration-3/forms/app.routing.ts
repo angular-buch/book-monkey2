@@ -8,7 +8,8 @@ import { BookFormComponent } from './book-form/book-form.component';
 export const routes: Routes = [
   {
     path: '',
-    redirectTo: 'home'
+    redirectTo: 'home',
+    pathMatch: 'full'
   },
   {
     path: 'home',

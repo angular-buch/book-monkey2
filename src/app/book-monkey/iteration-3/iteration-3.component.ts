@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
   selector: 'iteration-3',
   template: `
     <div class="ui two small ordered steps">
-    <a [routerLink]="['form']"
+    <a [routerLink]="['forms']"
        class="step">
       <div class="content">
         <div class="title">Formulare</div>
