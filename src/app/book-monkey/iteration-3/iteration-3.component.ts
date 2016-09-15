@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
 
-
-
 @Component({
   selector: 'iteration-3',
   template: `
@@ -24,4 +22,4 @@ import { Component } from '@angular/core';
   </div>
   `
 })
-export class IterationThreeComponent { }
+export class Iteration3Component { }
