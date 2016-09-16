@@ -5,7 +5,11 @@
 language: node_js
 
 node_js:
-  - '4.2'
+  - 6.5.0
+
+cache:
+  directories:
+  - node_modules
 
 env:
   global:
@@ -30,9 +34,9 @@ env:
     - NAME="iteration-5-directives"            BLUEPRINT="src/app/book-monkey/iteration-5/directives"
 
 install:
-  # speeds up install time
-  - npm uninstall book-monkey2-api --save-dev
   - npm install
+  - npm install -g angular-cli@1.0.0-beta.14
+  - npm install -g angular-cli-ghpages
 
 script:
   - echo "*** BUILDING $NAME ***"
@@ -42,12 +46,12 @@ script:
   # - sends compiled version to gh-pages
   # TODO: npm run ng test
   - if [ "$NAME" == "one-app" ]; then
-      npm run ng build;
+      ng build;
 
       echo "book-monkey2.angular2buch.de" > dist/CNAME;
       cp dist/index.html dist/404.html;
 
-      npm run ng -- ghpages --repo="$GITHUB_ORG/$NAME.git" --name="$GITHUB_NAME" --email="$GITHUB_EMAIL"s;
+      ng ghpages --repo="$GITHUB_ORG/$NAME.git" --name="$GITHUB_NAME" --email="$GITHUB_EMAIL" --skip-build;
     fi
 
   # [2] single apps:
@@ -61,7 +65,7 @@ script:
       mkdir TMP;
       cd TMP || exit;
 
-      node "$TRAVIS_BUILD_DIR/node_modules/angular-cli/bin/ng" new BookMonkey;
+      ng new BookMonkey;
       cd "$NEW_BOOKMONKEY" || exit;
       mkdir -p src/{domain};
 
@@ -69,16 +73,8 @@ script:
       rm -rf src/app/*;
       cd "$TRAVIS_BUILD_DIR" || exit;
 
-      sed "s/_NAME_/${NAME}/g" src/index.single.html > tmp;
-      mv tmp src/index.single.html;
-
       cp -f package.json                         "$NEW_BOOKMONKEY/";
       cp -f angular-cli-build.js                 "$NEW_BOOKMONKEY/";
-      cp -f src/app.single.ts                    "$NEW_BOOKMONKEY/src/main.ts";
-      cp -f src/index.single.html                "$NEW_BOOKMONKEY/src/index.html";
-      cp -f src/forkme_light_background.png      "$NEW_BOOKMONKEY/src/";
-      cp -f src/tsconfig.json                    "$NEW_BOOKMONKEY/src/";
-      cp -f src/typings.*                        "$NEW_BOOKMONKEY/src/";
       cp -rf "$TRAVIS_BUILD_DIR/$BLUEPRINT/."    "$NEW_BOOKMONKEY/src/app/";
 
       echo "*** DIRECTORY LISTING OF $NEW_BOOKMONKEY ***";
@@ -94,12 +90,12 @@ script:
       cd "$NEW_BOOKMONKEY/";
 
       npm install;
-      npm run ng build;
+      ng build;
 
       echo "$NAME.angular2buch.de" > dist/CNAME;
       cp dist/index.html dist/404.html;
 
-      npm run ng -- ghpages --repo="$GITHUB_ORG/$NAME.git" --name="$GITHUB_NAME" --email="$GITHUB_EMAIL";
+      ng --ghpages --repo="$GITHUB_ORG/$NAME.git" --name="$GITHUB_NAME" --email="$GITHUB_EMAIL" --skip-build;
     fi
 
 # ---- boilerplate ----
