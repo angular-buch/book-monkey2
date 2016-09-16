@@ -36,7 +36,7 @@ env:
 install:
   - npm install
   - npm install -g angular-cli@1.0.0-beta.14
-  - npm install -g angular-cli-ghpages
+  - npm install angular-cli-ghpages
 
 script:
   - echo "*** BUILDING $NAME ***"
@@ -95,6 +95,7 @@ script:
       echo "$NAME.angular2buch.de" > dist/CNAME;
       cp dist/index.html dist/404.html;
 
+      npm install angular-cli-ghpages;
       ng --ghpages --repo="$GITHUB_ORG/$NAME.git" --name="$GITHUB_NAME" --email="$GITHUB_EMAIL" --skip-build;
     fi
 
