@@ -3,12 +3,10 @@ import { ActivatedRoute, Router } from '@angular/router';
 
 import { Book } from '../shared/book';
 import { BookStoreService } from '../shared/book-store.service';
-import { IsbnPipe } from '../shared/isbn-pipe';
 
 @Component({
   selector: 'book-details',
-  templateUrl: 'book-details.component.html',
-  pipes: [IsbnPipe]
+  templateUrl: 'book-details.component.html'
 })
 export class BookDetailsComponent implements OnInit {
   book: Book;

@@ -18,9 +18,10 @@ export class AppComponent {
       .subscribe(e => {
 
         let url: string = (<any>e).urlAfterRedirects;
+        let amountOfSlashes = (url.match(/\//g) || []).length;
 
-        if ((url.match(/\//g) || []).length < 2) {
-          this.repoName = '';
+        if (amountOfSlashes < 2) {
+          this.repoName = 'one-app';
         } else {
           let parts = url.split('/');
           this.repoName = parts[1] + '-' + parts[2];
