@@ -1,11 +1,9 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'iteration-4',
   template: `
     <div class="ui one small ordered steps">
-    <a [routerLink]="['http']"
-       class="step">
+    <a [routerLink]="['http']" routerLinkActive="active" class="step">
       <div class="content">
         <div class="title">Http</div>
       </div>
@@ -16,4 +14,4 @@ import { Component } from '@angular/core';
   </div>
   `
 })
-export class IterationFourComponent { }
+export class Iteration4Component { }

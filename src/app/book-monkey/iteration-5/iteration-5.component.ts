@@ -1,17 +1,14 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'iteration-5',
   template: `
     <div class="ui two small ordered steps">
-    <a [routerLink]="['pipes']"
-       class="step">
+    <a [routerLink]="['pipes']" routerLinkActive="active" class="step">
       <div class="content">
         <div class="title">Pipes</div>
       </div>
     </a>
-    <a [routerLink]="['directives']"
-       class="step">
+    <a [routerLink]="['directives']" routerLinkActive="active" class="step">
       <div class="content">
         <div class="title">Direktiven</div>
       </div>
@@ -22,4 +19,4 @@ import { Component } from '@angular/core';
   </div>
   `
 })
-export class IterationFiveComponent { }
+export class Iteration5Component { }

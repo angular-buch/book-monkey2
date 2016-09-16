@@ -1,17 +1,14 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'iteration-3',
   template: `
     <div class="ui two small ordered steps">
-    <a [routerLink]="['forms']"
-       class="step">
+    <a [routerLink]="['forms']" routerLinkActive="active" class="step">
       <div class="content">
         <div class="title">Formulare</div>
       </div>
     </a>
-    <a [routerLink]="['validation']"
-       class="step">
+    <a [routerLink]="['validation']" routerLinkActive="active" class="step">
       <div class="content">
         <div class="title">Formularvalidierung</div>
       </div>
