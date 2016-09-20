@@ -42,7 +42,7 @@
         <div formArrayName="authors"
             *ngFor="let control of authors.controls; let i = index"
             class="sixteen wide field">
-            <input formControlName="{{i}}" placeholder="Autor {{i+1}}">
+            <input [formControlName]="i" placeholder="Autor {{i+1}}">
         </div>
       </div>
       <!-- funktioniert nicht!! -->

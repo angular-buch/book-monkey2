@@ -3,7 +3,6 @@ import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
-  //{ path: '', component: HomeComponent, pathMatch: 'full' },
   {
     path: 'iteration-1',
     loadChildren: 'app/book-monkey/iteration-1/iteration-1.module'
