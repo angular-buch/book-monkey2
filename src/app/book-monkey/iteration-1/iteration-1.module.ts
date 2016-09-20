@@ -15,6 +15,6 @@ import { Iteration1Routing } from './iteration-1.routing';
     AppModuleBookDetails,
     Iteration1Routing]
 })
-export class Iteration1Module { }
+export default class Iteration1Module { }
 
 

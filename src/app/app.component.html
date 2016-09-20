@@ -1,7 +1,7 @@
 <div class="let-space-for-footer">
 
   <div class="ui six steps">
-    <a [routerLink]="['']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"  class="step">
+    <a [routerLink]="['']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="step">
       <i class="home icon"></i>
     </a>
     <a [routerLink]="['iteration-1']" routerLinkActive="active" class="step">
@@ -42,7 +42,7 @@
 
 <div class="ui tertiary vertical footer segment">
   <h2 class="ui center aligned icon header">
-    <a href="{{ repositoryUrl }}" target="_blank">
+    <a [href]="repositoryUrl" target="_blank">
       <i class="github icon"></i>
       <div class="content">
         {{ repoName }}

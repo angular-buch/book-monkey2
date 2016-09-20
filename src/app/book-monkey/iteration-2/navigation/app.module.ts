@@ -1,4 +1,4 @@
-import { BrowserModule } from '@angular/platform-browser';
+import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
@@ -19,7 +19,7 @@ import { routing } from './app.routing'; // NEW
     BookDetailsComponent
   ],
   imports: [
-    BrowserModule,
+    CommonModule,
     routing
   ],
   providers: [
@@ -27,4 +27,4 @@ import { routing } from './app.routing'; // NEW
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export default class AppModule { }

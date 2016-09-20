@@ -7,7 +7,7 @@ import { AppComponent as AppComponentBookDetails } from './book-details/app.comp
 
 export const IT1_ROUTES: Routes = [
   {
-    path: 'iteration-1',
+    path: '',
     component: Iteration1Component,
     children: [
       { path: '', redirectTo: 'book-list', pathMatch: 'full' },

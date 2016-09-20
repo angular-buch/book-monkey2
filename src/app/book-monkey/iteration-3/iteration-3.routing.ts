@@ -1,27 +1,17 @@
 import { RouterModule, Routes } from '@angular/router';
 
 import { Iteration3Component } from './iteration-3.component';
-import { AppComponent as AppComponentForms } from './forms/app.component';
-import { AppComponent as AppComponentValidationn } from './validation/app.component';
-import { routes as routesForms } from './forms/app.routing';
-import { routes as routesValdiation } from './validation/app.routing';
+
 
 export const IT3_ROUTES: Routes = [
   {
-    path: 'iteration-3',
+    path: '',
     component: Iteration3Component,
     children: [
       { path: '', redirectTo: 'forms', pathMatch: 'full' },
-      {
-        path: 'forms',
-        component: AppComponentForms,
-        children: routesForms
-      },
-      {
-        path: 'validation',
-        component: AppComponentValidationn,
-        children: routesValdiation
-      }]
+      { path: 'forms', loadChildren: 'app/book-monkey/iteration-3/forms/app.module#AppModule' },
+      { path: 'validation', loadChildren: 'app/book-monkey/iteration-3/validation/app.module#AppModule' }
+    ]
   }
 ];
 
