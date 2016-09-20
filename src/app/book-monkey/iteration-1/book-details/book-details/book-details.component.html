@@ -1,6 +1,6 @@
 <div class="ui grid" *ngIf="book">
   <div class="four wide column">
-    <img class="ui large image" src="{{book.thumbnails[0].url}}">
+    <img class="ui large image" [src]="book.thumbnails[0].url">
   </div>
   <div class="twelve wide column">
     <h1 class="ui header">{{ book.title }}</h1>
@@ -33,7 +33,7 @@
   </div>
   <div class="sixteen wide column">
     <div class="ui small images">
-      <img *ngFor="let thumbnail of book.thumbnails" src="{{thumbnail.url}}">
+      <img *ngFor="let thumbnail of book.thumbnails" [src]="thumbnail.url">
     </div>
   </div>
 </div>
