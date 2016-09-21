@@ -86,12 +86,12 @@ export class BookFormComponent implements OnInit {
     this.thumbnails.push(this.fb.group({ url: [''], title: [''] }));
   }
 
-  submitForm(formData) {
+  submitForm() {
     if(this.isUpdatingBook) {
-      this.bs.update(formData.value).subscribe(res => res);
-      this.router.navigate(['../../books', formData.value.isbn], {relativeTo: this.route});
+      this.bs.update(this.myForm.value).subscribe(res => res);
+      this.router.navigate(['../../books', this.myForm.value.isbn], {relativeTo: this.route});
     } else {
-      this.bs.create(formData.value).subscribe(res => res);
+      this.bs.create(this.myForm.value).subscribe(res => res);
       this.myForm.reset();
     }
   }
