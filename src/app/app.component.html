@@ -39,15 +39,20 @@
   <router-outlet></router-outlet>
 </div>
 
+<a [href]="repositoryUrl" target="_blank">
+<div class="ui inverted vertical footer segment">
+    <div class="ui center aligned container">
 
-<div class="ui tertiary vertical footer segment">
-  <h2 class="ui center aligned icon header">
-    <a [href]="repositoryUrl" target="_blank">
-      <i class="github icon"></i>
+
+<h4 class="ui inverted icon header">
+  <i class="github icon"></i>
       <div class="content">
         {{ repoName }}
         <div class="sub header">Quelltext auf Github</div>
       </div>
+</h4>
+
+    </div>
+  </div>
     </a>
-  </h2>
-</div>
+  
