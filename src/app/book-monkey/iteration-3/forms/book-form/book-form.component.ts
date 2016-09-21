@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { FormBuilder, FormGroup, FormArray } from '@angular/forms';
 
 import { Book } from '../shared/book';
@@ -18,7 +18,8 @@ export class BookFormComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private bs: BookStoreService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -78,8 +79,12 @@ export class BookFormComponent implements OnInit {
   }
 
   submitForm(formData) {
-    this.isUpdatingBook
-      ? this.bs.update(formData.value)
-      : this.bs.create(formData.value);
+    if(this.isUpdatingBook) {
+      this.bs.update(formData.value);
+      this.router.navigate(['../../books', formData.value.isbn], {relativeTo: this.route});
+    } else {
+      this.bs.create(formData.value);
+      this.myForm.reset();
+    }
   }
 }

@@ -33,7 +33,7 @@ export class BookDetailsComponent implements OnInit {
   deleteBook() {
     if (confirm('Buch wirklich löschen?')) {
       this.bs.delete(this.book.isbn)
-        .subscribe(res => this.router.navigate(['../']));
+        .subscribe(res => this.router.navigate(['../'], {relativeTo: this.route}));
     }
   }
 }
