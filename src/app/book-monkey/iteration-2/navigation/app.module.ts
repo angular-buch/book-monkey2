@@ -27,4 +27,4 @@ import { routing } from './app.routing'; // NEW
   ],
   bootstrap: [AppComponent]
 })
-export default class AppModule { }
+export class AppModule { }
