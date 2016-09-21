@@ -9,35 +9,29 @@ import { BookFormComponent } from './book-form/book-form.component';
 export const routes: Routes = [
   {
     path: '',
-    component: AppComponent,
-    children: [
-      {
-        path: '',
-        redirectTo: 'home',
-        pathMatch: 'full'
-      },
-      {
-        path: 'home',
-        component: HomeComponent
-      },
-      {
-        path: 'books',
-        component: BookListComponent
-      },
-      {
-        path: 'books/:isbn',
-        component: BookDetailsComponent
-      },
-      {
-        path: 'admin',
-        component: BookFormComponent,
-      },
-      {
-        path: 'admin/:isbn',
-        component: BookFormComponent
-      }
-    ]
+    redirectTo: 'home',
+    pathMatch: 'full'
+  },
+  {
+    path: 'home',
+    component: HomeComponent
+  },
+  {
+    path: 'books',
+    component: BookListComponent
+  },
+  {
+    path: 'books/:isbn',
+    component: BookDetailsComponent
+  },
+  {
+    path: 'admin',
+    component: BookFormComponent,
+  },
+  {
+    path: 'admin/:isbn',
+    component: BookFormComponent
   }
 ];
 
-export const routing = RouterModule.forChild(routes);
+export const routing = RouterModule.forRoot(routes);

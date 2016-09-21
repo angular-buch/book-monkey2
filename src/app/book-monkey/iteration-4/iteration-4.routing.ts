@@ -8,7 +8,7 @@ export const IT4_ROUTES: Routes = [
     component: Iteration4Component,
     children: [
       { path: '', redirectTo: 'http', pathMatch: 'full' },
-      { path: 'http', loadChildren: 'app/book-monkey/iteration-4/http/app.module#AppModule' },
+      { path: 'http', loadChildren: 'app/book-monkey/iteration-4/http/app.module.1#AppModule' },
     ]
   }
 ];

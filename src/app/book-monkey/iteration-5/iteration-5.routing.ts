@@ -8,8 +8,8 @@ export const IT5_ROUTES: Routes = [
     component: Iteration5Component,
     children: [
       { path: '', redirectTo: 'pipes', pathMatch: 'full' },
-      { path: 'pipes', loadChildren: 'app/book-monkey/iteration-5/pipes/app.module#AppModule' },
-      { path: 'directives', loadChildren: 'app/book-monkey/iteration-5/directives/app.module#AppModule' }
+      { path: 'pipes', loadChildren: 'app/book-monkey/iteration-5/pipes/app.module.1#AppModule' },
+      { path: 'directives', loadChildren: 'app/book-monkey/iteration-5/directives/app.module.1#AppModule' }
     ]
   }
 ];
