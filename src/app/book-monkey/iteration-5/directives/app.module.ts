@@ -12,7 +12,7 @@ import { BookFormComponent } from './book-form/book-form.component';
 
 import { BookStoreService } from './shared/book-store.service';
 import { IsbnPipe } from './shared/isbn-pipe';
-import { ZoomBookCoverDirective } from './shared/zoom-book-cover.directive';
+import { ZoomImageOnHoverDirective } from './shared/zoom-image-on-hover.directive';
 
 import { routing } from './app.routing';
 
@@ -25,7 +25,7 @@ import { routing } from './app.routing';
     BookDetailsComponent,
     BookFormComponent,
     IsbnPipe,
-    ZoomBookCoverDirective
+    ZoomImageOnHoverDirective
   ],
   imports: [
     CommonModule,

@@ -1,10 +1,10 @@
 import { Directive, Input, ElementRef, HostListener, Renderer } from '@angular/core';
 
 @Directive({
-  selector: '[zoomBookCover]'
+  selector: '[zoomImageOnHover]'
 })
-export class ZoomBookCoverDirective {
-  @Input('zoomBookCover') size: string;
+export class ZoomImageOnHoverDirective {
+  @Input('zoomImageOnHover') size: string;
 
   constructor(private el: ElementRef, private renderer: Renderer) { }
 
