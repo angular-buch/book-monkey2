@@ -1,7 +1,7 @@
 .ng-dirty {
-    border-left: 4px solid greenyellow;
+  border-left: 4px solid greenyellow;
 }
 
 .ng-untouched {
-    border-left: 4px solid orangered;
+  border-left: 4px solid orangered;
 }
