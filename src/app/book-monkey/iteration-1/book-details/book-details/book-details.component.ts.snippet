@@ -8,4 +8,8 @@ import { Book } from '../shared/book';
 })
 export class BookDetailsComponent {
   @Input() book: Book;
+
+  getRating(num: number) {
+    return new Array(num);
+  }
 }
