@@ -1,0 +1,91 @@
+<h1>Buchformular</h1>
+<form #myForm="ngForm"
+      (ngSubmit)="submitForm(); myForm.reset()"
+      class="ui form grid">
+
+  <div class="four wide column">
+    <h4>Buchtitel</h4>
+  </div>
+  <div class="eleven wide column">
+    <input name="title" [(ngModel)]="book.title">
+  </div>
+
+  <div class="four wide column">
+    <h4>Untertitel</h4>
+  </div>
+  <div class="eleven wide column">
+    <input name="subtitle" [(ngModel)]="book.subtitle">
+  </div>
+
+  <div class="four wide column">
+    <h4>Erscheinungsdatum</h4>
+  </div>
+  <div class="eleven wide column">
+    <input type="date" name="published" [(ngModel)]="book.published">
+  </div>
+
+  <!--
+  <div class="row">
+    <div class="four wide column">
+      <h4>Autoren</h4>
+    </div>
+    <div class="eleven wide column">
+      <div class="fields">
+        <div formArrayName="authors"
+            *ngFor="let control of authors.controls; let i = index"
+            class="sixteen wide field">
+            <input [formControlName]="i" placeholder="Autor {{i+1}}">
+        </div>
+      </div>
+    </div>
+    <div class="one wide field">
+      <button (click)="addAuthorControl()" class="ui button"> + </button>
+    </div>
+  </div>
+  -->
+
+  <div class="four wide column">
+    <h4>ISBN</h4>
+  </div>
+  <div class="eleven wide column">
+    <input name="isbn" [(ngModel)]="book.isbn">
+  </div>
+
+
+  <div class="four wide column">
+    <h4>Beschreibung</h4>
+  </div>
+  <div class="eleven wide column">
+    <textarea  name="isbn" [(ngModel)]="book.description" rows="3"></textarea>
+  </div>
+
+  <!--
+  <div class="row">
+    <div class="four wide column">
+      <h4>Thumbnails</h4>
+    </div>
+    <div class="eleven wide column">
+        <div formArrayName="thumbnails"
+            *ngFor="let control of thumbnails.controls; let i = index">
+            <div [formGroupName]="i" class="inline fields">
+                <input formControlName="url" placeholder="http://bild{{i+1}}_Url">
+                <input formControlName="title" placeholder="Bild {{i+1}} Titel">
+            </div>
+          </div>
+        </div>
+    <div class="one wide field">
+      <button (click)="addThumbnailControl()" class="ui button"> + </button>
+    </div>
+  </div>
+  -->
+
+  <div class="four wide column"></div>
+  <div class="right twelfe wide column">
+    <button type="submit" class="ui button">Speichern</button>
+  </div>
+
+</form>
+
+<div style="margin-top: 20px; white-space:pre">
+  DEBUG: {{ book | json}}
+</div>
