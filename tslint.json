@@ -93,8 +93,8 @@
       "check-type"
     ],
 
-    "directive-selector-prefix": [true, "br"],
-    "component-selector-prefix": [true, "br"],
+    "directive-selector-prefix": [true, "bm"],
+    "component-selector-prefix": [true, "bm"],
     "directive-selector-name": [true, "camelCase"],
     "component-selector-name": [true, "kebab-case"],
     "directive-selector-type": [true, "attribute"],

@@ -3,7 +3,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Book, Thumbnail } from '../shared/book';
 
 @Component({
-  selector: 'br-book-list',
+  selector: 'bm-book-list',
   templateUrl: 'book-list.component.html',
 })
 export class BookListComponent implements OnInit {
