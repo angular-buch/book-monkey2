@@ -8,7 +8,7 @@ import { Book, Thumbnail } from '../shared/book';
 })
 export class BookListComponent implements OnInit {
   books: Book[];
-  @Output() showDetailsEvent: EventEmitter<any> = new EventEmitter();
+  @Output() showDetailsEvent = new EventEmitter<any>();
 
   ngOnInit() {
     this.books = [

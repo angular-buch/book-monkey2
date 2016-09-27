@@ -5,9 +5,9 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
   template: `<button (click)="raiseEvent()">Damage!</button>`,
 })
 export class MyComponent {
-  @Output() onRaisedEvent:EventEmitter<any> = new EventEmitter();
+  @Output() onRaisedEvent = new EventEmitter<string>();
 
   raiseEvent() {
-    this.onRaisedEvent.emit('event');
+    this.onRaisedEvent.emit('event!');
   }
 }

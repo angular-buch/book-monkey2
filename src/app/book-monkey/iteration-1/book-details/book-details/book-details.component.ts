@@ -8,7 +8,7 @@ import { Book } from '../shared/book';
 })
 export class BookDetailsComponent {
   @Input() book: Book;
-  @Output() showListEvent: EventEmitter<any> = new EventEmitter();
+  @Output() showListEvent = new EventEmitter<any>();
 
   getRating(num: number) {
     return new Array(num);
