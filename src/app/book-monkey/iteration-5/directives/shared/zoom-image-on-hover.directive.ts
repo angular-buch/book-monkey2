@@ -1,7 +1,7 @@
 import { Directive, Input, ElementRef, HostListener, Renderer } from '@angular/core';
 
 @Directive({
-  selector: '[zoomImageOnHover]'
+  selector: '[br-zoomImageOnHover]'
 })
 export class ZoomImageOnHoverDirective {
   @Input('zoomImageOnHover') size: string;
