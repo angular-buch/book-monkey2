@@ -6,7 +6,7 @@ import { Book } from '../shared/book';
 import { BookStoreService } from '../shared/book-store.service';
 
 @Component({
-  selector: 'book-form',
+  selector: 'br-book-form',
   templateUrl: 'book-form.component.html'
 })
 export class BookFormComponent implements OnInit {

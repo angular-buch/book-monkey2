@@ -3,7 +3,7 @@ import { Router, NavigationEnd } from '@angular/router';
 import 'rxjs/add/operator/filter';
 
 @Component({
-  selector: 'app-root',
+  selector: 'br-root',
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.css']
 })

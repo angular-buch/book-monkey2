@@ -3,7 +3,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Book } from '../shared/book';
 
 @Component({
-  selector: 'book-details',
+  selector: 'br-book-details',
   templateUrl: 'book-details.component.html'
 })
 export class BookDetailsComponent {

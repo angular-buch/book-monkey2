@@ -2,10 +2,10 @@ import { Component } from '@angular/core';
 import { Book } from './shared/book';
 
 @Component({
-  selector: 'app-root',
+  selector: 'br-root',
   template: `
-    <book-list *ngIf="listOn" (showDetailsEvent)="showDetails($event)"></book-list>
-    <book-details *ngIf="detailsOn" (showListEvent)="showList()" [book]="book"></book-details>
+    <br-book-list *ngIf="listOn" (showDetailsEvent)="showDetails($event)"></br-book-list>
+    <br-book-details *ngIf="detailsOn" (showListEvent)="showList()" [book]="book"></br-book-details>
   `
 })
 export class AppComponent {
