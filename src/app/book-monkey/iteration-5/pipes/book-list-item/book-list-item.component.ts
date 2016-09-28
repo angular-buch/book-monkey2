@@ -4,7 +4,7 @@ import { Book } from '../shared/book';
 import { IsbnPipe } from '../shared/isbn-pipe';
 
 @Component({
-  selector: 'a.book-list-item',
+  selector: 'a.bm-book-list-item',
   templateUrl: 'book-list-item.component.html'
 })
 
