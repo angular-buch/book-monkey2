@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 
 import { Iteration5Component } from './iteration-5.component';
-import { Iteration5Routing } from './iteration-5.routing';
+import { Iteration5RoutingModule } from './iteration-5-routing.module';
 
 @NgModule({
   declarations: [Iteration5Component],
-  imports: [Iteration5Routing]
+  imports: [Iteration5RoutingModule]
 })
 export default class Iteration5Module { }
 

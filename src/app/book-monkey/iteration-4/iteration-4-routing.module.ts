@@ -1,8 +1,9 @@
+import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { Iteration4Component } from './iteration-4.component';
 
-export const IT4_ROUTES: Routes = [
+export const routes: Routes = [
   {
     path: '',
     component: Iteration4Component,
@@ -13,4 +14,9 @@ export const IT4_ROUTES: Routes = [
   }
 ];
 
-export const Iteration4Routing = RouterModule.forChild(IT4_ROUTES);
+@NgModule({
+  imports: [RouterModule.forChild(routes)],
+  exports: [RouterModule],
+  providers: []
+})
+export class Iteration4RoutingModule { }

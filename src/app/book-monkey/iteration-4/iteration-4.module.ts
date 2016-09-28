@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 
 import { Iteration4Component } from './iteration-4.component';
-import { Iteration4Routing } from './iteration-4.routing';
+import { Iteration4RoutingModule } from './iteration-4-routing.module';
 
 @NgModule({
   declarations: [Iteration4Component],
-  imports: [Iteration4Routing]
+  imports: [Iteration4RoutingModule]
 })
 export default class Iteration4Module { }
 

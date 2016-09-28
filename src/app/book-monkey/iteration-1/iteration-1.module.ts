@@ -5,7 +5,7 @@ import { AppModule as AppModuleBookListRefactored } from './book-list-refactored
 import { AppModule as AppModuleBookDetails } from './book-details/app.module';
 
 import { Iteration1Component } from './iteration-1.component';
-import { Iteration1Routing } from './iteration-1.routing';
+import { Iteration1RoutingModule } from './iteration-1-routing.module';
 
 @NgModule({
   declarations: [Iteration1Component],
@@ -13,7 +13,8 @@ import { Iteration1Routing } from './iteration-1.routing';
     AppModuleBookList,
     AppModuleBookListRefactored,
     AppModuleBookDetails,
-    Iteration1Routing]
+    Iteration1RoutingModule
+  ]
 })
 export default class Iteration1Module { }
 

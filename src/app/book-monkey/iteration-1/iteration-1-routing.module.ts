@@ -1,3 +1,4 @@
+import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { Iteration1Component } from './iteration-1.component';
@@ -5,7 +6,7 @@ import { AppComponent as AppComponentBookList } from './book-list/app.component'
 import { AppComponent as AppComponentBookListRefactored } from './book-list-refactored/app.component';
 import { AppComponent as AppComponentBookDetails } from './book-details/app.component';
 
-export const IT1_ROUTES: Routes = [
+export const routes: Routes = [
   {
     path: '',
     component: Iteration1Component,
@@ -17,4 +18,9 @@ export const IT1_ROUTES: Routes = [
   }
 ];
 
-export const Iteration1Routing = RouterModule.forChild(IT1_ROUTES);
+@NgModule({
+  imports: [RouterModule.forChild(routes)],
+  exports: [RouterModule],
+  providers: []
+})
+export class Iteration1RoutingModule { }

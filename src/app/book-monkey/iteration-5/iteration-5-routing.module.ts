@@ -1,8 +1,9 @@
+import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { Iteration5Component } from './iteration-5.component';
 
-export const IT5_ROUTES: Routes = [
+export const routes: Routes = [
   {
     path: '',
     component: Iteration5Component,
@@ -14,4 +15,9 @@ export const IT5_ROUTES: Routes = [
   }
 ];
 
-export const Iteration5Routing = RouterModule.forChild(IT5_ROUTES);
+@NgModule({
+  imports: [RouterModule.forChild(routes)],
+  exports: [RouterModule],
+  providers: []
+})
+export class Iteration5RoutingModule { }

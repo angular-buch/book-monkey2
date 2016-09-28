@@ -1,9 +1,10 @@
+import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { Iteration2Component } from './iteration-2.component';
 import { AppComponent as AppComponentDi } from './di/app.component';
 
-export const IT2_ROUTES: Routes = [
+export const routes: Routes = [
   {
     path: '',
     component: Iteration2Component,
@@ -15,4 +16,9 @@ export const IT2_ROUTES: Routes = [
   }
 ];
 
-export const Iteration2Routing = RouterModule.forChild(IT2_ROUTES);
+@NgModule({
+  imports: [RouterModule.forChild(routes)],
+  exports: [RouterModule],
+  providers: []
+})
+export class Iteration2RoutingModule { }

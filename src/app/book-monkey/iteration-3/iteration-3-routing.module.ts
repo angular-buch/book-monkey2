@@ -1,9 +1,10 @@
+import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { Iteration3Component } from './iteration-3.component';
 
 
-export const IT3_ROUTES: Routes = [
+export const routes: Routes = [
   {
     path: '',
     component: Iteration3Component,
@@ -16,4 +17,9 @@ export const IT3_ROUTES: Routes = [
   }
 ];
 
-export const Iteration3Routing = RouterModule.forChild(IT3_ROUTES);
+@NgModule({
+  imports: [RouterModule.forChild(routes)],
+  exports: [RouterModule],
+  providers: []
+})
+export class Iteration3RoutingModule { }
