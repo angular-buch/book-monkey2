@@ -48,6 +48,6 @@ export class BookStoreService {
   }
 
   delete(isbn: string): void {
-    console.log(`deletes book with isbn: ${isbn}`);
+    console.log('deletes book with isbn', isbn);
   }
 }

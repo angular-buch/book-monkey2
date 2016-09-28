@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormBuilder, FormGroup, FormArray, Validators } from '@angular/forms';
 
@@ -87,9 +87,9 @@ export class BookFormComponent implements OnInit {
   }
 
   submitForm() {
-    if(this.isUpdatingBook) {
+    if (this.isUpdatingBook) {
       this.bs.update(this.myForm.value);
-      this.router.navigate(['../../books', this.myForm.value.isbn], {relativeTo: this.route});
+      this.router.navigate(['../../books', this.myForm.value.isbn], { relativeTo: this.route });
     } else {
       this.bs.create(this.myForm.value);
       this.myForm.reset();

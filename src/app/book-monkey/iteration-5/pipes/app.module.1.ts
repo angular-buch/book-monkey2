@@ -13,8 +13,6 @@ import { BookFormComponent } from './book-form/book-form.component';
 import { BookStoreService } from './shared/book-store.service';
 import { IsbnPipe } from './shared/isbn-pipe';
 
-//import { routing } from './app.routing';
-
 import { routes } from './app.routing'; // NEW
 import { RouterModule } from '@angular/router';
 let routing = RouterModule.forChild([{ path: '', component: AppComponent, children: routes }]);

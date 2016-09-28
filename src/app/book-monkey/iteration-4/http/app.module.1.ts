@@ -11,7 +11,6 @@ import { BookDetailsComponent } from './book-details/book-details.component';
 import { BookFormComponent } from './book-form/book-form.component';
 
 import { BookStoreService } from './shared/book-store.service';
-//import { routing } from './app.routing';
 
 import { routes } from './app.routing'; // NEW
 import { RouterModule } from '@angular/router';

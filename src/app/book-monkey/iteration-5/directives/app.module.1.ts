@@ -12,9 +12,7 @@ import { BookFormComponent } from './book-form/book-form.component';
 
 import { BookStoreService } from './shared/book-store.service';
 import { IsbnPipe } from './shared/isbn-pipe';
-import { ZoomImageOnHoverDirective } from './shared/zoom-image-on-hover.directive';
-
-//import { routing } from './app.routing';
+import { ZoomDirective } from './shared/zoom.directive';
 
 import { routes } from './app.routing'; // NEW
 import { RouterModule } from '@angular/router';
@@ -29,7 +27,7 @@ let routing = RouterModule.forChild([{ path: '', component: AppComponent, childr
     BookDetailsComponent,
     BookFormComponent,
     IsbnPipe,
-    ZoomImageOnHoverDirective
+    ZoomDirective
   ],
   imports: [
     CommonModule,

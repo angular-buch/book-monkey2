@@ -1,7 +1,6 @@
 import { Component, Input } from '@angular/core';
 
 import { Book } from '../shared/book';
-import { IsbnPipe } from '../shared/isbn-pipe';
 
 @Component({
   selector: 'a.bm-book-list-item',
