@@ -12,7 +12,7 @@
       "main": "main.ts",
       "test": "test.ts",
       "tsconfig": "tsconfig.json",
-      "prefix": "br",
+      "prefix": "bm",
       "mobile": false,
       "styles": [
         "../node_modules/semantic-ui-css/semantic.css"
