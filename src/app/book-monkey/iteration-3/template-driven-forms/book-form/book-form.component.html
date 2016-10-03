@@ -28,11 +28,11 @@
     <h4>Autoren</h4>
   </div>
   <div class="eleven wide column">
-    <div class="fields">
-      <input name="authors[0]" [(ngModel)]="book.authors[0]">
-      <input name="authors[1]" [(ngModel)]="book.authors[1]">
-      <input name="authors[2]" [(ngModel)]="book.authors[2]">
-      <input name="authors[3]" [(ngModel)]="book.authors[3]">
+    <div class="fields" ngModelGroup="authors">
+      <input name="0" [(ngModel)]="book.authors[0]">
+      <input name="1" [(ngModel)]="book.authors[1]">
+      <input name="2" [(ngModel)]="book.authors[2]">
+      <input name="3" [(ngModel)]="book.authors[3]">
     </div>
   </div>
 
@@ -54,10 +54,10 @@
     <div class="four wide column">
       <h4>Thumbnail</h4>
     </div>
-    <div class="eleven wide column">
+    <div class="eleven wide column"  ngModelGroup="thumbnail">
       <div class="fields">
-        <input name="thumbnails[0].url" [(ngModel)]="book.thumbnails[0].url" placeholder="http://beispiel/img.jpg">
-        <input name="thumbnails[0].title" [(ngModel)]="book.thumbnails[0].title" placeholder="Titel">
+        <input name="url" [(ngModel)]="book.thumbnails[0].url" placeholder="http://beispiel/img.jpg">
+        <input name="title" [(ngModel)]="book.thumbnails[0].title" placeholder="Titel">
       </div>
     </div>
   </div>
