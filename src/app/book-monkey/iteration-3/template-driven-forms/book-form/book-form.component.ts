@@ -9,8 +9,6 @@ import { BookStoreService } from '../shared/book-store.service';
   templateUrl: 'book-form.component.html'
 })
 export class BookFormComponent implements OnInit {
-  //authors: FormArray;
-  //thumbnails: FormArray;
   book: Book = Book.empty();
   isUpdatingBook: boolean = false;
 
