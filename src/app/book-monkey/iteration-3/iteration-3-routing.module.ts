@@ -10,9 +10,9 @@ export const routes: Routes = [
     component: Iteration3Component,
     children: [
       { path: '', redirectTo: 'template-driven-forms', pathMatch: 'full' },
-      { path: 'template-driven-forms', loadChildren: 'app/book-monkey/iteration-3/template-driven-forms/app.module.1#AppModule' },
-      { path: 'reactive-forms', loadChildren: 'app/book-monkey/iteration-3/reactive-forms/app.module.1#AppModule' },
-      { path: 'custom-validation', loadChildren: 'app/book-monkey/iteration-3/custom-validation/app.module.1#AppModule' }
+      { path: 'template-driven-forms', loadChildren: 'app/book-monkey/iteration-3/template-driven-forms/app.module#AppModule' },
+      { path: 'reactive-forms', loadChildren: 'app/book-monkey/iteration-3/reactive-forms/app.module#AppModule' },
+      { path: 'custom-validation', loadChildren: 'app/book-monkey/iteration-3/custom-validation/app.module#AppModule' }
     ]
   }
 ];

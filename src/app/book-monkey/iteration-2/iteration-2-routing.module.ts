@@ -11,7 +11,7 @@ export const routes: Routes = [
     children: [
       { path: '', redirectTo: 'di', pathMatch: 'full' },
       { path: 'di', component: AppComponentDi },
-      { path: 'navigation', loadChildren: 'app/book-monkey/iteration-2/navigation/app.module.1#AppModule' }
+      { path: 'navigation', loadChildren: 'app/book-monkey/iteration-2/navigation/app.module#AppModule' }
     ]
   }
 ];

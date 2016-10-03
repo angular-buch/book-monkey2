@@ -1,3 +1,4 @@
+//import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
@@ -14,7 +15,8 @@ import { BookStoreService } from './shared/book-store.service';
 import { IsbnPipe } from './shared/isbn-pipe';
 import { ZoomDirective } from './shared/zoom.directive';
 
-import { routing } from './app.routing';
+//import { AppRoutingModule } from './app-routing.module'; // NEW
+import { AppRoutingModule } from './app-routing.module.1';
 
 @NgModule({
   declarations: [
@@ -28,11 +30,12 @@ import { routing } from './app.routing';
     ZoomDirective
   ],
   imports: [
+    //BrowserModule,
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
     HttpModule,
-    routing
+    AppRoutingModule
   ],
   providers: [
     BookStoreService
