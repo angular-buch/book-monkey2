@@ -11,9 +11,9 @@ import { BookListItemComponent } from './book-list-item/book-list-item.component
 import { BookDetailsComponent } from './book-details/book-details.component';
 import { BookFormComponent } from './book-form/book-form.component';
 
-import { BookStoreService } from '../shared/book-store.service';
-import { IsbnPipe } from '../shared/isbn-pipe';
-import { ZoomDirective } from '../shared/zoom.directive';
+import { BookStoreService } from '../pipes/shared/book-store.service';
+import { IsbnPipe } from './shared/isbn-pipe';
+import { ZoomDirective } from './shared/zoom.directive';
 
 //import { AppRoutingModule } from './app-routing.module'; // NEW
 import { AppRoutingModule } from './app-routing.module.1';
