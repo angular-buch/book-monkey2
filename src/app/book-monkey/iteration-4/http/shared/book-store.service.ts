@@ -14,7 +14,7 @@ export class BookStoreService {
     this.headers.append('Content-Type', 'application/json');
   }
 
-  getAll(): Observable<Book[]> {
+  getAll(): Observable<Array<Book>> {
     return this.http
       .get(`${this.api}/books`)
       .map(response => response.json());
