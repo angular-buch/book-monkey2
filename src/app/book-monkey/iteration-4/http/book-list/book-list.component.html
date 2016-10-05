@@ -1,6 +1,6 @@
 <div class="ui middle aligned selection divided list">
   <a class="bm-book-list-item item"
-      *ngFor="let b of books"
+      *ngFor="let b of books | async"
       [book]="b"
       [routerLink]="[b.isbn]"></a>
 </div>
