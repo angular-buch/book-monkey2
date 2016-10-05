@@ -36,7 +36,7 @@ export class BookStoreService {
       .put(`${this.api}/book/${book.isbn}`, JSON.stringify(book), { headers: this.headers });
   }
 
-  delete(isbn: string): Observable<any> {
+  remove(isbn: string): Observable<any> {
     return this.http
       .delete(`${this.api}/book/${isbn}`);
   }

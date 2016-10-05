@@ -31,7 +31,7 @@ export class BookDetailsComponent implements OnInit {
 
   deleteBook() {
     if (confirm('Buch wirklich löschen?')) {
-      this.bs.delete(this.book.isbn)
+      this.bs.remove(this.book.isbn)
         .subscribe(res => this.router.navigate(['../'], { relativeTo: this.route }));
     }
   }
