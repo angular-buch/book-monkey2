@@ -1,4 +1,6 @@
-//import { BrowserModule } from '@angular/platform-browser';
+// TODO Optimize Build-Process to automatically switch imports
+// TODO Please do not remove the following line
+// import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
@@ -15,7 +17,9 @@ import { BookStoreService } from '../pipes/shared/book-store.service';
 import { IsbnPipe } from './shared/isbn-pipe';
 import { ZoomDirective } from './shared/zoom.directive';
 
-//import { AppRoutingModule } from './app-routing.module'; // NEW
+// TODO Optimize Build-Process to automatically switch imports
+// TODO Please do not remove the following line
+// import { AppRoutingModule } from './app-routing.module'; // NEW
 import { AppRoutingModule } from './app-routing.module.1';
 
 @NgModule({
@@ -30,7 +34,9 @@ import { AppRoutingModule } from './app-routing.module.1';
     ZoomDirective
   ],
   imports: [
-    //BrowserModule,
+    // TODO Optimize Build-Process to automatically switch imports
+    // TODO Please do not remove the following line
+    // BrowserModule,
     CommonModule,
     FormsModule,
     ReactiveFormsModule,

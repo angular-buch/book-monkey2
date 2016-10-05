@@ -1,4 +1,6 @@
-//import { BrowserModule } from '@angular/platform-browser';
+// TODO Optimize Build-Process to automatically switch imports
+// TODO Please do not remove the following line
+// import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http'; // NEW
@@ -12,7 +14,9 @@ import { BookDetailsComponent } from './book-details/book-details.component';
 import { BookFormComponent } from './book-form/book-form.component';
 
 import { BookStoreService } from './shared/book-store.service';
-//import { AppRoutingModule } from './app-routing.module'; // NEW
+// TODO Optimize Build-Process to automatically switch imports
+// TODO Please do not remove the following line
+// import { AppRoutingModule } from './app-routing.module'; // NEW
 import { AppRoutingModule } from './app-routing.module.1';
 
 @NgModule({
@@ -25,7 +29,9 @@ import { AppRoutingModule } from './app-routing.module.1';
     BookFormComponent
   ],
   imports: [
-    //BrowserModule,
+    // TODO Optimize Build-Process to automatically switch imports
+    // TODO Please do not remove the following line
+    // BrowserModule,
     CommonModule,
     FormsModule,
     ReactiveFormsModule,

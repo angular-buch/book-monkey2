@@ -1,4 +1,6 @@
-//import { BrowserModule } from '@angular/platform-browser';
+// TODO Optimize Build-Process to automatically switch imports
+// TODO Please do not remove the following line
+// import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
@@ -9,7 +11,9 @@ import { BookListItemComponent } from './book-list-item/book-list-item.component
 import { BookDetailsComponent } from './book-details/book-details.component';
 
 import { BookStoreService } from './shared/book-store.service';
-//import { AppRoutingModule } from './app-routing.module'; // NEW
+// TODO Optimize Build-Process to automatically switch imports
+// TODO Please do not remove the following line
+// import { AppRoutingModule } from './app-routing.module'; // NEW
 import { AppRoutingModule } from './app-routing.module.1';
 
 @NgModule({
@@ -21,7 +25,9 @@ import { AppRoutingModule } from './app-routing.module.1';
     BookDetailsComponent
   ],
   imports: [
-    //BrowserModule,
+    // TODO Optimize Build-Process to automatically switch imports
+    // TODO Please do not remove the following line
+    // BrowserModule,
     CommonModule,
     AppRoutingModule
   ],
