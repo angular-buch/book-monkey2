@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router  } from '@angular/router';
 import { FormBuilder, FormGroup, FormArray, Validators } from '@angular/forms';
 
-import { validateIsbn } from '../shared/isbn.validator';
-import { Book } from '../shared/book';
-import { BookStoreService } from '../shared/book-store.service';
+import { validateIsbn } from '../../shared/isbn.validator';
+import { Book } from '../../shared/book';
+import { BookStoreService } from '../../shared/book-store.service';
 
 @Component({
   selector: 'bm-book-form',
