@@ -62,11 +62,15 @@ export class BookFormComponent implements OnInit {
   }
 
   buildAuthorsArray(authors): FormArray {
+    if(!authors) return this.fb.array([]);
+
     this.authors = this.fb.array(authors, Validators.required);
     return this.authors;
   }
 
   buildThumbnailsArray(thumbnails): FormArray {
+    if(!thumbnails) return this.fb.array([]);
+
     this.thumbnails = this.fb.array(
       thumbnails.map(
         t => this.fb.group({

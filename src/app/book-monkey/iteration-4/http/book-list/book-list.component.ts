@@ -8,7 +8,7 @@ import { Observable } from "rxjs";
   templateUrl: 'book-list.component.html'
 })
 export class BookListComponent implements OnInit {
-  books: Observable<Array<Book>>;
+  books: Observable<Book[]>;
 
   constructor(private bs: BookStoreService) { }
 
