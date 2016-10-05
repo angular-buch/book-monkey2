@@ -53,7 +53,7 @@ export class BookFormComponent implements OnInit {
       ])],
       description: [book.description],
       authors: this.buildAuthorsArray(book.authors),
-      thumbnails: this.buildThumbnialsArray(book.thumbnails),
+      thumbnails: this.buildThumbnailsArray(book.thumbnails),
       published: [
         book.published,
         Validators.pattern('([1-9]|0[1-9]|(1|2)[0-9]|3[0-1])\.([1-9]|0[1-9]|1[0-2])\.[0-9]{4}')
@@ -66,7 +66,7 @@ export class BookFormComponent implements OnInit {
     return this.authors;
   }
 
-  buildThumbnialsArray(thumbnails): FormArray {
+  buildThumbnailsArray(thumbnails): FormArray {
     this.thumbnails = this.fb.array(
       thumbnails.map(
         t => this.fb.group({
