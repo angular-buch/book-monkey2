@@ -10,10 +10,11 @@ import { BookStoreService } from '../shared/book-store.service';
   templateUrl: 'book-form.component.html'
 })
 export class BookFormComponent implements OnInit {
+  book: Book = Book.empty();
+  isUpdatingBook: boolean = false;
   myForm: FormGroup;
   authors: FormArray;
   thumbnails: FormArray;
-  isUpdatingBook: boolean;
 
   constructor(
     private fb: FormBuilder,
@@ -23,12 +24,9 @@ export class BookFormComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.isUpdatingBook = false;
-    this.initBook();
-
+    this.initBook(this.book);
     this.route.params.subscribe(params => {
       let isbn = params['isbn'];
-
       if (isbn) {
         this.isUpdatingBook = true;
         let book = this.bs.getSingle(isbn);
@@ -37,11 +35,7 @@ export class BookFormComponent implements OnInit {
     });
   }
 
-  initBook(book?: Book) {
-    if (!book) {
-      book = new Book('', '', [''], new Date(), '', 0, [{ url: '', title: '' }], '');
-    }
-
+  initBook(book: Book) {
     this.myForm = this.fb.group({
       title: book.title,
       subtitle: book.subtitle,

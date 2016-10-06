@@ -12,10 +12,11 @@ import { BookStoreService } from '../shared/book-store.service';
   styleUrls: ['book-form.component.css']
 })
 export class BookFormComponent implements OnInit {
+  book: Book = Book.empty();
+  isUpdatingBook: boolean = false;
   myForm: FormGroup;
   authors: FormArray;
   thumbnails: FormArray;
-  isUpdatingBook: boolean;
 
   constructor(
     private fb: FormBuilder,
@@ -25,12 +26,9 @@ export class BookFormComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.isUpdatingBook = false;
-    this.initBook();
-
+    this.initBook(this.book);
     this.route.params.subscribe(params => {
       let isbn = params['isbn'];
-
       if (isbn) {
         this.isUpdatingBook = true;
         this.bs.getSingle(isbn)
@@ -39,11 +37,7 @@ export class BookFormComponent implements OnInit {
     });
   }
 
-  initBook(book?: Book) {
-    if (!book) {
-      book = new Book('', '', [''], new Date(), '', 0, [{ url: '', title: '' }], '');
-    }
-
+  initBook(book: Book) {
     this.myForm = this.fb.group({
       title: [book.title, Validators.required],
       subtitle: [book.subtitle],
@@ -62,15 +56,11 @@ export class BookFormComponent implements OnInit {
   }
 
   buildAuthorsArray(authors): FormArray {
-    if(!authors) return this.fb.array([]);
-
     this.authors = this.fb.array(authors, Validators.required);
     return this.authors;
   }
 
   buildThumbnailsArray(thumbnails): FormArray {
-    if(!thumbnails) return this.fb.array([]);
-
     this.thumbnails = this.fb.array(
       thumbnails.map(
         t => this.fb.group({
