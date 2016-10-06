@@ -1,53 +1,48 @@
 <h1>Buchformular</h1>
 <form #myForm="ngForm"
-      (ngSubmit)="submitForm(); myForm.reset()"
+      (ngSubmit)="submitForm(myForm.value); myForm.reset()"
       class="ui form grid">
 
   <div class="four wide column">
     <h4>Buchtitel</h4>
   </div>
   <div class="eleven wide column">
-    <input name="title" [(ngModel)]="book.title">
+    <input name="title" ngModel required>
   </div>
 
   <div class="four wide column">
     <h4>Untertitel</h4>
   </div>
   <div class="eleven wide column">
-    <input name="subtitle" [(ngModel)]="book.subtitle">
+    <input name="subtitle" ngModel>
   </div>
 
   <div class="four wide column">
     <h4>Erscheinungsdatum</h4>
   </div>
   <div class="eleven wide column">
-    <input type="date" name="published" [(ngModel)]="book.published">
+    <input type="date" name="published" ngModel required>
   </div>
 
   <div class="four wide column">
     <h4>Autoren</h4>
   </div>
   <div class="eleven wide column">
-    <div class="fields" ngModelGroup="authors">
-      <input name="0" [(ngModel)]="book.authors[0]">
-      <input name="1" [(ngModel)]="book.authors[1]">
-      <input name="2" [(ngModel)]="book.authors[2]">
-      <input name="3" [(ngModel)]="book.authors[3]">
-    </div>
+    <input type="text" name="published" ngModel required pattern="[^,\s][^\,]*[^,\s]*">
   </div>
 
   <div class="four wide column">
     <h4>ISBN</h4>
   </div>
   <div class="eleven wide column">
-    <input name="isbn" [(ngModel)]="book.isbn">
+    <input name="isbn" ngModel>
   </div>
 
   <div class="four wide column">
     <h4>Beschreibung</h4>
   </div>
   <div class="eleven wide column">
-    <textarea  name="isbn" [(ngModel)]="book.description" rows="3"></textarea>
+    <textarea  name="isbn" ngModel rows="3"></textarea>
   </div>
 
   <div class="row">
@@ -56,8 +51,8 @@
     </div>
     <div class="eleven wide column"  ngModelGroup="thumbnail">
       <div class="fields">
-        <input name="url" [(ngModel)]="book.thumbnails[0].url" placeholder="http://beispiel/img.jpg">
-        <input name="title" [(ngModel)]="book.thumbnails[0].title" placeholder="Titel">
+        <input name="url" ngModel placeholder="http://beispiel/img.jpg">
+        <input name="title" ngModel placeholder="Titel">
       </div>
     </div>
   </div>
