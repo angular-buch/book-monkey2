@@ -28,14 +28,14 @@
     <h4>Autoren</h4>
   </div>
   <div class="eleven wide column">
-    <input type="text" name="published" ngModel required pattern="[^,\s][^\,]*[^,\s]*">
+    <input type="text" name="authors" ngModel required>
   </div>
 
   <div class="four wide column">
     <h4>ISBN</h4>
   </div>
   <div class="eleven wide column">
-    <input name="isbn" ngModel>
+    <input name="isbn" ngModel required>
   </div>
 
   <div class="four wide column">
@@ -59,7 +59,7 @@
 
   <div class="four wide column"></div>
   <div class="right twelfe wide column">
-    <button type="submit" class="ui button">Speichern</button>
+    <button type="submit" class="ui button" [disabled]="!myForm.valid">Speichern</button>
   </div>
 
 </form>
