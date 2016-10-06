@@ -40,5 +40,12 @@
     </div>
   </div>
 
+  <div *ngIf="!myForm.valid" class="ui negative message">
+    <div class="header">
+      Fehler bei der Überprüfung der Eingabewerte
+    </div>
+    <p>Bitte überprüfen Sie die Angaben</p>
+  </div>
+
   <button type="submit" class="ui button" [disabled]="!myForm.valid">Speichern</button>
 </form>
