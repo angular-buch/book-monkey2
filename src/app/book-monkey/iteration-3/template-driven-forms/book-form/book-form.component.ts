@@ -18,7 +18,11 @@ export class BookFormComponent implements OnInit {
   ngOnInit() { }
 
   submitForm(value: {}) {
-    console.log(value);
+    // split authors and save as array
+    this.book.authors = value['authors'].split(/(?:,| )+/);
+    // wrap single thumbnail into array
+    this.book.thumbnails = [value['thumbnails']];
+
     this.bs.create(this.book);
   }
 }
