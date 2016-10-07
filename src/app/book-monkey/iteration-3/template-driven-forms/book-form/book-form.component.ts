@@ -11,11 +11,11 @@ import { BookStoreService } from '../shared/book-store.service';
 export class BookFormComponent implements OnInit {
   @ViewChild('myForm') currentForm: NgForm;
   book = Book.empty();
-  formErrors = {
+  formErrors: Object = {
     'title': '',
     'isbn': '',
     'published': '',
-    'authors': ''
+    'author': ''
   };
   validationMessages = {
     'title': {
@@ -29,27 +29,29 @@ export class BookFormComponent implements OnInit {
     'published': {
       'required': 'Es muss ein Erscheinungsdatum angegeben werden'
     },
-    'authors': {
+    'author': {
       'required': 'Es muss mindestens ein Autor angegeben werden'
     }
   };
 
   constructor(private bs: BookStoreService) { }
 
-  ngOnInit(): void {
-    this.currentForm.valueChanges.subscribe(data =>
-      this.updateErrorMessage());
+  ngOnInit() {
+    this.currentForm.valueChanges.subscribe(() => this.updateErrorMessages());
   }
 
-  submitForm() { this.bs.create(this.book); }
+  submitForm() {
+    this.bs.create(this.book);
+    this.currentForm.reset();
+  }
 
-  updateErrorMessage() {
+  updateErrorMessages() {
     for (let field in this.formErrors) {
       this.formErrors[field] = '';
-      const control = this.currentForm.form.get(field);
+      let control = this.currentForm.form.get(field);
 
-      if (control && control.dirty && !control.valid) {
-        const messages = this.validationMessages[field];
+      if (control && control.dirty && control.invalid) {
+        let messages = this.validationMessages[field];
         for (let key in control.errors) {
           this.formErrors[field] += messages[key] + ' ';
         }

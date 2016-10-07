@@ -2,7 +2,7 @@
 <form novalidate
        class="ui large form"
        #myForm="ngForm"
-       (ngSubmit)="submitForm(myForm.value); myForm.reset()">
+       (ngSubmit)="submitForm(myForm.value)">
 
   <div class="field">
     <label>Buchtitel</label>
@@ -45,13 +45,13 @@
     </div>
   </div>
   <div class="field">
-    <label>Autoren</label>
+    <label>Autor</label>
     <input
       name="author"
       [(ngModel)]="book.authors[0]"
       required>
-    <div *ngIf="formErrors.authors" class="ui negative message">
-      {{ formErrors.authors }}
+    <div *ngIf="formErrors.author" class="ui negative message">
+      {{ formErrors.author }}
     </div>
   </div>
   <div class="field">
@@ -63,7 +63,7 @@
   </div>
   <div class="field">
     <label>Bild</label>
-    <div class="two fields">
+    <div class="two fields" ngModelGroup="thumbnail">
       <div class="field">
         <input
           name="url"
