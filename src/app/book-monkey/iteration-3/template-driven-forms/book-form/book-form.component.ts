@@ -11,6 +11,28 @@ import { BookStoreService } from '../shared/book-store.service';
 export class BookFormComponent implements OnInit {
   bookForm: NgForm;
   @ViewChild('myForm') currentForm: NgForm;
+  formErrors = {
+    'title': '',
+    'isbn': '',
+    'published': '',
+    'authors': ''
+  };
+  validationMessages = {
+    'title': {
+      'required': 'Ein Buchtitel muss angegeben werden',
+    },
+    'isbn': {
+      'required': 'Es muss eine ISBN Nummer angegeben werden',
+      'minlength': 'Die ISBN Nummer muss mindestens 10 Zeichen enthalten',
+      'maxlength': 'Eine ISBN Nummer kann nicht mehr als 10 Zeichen haben'
+    },
+    'published': {
+      'required': 'Es muss ein Erscheinungsdatum angegeben werden'
+    },
+    'authors': {
+      'required': 'Es muss mindestens ein Autor angegeben werden'
+    }
+  };
 
   constructor(private bs: BookStoreService) { }
 
@@ -51,28 +73,4 @@ export class BookFormComponent implements OnInit {
       }
     }
   }
-
-  formErrors = {
-    'title': '',
-    'isbn': '',
-    'published': '',
-    'authors': ''
-  };
-
-  validationMessages = {
-    'title': {
-      'required': 'Ein Buchtitel muss angegeben werden',
-    },
-    'isbn': {
-      'required': 'Es muss eine ISBN Nummer angegeben werden',
-      'minlength': 'Die ISBN Nummer muss mindestens 10 Zeichen enthalten',
-      'maxlength': 'Eine ISBN Nummer kann nicht mehr als 10 Zeichen haben'
-    },
-    'published': {
-      'required': 'Es muss ein Erscheinungsdatum angegeben werden'
-    },
-    'authors': {
-      'required': 'Es muss mindestens ein Autor angegeben werden'
-    }
-  };
 }
