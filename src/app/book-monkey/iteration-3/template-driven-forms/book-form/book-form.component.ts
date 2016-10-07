@@ -1,7 +1,7 @@
-import { Component, OnInit, ViewChild, AfterViewChecked } from '@angular/core';
+import { Component, ViewChild, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
-import { Book, Thumbnail } from '../shared/book';
+import { Book } from '../shared/book';
 import { BookStoreService } from '../shared/book-store.service';
 
 @Component({
@@ -12,23 +12,11 @@ export class BookFormComponent implements OnInit {
   bookForm: NgForm;
   @ViewChild('myForm') currentForm: NgForm;
 
-  constructor(
-    private bs: BookStoreService
-  ) { }
+  constructor(private bs: BookStoreService) { }
 
-  ngOnInit() { }
-
-  ngAfterViewChecked() {
-    this.formChanged();
-  }
-
-  formChanged() {
-    if (this.currentForm === this.bookForm) { return; }
-    this.bookForm = this.currentForm;
-    if (this.bookForm) {
-      this.bookForm.valueChanges
-        .subscribe(data => this.onValueChanged(data));
-    }
+  ngOnInit(): void {
+    this.currentForm.valueChanges.subscribe(data =>
+      this.onValueChanged(data));
   }
 
   submitForm(value: {}) {
