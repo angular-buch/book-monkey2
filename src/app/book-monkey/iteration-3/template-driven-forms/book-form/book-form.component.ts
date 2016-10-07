@@ -38,7 +38,7 @@ export class BookFormComponent implements OnInit {
 
   ngOnInit(): void {
     this.currentForm.valueChanges.subscribe(data =>
-      this.onValueChanged(data));
+      this.updateErrorMessage());
   }
 
   submitForm(value: {}) {
@@ -56,18 +56,14 @@ export class BookFormComponent implements OnInit {
     this.bs.create(book);
   }
 
-  onValueChanged(data?: any) {
-    if (!this.bookForm) { return; }
-    const form = this.bookForm.form;
-
-    for (const field in this.formErrors) {
-      // clear previous error message (if any)
+  updateErrorMessage() {
+    for (let field in this.formErrors) {
       this.formErrors[field] = '';
-      const control = form.get(field);
+      const control = this.currentForm.form.get(field);
 
       if (control && control.dirty && !control.valid) {
         const messages = this.validationMessages[field];
-        for (const key in control.errors) {
+        for (let key in control.errors) {
           this.formErrors[field] += messages[key] + ' ';
         }
       }
