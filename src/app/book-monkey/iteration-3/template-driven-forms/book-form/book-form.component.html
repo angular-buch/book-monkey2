@@ -1,8 +1,8 @@
 <h1>Buchformular</h1>
-{{ book | json }}
-<form class="ui large form"
-      #myForm="ngForm"
-      (ngSubmit)="submitForm(myForm.value); myForm.reset()">
+<form novalidate
+       class="ui large form"
+       #myForm="ngForm"
+       (ngSubmit)="submitForm(myForm.value); myForm.reset()">
 
   <div class="field">
     <label>Buchtitel</label>
@@ -47,9 +47,9 @@
   <div class="field">
     <label>Autoren</label>
     <input
-      name="authors"
-      [(ngModel)]="book.authors"
-      required>
+        name="author"
+        [(ngModel)]="book.authors[0]"
+        required>
     <div *ngIf="formErrors.authors" class="ui negative message">
       {{ formErrors.authors }}
     </div>
