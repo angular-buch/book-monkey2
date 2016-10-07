@@ -9,8 +9,8 @@ import { BookStoreService } from '../shared/book-store.service';
   templateUrl: 'book-form.component.html'
 })
 export class BookFormComponent implements OnInit {
-  bookForm: NgForm;
   @ViewChild('myForm') currentForm: NgForm;
+  book = Book.empty();
   formErrors = {
     'title': '',
     'isbn': '',
