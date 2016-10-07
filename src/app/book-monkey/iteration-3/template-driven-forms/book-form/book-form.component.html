@@ -7,6 +7,9 @@
   <div class="field">
     <label>Buchtitel</label>
     <input name="title" ngModel required>
+    <div *ngIf="formErrors.title" class="ui negative message">
+      {{ formErrors.title }}
+    </div>
   </div>
   <div class="field">
     <label>Untertitel</label>
@@ -14,15 +17,24 @@
   </div>
   <div class="field">
     <label>ISBN-Nummer</label>
-    <input name="isbn" ngModel required>
+    <input name="isbn" ngModel required minlength="10" maxlength="13">
+    <div *ngIf="formErrors.isbn" class="ui negative message">
+      {{ formErrors.isbn }}
+    </div>
   </div>
   <div class="field">
     <label>Erscheinungsdatum</label>
     <input type="date" name="published" ngModel required>
+    <div *ngIf="formErrors.date" class="ui negative message">
+      {{ formErrors.date }}
+    </div>
   </div>
   <div class="field">
     <label>Autoren</label>
     <input name="authors" ngModel required>
+    <div *ngIf="formErrors.authors" class="ui negative message">
+      {{ formErrors.authors }}
+    </div>
   </div>
   <div class="field">
     <label>Beschreibung</label>
@@ -30,7 +42,7 @@
   </div>
   <div class="field">
     <label>Bild</label>
-    <div class="two fields">
+    <div class="two fields" ngModelGroup="thumbnails">
       <div class="field">
         <input name="url" ngModel placeholder="http://beispiel/img.jpg">
       </div>
@@ -38,13 +50,6 @@
         <input name="title" ngModel placeholder="Titel">
       </div>
     </div>
-  </div>
-
-  <div *ngIf="!myForm.valid" class="ui negative message">
-    <div class="header">
-      Fehler bei der Überprüfung der Eingabewerte
-    </div>
-    <p>Bitte überprüfen Sie die Angaben</p>
   </div>
 
   <button type="submit" class="ui button" [disabled]="!myForm.valid">Speichern</button>
