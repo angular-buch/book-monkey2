@@ -41,24 +41,7 @@ export class BookFormComponent implements OnInit {
       this.updateErrorMessage());
   }
 
-  addAuthor() {
-    this.book.authors.push('');
-  }
-
-  submitForm(value: {}) {
-    let book = new Book(
-      value['isbn'],
-      value['title'],
-      value['authors'].split(/(?:,| )+/),
-      value['published'],
-      value['subtitle'],
-      null,
-      [ value['thumbnails'] ],
-      value['description']
-    );
-
-    this.bs.create(book);
-  }
+  submitForm() { this.bs.create(this.book); }
 
   updateErrorMessage() {
     for (let field in this.formErrors) {
