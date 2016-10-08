@@ -20,7 +20,7 @@ import { ZoomDirective } from './shared/zoom.directive';
 // TODO Optimize Build-Process to automatically switch imports
 // TODO Please do not remove the following line
 // import { AppRoutingModule } from './app-routing.module'; // NEW
-import { AppRoutingModule } from './app-routing.module.1';
+import { AppRoutingModule } from './app-routing.module.one-app';
 
 @NgModule({
   declarations: [
