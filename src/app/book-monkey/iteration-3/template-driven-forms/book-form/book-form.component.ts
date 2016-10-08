@@ -11,26 +11,33 @@ import { BookStoreService } from '../shared/book-store.service';
 export class BookFormComponent implements OnInit {
   @ViewChild('myForm') currentForm: NgForm;
   book = Book.empty();
-  formErrors: Object = {
-    'title': '',
-    'isbn': '',
-    'published': '',
-    'author': ''
-  };
-  validationMessages = {
-    'title': {
-      'required': 'Ein Buchtitel muss angegeben werden',
+
+  validation = {
+    title: {
+      error: '',
+      messages: {
+        'required': 'Ein Buchtitel muss angegeben werden',
+      }
     },
-    'isbn': {
-      'required': 'Es muss eine ISBN Nummer angegeben werden',
-      'minlength': 'Die ISBN Nummer muss mindestens 10 Zeichen enthalten',
-      'maxlength': 'Eine ISBN Nummer kann nicht mehr als 10 Zeichen haben'
+    isbn: {
+      error: '',
+      messages: {
+        'required': 'Es muss eine ISBN Nummer angegeben werden',
+        'minlength': 'Die ISBN Nummer muss mindestens 10 Zeichen enthalten',
+        'maxlength': 'Eine ISBN Nummer kann nicht mehr als 10 Zeichen haben'
+      }
     },
-    'published': {
-      'required': 'Es muss ein Erscheinungsdatum angegeben werden'
+    published: {
+      error: '',
+      messages: {
+        'required': 'Es muss ein Erscheinungsdatum angegeben werden'
+      }
     },
-    'author': {
-      'required': 'Es muss mindestens ein Autor angegeben werden'
+    author: {
+      error: '',
+      messages: {
+        'required': 'Es muss mindestens ein Autor angegeben werden'
+      }
     }
   };
 
@@ -46,16 +53,16 @@ export class BookFormComponent implements OnInit {
   }
 
   updateErrorMessages() {
-    for (let field in this.formErrors) {
-      this.formErrors[field] = '';
+    for (let field in this.validation) {
+      this.validation[field].error = '';     
       let control = this.currentForm.form.get(field);
-
+      
       if (control && control.dirty && control.invalid) {
-        let messages = this.validationMessages[field];
         for (let key in control.errors) {
-          this.formErrors[field] += messages[key] + ' ';
+          this.validation[field].error = this.validation[field].messages[key];
+          console.log(this.validation[field]);
         }
       }
-    }
+    };
   }
 }
