@@ -2,17 +2,18 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormBuilder, FormGroup, FormArray, Validators } from '@angular/forms';
 
-import { validateIsbn } from '../shared/isbn.validator';
 import { Book } from '../shared/book';
+import { Validation } from './validation';
 import { BookStoreService } from '../shared/book-store.service';
+import { validateIsbn } from '../shared/isbn.validator';
 
 @Component({
   selector: 'bm-book-form',
-  templateUrl: 'book-form.component.html',
-  styleUrls: ['book-form.component.css']
+  templateUrl: 'book-form.component.html'
 })
 export class BookFormComponent implements OnInit {
   book: Book = Book.empty();
+  validation = new Validation();
   isUpdatingBook: boolean = false;
   myForm: FormGroup;
   authors: FormArray;
@@ -27,6 +28,8 @@ export class BookFormComponent implements OnInit {
 
   ngOnInit() {
     this.initBook(this.book);
+    this.myForm.valueChanges.subscribe(() => this.updateErrorMessages());
+
     this.route.params.subscribe(params => {
       let isbn = params['isbn'];
       if (isbn) {
@@ -64,7 +67,7 @@ export class BookFormComponent implements OnInit {
     this.thumbnails = this.fb.array(
       thumbnails.map(
         t => this.fb.group({
-          url: this.fb.control(t.url, Validators.required),
+          url: this.fb.control(t.url),
           title: this.fb.control(t.title)
         })
       )
@@ -73,11 +76,11 @@ export class BookFormComponent implements OnInit {
   }
 
   addAuthorControl() {
-    this.authors.push(this.fb.control(''));
+    this.authors.push(this.fb.control(null));
   }
 
   addThumbnailControl() {
-    this.thumbnails.push(this.fb.group({ url: [''], title: [''] }));
+    this.thumbnails.push(this.fb.group({ url: null, title: null }));
   }
 
   submitForm() {
@@ -88,5 +91,18 @@ export class BookFormComponent implements OnInit {
       this.bs.create(this.myForm.value);
       this.myForm.reset();
     }
+  }
+
+  updateErrorMessages() {
+    for (let field in this.validation) {
+      this.validation[field].error = '';     
+      let control = this.myForm.get(field);
+
+      if (control && control.dirty && control.invalid) {
+        for (let key in control.errors) {
+          this.validation[field].error = this.validation[field].messages[key];
+        }
+      }
+    };
   }
 }
