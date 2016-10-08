@@ -2,6 +2,7 @@ import { Component, ViewChild, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
 import { Book } from '../shared/book';
+import { Validation } from './validation';
 import { BookStoreService } from '../shared/book-store.service';
 
 @Component({
@@ -11,40 +12,13 @@ import { BookStoreService } from '../shared/book-store.service';
 export class BookFormComponent implements OnInit {
   @ViewChild('myForm') currentForm: NgForm;
   book = Book.empty();
-
-  validation = {
-    title: {
-      error: '',
-      messages: {
-        'required': 'Ein Buchtitel muss angegeben werden',
-      }
-    },
-    isbn: {
-      error: '',
-      messages: {
-        'required': 'Es muss eine ISBN Nummer angegeben werden',
-        'minlength': 'Die ISBN Nummer muss mindestens 10 Zeichen enthalten',
-        'maxlength': 'Eine ISBN Nummer kann nicht mehr als 10 Zeichen haben'
-      }
-    },
-    published: {
-      error: '',
-      messages: {
-        'required': 'Es muss ein Erscheinungsdatum angegeben werden'
-      }
-    },
-    author: {
-      error: '',
-      messages: {
-        'required': 'Es muss mindestens ein Autor angegeben werden'
-      }
-    }
-  };
+  validation = new Validation();
 
   constructor(private bs: BookStoreService) { }
 
   ngOnInit() {
     this.currentForm.valueChanges.subscribe(() => this.updateErrorMessages());
+    this.validation = new Validation();
   }
 
   submitForm() {
