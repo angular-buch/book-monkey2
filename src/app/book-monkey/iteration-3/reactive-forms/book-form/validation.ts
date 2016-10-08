@@ -21,7 +21,7 @@ export class Validation {
          'required': 'Es muss ein Erscheinungsdatum angegeben werden'
         }
       },
-      author: {
+      authors: {
         error: '',
         messages: {
          'required': 'Es muss mindestens ein Autor angegeben werden'
