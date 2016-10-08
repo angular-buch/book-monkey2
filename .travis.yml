@@ -5,7 +5,7 @@
 language: node_js
 
 node_js:
-  - 6.5.0
+  - 6.6.0
 
 cache:
   directories:
@@ -25,18 +25,23 @@ env:
     - NAME="iteration-1-book-list"             BLUEPRINT="src/app/book-monkey/iteration-1/book-list"
     - NAME="iteration-1-book-list-refactored"  BLUEPRINT="src/app/book-monkey/iteration-1/book-list-refactored"
     - NAME="iteration-1-book-details"          BLUEPRINT="src/app/book-monkey/iteration-1/book-details"
+
     - NAME="iteration-2-di"                    BLUEPRINT="src/app/book-monkey/iteration-2/di"
     - NAME="iteration-2-navigation"            BLUEPRINT="src/app/book-monkey/iteration-2/navigation"
-    - NAME="iteration-3-forms"                 BLUEPRINT="src/app/book-monkey/iteration-3/forms"
-    - NAME="iteration-3-validation"            BLUEPRINT="src/app/book-monkey/iteration-3/validation"
+
+    - NAME="iteration-3-template-driven-forms" BLUEPRINT="src/app/book-monkey/iteration-3/template-driven-forms"
+    - NAME="iteration-3-reactive-forms"        BLUEPRINT="src/app/book-monkey/iteration-3/reactive-forms"
+    - NAME="iteration-3-custom-validation"     BLUEPRINT="src/app/book-monkey/iteration-3/custom-validation"
+
     - NAME="iteration-4-http"                  BLUEPRINT="src/app/book-monkey/iteration-4/http"
+
     - NAME="iteration-5-pipes"                 BLUEPRINT="src/app/book-monkey/iteration-5/pipes"
     - NAME="iteration-5-directives"            BLUEPRINT="src/app/book-monkey/iteration-5/directives"
 
 install:
-  - npm install
-  - npm install -g angular-cli@1.0.0-beta.14
-  - npm install angular-cli-ghpages
+  - npm i
+  - npm i -g angular-cli@1.0.0-beta.17
+  - npm i angular-cli-ghpages --save-dev
 
 script:
   - echo "*** BUILDING $NAME ***"
@@ -54,7 +59,7 @@ script:
       ng ghpages --repo="$GITHUB_ORG/$NAME.git" --name="$GITHUB_NAME" --email="$GITHUB_EMAIL" --skip-build;
     fi
 
-  # [2] single apps:
+  # [2] single apps (mini monkeys)
   # - creates multiple single apps by copying file content around
   # - sends uncompiled version to master
   - if [ "$NAME" != "one-app" ]; then
@@ -65,7 +70,7 @@ script:
       mkdir TMP;
       cd TMP || exit;
 
-      ng new BookMonkey;
+      ng new BookMonkey --prefix=bm;
       cd "$NEW_BOOKMONKEY" || exit;
       mkdir -p src/{domain};
 
@@ -74,13 +79,32 @@ script:
       cd "$TRAVIS_BUILD_DIR" || exit;
 
       cp -f package.json                         "$NEW_BOOKMONKEY/";
-      cp -f angular-cli-build.js                 "$NEW_BOOKMONKEY/";
+      cp -f angular-cli.json                     "$NEW_BOOKMONKEY/";
       cp -rf "$TRAVIS_BUILD_DIR/$BLUEPRINT/."    "$NEW_BOOKMONKEY/src/app/";
+
+
+      SEARCH=();
+      REPLACE=();
+        SEARCH[0]="import { CommonModule } from '@angular/common'";
+        REPLACE[0]="import { BrowserModule } from '@angular/platform-browser'";
+    
+        SEARCH[1]="import { AppRoutingModule } from './app-routing.module.one-app'";
+        REPLACE[1]="import { AppRoutingModule } from './app-routing.module'";
+
+        SEARCH[2]="CommonModule";
+        REPLACE[2]="BrowserModule";
+
+        for i in "${!SEARCH[@]}";
+        do sed -i "s|${SEARCH[$i]}|${REPLACE[$i]}|g" "$NEW_BOOKMONKEY/src/app/app.module.ts";
+        done;
+
+        rm -f "$NEW_BOOKMONKEY/src/app/app-routing.module.one-app.ts";
+
 
       echo "*** DIRECTORY LISTING OF $NEW_BOOKMONKEY ***";
       ls -a "$NEW_BOOKMONKEY";
 
-      npm run ng -- ghpages --repo="$GITHUB_ORG/$NAME.git" --name="$GITHUB_NAME" --email="$GITHUB_EMAIL" --dir=../TMP/BookMonkey --branch=master;
+      ng ghpages --repo="$GITHUB_ORG/$NAME.git" --name="$GITHUB_NAME" --email="$GITHUB_EMAIL" --dir=../TMP/BookMonkey --branch=master --skip-build;
     fi
 
   # [2] single apps:
@@ -89,14 +113,13 @@ script:
   - if [ "$NAME" != "one-app" ]; then
       cd "$NEW_BOOKMONKEY/";
 
-      npm install;
+      npm i;
       ng build;
 
       echo "$NAME.angular2buch.de" > dist/CNAME;
       cp dist/index.html dist/404.html;
 
-      npm install angular-cli-ghpages;
-      ng --ghpages --repo="$GITHUB_ORG/$NAME.git" --name="$GITHUB_NAME" --email="$GITHUB_EMAIL" --skip-build;
+      ng ghpages --repo="$GITHUB_ORG/$NAME.git" --name="$GITHUB_NAME" --email="$GITHUB_EMAIL" --skip-build;
     fi
 
 # ---- boilerplate ----
