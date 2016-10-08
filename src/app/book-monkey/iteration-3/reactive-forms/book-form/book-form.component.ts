@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { FormBuilder, FormGroup, FormArray } from '@angular/forms';
 
 import { Book } from '../shared/book';
+import { Validation } from './validation';
 import { BookStoreService } from '../shared/book-store.service';
 
 @Component({
@@ -11,6 +12,7 @@ import { BookStoreService } from '../shared/book-store.service';
 })
 export class BookFormComponent implements OnInit {
   book: Book = Book.empty();
+  validation = new Validation();
   isUpdatingBook: boolean = false;
   myForm: FormGroup;
   authors: FormArray;
@@ -81,4 +83,18 @@ export class BookFormComponent implements OnInit {
       this.myForm.reset();
     }
   }
+  
+  /*updateErrorMessages() {
+    for (let field in this.validation) {
+      this.validation[field].error = '';     
+      let control = this.currentForm.form.get(field);
+      
+      if (control && control.dirty && control.invalid) {
+        for (let key in control.errors) {
+          this.validation[field].error = this.validation[field].messages[key];
+          console.log(this.validation[field]);
+        }
+      }
+    };
+  }*/
 }

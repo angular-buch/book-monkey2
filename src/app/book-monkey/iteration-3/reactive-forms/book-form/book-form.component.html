@@ -1,82 +1,72 @@
 <h1>Buchformular</h1>
-<form [formGroup]="myForm"
-      (ngSubmit)="submitForm()"
-      class="ui form grid">
+<form novalidate
+      class="ui large form"
+      [formGroup]="myForm"
+      (ngSubmit)="submitForm()">
 
-  <div class="four wide column">
-    <h4>Buchtitel</h4>
-  </div>
-  <div class="eleven wide column">
+  <div class="field">
+    <label>Buchtitel</label>
     <input formControlName="title">
+    <div *ngIf="validation.title.error" class="ui negative message">
+      {{ validation.title.error }}
+    </div>
   </div>
-
-  <div class="four wide column">
-    <h4>Untertitel</h4>
-  </div>
-  <div class="eleven wide column">
+  <div class="field">
+    <label>Untertitel</label>
     <input formControlName="subtitle">
   </div>
-
-  <div class="four wide column">
-    <h4>Erscheinungsdatum</h4>
-  </div>
-  <div class="eleven wide column">
-    <input formControlName="published">
-  </div>
-
-  <div class="row">
-    <div class="four wide column">
-      <h4>Autoren</h4>
+  <div class="field">
+    <label>ISBN-Nummer</label>
+    <input formControlName="isbn">
+    <div *ngIf="validation.isbn.error" class="ui negative message">
+      {{ validation.isbn.error }}
     </div>
-    <div class="eleven wide column">
-      <div class="fields">
-        <div formArrayName="authors"
-            *ngFor="let control of authors.controls; let i = index"
-            class="sixteen wide field">
-            <input [formControlName]="i" placeholder="Autor {{i+1}}">
+  </div>
+  <div class="field">
+    <label>Erscheinungsdatum</label>
+    <input type="date" 
+           useValueAsDate 
+           formControlName="published">
+    <div *ngIf="validation.published.error" class="ui negative message">
+      {{ validation.published.error }}
+    </div>
+  </div>
+  <div class="field">
+    <label>Autoren</label>
+    <div class="fields" formArrayName="authors">
+      <div class="fifteen wide field" *ngFor="let control of authors.controls; let i = index">
+        <input [formControlName]="i" placeholder="Autor {{i+1}}">
+      </div>        
+      <div class="one wide field">
+        <button (click)="addAuthorControl()" class="ui large button" type="button"> + </button>
+      </div>
+    </div>
+    <div *ngIf="validation.author.error" class="ui negative message">
+      {{ validation.author.error }}
+    </div>
+  </div>
+  <div class="field">
+    <label>Beschreibung</label>
+    <textarea formControlName="description" rows="3"></textarea>
+  </div>
+  <div class="field">
+    <label>Bilder</label>
+    <div formArrayName="thumbnails">
+      <div class="fields"
+          *ngFor="let control of thumbnails.controls; let i = index; let l = last" 
+          [formGroupName]="i">
+        <div class="nine wide field">
+          <input formControlName="url" placeholder="http://bild{{i+1}}_Url">
+        </div>
+        <div class="six wide field">
+          <input formControlName="title" placeholder="Bild {{i+1}} Titel">
+        </div>
+        <div class="one wide field" *ngIf="l">
+          <button (click)="addThumbnailControl()" class="ui large button" type="button"> + </button>
         </div>
       </div>
     </div>
-    <div class="one wide field">
-      <button (click)="addAuthorControl()" class="ui button" type="button"> + </button>
-    </div>
   </div>
 
-  <div class="four wide column">
-    <h4>ISBN</h4>
-  </div>
-  <div class="eleven wide column">
-    <input formControlName="isbn">
-  </div>
-
-  <div class="four wide column">
-    <h4>Beschreibung</h4>
-  </div>
-  <div class="eleven wide column">
-    <textarea formControlName="description" rows="3"></textarea>
-  </div>
-
-  <div class="row">
-    <div class="four wide column">
-      <h4>Thumbnails</h4>
-    </div>
-    <div class="eleven wide column">
-        <div formArrayName="thumbnails"
-            *ngFor="let control of thumbnails.controls; let i = index">
-            <div [formGroupName]="i" class="inline fields">
-                <input formControlName="url" placeholder="http://bild{{i+1}}_Url">
-                <input formControlName="title" placeholder="Bild {{i+1}} Titel">
-            </div>
-          </div>
-        </div>
-    <div class="one wide field">
-      <button (click)="addThumbnailControl()" class="ui button" type="button"> + </button>
-    </div>
-  </div>
-
-  <div class="four wide column"></div>
-  <div class="right twelfe wide column">
-    <button type="submit" class="ui button">Speichern</button>
-  </div>
-
+  <button type="submit" class="ui button" [disabled]="!myForm.valid">Speichern</button>
 </form>
