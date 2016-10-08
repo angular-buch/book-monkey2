@@ -34,7 +34,6 @@ export class BookFormComponent implements OnInit {
       if (control && control.dirty && control.invalid) {
         for (let key in control.errors) {
           this.validation[field].error = this.validation[field].messages[key];
-          console.log(this.validation[field]);
         }
       }
     };
