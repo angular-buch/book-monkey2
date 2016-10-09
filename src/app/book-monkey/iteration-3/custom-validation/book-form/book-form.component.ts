@@ -95,7 +95,7 @@ export class BookFormComponent implements OnInit {
 
   updateErrorMessages() {
     for (let field in this.validation) {
-      this.validation[field].error = '';     
+      this.validation[field].error = '';
       let control = this.myForm.get(field);
 
       if (control && control.dirty && control.invalid) {
