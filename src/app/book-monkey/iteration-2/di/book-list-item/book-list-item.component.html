@@ -1,5 +1,6 @@
-<img class="ui tiny image" [src]="book?.thumbnails && book?.thumbnails[0]?.url">
-<div class="content">
+<img class="ui tiny image"
+     *ngIf="book.thumbnails != undefined"
+     [src]="book.thumbnails[0].url"><div class="content">
   <div class="header">{{ book?.title }}</div>
   <div class="description"> {{ book?.subtitle }} </div>
   <div class="metadata">
