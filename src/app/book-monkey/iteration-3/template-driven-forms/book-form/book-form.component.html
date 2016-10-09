@@ -10,8 +10,9 @@
       name="title"
       [(ngModel)]="book.title"
       required>
-    <div *ngIf="validation.title.error" class="ui negative message">
-      {{ validation.title.error }}
+    
+    <div *ngIf="errors.title" class="ui negative message">
+      {{ errors.title }}
     </div>
   </div>
   <div class="field">
@@ -28,8 +29,8 @@
       required
       minlength="10"
       maxlength="13">
-    <div *ngIf="validation.isbn.error" class="ui negative message">
-      {{ validation.isbn.error }}
+    <div *ngIf="errors.isbn" class="ui negative message">
+      {{ errors.isbn }}
     </div>
   </div>
   <div class="field">
@@ -40,8 +41,8 @@
       [(ngModel)]="book.published"
       useValueAsDate
       required>
-    <div *ngIf="validation.published.error" class="ui negative message">
-      {{ validation.published.error }}
+    <div *ngIf="errors.published" class="ui negative message">
+      {{ errors.published }}
     </div>
   </div>
   <div class="field">
@@ -50,8 +51,8 @@
       name="author"
       [(ngModel)]="book.authors[0]"
       required>
-    <div *ngIf="validation.author.error" class="ui negative message">
-      {{ validation.author.error }}
+    <div *ngIf="errors.author" class="ui negative message">
+      {{ errors.author }}
     </div>
   </div>
   <div class="field">

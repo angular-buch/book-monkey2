@@ -2,7 +2,7 @@ import { Component, ViewChild, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
 import { Book } from '../shared/book';
-import { Validation } from './validation';
+import { BookFormErrorMessages } from './book-form-error-messages';
 import { BookStoreService } from '../shared/book-store.service';
 
 @Component({
@@ -12,13 +12,12 @@ import { BookStoreService } from '../shared/book-store.service';
 export class BookFormComponent implements OnInit {
   @ViewChild('myForm') currentForm: NgForm;
   book = Book.empty();
-  validation = new Validation();
+  errors = {};
 
   constructor(private bs: BookStoreService) { }
 
   ngOnInit() {
     this.currentForm.valueChanges.subscribe(() => this.updateErrorMessages());
-    this.validation = new Validation();
   }
 
   submitForm() {
@@ -27,15 +26,18 @@ export class BookFormComponent implements OnInit {
   }
 
   updateErrorMessages() {
-    for (let field in this.validation) {
-      this.validation[field].error = '';     
-      let control = this.currentForm.form.get(field);
-      
-      if (control && control.dirty && control.invalid) {
-        for (let key in control.errors) {
-          this.validation[field].error = this.validation[field].messages[key];
-        }
+
+    this.errors = {};
+
+    for (let message of BookFormErrorMessages) {
+      let control = this.currentForm.form.get(message.forControl);
+      if (control &&
+          control.dirty &&
+          control.invalid &&
+          control.errors[message.forValidator] &&
+          !this.errors[message.forControl]) {
+        this.errors[message.forControl] = message.text;
       }
-    };
+    }
   }
 }
