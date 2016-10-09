@@ -52,7 +52,7 @@ export class BookFormComponent implements OnInit {
       authors: this.buildAuthorsArray(book.authors),
       thumbnails: this.buildThumbnialsArray(book.thumbnails),
       published: [
-        book.published,
+        new Date(book.published),
         Validators.pattern('([1-9]|0[1-9]|(1|2)[0-9]|3[0-1])\.([1-9]|0[1-9]|1[0-2])\.[0-9]{4}')
       ]
     });

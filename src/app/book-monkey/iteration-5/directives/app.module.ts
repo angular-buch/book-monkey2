@@ -11,10 +11,10 @@ import { BookDetailsComponent } from './book-details/book-details.component';
 import { BookFormComponent } from './book-form/book-form.component';
 
 import { BookStoreService } from './shared/book-store.service';
+import { AppRoutingModule } from './app-routing.module.one-app';
+import { DateValueAccessorModule } from 'angular2-date-value-accessor';
 import { IsbnPipe } from './shared/isbn-pipe';
 import { ZoomDirective } from './shared/zoom.directive';
-
-import { AppRoutingModule } from './app-routing.module.one-app';
 
 @NgModule({
   declarations: [
@@ -32,7 +32,8 @@ import { AppRoutingModule } from './app-routing.module.one-app';
     FormsModule,
     ReactiveFormsModule,
     HttpModule,
-    AppRoutingModule
+    AppRoutingModule,
+    DateValueAccessorModule
   ],
   providers: [
     BookStoreService
