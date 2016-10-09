@@ -80,8 +80,10 @@ script:
 
       cp -f package.json                         "$NEW_BOOKMONKEY/";
       cp -f angular-cli.json                     "$NEW_BOOKMONKEY/";
+      cp -f src/assets                           "$NEW_BOOKMONKEY/src/assets/";
       cp -rf "$TRAVIS_BUILD_DIR/$BLUEPRINT/."    "$NEW_BOOKMONKEY/src/app/";
 
+      echo "body { margin: 30px; }" > styles.css;
 
       SEARCH=();
       REPLACE=();
