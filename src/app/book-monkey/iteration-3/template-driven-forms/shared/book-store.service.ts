@@ -39,11 +39,11 @@ export class BookStoreService {
     return this.books.find(book => book.isbn === isbn);
   }
 
-  create(book: Book): void {
+  create(book: Book) {
     console.log('creates new book', book);
   }
 
-  delete(isbn: string): void {
+  delete(isbn: string) {
     console.log('deletes book with isbn', isbn);
   }
 }
