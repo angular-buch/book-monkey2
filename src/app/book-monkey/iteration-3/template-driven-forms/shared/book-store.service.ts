@@ -43,10 +43,6 @@ export class BookStoreService {
     console.log('creates new book', book);
   }
 
-  update(book: Book): void {
-    console.log('updates book', book);
-  }
-
   delete(isbn: string): void {
     console.log('deletes book with isbn', isbn);
   }
