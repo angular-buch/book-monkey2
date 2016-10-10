@@ -7,8 +7,8 @@
   <div class="field">
     <label>Buchtitel</label>
     <input formControlName="title">
-    <div *ngIf="validation.title.error" class="ui negative message">
-      {{ validation.title.error }}
+    <div *ngIf="errors.title" class="ui negative message">
+      {{ errors.title }}
     </div>
   </div>
   <div class="field">
@@ -18,8 +18,8 @@
   <div class="field">
     <label>ISBN-Nummer</label>
     <input formControlName="isbn">
-    <div *ngIf="validation.isbn.error" class="ui negative message">
-      {{ validation.isbn.error }}
+    <div *ngIf="errors.isbn" class="ui negative message">
+      {{ errors.isbn }}
     </div>
   </div>
   <div class="field">
@@ -27,8 +27,8 @@
     <input type="date" 
            useValueAsDate 
            formControlName="published">
-    <div *ngIf="validation.published.error" class="ui negative message">
-      {{ validation.published.error }}
+    <div *ngIf="errors.published" class="ui negative message">
+      {{ errors.published }}
     </div>
   </div>
   <div class="field">
@@ -41,8 +41,8 @@
         <button (click)="addAuthorControl()" class="ui large button" type="button"> + </button>
       </div>
     </div>
-    <div *ngIf="validation.authors.error" class="ui negative message">
-      {{ validation.authors.error }}
+    <div *ngIf="errors.authors" class="ui negative message">
+      {{ errors.authors }}
     </div>
   </div>
   <div class="field">

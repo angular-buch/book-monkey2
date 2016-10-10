@@ -26,9 +26,7 @@ export class BookFormComponent implements OnInit {
   }
 
   updateErrorMessages() {
-
     this.errors = {};
-
     for (let message of BookFormErrorMessages) {
       let control = this.currentForm.form.get(message.forControl);
       if (control &&
