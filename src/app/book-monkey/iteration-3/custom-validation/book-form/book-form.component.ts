@@ -30,14 +30,12 @@ export class BookFormComponent implements OnInit {
     this.initBook(this.book);
     this.myForm.valueChanges.subscribe(() => this.updateErrorMessages());
 
-    this.route.params.subscribe(params => {
-      let isbn = params['isbn'];
-      if (isbn) {
-        this.isUpdatingBook = true;
-        let book = this.bs.getSingle(isbn);
-        this.initBook(book);
-      }
-    });
+    let isbn = this.route.snapshot.params['isbn'];
+    if (isbn) {
+      this.isUpdatingBook = true;
+      let book = this.bs.getSingle(isbn);
+      this.initBook(book);
+    }
   }
 
   initBook(book: Book) {
