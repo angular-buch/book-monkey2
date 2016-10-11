@@ -12,7 +12,7 @@ import { BookFormComponent } from './book-form/book-form.component';
 
 import { BookStoreService } from './shared/book-store.service';
 import { AppRoutingModule } from './app-routing.module.one-app';
-import { DateValueAccessorModule } from 'angular2-date-value-accessor';
+import { DateValueAccessorModule } from 'angular-date-value-accessor';
 import { IsbnPipe } from './shared/isbn-pipe';
 import { ZoomDirective } from './shared/zoom.directive';
 
