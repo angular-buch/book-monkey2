@@ -44,10 +44,10 @@ export class BookFormComponent implements OnInit {
     this.myForm = this.fb.group({
       title: [book.title, Validators.required],
       subtitle: [book.subtitle],
-      isbn: [book.isbn, Validators.compose([
+      isbn: [book.isbn, [
         Validators.required,
         validateIsbn
-      ])],
+      ]],
       description: [book.description],
       authors: this.buildAuthorsArray(book.authors),
       thumbnails: this.buildThumbnialsArray(book.thumbnails),
