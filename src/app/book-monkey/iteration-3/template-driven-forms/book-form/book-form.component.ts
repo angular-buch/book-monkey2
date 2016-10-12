@@ -10,25 +10,25 @@ import { BookStoreService } from '../shared/book-store.service';
   templateUrl: 'book-form.component.html'
 })
 export class BookFormComponent implements OnInit {
-  @ViewChild('myForm') currentForm: NgForm;
+  @ViewChild('myForm') myForm: NgForm;
   book = Book.empty();
   errors = {};
 
   constructor(private bs: BookStoreService) { }
 
   ngOnInit() {
-    this.currentForm.valueChanges.subscribe(() => this.updateErrorMessages());
+    this.myForm.valueChanges.subscribe(() => this.updateErrorMessages());
   }
 
   submitForm() {
     this.bs.create(this.book);
-    this.currentForm.reset();
+    this.myForm.reset();
   }
 
   updateErrorMessages() {
     this.errors = {};
     for (let message of BookFormErrorMessages) {
-      let control = this.currentForm.form.get(message.forControl);
+      let control = this.myForm.form.get(message.forControl);
       if (control &&
           control.dirty &&
           control.invalid &&
