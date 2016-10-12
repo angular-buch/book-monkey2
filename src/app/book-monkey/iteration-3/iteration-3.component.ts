@@ -15,7 +15,7 @@ import { Component } from '@angular/core';
     </a>
     <a [routerLink]="['custom-validation']" routerLinkActive="active" class="step">
       <div class="content">
-        <div class="title">Formularvalidierung</div>
+        <div class="title">Custom Validation</div>
       </div>
     </a>
   </div>
