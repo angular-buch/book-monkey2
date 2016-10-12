@@ -48,8 +48,8 @@ export class BookFormComponent implements OnInit {
         validateIsbn
       ]],
       description: [this.book.description],
-      authors: this.buildAuthorsArray(this.book.authors),
-      thumbnails: this.buildThumbnialsArray(this.book.thumbnails),
+      authors: this.buildAuthorsArray(),
+      thumbnails: this.buildThumbnialsArray(),
       published: [
         new Date(this.book.published),
         Validators.pattern('([1-9]|0[1-9]|(1|2)[0-9]|3[0-1])\.([1-9]|0[1-9]|1[0-2])\.[0-9]{4}')
@@ -58,14 +58,14 @@ export class BookFormComponent implements OnInit {
     this.myForm.valueChanges.subscribe(() => this.updateErrorMessages());
   }
 
-  buildAuthorsArray(authors): FormArray {
-    this.authors = this.fb.array(authors, Validators.required);
+  buildAuthorsArray(): FormArray {
+    this.authors = this.fb.array(this.book.authors, Validators.required);
     return this.authors;
   }
 
-  buildThumbnialsArray(thumbnails): FormArray {
+  buildThumbnialsArray(): FormArray {
     this.thumbnails = this.fb.array(
-      thumbnails.map(
+      this.book.thumbnails.map(
         t => this.fb.group({
           url: this.fb.control(t.url),
           title: this.fb.control(t.title)
