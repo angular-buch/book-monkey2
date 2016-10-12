@@ -27,33 +27,35 @@ export class BookFormComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.initBook(this.book);
-    this.myForm.valueChanges.subscribe(() => this.updateErrorMessages());
-
     let isbn = this.route.snapshot.params['isbn'];
     if (isbn) {
       this.isUpdatingBook = true;
       this.bs.getSingle(isbn)
-        .subscribe(b => this.initBook(b));
+        .subscribe(b => {
+          this.book = b;
+          this.initBook();
+        });
     }
+    this.initBook();
   }
 
-  initBook(book: Book) {
+  initBook() {
     this.myForm = this.fb.group({
-      title: [book.title, Validators.required],
-      subtitle: [book.subtitle],
-      isbn: [book.isbn, [
+      title: [this.book.title, Validators.required],
+      subtitle: [this.book.subtitle],
+      isbn: [this.book.isbn, [
         Validators.required,
         validateIsbn
       ]],
-      description: [book.description],
-      authors: this.buildAuthorsArray(book.authors),
-      thumbnails: this.buildThumbnialsArray(book.thumbnails),
+      description: [this.book.description],
+      authors: this.buildAuthorsArray(this.book.authors),
+      thumbnails: this.buildThumbnialsArray(this.book.thumbnails),
       published: [
-        new Date(book.published),
+        new Date(this.book.published),
         Validators.pattern('([1-9]|0[1-9]|(1|2)[0-9]|3[0-1])\.([1-9]|0[1-9]|1[0-2])\.[0-9]{4}')
       ]
     });
+    this.myForm.valueChanges.subscribe(() => this.updateErrorMessages());
   }
 
   buildAuthorsArray(authors): FormArray {

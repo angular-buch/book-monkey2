@@ -15,7 +15,7 @@
     <label>Untertitel</label>
     <input formControlName="subtitle">
   </div>
-  <div class="field">
+  <div class="field" [class.disabled]="isUpdatingBook">
     <label>ISBN-Nummer</label>
     <input formControlName="isbn">
     <div *ngIf="errors.isbn" class="ui negative message">
