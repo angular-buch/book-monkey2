@@ -29,11 +29,11 @@ env:
     - NAME="iteration-2-di"                    BLUEPRINT="src/app/book-monkey/iteration-2/di"
     - NAME="iteration-2-navigation"            BLUEPRINT="src/app/book-monkey/iteration-2/navigation"
 
-    - NAME="iteration-3-template-driven-forms" BLUEPRINT="src/app/book-monkey/iteration-3/template-driven-forms"
-    - NAME="iteration-3-reactive-forms"        BLUEPRINT="src/app/book-monkey/iteration-3/reactive-forms"
-    - NAME="iteration-3-custom-validation"     BLUEPRINT="src/app/book-monkey/iteration-3/custom-validation"
+    - NAME="iteration-3-http"                  BLUEPRINT="src/app/book-monkey/iteration-3/http"
 
-    - NAME="iteration-4-http"                  BLUEPRINT="src/app/book-monkey/iteration-4/http"
+    - NAME="iteration-4-template-driven-forms" BLUEPRINT="src/app/book-monkey/iteration-4/template-driven-forms"
+    - NAME="iteration-4-reactive-forms"        BLUEPRINT="src/app/book-monkey/iteration-4/reactive-forms"
+    - NAME="iteration-4-custom-validation"     BLUEPRINT="src/app/book-monkey/iteration-4/custom-validation"
 
     - NAME="iteration-5-pipes"                 BLUEPRINT="src/app/book-monkey/iteration-5/pipes"
     - NAME="iteration-5-directives"            BLUEPRINT="src/app/book-monkey/iteration-5/directives"
@@ -89,7 +89,7 @@ script:
       REPLACE=();
         SEARCH[0]="import { CommonModule } from '@angular/common'";
         REPLACE[0]="import { BrowserModule } from '@angular/platform-browser'";
-    
+
         SEARCH[1]="import { AppRoutingModule } from './app-routing.module.one-app'";
         REPLACE[1]="import { AppRoutingModule } from './app-routing.module'";
 
