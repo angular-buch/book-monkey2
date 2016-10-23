@@ -18,7 +18,7 @@
       "prefix": "bm",
       "mobile": false,
       "styles": [
-        "../node_modules/semantic-ui-css/semantic.css"
+        "../node_modules/semantic-ui-css/semantic.css",
         "styles.css"
       ],
       "scripts": [],
