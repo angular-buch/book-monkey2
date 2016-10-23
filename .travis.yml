@@ -53,7 +53,7 @@ script:
   - if [ "$NAME" == "one-app" ]; then
       ng build;
 
-      echo "book-monkey2.angular2buch.de" > dist/CNAME;
+      echo "book-monkey2.angular-buch.com" > dist/CNAME;
       cp dist/index.html dist/404.html;
 
       ng ghpages --repo="$GITHUB_ORG/$NAME.git" --name="$GITHUB_NAME" --email="$GITHUB_EMAIL" --skip-build;
@@ -118,7 +118,7 @@ script:
       npm i;
       ng build;
 
-      echo "$NAME.angular2buch.de" > dist/CNAME;
+      echo "$NAME.angular-buch.com" > dist/CNAME;
       cp dist/index.html dist/404.html;
 
       ng ghpages --repo="$GITHUB_ORG/$NAME.git" --name="$GITHUB_NAME" --email="$GITHUB_EMAIL" --skip-build;
