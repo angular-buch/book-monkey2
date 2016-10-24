@@ -104,6 +104,7 @@ script:
 
         rm -f "$NEW_BOOKMONKEY/src/app/app-routing.module.one-app.ts";
 
+      find $NEW_BOOKMONKEY/src -name "*.snippet" -type f -delete
 
       echo "*** DIRECTORY LISTING OF $NEW_BOOKMONKEY ***";
       ls -a "$NEW_BOOKMONKEY";
