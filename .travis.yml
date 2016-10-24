@@ -38,6 +38,8 @@ env:
     - NAME="iteration-5-pipes"                 BLUEPRINT="src/app/book-monkey/iteration-5/pipes"
     - NAME="iteration-5-directives"            BLUEPRINT="src/app/book-monkey/iteration-5/directives"
 
+    - NAME="iteration-6-modules"               BLUEPRINT="src/app/book-monkey/iteration-6/modules"
+
 install:
   - npm i
   - npm i -g angular-cli@1.0.0-beta.18

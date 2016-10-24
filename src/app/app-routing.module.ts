@@ -24,6 +24,10 @@ const routes: Routes = [
   {
     path: 'iteration-5',
     loadChildren: 'app/book-monkey/iteration-5/iteration-5.module'
+  },
+  {
+    path: 'iteration-6',
+    loadChildren: 'app/book-monkey/iteration-6/iteration-6.module'
   }
 ];
 
