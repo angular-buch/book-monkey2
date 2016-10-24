@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormBuilder, FormGroup, FormArray, Validators } from '@angular/forms';
 
-import { Book } from '../shared/book';
+import { Book } from '../../shared/book';
 import { BookFormErrorMessages } from './book-form-error-messages';
-import { BookStoreService } from '../shared/book-store.service';
+import { BookStoreService } from '../../shared/book-store.service';
 import { validateIsbn } from './isbn.validator';
 
 @Component({
