@@ -5,7 +5,7 @@ import { FormBuilder, FormGroup, FormArray, Validators } from '@angular/forms';
 import { Book } from '../shared/book';
 import { BookFormErrorMessages } from './book-form-error-messages';
 import { BookStoreService } from '../shared/book-store.service';
-import { validateIsbn } from './isbn.validator';
+import { BookValidators } from './book-validators';
 
 @Component({
   selector: 'bm-book-form',
@@ -45,7 +45,7 @@ export class BookFormComponent implements OnInit {
       subtitle: [this.book.subtitle],
       isbn: [this.book.isbn, [
         Validators.required,
-        validateIsbn
+        BookValidators.isbn
       ]],
       description: [this.book.description],
       authors: this.buildAuthorsArray(),
