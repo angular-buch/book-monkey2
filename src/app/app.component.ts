@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import 'rxjs/add/operator/filter';
 
@@ -7,13 +7,16 @@ import 'rxjs/add/operator/filter';
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.css']
 })
-export class AppComponent {
-
+export class AppComponent implements OnInit {
   repositoryUrl: string;
   repoName: string;
+  mobileLayout: boolean = false;
+  showSidebar: boolean = false;
 
-  constructor(r: Router) {
-    r.events
+  constructor(private r: Router) { }
+
+  ngOnInit() {
+    this.r.events
       .filter(e => e instanceof NavigationEnd)
       .subscribe(e => {
 
@@ -29,5 +32,16 @@ export class AppComponent {
 
         this.repositoryUrl = 'https://github.com/book-monkey2-build/' + this.repoName;
       });
+    this.onResize();
+  }
+
+  toggleSidebar() {
+    this.showSidebar = !this.showSidebar;
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize() {
+    this.mobileLayout = (window.innerWidth < 767) ? true : false;
   }
 }
+
