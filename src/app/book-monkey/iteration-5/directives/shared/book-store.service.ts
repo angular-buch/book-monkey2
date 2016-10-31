@@ -14,7 +14,7 @@ export class BookStoreService {
     this.headers.append('Content-Type', 'application/json');
   }
 
-  getAll(): Observable<Book[]> {
+  getAll(): Observable<Array<Book>> {
     return this.http
       .get(`${this.api}/books`)
       .map(response => response.json());
@@ -26,14 +26,20 @@ export class BookStoreService {
       .map(response => response.json());
   }
 
+  check(isbn: string): Observable<Boolean> {
+    return this.http
+      .get(`${this.api}/book/${isbn}/check`)
+      .map(response => response.json());
+  }
+
   create(book: Book): Observable<any> {
     return this.http
-      .post(`${this.api}/book`, JSON.stringify(book), { headers: this.headers })
+      .post(`${this.api}/book`, JSON.stringify(book), { headers: this.headers });
   }
 
   update(book: Book): Observable<any> {
     return this.http
-      .put(`${this.api}/book/${book.isbn}`, JSON.stringify(book), { headers: this.headers })
+      .put(`${this.api}/book/${book.isbn}`, JSON.stringify(book), { headers: this.headers });
   }
 
   remove(isbn: string): Observable<any> {

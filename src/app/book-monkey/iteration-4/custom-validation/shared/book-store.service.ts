@@ -7,7 +7,7 @@ import { Book } from './book';
 
 @Injectable()
 export class BookStoreService {
-  private api: string = 'https://book-monkey2-api.angular2buch.de';
+  private api: string = 'https://book-monkey2-api.angular-buch.com';
   private headers: Headers = new Headers();
 
   constructor(private http: Http) {
@@ -23,6 +23,12 @@ export class BookStoreService {
   getSingle(isbn: string): Observable<Book> {
     return this.http
       .get(`${this.api}/book/${isbn}`)
+      .map(response => response.json());
+  }
+
+  check(isbn: string): Observable<Boolean> {
+    return this.http
+      .get(`${this.api}/book/${isbn}/check`)
       .map(response => response.json());
   }
 

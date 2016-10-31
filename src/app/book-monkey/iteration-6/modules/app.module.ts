@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 
 import { BookStoreService } from './shared/book-store.service';
+import { BookValidators } from './shared/book-validators';
 import { AppRoutingModule } from './app-routing.module.one-app';
 
 import { BookModule } from './book/book.module';
@@ -26,7 +27,8 @@ import { AdminModule } from './admin/admin.module';
     AdminModule
   ],
   providers: [
-    BookStoreService
+    BookStoreService,
+    BookValidators
   ],
   bootstrap: [AppComponent]
 })

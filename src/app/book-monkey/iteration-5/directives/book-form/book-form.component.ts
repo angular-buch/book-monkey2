@@ -5,7 +5,7 @@ import { FormBuilder, FormGroup, FormArray, Validators } from '@angular/forms';
 import { Book } from '../shared/book';
 import { BookFormErrorMessages } from './book-form-error-messages';
 import { BookStoreService } from '../shared/book-store.service';
-import { BookValidators } from './book-validators';
+import { BookValidators } from '../shared/book-validators';
 
 @Component({
   selector: 'bm-book-form',
@@ -23,7 +23,8 @@ export class BookFormComponent implements OnInit {
     private fb: FormBuilder,
     private bs: BookStoreService,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private bv: BookValidators
   ) { }
 
   ngOnInit() {
@@ -45,8 +46,8 @@ export class BookFormComponent implements OnInit {
       subtitle: [this.book.subtitle],
       isbn: [this.book.isbn, [
         Validators.required,
-        BookValidators.isbn
-      ]],
+        this.bv.isbnFormat
+      ], this.isUpdatingBook ? null : this.bv.isbnExists.bind(this)],
       description: [this.book.description],
       authors: this.buildAuthorsArray(),
       thumbnails: this.buildThumbnialsArray(),

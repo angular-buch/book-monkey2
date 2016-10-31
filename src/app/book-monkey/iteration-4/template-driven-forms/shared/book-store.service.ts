@@ -7,7 +7,7 @@ import { Book } from './book';
 
 @Injectable()
 export class BookStoreService {
-  private api: string = 'https://book-monkey2-api.angular2buch.de';
+  private api: string = 'https://book-monkey2-api.angular-buch.com';
   private headers: Headers = new Headers();
 
   constructor(private http: Http) {
