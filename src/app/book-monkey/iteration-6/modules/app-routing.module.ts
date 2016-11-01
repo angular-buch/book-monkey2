@@ -1,3 +1,4 @@
+import { CanNavigateToAdminGuard } from './can-navigate-to-admin.guard';
 import { AdminModule } from './admin/admin.module';
 import { AdminComponent } from './admin/admin.component';
 import { NgModule } from '@angular/core';
@@ -21,13 +22,14 @@ export const routes: Routes = [
   },
   {
     path: 'admin',
-    loadChildren: 'app/book-monkey/iteration-6/modules/admin/admin.module#AdminModule'
+    loadChildren: 'app/book-monkey/iteration-6/modules/admin/admin.module#AdminModule',
+    canActivate: [CanNavigateToAdminGuard]
   }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
-  providers: []
+  providers: [CanNavigateToAdminGuard]
 })
 export class AppRoutingModule { }
