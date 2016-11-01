@@ -17,7 +17,7 @@ export class BookValidators {
     };
   }
 
-  isbnExists(control?: FormControl): Observable<{ [error: string]: any }> {
+  isbnExists(control: FormControl): Observable<{ [error: string]: any }> {
     return this.bs.check(control.value)
       .map(exists => (exists === false) ? null : {
           isbnExists: { valid: false }
