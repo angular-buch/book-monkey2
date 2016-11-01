@@ -12,7 +12,6 @@ import { BookFormComponent } from './book-form/book-form.component';
 
 import { BookStoreService } from './shared/book-store.service';
 import { BookValidators } from './shared/book-validators';
-
 import { AppRoutingModule } from './app-routing.module.one-app';
 import { DateValueAccessorModule } from 'angular-date-value-accessor';
 
@@ -34,7 +33,7 @@ import { DateValueAccessorModule } from 'angular-date-value-accessor';
   ],
   providers: [
     BookStoreService,
-    BookValidators
+    BookValidators // NEW
   ],
   bootstrap: [AppComponent]
 })
