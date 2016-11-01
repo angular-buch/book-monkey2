@@ -23,8 +23,8 @@ import { AdminModule } from './admin/admin.module';
     CommonModule,
     HttpModule,
     AppRoutingModule,
-    BookModule,
-    AdminModule
+    //BookModule,
+    //AdminModule
   ],
   providers: [
     BookStoreService,

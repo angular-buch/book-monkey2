@@ -1,3 +1,4 @@
+import { CanNavigateToAdminGuard } from './can-navigate-to-admin.guard';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
@@ -8,16 +9,18 @@ const routes: Routes = [
   {
     path: 'admin',
     component: BookFormComponent,
+    canActivate: [CanNavigateToAdminGuard]
   },
   {
     path: 'admin/:isbn',
-    component: BookFormComponent
+    component: BookFormComponent,
+    canActivate: [CanNavigateToAdminGuard]
   }
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
-  providers: []
+  providers: [CanNavigateToAdminGuard]
 })
 export class AdminRoutingModule { }
