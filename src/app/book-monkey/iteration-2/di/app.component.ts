@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Console } from '@angular/core/src/console';
+
 import { Book } from './shared/book';
 
 @Component({
@@ -13,6 +15,10 @@ export class AppComponent {
   detailsOn: boolean = false;
 
   book: Book;
+
+    constructor(console: Console) {
+      console.log('One example for an inbuild injectable!');
+    }
 
   showList() {
     this.listOn = true;
