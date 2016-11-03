@@ -1,0 +1,29 @@
+/* [...] */
+import { BookValidatorsService } from '../shared/book-validators.service';
+
+@Component({
+  selector: 'bm-book-form',
+  templateUrl: 'book-form.component.html'
+})
+export class BookFormComponent implements OnInit {
+  /* [...] */
+
+  constructor(
+    /* [...] */
+    private bv: BookValidatorsService
+  ) { }
+
+  /* [...] */
+
+  initBook() {
+    this.myForm = this.fb.group({
+      /* [...] */
+      isbn: [this.book.isbn, [
+        Validators.required,
+        this.bv.isbnFormat
+      ], this.isUpdatingBook ? null : this.bv.isbnExists.bind(this)]
+    });
+    this.myForm.valueChanges.subscribe(() => this.updateErrorMessages());
+  }
+  /* [...] */
+}
