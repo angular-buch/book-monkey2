@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 import { BookStoreService } from '../shared/book-store.service';
 
 @Injectable()
-export class BookValidators {
+export class BookValidatorsService {
 
   constructor(private bs: BookStoreService){ }
 

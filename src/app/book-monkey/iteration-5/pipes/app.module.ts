@@ -11,7 +11,7 @@ import { BookDetailsComponent } from './book-details/book-details.component';
 import { BookFormComponent } from './book-form/book-form.component';
 
 import { BookStoreService } from './shared/book-store.service';
-import { BookValidators } from './shared/book-validators';
+import { BookValidatorsService } from './shared/book-validators.service';
 import { AppRoutingModule } from './app-routing.module.one-app';
 import { DateValueAccessorModule } from 'angular-date-value-accessor';
 import { IsbnPipe } from './shared/isbn-pipe';
@@ -36,7 +36,7 @@ import { IsbnPipe } from './shared/isbn-pipe';
   ],
   providers: [
     BookStoreService,
-    BookValidators
+    BookValidatorsService
   ],
   bootstrap: [AppComponent]
 })

@@ -5,7 +5,7 @@ import { FormBuilder, FormGroup, FormArray, Validators } from '@angular/forms';
 import { Book } from '../shared/book';
 import { BookFormErrorMessages } from './book-form-error-messages';
 import { BookStoreService } from '../shared/book-store.service';
-import { BookValidators } from '../shared/book-validators';
+import { BookValidatorsService } from '../shared/book-validators.service';
 
 @Component({
   selector: 'bm-book-form',
@@ -24,7 +24,7 @@ export class BookFormComponent implements OnInit {
     private bs: BookStoreService,
     private route: ActivatedRoute,
     private router: Router,
-    private bv: BookValidators
+    private bv: BookValidatorsService
   ) { }
 
   ngOnInit() {
