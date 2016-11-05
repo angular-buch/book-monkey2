@@ -1,8 +1,10 @@
+import { Book } from './shared/book';
+
 @Component({
-  selector: 'app-root',
+  selector: 'bm-root',
   template: `
-    <book-list *ngIf="listOn"></book-list>
-    <book-details *ngIf="detailsOn" [book]="book"></book-details>
+    <bm-book-list *ngIf="listOn"></bm-book-list>
+    <bm-book-details *ngIf="detailsOn" [book]="book"></bm-book-details>
   `
 })
 export class AppComponent {
