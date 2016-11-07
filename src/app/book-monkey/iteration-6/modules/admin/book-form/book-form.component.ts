@@ -31,11 +31,7 @@ export class BookFormComponent implements OnInit {
     let isbn = this.route.snapshot.params['isbn'];
     if (isbn) {
       this.isUpdatingBook = true;
-      this.bs.getSingle(isbn)
-        .subscribe(b => {
-          this.book = b;
-          this.initBook();
-        });
+      this.book = this.route.snapshot.data['book'];
     }
     this.initBook();
   }
