@@ -91,4 +91,4 @@ fabric.properties
 # .idea/misc.xml
 # *.ipr
 
-/step-diffs
+/diffs
