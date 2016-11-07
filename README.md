@@ -25,6 +25,18 @@ Neben der vollständigen Demo können Sie die einzelnen Entwicklungsschritte dur
 Achten Sie auf den Download-Link im Footer der Demo unter  [book-monkey2.angular-buch.com](http://book-monkey2.angular-buch.com/).
 
 
+## Anziege der Änderungen zwischen den einzelnen Schritten
+
+Der BookMonkey wird in mehreren Iterationen entwickelt.
+Innerhalb jeder Iteration existieren ein oder mehrere Schritte, die jeweil den vorherigen Stand des BookMonkeys erweitern bzw. verändern.
+Um eine Auflistung aller Unterscheide zwischen den einzelnen Entwicklungsschritten zu erhalten, kann auf der Konsole das Script `step-diff.sh` aufgerufen werden:
+
+```bash
+sh step-diff.sh
+```
+
+Das Script erstellt einen neuen Ordner `step-diffs`. In diesem Ordner liegen (soriert nach Schritten) `.diff`-Dateien, die jeweils die Änderungen zwischen den BookMonkey-Versionen auflisten.
+
 ## Start
 
 Die gezeigten Kommandozeilen-Befehle setzen voraus, dass [Node.js](https://nodejs.org/) und [Git](https://git-scm.com/) installiert sind. 
