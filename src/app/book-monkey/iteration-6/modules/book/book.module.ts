@@ -1,3 +1,4 @@
+import { DelayDirective } from '../shared/delay.directive';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BookRoutingModule } from './book-routing.module';
@@ -19,7 +20,8 @@ import { ZoomDirective } from '../shared/zoom.directive';
     BookListItemComponent,
     BookDetailsComponent,
     IsbnPipe,
-    ZoomDirective
+    ZoomDirective,
+    DelayDirective
   ]
 })
 export class BookModule { }
