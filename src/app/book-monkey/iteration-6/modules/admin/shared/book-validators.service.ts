@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Observable } from 'rxjs';
 
-import { BookStoreService } from '../shared/book-store.service';
+import { BookStoreService } from '../../shared/book-store.service';
 
 @Injectable()
 export class BookValidatorsService {

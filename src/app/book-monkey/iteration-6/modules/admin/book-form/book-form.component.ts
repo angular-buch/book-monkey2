@@ -5,7 +5,7 @@ import { FormBuilder, FormGroup, FormArray, Validators } from '@angular/forms';
 import { Book } from '../../shared/book';
 import { BookFormErrorMessages } from './book-form-error-messages';
 import { BookStoreService } from '../../shared/book-store.service';
-import { BookValidatorsService } from '../../shared/book-validators.service';
+import { BookValidatorsService } from '../shared/book-validators.service';
 
 @Component({
   selector: 'bm-book-form',
