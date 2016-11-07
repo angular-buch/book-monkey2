@@ -6,11 +6,11 @@ import { BookResolver } from './../shared/book-resolver.service';
 
 const routes: Routes = [
   {
-    path: 'admin',
+    path: '',
     component: BookFormComponent,
   },
   {
-    path: 'admin/:isbn',
+    path: ':isbn',
     component: BookFormComponent,
     resolve: {
       book: BookResolver

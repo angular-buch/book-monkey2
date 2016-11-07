@@ -17,7 +17,7 @@ export const routes: Routes = [
     component: HomeComponent
   },
   {
-    path: 'book',
+    path: 'books',
     loadChildren: 'app/book-monkey/iteration-6/modules/book/book.module#BookModule'
   },
   {

@@ -7,11 +7,11 @@ import { BookResolver } from './../shared/book-resolver.service';
 
 const routes: Routes = [
   {
-    path: 'books',
+    path: '',
     component: BookListComponent
   },
   {
-    path: 'books/:isbn',
+    path: ':isbn',
     component: BookDetailsComponent,
     resolve: {
       book: BookResolver
