@@ -3,9 +3,9 @@
 
 [![Monkey](src/assets/images/monkey-thinking.png)](http://book-monkey2.angular-buch.com/)
 
-Der __"Book-Monkey"__ ist das Demo Projekt zum Buch ["Angular 2: Einstieg in die komponentenbasierte Entwicklung von Web- und Mobile-Anwendungen"](https://angular-buch.com/). Mithilfe dieses Buches werden Sie Googles neuestes Framework kennen lernen. Wir laden Sie dazu ein, mit den aktuellsten Technologien moderne Single-Page-Anwendungen zu erstellen.
+Der __"Book-Monkey"__ ist das Demo-Projekt zum Buch ["Angular: Einstieg in die komponentenbasierte Entwicklung von Web- und Mobile-Anwendungen"](https://angular-buch.com/). Mithilfe dieses Buchs werden Sie Googles neuestes Framework kennenlernen. Wir laden Sie dazu ein, mit den aktuellsten Technologien moderne Single-Page-Anwendungen zu erstellen.
 
-Anhand des Beispielprojekts __"Book-Monkey"__ führen wir Sie schrittweise an die Entwicklung von Angular2-Anwendungen heran. Sie werden in die grundlegenden Konzepte eingeführt, die es Ihnen ermöglichen, strukturierte, modularisierte und somit wartbare Applikationen zu erstellen.
+Anhand des Beispielprojekts __"Book-Monkey"__ führen wir Sie schrittweise an die Entwicklung von Angular-Anwendungen heran. Sie werden in die grundlegenden Konzepte eingeführt, die es Ihnen ermöglichen, strukturierte, modularisierte und somit wartbare Applikationen zu erstellen.
 
 # Das Buch
 
@@ -27,7 +27,6 @@ Achten Sie auf den Download-Link im Footer der Demo unter [book-monkey2.angular-
 
 ## Anzeige der Änderungen zwischen den einzelnen Schritten
 
-Der BookMonkey wird in mehreren Iterationen entwickelt.
 Innerhalb jeder Iteration existieren einer oder mehrere Schritte, die jeweils den vorherigen Stand des BookMonkeys erweitern bzw. verändern.
 Um eine Auflistung aller Unterscheide zwischen den einzelnen Entwicklungsschritten zu erhalten, kann auf der Konsole das Skript `step-diff.sh` aufgerufen werden:
 
@@ -35,7 +34,7 @@ Um eine Auflistung aller Unterscheide zwischen den einzelnen Entwicklungsschritt
 ./step-diff.sh
 ```
 
-Das Skript erstellt einen neuen Ordner `diffs`. Dort liegen (sortiert nach Schritten) `.diff`-Dateien, die jeweils die Änderungen zwischen den BookMonkey-Versionen auflisten.
+Das Skript erstellt einen neuen Ordner `diffs`. Dort liegen (sortiert nach Schritten) HTML-Dateien, die jeweils die Änderungen zwischen den BookMonkey-Versionen auflisten.
 
 ## Start
 
