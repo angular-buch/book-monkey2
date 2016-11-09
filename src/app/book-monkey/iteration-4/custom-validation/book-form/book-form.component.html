@@ -24,9 +24,9 @@
   </div>
   <div class="field">
     <label>Erscheinungsdatum</label>
-    <input type="date" 
-           useValueAsDate 
-           formControlName="published">
+    <input type="date"
+            useValueAsDate
+            formControlName="published">
     <div *ngIf="errors.published" class="ui negative message">
       {{ errors.published }}
     </div>
@@ -36,7 +36,7 @@
     <div class="fields" formArrayName="authors">
       <div class="fifteen wide field" *ngFor="let control of authors.controls; let i = index">
         <input [formControlName]="i" placeholder="Autor {{i+1}}">
-      </div>        
+      </div>
       <div class="one wide field">
         <button (click)="addAuthorControl()" class="ui large button" type="button"> + </button>
       </div>
@@ -53,7 +53,7 @@
     <label>Bilder</label>
     <div formArrayName="thumbnails">
       <div class="fields"
-          *ngFor="let control of thumbnails.controls; let i = index; let l = last" 
+          *ngFor="let control of thumbnails.controls; let i = index; let l = last"
           [formGroupName]="i">
         <div class="nine wide field">
           <input formControlName="url" placeholder="http://bild{{i+1}}_Url">
