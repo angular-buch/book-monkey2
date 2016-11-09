@@ -27,14 +27,17 @@ Achten Sie auf den Download-Link im Footer der Demo unter [book-monkey2.angular-
 
 ## Anzeige der Änderungen zwischen den einzelnen Schritten
 
+** Achtung: aktuell nur unter Linux/ Unix Systemen verfügbar **
 Innerhalb jeder Iteration existieren einer oder mehrere Schritte, die jeweils den vorherigen Stand des BookMonkeys erweitern bzw. verändern.
-Um eine Auflistung aller Unterscheide zwischen den einzelnen Entwicklungsschritten zu erhalten, kann auf der Konsole das Skript `step-diff.sh` aufgerufen werden:
+Um eine Auflistung aller Unterscheide zwischen den einzelnen Entwicklungsschritten zu erhalten, kann  der folgende Befehl auf der Konsole aufgerufen werden:
 
 ```bash
-./step-diff.sh
+npm run diff
 ```
 
-Das Skript erstellt einen neuen Ordner `diffs`. Dort liegen (sortiert nach Schritten) HTML-Dateien, die jeweils die Änderungen zwischen den BookMonkey-Versionen auflisten.
+Der Befehl führt das Skript `step-diff.sh` aus und erstellt einen neuen Ordner `diffs`.
+Dort liegen (sortiert nach Schritten) HTML-Dateien, die jeweils die Änderungen zwischen den BookMonkey-Versionen auflisten.
+Weiterhin wird eine Index-Datei mit verweisen auf die diffs erzeugt und ein Webserver zur Auslieferung (http-server) gestartet, sofern dieser auf dem System installiert ist.
 
 ## Start
 
