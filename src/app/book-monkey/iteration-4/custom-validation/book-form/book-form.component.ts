@@ -50,7 +50,7 @@ export class BookFormComponent implements OnInit {
       ], this.isUpdatingBook ? null : this.bv.isbnExists.bind(this)],
       description: [this.book.description],
       authors: this.buildAuthorsArray(),
-      thumbnails: this.buildThumbnialsArray(),
+      thumbnails: this.buildThumbnailsArray(),
       published: [new Date(this.book.published)]
     });
     this.myForm.valueChanges.subscribe(() => this.updateErrorMessages());
@@ -61,7 +61,7 @@ export class BookFormComponent implements OnInit {
     return this.authors;
   }
 
-  buildThumbnialsArray(): FormArray {
+  buildThumbnailsArray(): FormArray {
     this.thumbnails = this.fb.array(
       this.book.thumbnails.map(
         t => this.fb.group({
