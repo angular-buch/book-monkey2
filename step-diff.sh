@@ -14,7 +14,7 @@ rm -fr $OUTDIR
 mkdir $OUTDIR
 
 DIFF="diff -u -r --unidirectional-new-file"
-DIFF2HTML="node_modules/diff2html-cli/bin/diff2html -i stdin -o stdout --"
+DIFF2HTML="node_modules/diff2html-cli/bin/diff2html -i stdin -o stdout -s side --"
 
 echo "creating .html-files with diffs between iterations/steps in folder..."
 $DIFF $IT1/book-list $IT1/book-list-refactored       | $DIFF2HTML > $OUTDIR/it1-1_it1-2.html;
