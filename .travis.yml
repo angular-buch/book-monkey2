@@ -39,6 +39,8 @@ env:
     - NAME="iteration-5-directives"            BLUEPRINT="src/app/book-monkey/iteration-5/directives"
 
     - NAME="iteration-6-modules"               BLUEPRINT="src/app/book-monkey/iteration-6/modules"
+    - NAME="iteration-6-lazy-loading"          BLUEPRINT="src/app/book-monkey/iteration-6/lazy-loading"
+    - NAME="iteration-6-routing"               BLUEPRINT="src/app/book-monkey/iteration-6/routing"
 
 install:
   - npm i

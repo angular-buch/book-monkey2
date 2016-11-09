@@ -28,4 +28,6 @@ $DIFF $IT4/reactive-forms $IT4/custom-validation     | $DIFF2HTML > $OUTDIR/it4-
 $DIFF $IT4/custom-validation $IT5/pipes              | $DIFF2HTML > $OUTDIR/it4-3_it5-1.html;
 $DIFF $IT5/pipes $IT5/directives                     | $DIFF2HTML > $OUTDIR/it5-1_it5-2.html;
 $DIFF $IT5/directives $IT6/modules                   | $DIFF2HTML > $OUTDIR/it5-2_it6-1.html;
+$DIFF $IT6/modules $IT6/lazy-loading                 | $DIFF2HTML > $OUTDIR/it6-1_it6-2.html;
+$DIFF $IT6/lazy-loading $IT6/routing                 | $DIFF2HTML > $OUTDIR/it6-2_it6-3.html;
 echo "finished job. Diffs stored in folder: $OUTDIR"
