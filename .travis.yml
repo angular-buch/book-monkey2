@@ -103,8 +103,14 @@ script:
         for i in "${!SEARCH[@]}";
         do sed -i "s|${SEARCH[$i]}|${REPLACE[$i]}|g" "$NEW_BOOKMONKEY/src/app/app.module.ts";
         done;
+        unset SEARCH; unset REPLACE;
 
         rm -f "$NEW_BOOKMONKEY/src/app/app-routing.module.one-app.ts";
+
+        SEARCH[0]="app/book-monkey/iteration-6/lazy-loading/";
+        SEARCH[1]="app/book-monkey/iteration-6/routing/";
+        for i in "${!SEARCH[@]}";
+        do sed -i "s|${SEARCH[$i]}|app|g" "$NEW_BOOKMONKEY/src/app/app-routing.module.ts"
 
       find $NEW_BOOKMONKEY/src -name "*.snippet" -type f -delete
 
