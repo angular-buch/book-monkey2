@@ -13,9 +13,9 @@ import { Component } from '@angular/core';
         <div class="title">Lazy-Loading</div>
       </div>
     </a>
-    <a routerLink="routing-tools" routerLinkActive="active" class="step">
+    <a routerLink="routing" routerLinkActive="active" class="step">
       <div class="content">
-        <div class="title">Routing-Tools</div>
+        <div class="title">Routing</div>
       </div>
     </a>
   </div>

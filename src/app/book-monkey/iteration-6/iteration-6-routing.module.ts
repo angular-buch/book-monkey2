@@ -11,7 +11,7 @@ export const routes: Routes = [
       { path: '', redirectTo: 'modules', pathMatch: 'full' },
       { path: 'modules', loadChildren: 'app/book-monkey/iteration-6/modules/app.module#AppModule' },
       { path: 'lazy-loading', loadChildren: 'app/book-monkey/iteration-6/lazy-loading/app.module#AppModule' },
-      { path: 'routing-tools', loadChildren: 'app/book-monkey/iteration-6/routing-tools/app.module#AppModule' }
+      { path: 'routing', loadChildren: 'app/book-monkey/iteration-6/routing/app.module#AppModule' }
     ]
   }
 ];
