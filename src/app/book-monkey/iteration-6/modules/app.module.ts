@@ -21,9 +21,7 @@ import { AdminModule } from './admin/admin.module';
     BookModule,
     AdminModule
   ],
-  providers: [
-    BookStoreService
-  ],
+  providers: [BookStoreService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

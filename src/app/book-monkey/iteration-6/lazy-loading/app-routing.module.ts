@@ -21,7 +21,7 @@ export const routes: Routes = [
   },
   {
     path: 'admin',
-    loadChildren: 'app/book-monkey/iteration-6/lazy-loading/admin/admin.module#AdminModule',
+    loadChildren: 'app/book-monkey/iteration-6/lazy-loading/admin/admin.module#AdminModule'
   }
 ];
 

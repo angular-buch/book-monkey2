@@ -7,8 +7,6 @@ import { HomeComponent } from './home/home.component';
 import { BookStoreService } from './shared/book-store.service';
 import { AppRoutingModule } from './app-routing.module.one-app';
 import { BookResolver } from './shared/book-resolver.service';
-import { BookModule } from './book/book.module';
-import { AdminModule } from './admin/admin.module';
 
 @NgModule({
   declarations: [
@@ -18,9 +16,7 @@ import { AdminModule } from './admin/admin.module';
   imports: [
     CommonModule,
     HttpModule,
-    AppRoutingModule,
-    //BookModule,
-    //AdminModule
+    AppRoutingModule
   ],
   providers: [
     BookStoreService,
