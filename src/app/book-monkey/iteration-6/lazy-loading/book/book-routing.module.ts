@@ -3,7 +3,6 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { BookListComponent } from './book-list/book-list.component';
 import { BookDetailsComponent } from './book-details/book-details.component';
-import { BookResolver } from './../shared/book-resolver.service';
 
 const routes: Routes = [
   {
@@ -12,10 +11,7 @@ const routes: Routes = [
   },
   {
     path: ':isbn',
-    component: BookDetailsComponent,
-    resolve: {
-      book: BookResolver
-    }
+    component: BookDetailsComponent
   }
 ];
 
