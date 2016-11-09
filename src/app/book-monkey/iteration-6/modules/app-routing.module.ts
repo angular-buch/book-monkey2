@@ -3,7 +3,6 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { HomeComponent } from './home/home.component';
 import { AdminModule } from './admin/admin.module';
-import { AdminComponent } from './admin/admin.component';
 
 export const routes: Routes = [
   {
