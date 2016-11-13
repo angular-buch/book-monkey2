@@ -113,6 +113,8 @@ script:
         do sed -i "s|${SEARCH[$i]}|app/|g" "$NEW_BOOKMONKEY/src/app/app-routing.module.ts";
         done;
 
+        sed -i "s|export const routes|const routes|g" "$NEW_BOOKMONKEY/src/app/app-routing.module.ts";
+
       find $NEW_BOOKMONKEY/src -name "*.snippet" -type f -delete;
 
       echo "*** DIRECTORY LISTING OF $NEW_BOOKMONKEY ***";
