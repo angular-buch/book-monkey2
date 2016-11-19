@@ -82,6 +82,10 @@ export class BookFormComponent implements OnInit {
   }
 
   submitForm() {
+    // filter empty values
+    this.myForm.value.authors = this.myForm.value.authors.filter(el => el);
+    this.myForm.value.thumbnails = this.myForm.value.thumbnails.filter(el => el.url);
+
     if (this.isUpdatingBook) {
       this.bs.update(this.myForm.value).subscribe(res => res);
       this.router.navigate(['../../books', this.myForm.value.isbn], { relativeTo: this.route });
