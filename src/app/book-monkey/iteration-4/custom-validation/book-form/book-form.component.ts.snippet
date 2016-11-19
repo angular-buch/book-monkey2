@@ -1,4 +1,4 @@
-/* [...] */
+// ...
 import { BookValidatorsService } from '../shared/book-validators.service';
 
 @Component({
@@ -6,18 +6,18 @@ import { BookValidatorsService } from '../shared/book-validators.service';
   templateUrl: 'book-form.component.html'
 })
 export class BookFormComponent implements OnInit {
-  /* [...] */
+  // ...
 
   constructor(
-    /* [...] */
+    // ...
     private bv: BookValidatorsService
   ) { }
 
-  /* [...] */
+  // ...
 
   initBook() {
     this.myForm = this.fb.group({
-      /* [...] */
+      // ...
       isbn: [this.book.isbn, [
         Validators.required,
         this.bv.isbnFormat
@@ -25,5 +25,5 @@ export class BookFormComponent implements OnInit {
     });
     this.myForm.valueChanges.subscribe(() => this.updateErrorMessages());
   }
-  /* [...] */
+  // ...
 }
