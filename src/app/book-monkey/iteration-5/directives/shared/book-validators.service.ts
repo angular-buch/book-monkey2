@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { FormControl, FormArray } from '@angular/forms';
 import { Observable } from 'rxjs';
 
 import { BookStoreService } from '../shared/book-store.service';
@@ -19,6 +19,15 @@ export class BookValidatorsService {
     };
   }
 
+  atLeastOneAuthor(controlArray: FormArray): { [error: string]: any } {
+    let check = controlArray.controls.some(el => {
+      return (el.value) ? true : false;
+    });
+    return check ? null : {
+      atLeastOneAuthor: { valid: false }
+    };
+  }
+
   isbnExists(control: FormControl): Observable<{ [error: string]: any }> {
     return this.bs.check(control.value)
       .map(exists => (exists === false) ? null : {
@@ -27,5 +36,3 @@ export class BookValidatorsService {
 
   }
 }
-
-

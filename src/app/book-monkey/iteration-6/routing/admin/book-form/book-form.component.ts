@@ -53,7 +53,7 @@ export class BookFormComponent implements OnInit {
   }
 
   buildAuthorsArray(): FormArray {
-    this.authors = this.fb.array(this.book.authors, Validators.required);
+    this.authors = this.fb.array(this.book.authors, this.bv.atLeastOneAuthor);
     return this.authors;
   }
 
