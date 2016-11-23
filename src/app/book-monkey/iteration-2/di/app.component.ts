@@ -16,9 +16,9 @@ export class AppComponent {
 
   book: Book;
 
-    constructor(console: Console) {
-      console.log('One example for a built-in injectable!');
-    }
+  constructor(console: Console) {
+    console.log('One example for a built-in injectable!');
+  }
 
   showList() {
     this.listOn = true;
