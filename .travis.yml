@@ -45,7 +45,7 @@ env:
 install:
   - npm i
   - npm i -g angular-cli@1.0.0-beta.20-4
-  - npm i angular-cli-ghpages --save-dev
+  - npm i angular-cli-ghpages@0.3.1 --save-dev
 
 script:
   - echo "*** BUILDING $NAME ***"
@@ -60,7 +60,7 @@ script:
       echo "book-monkey2.angular-buch.com" > dist/CNAME;
       cp dist/index.html dist/404.html;
 
-      ng ghpages --repo="$GITHUB_ORG/$NAME.git" --name="$GITHUB_NAME" --email="$GITHUB_EMAIL" --skip-build;
+      ng ghpages --repo="$GITHUB_ORG/$NAME.git" --name="$GITHUB_NAME" --email="$GITHUB_EMAIL";
     fi
 
   # [2] single apps (mini monkeys)
@@ -120,7 +120,7 @@ script:
       echo "*** DIRECTORY LISTING OF $NEW_BOOKMONKEY ***";
       ls -a "$NEW_BOOKMONKEY";
 
-      ng ghpages --repo="$GITHUB_ORG/$NAME.git" --name="$GITHUB_NAME" --email="$GITHUB_EMAIL" --dir=../TMP/BookMonkey --branch=master --skip-build;
+      ng ghpages --repo="$GITHUB_ORG/$NAME.git" --name="$GITHUB_NAME" --email="$GITHUB_EMAIL" --dir=../TMP/BookMonkey --branch=master;
     fi
 
   # [2] single apps:
@@ -135,7 +135,7 @@ script:
       echo "$NAME.angular-buch.com" > dist/CNAME;
       cp dist/index.html dist/404.html;
 
-      ng ghpages --repo="$GITHUB_ORG/$NAME.git" --name="$GITHUB_NAME" --email="$GITHUB_EMAIL" --skip-build;
+      ng ghpages --repo="$GITHUB_ORG/$NAME.git" --name="$GITHUB_NAME" --email="$GITHUB_EMAIL";
     fi
 
 # ---- boilerplate ----
