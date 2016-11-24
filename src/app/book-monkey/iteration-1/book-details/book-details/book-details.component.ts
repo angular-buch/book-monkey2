@@ -15,6 +15,6 @@ export class BookDetailsComponent {
   }
 
   showBookList() {
-    this.showListEvent.emit(null);
+    this.showListEvent.emit();
   }
 }
