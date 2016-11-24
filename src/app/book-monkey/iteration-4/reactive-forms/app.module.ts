@@ -21,7 +21,7 @@ import { DateValueAccessorModule } from 'angular-date-value-accessor';
     BookListComponent,
     BookListItemComponent,
     BookDetailsComponent,
-    BookFormComponent // NEW
+    BookFormComponent
   ],
   imports: [
     CommonModule,
