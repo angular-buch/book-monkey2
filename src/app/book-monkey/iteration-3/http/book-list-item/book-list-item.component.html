@@ -1,13 +1,13 @@
 <img class="ui tiny image"
      *ngIf="book.thumbnails != undefined"
-     [src]="book.thumbnails[0].url">
+     [src]="book?.thumbnails[0].url">
 <div class="content">
-  <div class="header">{{ book.title }}</div>
-  <div class="description"> {{ book.subtitle }} </div>
+  <div class="header">{{ book?.title }}</div>
+  <div class="description"> {{ book?.subtitle }} </div>
   <div class="metadata">
     <span *ngFor="let author of book.authors; let l=last">
       {{ author }}<span *ngIf="!l">, </span>
     </span>
   </div>
-  <div class="extra">ISBN {{ book.isbn }}</div>
+  <div class="extra">ISBN {{ book?.isbn }}</div>
 </div>
