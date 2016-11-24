@@ -26,7 +26,7 @@ export const routes: Routes = [
   },
   {
     path: 'admin',
-    component: BookFormComponent,
+    component: BookFormComponent
   }
 ];
 
