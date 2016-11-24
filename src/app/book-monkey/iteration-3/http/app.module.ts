@@ -24,7 +24,7 @@ import { AppRoutingModule } from './app-routing.module.one-app';
     CommonModule,
     FormsModule,
     HttpModule, // NEW
-    AppRoutingModule,
+    AppRoutingModule
   ],
   providers: [
     BookStoreService

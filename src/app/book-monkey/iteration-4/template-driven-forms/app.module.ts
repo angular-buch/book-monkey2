@@ -25,8 +25,8 @@ import { DateValueAccessorModule } from 'angular-date-value-accessor';
   ],
   imports: [
     CommonModule,
+    FormsModule,
     HttpModule,
-    FormsModule, // NEW
     AppRoutingModule,
     DateValueAccessorModule // NEW
   ],

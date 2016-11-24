@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   <div class="ui container">
     <h1>Home</h1>
     <p>Das ist der BookMonkey.</p>
-    <a [routerLink]="['../books']" class="ui red button">
+    <a routerLink="../books" class="ui red button">
       Buchliste ansehen
       <i class="right arrow icon"></i>
     </a>
