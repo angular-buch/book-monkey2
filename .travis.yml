@@ -45,7 +45,7 @@ env:
 install:
   - npm i
   - npm i -g angular-cli@1.0.0-beta.20-4
-  - npm i angular-cli-ghpages@0.3.1 --save-dev
+  - npm i angular-cli-ghpages@0.3.2 --save-dev
 
 script:
   - echo "*** BUILDING $NAME ***"
