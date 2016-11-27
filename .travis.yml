@@ -40,7 +40,8 @@ env:
 
     - NAME="iteration-6-modules"               BLUEPRINT="src/app/book-monkey/iteration-6/modules"
     - NAME="iteration-6-lazy-loading"          BLUEPRINT="src/app/book-monkey/iteration-6/lazy-loading"
-    - NAME="iteration-6-routing"               BLUEPRINT="src/app/book-monkey/iteration-6/routing"
+    - NAME="iteration-6-guards"                BLUEPRINT="src/app/book-monkey/iteration-6/guards"
+    - NAME="iteration-6-resolver"              BLUEPRINT="src/app/book-monkey/iteration-6/resolver"
 
 install:
   - npm i
@@ -108,7 +109,8 @@ script:
         rm -f "$NEW_BOOKMONKEY/src/app/app-routing.module.one-app.ts";
 
         SEARCH[0]="app/book-monkey/iteration-6/lazy-loading/";
-        SEARCH[1]="app/book-monkey/iteration-6/routing/";
+        SEARCH[1]="app/book-monkey/iteration-6/guards/";
+        SEARCH[2]="app/book-monkey/iteration-6/resolver/";
         for i in "${!SEARCH[@]}";
         do sed -i "s|${SEARCH[$i]}|app/|g" "$NEW_BOOKMONKEY/src/app/app-routing.module.ts";
         done;

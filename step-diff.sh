@@ -23,6 +23,7 @@ OUT10="it5-1_it5-2.html"
 OUT11="it5-2_it6-1.html"
 OUT12="it6-1_it6-2.html"
 OUT13="it6-2_it6-3.html"
+OUT14="it6-3_it6-4.html"
 
 rm -fr $OUTDIR
 mkdir $OUTDIR
@@ -43,7 +44,8 @@ $DIFF $IT4/custom-validation $IT5/pipes              | $DIFF2HTML > $OUTDIR/$OUT
 $DIFF $IT5/pipes $IT5/directives                     | $DIFF2HTML > $OUTDIR/$OUT10;
 $DIFF $IT5/directives $IT6/modules                   | $DIFF2HTML > $OUTDIR/$OUT11;
 $DIFF $IT6/modules $IT6/lazy-loading                 | $DIFF2HTML > $OUTDIR/$OUT12;
-$DIFF $IT6/lazy-loading $IT6/routing                 | $DIFF2HTML > $OUTDIR/$OUT13;
+$DIFF $IT6/lazy-loading $IT6/guards                  | $DIFF2HTML > $OUTDIR/$OUT13;
+$DIFF $IT6/guards $IT6/resolver                      | $DIFF2HTML > $OUTDIR/$OUT14;
 
 echo "
 <!doctype html>
@@ -67,6 +69,7 @@ echo "
     <li><a href='$OUT11'>Iteration-5 Schritt 2 -> Iteration 6 Schritt 1</a></li>
     <li><a href='$OUT12'>Iteration-6 Schritt 1 -> Iteration 6 Schritt 2</a></li>
     <li><a href='$OUT13'>Iteration-6 Schritt 2 -> Iteration 6 Schritt 3</a></li>
+    <li><a href='$OUT14'>Iteration-6 Schritt 3 -> Iteration 6 Schritt 4</a></li>
   </ol>
 </body>
 </html>
@@ -82,7 +85,7 @@ else
     echo "http-server does not exists globally, try to find it in node_modules..."
     if [ ! -f node_modules/http-server/bin/http-server ]; then
         echo "http-server not found (neither globally nor locally). Can't serve diffs."
-        echo "You can open the served files manually in your browser or install http-server running the following command:"
+        echo "You can open the served files manually in your browser or install http-server by running the following command:"
         echo "npm install -g http-server"
     else
         echo "using http-server from node_modules to serve files"
