@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { BookListComponent } from './book-list/book-list.component';
 import { BookDetailsComponent } from './book-details/book-details.component';
-import { BookResolver } from './../shared/book-resolver.service';
+import { BookResolver } from '../shared/book-resolver.service';
 
 const routes: Routes = [
   {
