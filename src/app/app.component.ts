@@ -24,7 +24,9 @@ export class AppComponent implements OnInit {
         let amountOfSlashes = (url.match(/\//g) || []).length;
 
         if (amountOfSlashes < 2) {
-          this.repoName = 'one-app';
+          this.repoName = 'book-monkey2';
+          this.repositoryUrl = 'https://github.com/angular-buch/book-monkey2';
+          return;
         } else {
           let parts = url.split('/');
           this.repoName = parts[1] + '-' + parts[2];
@@ -41,7 +43,7 @@ export class AppComponent implements OnInit {
 
   @HostListener('window:resize', ['$event'])
   onResize() {
-    this.mobileLayout = (window.innerWidth < 767) ? true : false;
+    this.mobileLayout = window.innerWidth < 767;
   }
 }
 
