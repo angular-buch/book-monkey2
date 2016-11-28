@@ -1,7 +1,7 @@
 <div class="ui middle aligned selection divided list">
   <a *ngFor="let book of books" class="item">
     <img class="ui tiny image"
-     *ngIf="book.thumbnails != undefined"
+     *ngIf="book.thumbnails"
      [src]="book.thumbnails[0].url">
     <div class="content">
       <div class="header">{{ book.title }}</div>
