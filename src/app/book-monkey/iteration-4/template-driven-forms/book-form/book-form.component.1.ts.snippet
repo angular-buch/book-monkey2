@@ -1,0 +1,19 @@
+import { Component, ViewChild, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
+
+import { Book } from '../shared/book';
+import { BookFormErrorMessages } from './book-form-error-messages';
+import { BookStoreService } from '../shared/book-store.service';
+
+@Component({
+  selector: 'bm-book-form',
+  templateUrl: 'book-form.component.html'
+})
+export class BookFormComponent implements OnInit {
+  @ViewChild('myForm') myForm: NgForm;
+  book = Book.empty();
+  errors = {};
+
+  constructor(private bs: BookStoreService) { }
+
+}

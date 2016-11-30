@@ -1,0 +1,22 @@
+// ...
+export class BookFormComponent implements OnInit {
+  // ...
+
+  ngOnInit() {
+    this.myForm.valueChanges.subscribe(() => this.updateErrorMessages());
+  }
+
+  updateErrorMessages() {
+    this.errors = {};
+    for (let message of BookFormErrorMessages) {
+      let control = this.myForm.form.get(message.forControl);
+      if (control &&
+          control.dirty &&
+          control.invalid &&
+          control.errors[message.forValidator] &&
+          !this.errors[message.forControl]) {
+        this.errors[message.forControl] = message.text;
+      }
+    }
+  }
+}
