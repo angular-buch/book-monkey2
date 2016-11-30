@@ -7,7 +7,7 @@ import { BookResolver } from './../shared/book-resolver.service';
 const routes: Routes = [
   {
     path: '',
-    component: BookFormComponent,
+    component: BookFormComponent
   },
   {
     path: ':isbn',

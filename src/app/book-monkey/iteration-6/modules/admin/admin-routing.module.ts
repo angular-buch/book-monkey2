@@ -6,7 +6,7 @@ import { BookFormComponent } from './book-form/book-form.component';
 const routes: Routes = [
   {
     path: 'admin',
-    component: BookFormComponent,
+    component: BookFormComponent
   },
   {
     path: 'admin/:isbn',
