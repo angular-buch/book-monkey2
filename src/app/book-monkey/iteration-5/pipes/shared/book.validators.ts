@@ -1,13 +1,11 @@
-import { Injectable } from '@angular/core';
 import { FormControl, FormArray } from '@angular/forms';
 import { Observable } from 'rxjs';
 
 import { BookStoreService } from '../shared/book-store.service';
 
-@Injectable()
-export class BookValidatorsService {
+export class BookValidators {
 
-  isbnFormat(control: FormControl): { [error: string]: any } {
+  static isbnFormat(control: FormControl): { [error: string]: any } {
     if (!control.value) { return null; }
 
     let isolatedNumbers = control.value.replace(/[-]/g, '');
@@ -17,7 +15,7 @@ export class BookValidatorsService {
     };
   }
 
-  atLeastOneAuthor(controlArray: FormArray): { [error: string]: any } {
+  static atLeastOneAuthor(controlArray: FormArray): { [error: string]: any } {
     let check = controlArray.controls.some(el => {
       return (el.value) ? true : false;
     });
@@ -26,7 +24,7 @@ export class BookValidatorsService {
     };
   }
 
-  isbnExists(bs: BookStoreService) {
+  static isbnExists(bs: BookStoreService) {
     return function(control: FormControl): Observable<{ [error: string]: any }> {
       return bs.check(control.value)
         .map(exists => (exists === false) ? null : {

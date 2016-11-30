@@ -5,7 +5,7 @@ import { FormBuilder, FormGroup, FormArray, Validators } from '@angular/forms';
 import { Book } from '../shared/book';
 import { BookFormErrorMessages } from './book-form-error-messages';
 import { BookStoreService } from '../shared/book-store.service';
-import { BookValidatorsService } from '../shared/book-validators.service';
+import { BookValidators } from '../shared/book.validators';
 
 @Component({
   selector: 'bm-book-form',
@@ -23,8 +23,7 @@ export class BookFormComponent implements OnInit {
     private fb: FormBuilder,
     private bs: BookStoreService,
     private route: ActivatedRoute,
-    private router: Router,
-    private bv: BookValidatorsService
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -46,18 +45,18 @@ export class BookFormComponent implements OnInit {
       subtitle: [this.book.subtitle],
       isbn: [this.book.isbn, [
         Validators.required,
-        this.bv.isbnFormat
-      ], this.isUpdatingBook ? null : this.bv.isbnExists(this.bs)],
+        BookValidators.isbnFormat
+      ], this.isUpdatingBook ? null : BookValidators.isbnExists(this.bs)],
       description: [this.book.description],
       authors: this.buildAuthorsArray(),
       thumbnails: this.buildThumbnailsArray(),
-      published: [this.book.published]
+      published: this.book.published
     });
     this.myForm.valueChanges.subscribe(() => this.updateErrorMessages());
   }
 
   buildAuthorsArray(): FormArray {
-    this.authors = this.fb.array(this.book.authors, this.bv.atLeastOneAuthor);
+    this.authors = this.fb.array(this.book.authors, BookValidators.atLeastOneAuthor);
     return this.authors;
   }
 

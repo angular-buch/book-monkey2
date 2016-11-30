@@ -11,7 +11,6 @@ import { BookDetailsComponent } from './book-details/book-details.component';
 import { BookFormComponent } from './book-form/book-form.component';
 
 import { BookStoreService } from './shared/book-store.service';
-import { BookValidatorsService } from './shared/book-validators.service';
 import { AppRoutingModule } from './app-routing.module.one-app';
 import { DateValueAccessorModule } from 'angular-date-value-accessor';
 
@@ -32,8 +31,7 @@ import { DateValueAccessorModule } from 'angular-date-value-accessor';
     DateValueAccessorModule
   ],
   providers: [
-    BookStoreService,
-    BookValidatorsService // NEW
+    BookStoreService
   ],
   bootstrap: [AppComponent]
 })
