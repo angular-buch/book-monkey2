@@ -1,7 +1,7 @@
 import { Component, ViewChild, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
-import { Book } from '../shared/book';
+import { Book, Thumbnail } from '../shared/book';
 import { BookFormErrorMessages } from './book-form-error-messages';
 import { BookStoreService } from '../shared/book-store.service';
 
@@ -21,7 +21,17 @@ export class BookFormComponent implements OnInit {
   }
 
   submitForm() {
-    this.bs.create(this.myForm.value).subscribe(res => res);
+    let book = new Book(
+      this.myForm.value.isbn,
+      this.myForm.value.title,
+      this.myForm.value.authors.split(','),
+      this.myForm.value.published,
+      this.myForm.value.subtitle,
+      null,
+      [ new Thumbnail(this.myForm.value.thumbnail.url, this.myForm.value.thumbnail.title) ],
+      this.myForm.value.description
+    );
+    this.bs.create(book).subscribe(res => res);
     this.myForm.reset();
   }
 
