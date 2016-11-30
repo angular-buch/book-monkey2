@@ -47,7 +47,7 @@ export class BookFormComponent implements OnInit {
       isbn: [this.book.isbn, [
         Validators.required,
         this.bv.isbnFormat
-      ], this.isUpdatingBook ? null : this.bv.isbnExists.bind(this)],
+      ], this.isUpdatingBook ? null : this.bv.isbnExists(this.bs)],
       description: [this.book.description],
       authors: this.buildAuthorsArray(),
       thumbnails: this.buildThumbnailsArray(),

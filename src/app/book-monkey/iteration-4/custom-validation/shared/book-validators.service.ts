@@ -7,8 +7,6 @@ import { BookStoreService } from '../shared/book-store.service';
 @Injectable()
 export class BookValidatorsService {
 
-  constructor(private bs: BookStoreService){ }
-
   isbnFormat(control: FormControl): { [error: string]: any } {
     if (!control.value) { return null; }
 
@@ -28,11 +26,12 @@ export class BookValidatorsService {
     };
   }
 
-  isbnExists(control: FormControl): Observable<{ [error: string]: any }> {
-    return this.bs.check(control.value)
-      .map(exists => (exists === false) ? null : {
-          isbnExists: { valid: false }
-      });
-
+  isbnExists(bs: BookStoreService) {
+    return function(control: FormControl): Observable<{ [error: string]: any }> {
+      return bs.check(control.value)
+        .map(exists => (exists === false) ? null : {
+            isbnExists: { valid: false }
+        });
+    };
   }
 }
