@@ -18,7 +18,7 @@ export class BookListComponent implements OnInit {
         new Date(2016, 5, 26),
         'Einstieg in die komponentenbasierte Entwicklung von Web- und Mobile-Anwendungen',
         5,
-        [new Thumbnail('http://goo.gl/nDi0Fc', 'Buchcover')],
+        [new Thumbnail('https://angular-buch.com/angular-buch.jpg', 'Buchcover')],
         'Dieses Buch vermittelt einen Schnelleinstieg in Angular...'
       ),
       new Book(
