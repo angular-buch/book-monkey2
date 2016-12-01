@@ -2,19 +2,10 @@
 import { BookStoreService } from './shared/book-store.service';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    BookListComponent,
-    BookListItemComponent,
-    BookDetailsComponent
-  ],
-  imports: [
-    BrowserModule
-  ],
+  // ...
   providers: [
-    BookStoreService // NEW!
+    BookStoreService
     // ...
-  ],
-  bootstrap: [AppComponent]
+  ]
 })
 export class AppModule { }
