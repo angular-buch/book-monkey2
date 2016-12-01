@@ -10,13 +10,13 @@ export class BookStoreService {
     this.books = [
       new Book(
         '9783864903571',
-        'Angular 2',
+        'Angular',
         ['Johannes Hoppe', 'Danny Koppenhagen', 'Ferdinand Malcher', 'Gregor Woiwode'],
         new Date(2016, 5, 26),
         'Einstieg in die komponentenbasierte Entwicklung von Web- und Mobile-Anwendungen',
         5,
         [new Thumbnail('http://goo.gl/nDi0Fc', 'Buchcover')],
-        'Dieses Buch vermittelt einen Schnelleinstieg in Angular 2...'
+        'Dieses Buch vermittelt einen Schnelleinstieg in Angular...'
       ),
       new Book(
         '9783864901546',
