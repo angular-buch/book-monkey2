@@ -4,5 +4,5 @@ import { Pipe, PipeTransform } from '@angular/core';
   name: 'isbn'
 })
 export class IsbnPipe implements PipeTransform {
-  transform(value: any, addPrefix: any): any { }
+  transform(value: any, addPrefix: boolean): string { }
 }
