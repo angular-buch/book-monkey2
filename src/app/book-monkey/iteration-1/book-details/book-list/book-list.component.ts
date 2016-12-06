@@ -4,7 +4,7 @@ import { Book, Thumbnail } from '../shared/book';
 
 @Component({
   selector: 'bm-book-list',
-  templateUrl: 'book-list.component.html'
+  templateUrl: './book-list.component.html'
 })
 export class BookListComponent implements OnInit {
   books: Book[];

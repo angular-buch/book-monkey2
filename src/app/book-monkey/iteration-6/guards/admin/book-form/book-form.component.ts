@@ -9,7 +9,7 @@ import { BookValidators } from '../shared/book.validators';
 
 @Component({
   selector: 'bm-book-form',
-  templateUrl: 'book-form.component.html'
+  templateUrl: './book-form.component.html'
 })
 export class BookFormComponent implements OnInit {
   book: Book = Book.empty();

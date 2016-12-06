@@ -8,6 +8,6 @@ import { Iteration2RoutingModule } from './iteration-2-routing.module';
   declarations: [Iteration2Component],
   imports: [Iteration2RoutingModule, AppModuleDi]
 })
-export default class Iteration2Module { }
+export class Iteration2Module { }
 
 

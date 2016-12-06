@@ -4,8 +4,8 @@ import 'rxjs/add/operator/filter';
 
 @Component({
   selector: 'bm-root',
-  templateUrl: 'app.component.html',
-  styleUrls: ['app.component.css']
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
   repositoryUrl: string;

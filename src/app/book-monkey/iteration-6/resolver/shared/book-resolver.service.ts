@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Resolve, ActivatedRouteSnapshot } from '@angular/router';
+import { Observable } from 'rxjs/Observable';
 
 import { Book } from './book';
 import { BookStoreService } from './book-store.service';

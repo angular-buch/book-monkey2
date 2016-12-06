@@ -7,6 +7,6 @@ import { Iteration5RoutingModule } from './iteration-5-routing.module';
   declarations: [Iteration5Component],
   imports: [Iteration5RoutingModule]
 })
-export default class Iteration5Module { }
+export class Iteration5Module { }
 
 

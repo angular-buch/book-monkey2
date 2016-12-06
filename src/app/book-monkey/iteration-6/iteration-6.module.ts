@@ -7,6 +7,6 @@ import { Iteration6RoutingModule } from './iteration-6-routing.module';
   declarations: [Iteration6Component],
   imports: [Iteration6RoutingModule]
 })
-export default class Iteration6Module { }
+export class Iteration6Module { }
 
 
