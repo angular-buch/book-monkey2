@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { BookFormComponent } from './book-form/book-form.component';
-import { BookResolver } from './../shared/book-resolver.service';
+import { BookResolver } from '../shared/book-resolver.service';
 
 const routes: Routes = [
   {
