@@ -75,7 +75,7 @@ script:
       mkdir TMP;
       cd TMP || exit;
 
-      ng new BookMonkey --prefix=bm;
+      ng new BookMonkey --routing --prefix=bm;
       cd "$NEW_BOOKMONKEY" || exit;
       mkdir -p src/{domain};
 
