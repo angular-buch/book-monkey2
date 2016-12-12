@@ -10,7 +10,7 @@ import { Component } from '@angular/core';
     </a>
     <a routerLink="navigation" routerLinkActive="active" class="step">
       <div class="content">
-        <div class="title">Navigation</div>
+        <div class="title">Routing</div>
       </div>
     </a>
   </div>

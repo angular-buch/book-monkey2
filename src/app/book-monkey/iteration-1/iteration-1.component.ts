@@ -5,17 +5,17 @@ import { Component } from '@angular/core';
     <div class="ui three small ordered steps">
       <a routerLink="book-list" routerLinkActive="active" class="step">
         <div class="content">
-          <div class="title">Listenansicht</div>
+          <div class="title">Koponenten</div>
         </div>
       </a>
       <a routerLink="book-list-refactored" routerLinkActive="active"  class="step">
         <div class="content">
-          <div class="title">Verbesserte Listenansicht</div>
+          <div class="title">Property-Bindings</div>
         </div>
       </a>
       <a routerLink="book-details" routerLinkActive="active" class="step">
         <div class="content">
-          <div class="title">Detailansicht</div>
+          <div class="title">Event-Bindings</div>
         </div>
       </a>
     </div>

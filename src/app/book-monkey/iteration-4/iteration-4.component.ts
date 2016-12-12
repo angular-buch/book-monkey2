@@ -5,12 +5,12 @@ import { Component } from '@angular/core';
     <div class="ui three small ordered steps">
     <a routerLink="template-driven-forms" routerLinkActive="active" class="step">
       <div class="content">
-        <div class="title">Formulare (Template-Driven)</div>
+        <div class="title">Template Driven Forms</div>
       </div>
     </a>
     <a routerLink="reactive-forms" routerLinkActive="active" class="step">
       <div class="content">
-        <div class="title">Formulare (Reactive Forms)</div>
+        <div class="title">Reactive Forms</div>
       </div>
     </a>
     <a routerLink="custom-validation" routerLinkActive="active" class="step">

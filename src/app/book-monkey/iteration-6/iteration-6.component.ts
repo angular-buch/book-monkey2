@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
     <div class="ui four small ordered steps">
     <a routerLink="modules" routerLinkActive="active" class="step">
       <div class="content">
-        <div class="title">Module</div>
+        <div class="title">Die Anwendung modularisieren</div>
       </div>
     </a>
     <a routerLink="lazy-loading" routerLinkActive="active" class="step">
