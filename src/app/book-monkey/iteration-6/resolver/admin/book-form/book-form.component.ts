@@ -28,7 +28,7 @@ export class BookFormComponent implements OnInit {
 
   ngOnInit() {
     let data = this.route.snapshot.data;
-    if (data.hasOwnProperty('book')) {
+    if (data['book']) {
       this.isUpdatingBook = true;
       this.book = data['book'];
     }
