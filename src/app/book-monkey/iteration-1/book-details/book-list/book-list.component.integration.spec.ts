@@ -37,7 +37,7 @@ describe('BookListComponent', () => {
   });
 
 
-  it('should emit the showDetailsEvent when clicking the image', () => {
+  it('should emit the showDetailsEvent when clicking the thumbnail', () => {
 
     let receivedBook: Book;
     component.showDetailsEvent.subscribe((book) => receivedBook = book);
