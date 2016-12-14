@@ -1,4 +1,4 @@
-import { TestBed, async, inject, tick} from '@angular/core/testing';
+import { TestBed, inject } from '@angular/core/testing';
 import {
   BaseRequestOptions,
   HttpModule,
