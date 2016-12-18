@@ -119,10 +119,6 @@ script:
 
       find $NEW_BOOKMONKEY/src -name "*.snippet" -type f -delete;
 
-      cd $NEW_BOOKMONKEY;
-      npm uninstall angular-cli-ghpages --save-dev;
-      cd "$NEW_BOOKMONKEY";
-
       echo "*** DIRECTORY LISTING OF $NEW_BOOKMONKEY ***";
       ls -a "$NEW_BOOKMONKEY";
 
