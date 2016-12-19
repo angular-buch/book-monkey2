@@ -56,7 +56,7 @@ script:
   # - sends compiled version to gh-pages
   # TODO: npm run ng test
   - if [ "$NAME" == "one-app" ]; then
-      ng build;
+      ng build --prod;
 
       echo "book-monkey2.angular-buch.com" > dist/CNAME;
       cp dist/index.html dist/404.html;
@@ -132,7 +132,7 @@ script:
       cd "$NEW_BOOKMONKEY/";
 
       npm i;
-      ng build;
+      ng build --prod;
 
       echo "$NAME.angular-buch.com" > dist/CNAME;
       cp dist/index.html dist/404.html;
