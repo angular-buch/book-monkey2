@@ -10,7 +10,7 @@ export class BookResolver implements Resolve<Book> {
 
   constructor(private bs: BookStoreService) { }
 
-  resolve(route: ActivatedRouteSnapshot) {
+  resolve(route: ActivatedRouteSnapshot): Observable<Book> {
     return this.bs.getSingle(route.params['isbn']);
   }
 
