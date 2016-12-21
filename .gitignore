@@ -6,15 +6,17 @@
 
 # dependencies
 /node_modules
-/bower_components
 
 # IDEs and editors
 /.idea
 .project
 .classpath
+.c9/
 *.launch
 .settings/
-.vscode
+
+# IDE - VSCode
+.vscode/*
 
 # misc
 /.sass-cache
@@ -33,7 +35,6 @@ testem.log
 .DS_Store
 Thumbs.db
 
-.vscode/launch.json
 npm-debug.*
 yarn-error.log
 

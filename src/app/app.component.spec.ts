@@ -3,13 +3,14 @@
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 
-xdescribe('App: BookMonkey', () => {
+describe('AppComponent', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [
         AppComponent
       ],
     });
+    TestBed.compileComponents();
   });
 
   it('should create the app', async(() => {
