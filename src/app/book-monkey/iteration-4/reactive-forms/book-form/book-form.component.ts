@@ -41,16 +41,16 @@ export class BookFormComponent implements OnInit {
   initBook() {
     this.myForm = this.fb.group({
       title: [this.book.title, Validators.required],
-      subtitle: [this.book.subtitle],
+      subtitle: this.book.subtitle,
       isbn: [this.book.isbn, [
         Validators.required,
         Validators.minLength(10),
         Validators.maxLength(13)
       ]],
-      description: [this.book.description],
+      description: this.book.description,
       authors: this.buildAuthorsArray(),
       thumbnails: this.buildThumbnailsArray(),
-      published: [this.book.published]
+      published: this.book.published
     });
     this.myForm.valueChanges.subscribe(() => this.updateErrorMessages());
   }
