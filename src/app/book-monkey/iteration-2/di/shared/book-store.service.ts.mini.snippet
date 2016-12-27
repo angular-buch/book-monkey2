@@ -1,0 +1,14 @@
+@Injectable()
+export class BookStoreService {
+  books: Book[];
+
+  constructor() {
+    this.books = [
+      // ...
+    ];
+  }
+
+  getAll() {
+    return this.books;
+  }
+}
