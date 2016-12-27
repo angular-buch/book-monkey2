@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
 import { Book } from '../shared/book';
+import { BookFactory } from '../shared/book-factory';
 import { BookStoreService } from '../shared/book-store.service';
 
 @Component({
@@ -9,7 +10,7 @@ import { BookStoreService } from '../shared/book-store.service';
   templateUrl: './book-details.component.html'
 })
 export class BookDetailsComponent implements OnInit {
-  book: Book;
+  book: Book = BookFactory.empty();
 
   constructor(
     private bs: BookStoreService,
@@ -18,8 +19,6 @@ export class BookDetailsComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.book = Book.empty();
-
     let params = this.route.snapshot.params;
     this.bs.getSingle(params['isbn'])
       .subscribe(b => this.book = b);

@@ -3,8 +3,9 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { FormBuilder, FormGroup, FormArray, Validators } from '@angular/forms';
 
 import { Book } from '../shared/book';
-import { BookFormErrorMessages } from './book-form-error-messages';
+import { BookFactory } from '../shared/book-factory';
 import { BookStoreService } from '../shared/book-store.service';
+import { BookFormErrorMessages } from './book-form-error-messages';
 import { BookValidators } from '../shared/book.validators';
 
 @Component({
@@ -12,7 +13,7 @@ import { BookValidators } from '../shared/book.validators';
   templateUrl: './book-form.component.html'
 })
 export class BookFormComponent implements OnInit {
-  book: Book = Book.empty();
+  book = BookFactory.empty();
   errors = {};
   isUpdatingBook: boolean = false;
   myForm: FormGroup;
@@ -31,8 +32,8 @@ export class BookFormComponent implements OnInit {
     if (isbn) {
       this.isUpdatingBook = true;
       this.bs.getSingle(isbn)
-        .subscribe(b => {
-          this.book = b;
+        .subscribe(book => {
+          this.book = book;
           this.initBook();
         });
     }
@@ -40,6 +41,9 @@ export class BookFormComponent implements OnInit {
   }
 
   initBook() {
+    this.buildAuthorsArray();
+    this.buildThumbnailsArray();
+
     this.myForm = this.fb.group({
       title: [this.book.title, Validators.required],
       subtitle: this.book.subtitle,
@@ -48,19 +52,18 @@ export class BookFormComponent implements OnInit {
         BookValidators.isbnFormat
       ], this.isUpdatingBook ? null : BookValidators.isbnExists(this.bs)],
       description: this.book.description,
-      authors: this.buildAuthorsArray(),
-      thumbnails: this.buildThumbnailsArray(),
+      authors: this.authors,
+      thumbnails: this.thumbnails,
       published: this.book.published
     });
     this.myForm.valueChanges.subscribe(() => this.updateErrorMessages());
   }
 
-  buildAuthorsArray(): FormArray {
+  buildAuthorsArray() {
     this.authors = this.fb.array(this.book.authors, BookValidators.atLeastOneAuthor);
-    return this.authors;
   }
 
-  buildThumbnailsArray(): FormArray {
+  buildThumbnailsArray() {
     this.thumbnails = this.fb.array(
       this.book.thumbnails.map(
         t => this.fb.group({
@@ -69,7 +72,6 @@ export class BookFormComponent implements OnInit {
         })
       )
     );
-    return this.thumbnails;
   }
 
   addAuthorControl() {
@@ -82,14 +84,16 @@ export class BookFormComponent implements OnInit {
 
   submitForm() {
     // filter empty values
-    this.myForm.value.authors = this.myForm.value.authors.filter(el => el);
-    this.myForm.value.thumbnails = this.myForm.value.thumbnails.filter(el => el.url);
+    this.myForm.value.authors = this.myForm.value.authors.filter(author => author);
+    this.myForm.value.thumbnails = this.myForm.value.thumbnails.filter(thumbnail => thumbnail.url);
+
+    let book: Book = BookFactory.fromObject(this.myForm.value);
 
     if (this.isUpdatingBook) {
-      this.bs.update(this.myForm.value).subscribe(res => res);
-      this.router.navigate(['../../books', this.myForm.value.isbn], { relativeTo: this.route });
+      this.bs.update(book).subscribe(res => res);
+      this.router.navigate(['../../books', book.isbn], { relativeTo: this.route });
     } else {
-      this.bs.create(this.myForm.value).subscribe(res => res);
+      this.bs.create(book).subscribe(res => res);
       this.myForm.reset();
     }
   }

@@ -1,9 +1,10 @@
 import { Component, ViewChild, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
-import { Book, Thumbnail } from '../shared/book';
-import { BookFormErrorMessages } from './book-form-error-messages';
+import { Book } from '../shared/book';
+import { BookFactory } from '../shared/book-factory';
 import { BookStoreService } from '../shared/book-store.service';
+import { BookFormErrorMessages } from './book-form-error-messages';
 
 @Component({
   selector: 'bm-book-form',
@@ -11,7 +12,7 @@ import { BookStoreService } from '../shared/book-store.service';
 })
 export class BookFormComponent implements OnInit {
   @ViewChild('myForm') myForm: NgForm;
-  book = Book.empty();
+  book = BookFactory.empty();
   errors = {};
 
   constructor(private bs: BookStoreService) { }
@@ -21,16 +22,19 @@ export class BookFormComponent implements OnInit {
   }
 
   submitForm() {
-    let book = new Book(
-      this.myForm.value.isbn,
-      this.myForm.value.title,
-      this.myForm.value.authors.split(','),
-      this.myForm.value.published,
-      this.myForm.value.subtitle,
-      null,
-      [ new Thumbnail(this.myForm.value.thumbnail.url, this.myForm.value.thumbnail.title) ],
-      this.myForm.value.description
-    );
+    let book = BookFactory.fromObject({
+      isbn: this.myForm.value.isbn,
+      title: this.myForm.value.title,
+      authors: this.myForm.value.authors.split(','),
+      published: this.myForm.value.published,
+      subtitle: this.myForm.value.subtitle,
+      retring: null,
+      thumbnails: [{
+        url: this.myForm.value.thumbnail.url,
+        title: this.myForm.value.thumbnail.title
+      }],
+      description: this.myForm.value.description
+    });
     this.bs.create(book).subscribe(res => res);
     this.myForm.reset();
   }

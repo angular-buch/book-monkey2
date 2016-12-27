@@ -2,8 +2,10 @@ import { Injectable } from '@angular/core';
 import { Http, Headers } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/retry';
 
 import { Book } from './book';
+import { BookFactory } from './book-factory';
 
 @Injectable()
 export class BookStoreService {
@@ -17,13 +19,19 @@ export class BookStoreService {
   getAll(): Observable<Array<Book>> {
     return this.http
       .get(`${this.api}/books`)
-      .map(response => response.json());
+      .retry(3)
+      .map(response => response.json())
+      .map(rawBooks => rawBooks
+        .map(rawBook => BookFactory.fromObject(rawBook))
+      );
   }
 
   getSingle(isbn: string): Observable<Book> {
     return this.http
       .get(`${this.api}/book/${isbn}`)
-      .map(response => response.json());
+      .retry(3)
+      .map(response => response.json())
+      .map(rawBook => BookFactory.fromObject(rawBook));
   }
 
   create(book: Book): Observable<any> {

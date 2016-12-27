@@ -3,8 +3,8 @@ ngOnInit() {
   if (isbn) {
     this.isUpdatingBook = true;
     this.bs.getSingle(isbn)
-      .subscribe(b => {
-        this.book = b;
+      .subscribe(book => {
+        this.book = book;
         this.initBook();
       });
   }

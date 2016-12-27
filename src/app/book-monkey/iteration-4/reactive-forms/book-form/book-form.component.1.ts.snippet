@@ -3,15 +3,16 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { FormBuilder, FormGroup, FormArray, Validators } from '@angular/forms';
 
 import { Book } from '../shared/book';
-import { BookFormErrorMessages } from './book-form-error-messages';
+import { BookFactory } from '../shared/book-factory';
 import { BookStoreService } from '../shared/book-store.service';
+import { BookFormErrorMessages } from './book-form-error-messages';
 
 @Component({
   selector: 'bm-book-form',
   templateUrl: './book-form.component.html'
 })
 export class BookFormComponent implements OnInit {
-  book: Book = Book.empty();
+  book = BookFactory.empty();
   errors = {};
   isUpdatingBook: boolean = false;
   myForm: FormGroup;

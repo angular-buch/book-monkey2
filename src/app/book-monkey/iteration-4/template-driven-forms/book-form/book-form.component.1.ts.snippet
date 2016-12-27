@@ -2,8 +2,9 @@ import { Component, ViewChild, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
 import { Book } from '../shared/book';
-import { BookFormErrorMessages } from './book-form-error-messages';
+import { BookFactory } from '../shared/book-factory';
 import { BookStoreService } from '../shared/book-store.service';
+import { BookFormErrorMessages } from './book-form-error-messages';
 
 @Component({
   selector: 'bm-book-form',
@@ -11,7 +12,7 @@ import { BookStoreService } from '../shared/book-store.service';
 })
 export class BookFormComponent implements OnInit {
   @ViewChild('myForm') myForm: NgForm;
-  book = Book.empty();
+  book = BookFactory.empty();
   errors = {};
 
   constructor(private bs: BookStoreService) { }

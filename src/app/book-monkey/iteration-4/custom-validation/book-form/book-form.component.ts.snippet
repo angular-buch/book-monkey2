@@ -9,6 +9,8 @@ export class BookFormComponent implements OnInit {
   // ...
 
   initBook() {
+    // ...
+
     this.myForm = this.fb.group({
       // ...
       isbn: [this.book.isbn, [
@@ -21,9 +23,8 @@ export class BookFormComponent implements OnInit {
 
   // ...
 
-  buildAuthorsArray(): FormArray {
+  buildAuthorsArray() {
     this.authors = this.fb.array(this.book.authors, BookValidators.atLeastOneAuthor);
-    return this.authors;
   }
 
   // ...
