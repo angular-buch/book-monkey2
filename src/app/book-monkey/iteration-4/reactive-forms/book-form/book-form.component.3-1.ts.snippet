@@ -1,0 +1,22 @@
+// ...
+
+export class BookFormComponent implements OnInit {
+  // ...
+
+  buildAuthorsArray() {
+    this.authors = this.fb.array(this.book.authors, Validators.required);
+  }
+
+  buildThumbnailsArray() {
+    this.thumbnails = this.fb.array(
+      this.book.thumbnails.map(
+        t => this.fb.group({
+          url: this.fb.control(t.url),
+          title: this.fb.control(t.title)
+        })
+      )
+    );
+  }
+
+  // ...
+}
