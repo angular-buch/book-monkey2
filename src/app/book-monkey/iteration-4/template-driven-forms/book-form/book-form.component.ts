@@ -22,19 +22,14 @@ export class BookFormComponent implements OnInit {
   }
 
   submitForm() {
-    let book = BookFactory.fromObject({
-      isbn: this.myForm.value.isbn,
-      title: this.myForm.value.title,
-      authors: this.myForm.value.authors.split(','),
-      published: this.myForm.value.published,
-      subtitle: this.myForm.value.subtitle,
-      retring: null,
-      thumbnails: [{
+    this.book.authors = this.myForm.value.authors.split(',');
+    this.book.thumbnails = [{
         url: this.myForm.value.thumbnail.url,
         title: this.myForm.value.thumbnail.title
-      }],
-      description: this.myForm.value.description
-    });
+    }];
+
+    let book = BookFactory.fromObject(this.book);
+
     this.bs.create(book).subscribe(res => {
       this.myForm.reset();
     });
