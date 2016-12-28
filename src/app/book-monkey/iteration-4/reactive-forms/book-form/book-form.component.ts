@@ -90,11 +90,13 @@ export class BookFormComponent implements OnInit {
     let book: Book = BookFactory.fromObject(this.myForm.value);
 
     if (this.isUpdatingBook) {
-      this.bs.update(book).subscribe(res => res);
-      this.router.navigate(['../../books', book.isbn], { relativeTo: this.route });
+      this.bs.update(book).subscribe(res => {
+        this.router.navigate(['../../books', book.isbn], { relativeTo: this.route });
+      });
     } else {
-      this.bs.create(book).subscribe(res => res);
-      this.myForm.reset();
+      this.bs.create(book).subscribe(res => {
+        this.myForm.reset();
+      });
     }
   }
 

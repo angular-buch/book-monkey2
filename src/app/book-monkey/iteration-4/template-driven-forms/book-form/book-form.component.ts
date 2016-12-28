@@ -35,8 +35,9 @@ export class BookFormComponent implements OnInit {
       }],
       description: this.myForm.value.description
     });
-    this.bs.create(book).subscribe(res => res);
-    this.myForm.reset();
+    this.bs.create(book).subscribe(res => {
+      this.myForm.reset();
+    });
   }
 
   updateErrorMessages() {
