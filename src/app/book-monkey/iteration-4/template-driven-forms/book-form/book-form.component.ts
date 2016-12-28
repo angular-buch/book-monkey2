@@ -24,8 +24,8 @@ export class BookFormComponent implements OnInit {
   submitForm() {
     this.book.authors = this.myForm.value.authors.split(',');
     this.book.thumbnails = [{
-        url: this.myForm.value.thumbnail.url,
-        title: this.myForm.value.thumbnail.title
+      url: this.myForm.value.thumbnail.url,
+      title: this.myForm.value.thumbnail.title
     }];
 
     let book = BookFactory.fromObject(this.book);
