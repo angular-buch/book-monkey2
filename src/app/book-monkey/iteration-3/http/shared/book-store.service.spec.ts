@@ -24,7 +24,6 @@ describe('BookStoreService', () => {
     TestBed.configureTestingModule({
       imports: [HttpModule],
       providers: [
-        BookStoreService,
         {
           provide: Http,
           useFactory: (mockBackend, options) => {
@@ -33,7 +32,8 @@ describe('BookStoreService', () => {
           deps: [MockBackend, BaseRequestOptions]
         },
         MockBackend,
-        BaseRequestOptions
+        BaseRequestOptions,
+        BookStoreService
       ]
     });
   });
