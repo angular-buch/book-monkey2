@@ -1,3 +1,4 @@
 <div class="ui middle aligned selection divided list">
   <a class="bm-book-list-item item" *ngFor="let b of books" [book]="b"></a>
+  <p *ngIf="!books || books.length === 0">Noch keine Bücher eingetragen.</p>
 </div>
