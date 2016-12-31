@@ -3,5 +3,6 @@
       *ngFor="let b of books"
       [book]="b"
       [routerLink]="b.isbn"></a>
-  <p *ngIf="!books || !books.length">Es wurden noch keine B&uuml;cher eingetragen.</p>
+  <p *ngIf="!books">Laden Daten...</p>
+  <p *ngIf="books && !books.length">Es wurden noch keine B&uuml;cher eingetragen.</p>
 </div>

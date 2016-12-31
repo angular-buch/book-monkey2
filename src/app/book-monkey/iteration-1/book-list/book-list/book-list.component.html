@@ -14,5 +14,6 @@
       <div class="extra">ISBN {{ book.isbn }}</div>
     </div>
   </a>
-  <p *ngIf="!books || !books.length">Es wurden noch keine B&uuml;cher eingetragen.</p>
+  <p *ngIf="!books">Laden Daten...</p>
+  <p *ngIf="books && !books.length">Es wurden noch keine B&uuml;cher eingetragen.</p>
 </div>
