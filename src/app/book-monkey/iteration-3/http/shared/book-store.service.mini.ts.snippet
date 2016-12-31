@@ -13,6 +13,7 @@ export class BookStoreService {
       .map(response => response.json())
       .map(rawBooks => rawBooks
         .map(rawBook => BookFactory.fromObject(rawBook))
-      );
+      )
+      .catch(this.errorHandler);
   }
 }
