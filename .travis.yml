@@ -61,7 +61,7 @@ script:
       echo "book-monkey2.angular-buch.com" > dist/CNAME;
       cp dist/index.html dist/404.html;
 
-      ngh --repo="$GITHUB_ORG/$NAME.git" --name="$GITHUB_NAME" --email="$GITHUB_EMAIL";
+      angular-cli-ghpages --repo="$GITHUB_ORG/$NAME.git" --name="$GITHUB_NAME" --email="$GITHUB_EMAIL";
     fi
 
   # [2] single apps (mini monkeys)
@@ -122,7 +122,7 @@ script:
       echo "*** DIRECTORY LISTING OF $NEW_BOOKMONKEY ***";
       ls -a "$NEW_BOOKMONKEY";
 
-      ngh --repo="$GITHUB_ORG/$NAME.git" --name="$GITHUB_NAME" --email="$GITHUB_EMAIL" --dir=../TMP/BookMonkey --branch=master;
+      angular-cli-ghpages --repo="$GITHUB_ORG/$NAME.git" --name="$GITHUB_NAME" --email="$GITHUB_EMAIL" --dir=../TMP/BookMonkey --branch=master;
     fi
 
   # [2] single apps:
@@ -137,7 +137,7 @@ script:
       echo "$NAME.angular-buch.com" > dist/CNAME;
       cp dist/index.html dist/404.html;
 
-      ngh --repo="$GITHUB_ORG/$NAME.git" --name="$GITHUB_NAME" --email="$GITHUB_EMAIL";
+      angular-cli-ghpages --repo="$GITHUB_ORG/$NAME.git" --name="$GITHUB_NAME" --email="$GITHUB_EMAIL";
     fi
 
 # ---- boilerplate ----
