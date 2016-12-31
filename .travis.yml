@@ -44,9 +44,12 @@ env:
     - NAME="iteration-6-resolver"              BLUEPRINT="src/app/book-monkey/iteration-6/resolver"
 
 install:
-  - npm i
-  - npm i -g angular-cli@1.0.0-beta.24
+  #- npm i -g angular-cli@1.0.0-beta.24
+  - git clone https://github.com/angular-buch/angular-cli-ng4.git
+  - cd angular-cli-ng4 && npm link
   - npm i -g angular-cli-ghpages@0.4.1
+  - npm i
+  - npm link angular-cli
 
 script:
   - echo "*** BUILDING $NAME ***"
@@ -75,7 +78,7 @@ script:
       mkdir TMP;
       cd TMP || exit;
 
-      ng new BookMonkey --routing --prefix=bm;
+      ng new BookMonkey --routing --prefix=bm --link-cli;
       cd "$NEW_BOOKMONKEY" || exit;
       mkdir -p src/{domain};
 
@@ -132,6 +135,7 @@ script:
       cd "$NEW_BOOKMONKEY/";
 
       npm i;
+      npm link angular-cli;
       ng build --prod;
 
       echo "$NAME.angular-buch.com" > dist/CNAME;
