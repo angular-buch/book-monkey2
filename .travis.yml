@@ -45,8 +45,11 @@ env:
 
 install:
   #- npm i -g angular-cli@1.0.0-beta.24
+  - cd ..
   - git clone https://github.com/angular-buch/angular-cli-ng4.git
-  - cd angular-cli-ng4 && npm link
+  - cd angular-cli-ng4
+  - npm link
+  - cd $TRAVIS_BUILD_DIR
   - npm i -g angular-cli-ghpages@0.4.1
   - npm i
   - npm link angular-cli
