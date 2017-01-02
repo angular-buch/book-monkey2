@@ -13,21 +13,23 @@ describe('BookStoreService', () => {
     new Book('222', 'Book 2', [], new Date())
   ];
 
-  let httpStub;
+  let httpMock;
 
   beforeEach(() => {
 
-    httpStub = {
+    httpMock = {
       get: () => Observable.of({
         json: () => expectedBooks
       })
     };
 
+    spyOn(httpMock, 'get').and.callThrough();
+
     TestBed.configureTestingModule({
       providers: [
         {
           provide: Http,
-          useValue: httpStub
+          useValue: httpMock
         },
         BookStoreService
       ]
@@ -43,5 +45,9 @@ describe('BookStoreService', () => {
       expect(receivedBooks.length).toBe(2);
       expect(receivedBooks[0].isbn).toBe('111');
       expect(receivedBooks[1].isbn).toBe('222');
+
+      // NEU
+       expect(httpMock.get).toHaveBeenCalledTimes(1);
+       expect(httpMock.get).toHaveBeenCalledWith('https://book-monkey2-api.angular-buch.com/books');
     }));
 });
