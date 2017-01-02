@@ -8,8 +8,8 @@ export class BookValidators {
   static isbnFormat(control: FormControl): { [error: string]: any } {
     if (!control.value) { return null; }
 
-    let isolatedNumbers = control.value.replace(/[-]/g, '');
-    const isbnPattern = /(^\d{10}$)|(^\d{13}$)/g;
+    let isolatedNumbers = control.value.replace(/-/g, '');
+    const isbnPattern = /(^\d{10}$)|(^\d{13}$)/;
     return isbnPattern.test(isolatedNumbers) ? null : {
       isbnFormat: { valid: false }
     };
