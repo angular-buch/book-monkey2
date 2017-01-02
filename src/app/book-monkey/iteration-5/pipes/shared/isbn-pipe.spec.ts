@@ -2,7 +2,11 @@ import { IsbnPipe } from './isbn-pipe';
 
 describe('IsbnPipe', () => {
 
-  let pipe = new IsbnPipe();
+  let pipe: IsbnPipe;
+
+  beforeEach(() => {
+    pipe = new IsbnPipe();
+  });
 
   it('should ignore unknown values', () => {
     expect(pipe.transform('XXX', true)).toBe(null);
