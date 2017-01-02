@@ -18,7 +18,7 @@ export class BookFormComponent implements OnInit {
         BookValidators.isbnFormat
       ], this.isUpdatingBook ? null : BookValidators.isbnExists(this.bs)]
     });
-    this.myForm.valueChanges.subscribe(() => this.updateErrorMessages());
+    this.myForm.statusChanges.subscribe(() => this.updateErrorMessages());
   }
 
   // ...

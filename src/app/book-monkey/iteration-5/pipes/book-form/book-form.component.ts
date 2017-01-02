@@ -56,7 +56,7 @@ export class BookFormComponent implements OnInit {
       thumbnails: this.thumbnails,
       published: this.book.published
     });
-    this.myForm.valueChanges.subscribe(() => this.updateErrorMessages());
+    this.myForm.statusChanges.subscribe(() => this.updateErrorMessages());
   }
 
   buildAuthorsArray() {

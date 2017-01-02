@@ -3,7 +3,7 @@ export class BookFormComponent implements OnInit {
   // ...
 
   ngOnInit() {
-    this.myForm.valueChanges.subscribe(() => this.updateErrorMessages());
+    this.myForm.statusChanges.subscribe(() => this.updateErrorMessages());
   }
 
   updateErrorMessages() {

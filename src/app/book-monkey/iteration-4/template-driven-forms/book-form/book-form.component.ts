@@ -18,7 +18,7 @@ export class BookFormComponent implements OnInit {
   constructor(private bs: BookStoreService) { }
 
   ngOnInit() {
-    this.myForm.valueChanges.subscribe(() => this.updateErrorMessages());
+    this.myForm.statusChanges.subscribe(() => this.updateErrorMessages());
   }
 
   submitForm() {
