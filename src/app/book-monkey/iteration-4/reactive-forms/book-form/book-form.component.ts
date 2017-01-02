@@ -95,7 +95,8 @@ export class BookFormComponent implements OnInit {
       });
     } else {
       this.bs.create(book).subscribe(res => {
-        this.myForm.reset();
+        this.book = BookFactory.empty();
+        this.myForm.reset(BookFactory.empty());
       });
     }
   }
