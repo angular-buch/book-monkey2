@@ -13,7 +13,7 @@ describe('BookStoreService', () => {
     new Book('222', 'Book 2', [], new Date())
   ];
 
-  let mockHttp = {
+  let httpStub = {
     get: () => Observable.of({
       json: () => expectedBooks
     })
@@ -26,7 +26,7 @@ describe('BookStoreService', () => {
         BookStoreService,
         {
           provide: Http,
-          useValue: mockHttp
+          useValue: httpStub
         }
       ]
     });
