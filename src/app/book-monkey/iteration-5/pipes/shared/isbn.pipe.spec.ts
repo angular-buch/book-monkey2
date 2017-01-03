@@ -1,4 +1,4 @@
-import { IsbnPipe } from './isbn-pipe';
+import { IsbnPipe } from './isbn.pipe';
 
 describe('IsbnPipe', () => {
 

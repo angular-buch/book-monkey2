@@ -7,7 +7,7 @@ import { BookListComponent } from './book-list/book-list.component';
 import { BookListItemComponent } from './book-list-item/book-list-item.component';
 import { BookDetailsComponent } from './book-details/book-details.component';
 
-import { IsbnPipe } from './shared/isbn-pipe';
+import { IsbnPipe } from './shared/isbn.pipe';
 import { ZoomDirective } from './shared/zoom.directive';
 
 @NgModule({
