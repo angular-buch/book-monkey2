@@ -2,7 +2,7 @@
 // this is not part of the BookMonkey and will be deleted during build
 
 import { Console } from '@angular/core/src/console';
-import { inject, ComponentFixture, TestBed } from '@angular/core/testing';
+import { inject } from '@angular/core/testing';
 
 describe('inject() creates an injector', () => {
 
