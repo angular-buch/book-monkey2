@@ -1,21 +1,35 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/observable/of';
 
 import { BookListComponent } from './book-list.component';
 import { BookListItemComponent } from '../book-list-item/book-list-item.component';
 import { Book } from '../shared/book';
 
-// import { AppModule } from '../app.module';
-
+//
+// this will fail with: Can't bind to 'routerLink' since it isn't a known property of 'a'.
+//
 describe('BookListComponent', () => {
   let component: BookListComponent;
   let fixture: ComponentFixture<BookListComponent>;
 
+  let expectedBooks = [
+    new Book('111', 'Book 1', [], new Date()),
+    new Book('222', 'Book 2', [], new Date())
+  ];
+
+  let serviceMock;
+
   beforeEach(async(() => {
+
+    serviceMock = {
+      getAll: () => Observable.of(expectedBooks)
+    };
+
+    //spyOn(serviceMock, 'get').and.callThrough();
+
     TestBed.configureTestingModule({
         declarations: [BookListComponent, BookListItemComponent],
-
-        // also possible, importing the complete module
-        // imports: [AppModule]
       })
       .compileComponents();
   }));
@@ -26,22 +40,10 @@ describe('BookListComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should emit the showDetailsEvent on click', () => {
+  it('should get all books from BookStoreService', () => {
 
-    let receivedBook: Book;
-    component.showDetailsEvent.subscribe((book) => receivedBook = book);
-
-    fixture.nativeElement.querySelector('a').click();
-    expect(receivedBook.title).toBe('Angular');
-  });
-
-
-  it('should emit the showDetailsEvent when clicking the thumbnail', () => {
-
-    let receivedBook: Book;
-    component.showDetailsEvent.subscribe((book) => receivedBook = book);
-
-    fixture.nativeElement.querySelector('img').click();
-    expect(receivedBook.title).toBe('Angular');
+    expect(component.books.length).toBe(2);
+    expect(component.books[0].isbn).toBe('111');
+    expect(component.books[1].isbn).toBe('222');
   });
 });
