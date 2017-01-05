@@ -3,12 +3,12 @@
      [src]="book.thumbnails[0].url"
      bmZoom>
 <div class="content">
-  <div class="header">{{ book?.title }}</div>
-  <div class="description"> {{ book?.subtitle }} </div>
+  <div class="header">{{ book.title }}</div>
+  <div class="description">{{ book.subtitle }}</div>
   <div class="metadata">
     <span *ngFor="let author of book.authors; let l=last">
       {{ author }}<span *ngIf="!l">, </span>
     </span>
   </div>
-  <div class="extra">{{ book?.isbn | isbn:true }}</div>
+  <div class="extra">{{ book.isbn | isbn:true }}</div>
 </div>
