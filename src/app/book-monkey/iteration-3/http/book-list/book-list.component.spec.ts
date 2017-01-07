@@ -19,7 +19,7 @@ class RouterOutletComponent { }
 @Component({ template: 'Details' })
 class DummyDetailsComponent { }
 
-fdescribe('BookListComponent', () => {
+describe('BookListComponent', () => {
   let component: BookListComponent;
   let fixture: ComponentFixture<BookListComponent>;
 
