@@ -1,22 +1,29 @@
-import { Component } from '@angular/core';
-import { CommonModule, Location } from '@angular/common';
-import { By } from '@angular/platform-browser';
+import { Component, Input } from '@angular/core';
+import { Location } from '@angular/common';
 import { Router } from '@angular/router';
-import { async, inject, ComponentFixture, TestBed } from '@angular/core/testing';
-import { RouterTestingModule } from '@angular/router/testing';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/of';
 
+import { async, inject, ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
+
 import { AppComponent } from '../app.component';
 import { BookListComponent } from './book-list.component';
-import { BookListItemComponent } from '../book-list-item/book-list-item.component';
 import { BookStoreService } from '../shared/book-store.service';
 import { Book } from '../shared/book';
 
 @Component({ template: '<router-outlet></router-outlet>' })
-class RouterOutletComponent { }
+class DummyOutletComponent { }
 
-@Component({ template: 'Details' })
+@Component({
+  selector: 'a.bm-book-list-item',
+  template: 'Dummy'
+})
+class DummyBookListItemComponent {
+  @Input() book: Book;
+}
+
+@Component({ template: 'Dummy' })
 class DummyDetailsComponent { }
 
 describe('BookListComponent', () => {
@@ -32,16 +39,15 @@ describe('BookListComponent', () => {
 
     TestBed.configureTestingModule({
         declarations: [
-          RouterOutletComponent,
+          DummyOutletComponent,
           BookListComponent,
-          BookListItemComponent,
+          DummyBookListItemComponent,
           DummyDetailsComponent],
         providers: [{
           provide: BookStoreService,
           useValue: { getAll: () => Observable.of(expectedBooks) }
         }],
         imports: [
-          CommonModule,
           RouterTestingModule.withRoutes([
             { path: ':isbn', component: DummyDetailsComponent }
           ])
@@ -51,7 +57,7 @@ describe('BookListComponent', () => {
   }));
 
   beforeEach(async(() => {
-    TestBed.createComponent(RouterOutletComponent);
+    TestBed.createComponent(DummyOutletComponent);
     fixture = TestBed.createComponent(BookListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
@@ -66,8 +72,7 @@ describe('BookListComponent', () => {
 
   it('should navigate to details page by ISBN', async(inject([Location], (location) => {
 
-    // same as: fixture.nativeElement.querySelector('a').click();
-    fixture.debugElement.query(By.css('a')).nativeElement.click();
+    fixture.nativeElement.querySelector('a').click();
 
     fixture.whenStable().then(() => {
       expect(location.path()).toEqual('/111');

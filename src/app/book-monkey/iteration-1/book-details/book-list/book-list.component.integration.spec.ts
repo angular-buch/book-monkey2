@@ -1,4 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { By } from '@angular/platform-browser';
 
 import { BookListComponent } from './book-list.component';
 import { BookListItemComponent } from '../book-list-item/book-list-item.component';
@@ -32,9 +33,12 @@ describe('BookListComponent', () => {
     component.showDetailsEvent.subscribe((book) => receivedBook = book);
 
     fixture.nativeElement.querySelector('a').click();
+
+    // alternative Syntax für den Klick:
+    // fixture.debugElement.query(By.css('a')).nativeElement.click();
+
     expect(receivedBook.title).toBe('Angular');
   });
-
 
   it('should emit the showDetailsEvent when clicking the thumbnail', () => {
 
