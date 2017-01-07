@@ -9,6 +9,6 @@ export class BookListComponent implements OnInit {
   // im HTML:
   // <a *ngFor="let b of books" [book]="b" [routerLink]="b.isbn"></a>
   ngOnInit() {
-    this.books = this.bs.getAll();
+    this.bs.getAll().subscribe(res => this.books = res);
   }
 }

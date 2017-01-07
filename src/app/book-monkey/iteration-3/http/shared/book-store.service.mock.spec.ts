@@ -47,7 +47,7 @@ describe('BookStoreService', () => {
       expect(receivedBooks[1].isbn).toBe('222');
 
       // NEU
-       expect(httpMock.get).toHaveBeenCalledTimes(1);
-       expect(httpMock.get).toHaveBeenCalledWith('https://book-monkey2-api.angular-buch.com/books');
+      expect(httpMock.get).toHaveBeenCalledTimes(1);
+      expect(httpMock.get).toHaveBeenCalledWith('https://book-monkey2-api.angular-buch.com/books');
     }));
 });
