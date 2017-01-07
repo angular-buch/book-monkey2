@@ -22,9 +22,9 @@ env:
   matrix:
     # remember: each new app requires a new CNAME entry to book-monkey2-build.github.io
     - NAME="one-app"
-    - NAME="iteration-1-book-list"             BLUEPRINT="src/app/book-monkey/iteration-1/book-list"
-    - NAME="iteration-1-book-list-refactored"  BLUEPRINT="src/app/book-monkey/iteration-1/book-list-refactored"
-    - NAME="iteration-1-book-details"          BLUEPRINT="src/app/book-monkey/iteration-1/book-details"
+    - NAME="iteration-1-components"            BLUEPRINT="src/app/book-monkey/iteration-1/components"
+    - NAME="iteration-1-property-bindings"     BLUEPRINT="src/app/book-monkey/iteration-1/property-bindings"
+    - NAME="iteration-1-event-bindings"        BLUEPRINT="src/app/book-monkey/iteration-1/event-bindings"
 
     - NAME="iteration-2-di"                    BLUEPRINT="src/app/book-monkey/iteration-2/di"
     - NAME="iteration-2-navigation"            BLUEPRINT="src/app/book-monkey/iteration-2/navigation"

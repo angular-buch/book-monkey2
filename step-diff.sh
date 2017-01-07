@@ -32,9 +32,9 @@ DIFF="diff -u -r --unidirectional-new-file"
 DIFF2HTML="node_modules/diff2html-cli/bin/diff2html -i stdin -o stdout -s side --"
 
 echo "creating .html-files with diffs between iterations/steps in folder..."
-$DIFF $IT1/book-list $IT1/book-list-refactored       | $DIFF2HTML > $OUTDIR/$OUT01;
-$DIFF $IT1/book-list-refactored $IT1/book-details    | $DIFF2HTML > $OUTDIR/$OUT02;
-$DIFF $IT1/book-details $IT2/di                      | $DIFF2HTML > $OUTDIR/$OUT03;
+$DIFF $IT1/components $IT1/property-bindings         | $DIFF2HTML > $OUTDIR/$OUT01;
+$DIFF $IT1/property-bindings $IT1/event-bindings     | $DIFF2HTML > $OUTDIR/$OUT02;
+$DIFF $IT1/event-bindings $IT2/di                    | $DIFF2HTML > $OUTDIR/$OUT03;
 $DIFF $IT2/di $IT2/navigation                        | $DIFF2HTML > $OUTDIR/$OUT04;
 $DIFF $IT2/navigation $IT3/http                      | $DIFF2HTML > $OUTDIR/$OUT05;
 $DIFF $IT3/http $IT4/template-driven-forms           | $DIFF2HTML > $OUTDIR/$OUT06;

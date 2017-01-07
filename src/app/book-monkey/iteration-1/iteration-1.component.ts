@@ -3,17 +3,17 @@ import { Component } from '@angular/core';
 @Component({
   template: `
     <div class="ui three small ordered steps">
-      <a routerLink="book-list" routerLinkActive="active" class="step">
+      <a routerLink="components" routerLinkActive="active" class="step">
         <div class="content">
           <div class="title">Koponenten</div>
         </div>
       </a>
-      <a routerLink="book-list-refactored" routerLinkActive="active"  class="step">
+      <a routerLink="property-bindings" routerLinkActive="active" class="step">
         <div class="content">
           <div class="title">Property-Bindings</div>
         </div>
       </a>
-      <a routerLink="book-details" routerLinkActive="active" class="step">
+      <a routerLink="event-bindings" routerLinkActive="active" class="step">
         <div class="content">
           <div class="title">Event-Bindings</div>
         </div>

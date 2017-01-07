@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
     <div class="ui one small ordered steps">
     <a routerLink="http" routerLinkActive="active" class="step">
       <div class="content">
-        <div class="title">HTTP</div>
+        <div class="title">Http</div>
       </div>
     </a>
   </div>

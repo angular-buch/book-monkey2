@@ -11,10 +11,10 @@ export const routes: Routes = [
     path: '',
     component: Iteration1Component,
     children: [
-      { path: '', redirectTo: 'book-list', pathMatch: 'full' },
-      { path: 'book-list', component: AppComponentBookList },
-      { path: 'book-list-refactored', component: AppComponentBookListRefactored },
-      { path: 'book-details', component: AppComponentBookDetails }]
+      { path: '', redirectTo: 'components', pathMatch: 'full' },
+      { path: 'components', component: AppComponentBookList },
+      { path: 'property-bindings', component: AppComponentBookListRefactored },
+      { path: 'event-bindings', component: AppComponentBookDetails }]
   }
 ];
 
