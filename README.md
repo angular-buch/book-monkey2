@@ -16,7 +16,7 @@ Die einzelnen Schritte sind jeweils als einzelne Repositorys verfügbar und soll
   2. _[Property-Bindings](https://book-monkey2.angular-buch.com/iteration-1/property-bindings)_
   3. _[Event-Bindings](https://book-monkey2.angular-buch.com/iteration-1/event-bindings)_
 * __Iteration-2 - Services & Routing__
-  1. _[Dependency-Injection](https://book-monkey2.angular-buch.com/iteration-2/di)_
+  1. _[Dependency Injection](https://book-monkey2.angular-buch.com/iteration-2/di)_
   2. _[Routing](https://book-monkey2.angular-buch.com/iteration-2/navigation)_
 * __Iteration-3 - Http__
   1. _[Http](https://book-monkey2.angular-buch.com/iteration-3/http)_

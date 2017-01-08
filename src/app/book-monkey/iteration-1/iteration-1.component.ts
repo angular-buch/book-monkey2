@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
     <div class="ui three small ordered steps">
       <a routerLink="components" routerLinkActive="active" class="step">
         <div class="content">
-          <div class="title">Koponenten</div>
+          <div class="title">Komponenten</div>
         </div>
       </a>
       <a routerLink="property-bindings" routerLinkActive="active" class="step">
