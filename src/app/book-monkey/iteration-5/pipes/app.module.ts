@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { NgModule } from '@angular/core';
 
@@ -27,7 +27,6 @@ import { IsbnPipe } from './shared/isbn.pipe';
   ],
   imports: [
     CommonModule,
-    FormsModule,
     ReactiveFormsModule,
     HttpModule,
     AppRoutingModule,
