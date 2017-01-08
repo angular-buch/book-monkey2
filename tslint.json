@@ -90,7 +90,7 @@
     ],
 
     "directive-selector": [true, "attribute", "bm", "camelCase"],
-    "component-selector": [true, "element", "bm", "kebab-case"],
+    "component-selector": [false, "element", "bm", "kebab-case"],
     "use-input-property-decorator": true,
     "use-output-property-decorator": true,
     "use-host-property-decorator": true,

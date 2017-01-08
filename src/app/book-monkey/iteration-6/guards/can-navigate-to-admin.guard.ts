@@ -7,7 +7,7 @@ export class CanNavigateToAdminGuard implements CanActivate {
   accessGranted = false;
 
   canActivate() {
-    if(!this.accessGranted) {
+    if (!this.accessGranted) {
       this.accessGranted = window.confirm('Mit großer Macht kommt große Verantwortung. Möchten Sie den Admin-Bereich betreten?');
     }
 
