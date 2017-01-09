@@ -6,5 +6,7 @@
   <p *ngIf="!books.length">Es wurden noch keine B&uuml;cher eingetragen.</p>
 </div>
 <template #loading>
-  <p>Daten werden geladen...</p>
+  <div class="ui active dimmer">
+    <div class="ui large text loader">Daten werden geladen...</div>
+  </div>
 </template>
