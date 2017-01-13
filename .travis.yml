@@ -44,7 +44,7 @@ env:
     - NAME="iteration-6-resolver"              BLUEPRINT="src/app/book-monkey/iteration-6/resolver"
 
 install:
-  - npm i -g angular-cli@1.0.0-beta.25.5; npm i -g angular-cli-ghpages;
+  - npm i --silent -g angular-cli@1.0.0-beta.25.5; npm i --silent -g angular-cli-ghpages;
 
 script:
   - echo "*** BUILDING $NAME ***"
@@ -81,7 +81,7 @@ script:
       rm -rf src/app/*;
 
       cp -f "$TRAVIS_BUILD_DIR/package.mm.json" package.json;
-      npm i;
+      npm i --silent;
 
 
       cd "$TRAVIS_BUILD_DIR" || exit;
@@ -135,7 +135,7 @@ script:
   - if [ "$NAME" != "one-app" ]; then
       cd "$NEW_BOOKMONKEY/";
 
-      npm i;
+      npm i --silent;
       ng build -dev;
 
       echo "$NAME.angular-buch.com" > dist/CNAME;
