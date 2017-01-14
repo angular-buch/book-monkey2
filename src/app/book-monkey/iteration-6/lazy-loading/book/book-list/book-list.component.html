@@ -1,8 +1,9 @@
-<div *ngIf="booksOb | async; else loading; let books" class="ui middle aligned selection divided list">
+<div class="ui middle aligned selection divided list"
+     *ngIf="booksOb | async; else loading; let books">
   <a class="bm-book-list-item item"
-      *ngFor="let b of books"
-      [book]="b"
-      [routerLink]="b.isbn"></a>
+     *ngFor="let b of books"
+     [book]="b"
+     [routerLink]="b.isbn"></a>
   <p *ngIf="!books.length">Es wurden noch keine B&uuml;cher eingetragen.</p>
 </div>
 <template #loading>
