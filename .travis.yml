@@ -54,6 +54,7 @@ script:
   # - sends compiled version to gh-pages
   # TODO: npm run ng test
   - if [ "$NAME" == "one-app" ]; then
+      npm i;
       ng build --prod --aot --no-vendor-chunk --progress=false;
 
       echo "book-monkey2.angular-buch.com" > dist/CNAME;
