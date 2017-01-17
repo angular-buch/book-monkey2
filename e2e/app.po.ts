@@ -6,6 +6,6 @@ export class BookMonkeyPage {
   }
 
   getParagraphText() {
-    return element(by.css('app-root h1')).getText();
+    return element(by.css('bm-root h1')).getText();
   }
 }
