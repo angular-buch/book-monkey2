@@ -5,7 +5,7 @@ const html = `
   <h1 class="anotherClass">Another Heading <span>with child</span></h1>
 `;
 
-fdescribe('protractor locators', () => {
+describe('protractor locators', () => {
 
   beforeAll(() => {
     browser.ignoreSynchronization = true;
