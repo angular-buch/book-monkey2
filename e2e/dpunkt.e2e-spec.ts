@@ -1,6 +1,6 @@
 import { browser, element, by } from 'protractor';
 
-describe('dpunkt.verlang', function() {
+describe('dpunkt.verlag', function() {
 
     // does not wait for on angular on a non-angular page
     beforeEach(() => browser.ignoreSynchronization = true);
