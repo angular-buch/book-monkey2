@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { HttpModule } from '@angular/http';
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -20,7 +20,8 @@ import { BookResolver } from './shared/book-resolver.service';
   ],
   providers: [
     BookStoreService,
-    BookResolver
+    BookResolver,
+    { provide: LOCALE_ID, useValue: 'de' }
   ],
   bootstrap: [AppComponent]
 })

@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -37,7 +37,8 @@ import { DelayDirective } from './shared/delay.directive';
     DateValueAccessorModule
   ],
   providers: [
-    BookStoreService
+    BookStoreService,
+    { provide: LOCALE_ID, useValue: 'de' }
   ],
   bootstrap: [AppComponent]
 })

@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { HttpModule } from '@angular/http';
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -17,7 +17,10 @@ import { AppRoutingModule } from './app-routing.module.one-app';
     HttpModule,
     AppRoutingModule
   ],
-  providers: [BookStoreService],
+  providers: [
+    BookStoreService,
+    { provide: LOCALE_ID, useValue: 'de' }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
