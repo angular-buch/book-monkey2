@@ -12,7 +12,7 @@ export class BookStoreService {
         '9783864903571',
         'Angular',
         ['Johannes Hoppe', 'Danny Koppenhagen', 'Ferdinand Malcher', 'Gregor Woiwode'],
-        new Date(2016, 5, 26),
+        new Date(2017, 3, 1),
         'Einstieg in die komponentenbasierte Entwicklung von Web- und Mobile-Anwendungen',
         5,
         [new Thumbnail('https://angular-buch.com/angular-buch.jpg', 'Buchcover')],
