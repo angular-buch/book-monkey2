@@ -7,19 +7,19 @@ export class BookDetailsPage {
   }
 
   getUrl() {
-    return browser.getLocationAbsUrl();
+    return browser.getCurrentUrl();
   }
 }
 
 export class BookListPage {
 
   navigateTo() {
-    browser.get('https://iteration-3-http.angular-buch.com/books');
+    browser.get('/books');
     return this;
   }
 
   getBookItems() {
-    return element.all(by.css('bm-book-list-item'));
+    return element.all(by.css('.bm-book-list-item'));
   }
 
   clickOnFirstBook() {
