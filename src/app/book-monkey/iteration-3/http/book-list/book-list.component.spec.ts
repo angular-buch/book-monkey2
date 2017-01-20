@@ -63,7 +63,7 @@ describe('BookListComponent', () => {
     fixture.detectChanges();
   }));
 
-  it('should get all books from BookStoreService', () => {
+  it('should display books', () => {
 
     expect(component.books.length).toBe(2);
     expect(component.books[0].isbn).toBe('111');
