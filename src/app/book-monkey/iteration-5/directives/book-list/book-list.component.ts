@@ -9,11 +9,11 @@ import { BookStoreService } from '../shared/book-store.service';
   templateUrl: './book-list.component.html'
 })
 export class BookListComponent implements OnInit {
-  booksOb: Observable<Book[]>;
+  books$: Observable<Book[]>;
 
   constructor(private bs: BookStoreService) { }
 
   ngOnInit() {
-    this.booksOb = this.bs.getAll();
+    this.books$ = this.bs.getAll();
   }
 }
