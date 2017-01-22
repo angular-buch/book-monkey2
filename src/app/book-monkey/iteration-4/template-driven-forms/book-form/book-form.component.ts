@@ -25,7 +25,7 @@ export class BookFormComponent implements OnInit {
     this.book.authors = this.myForm.value.authors.split(',');
     this.book.thumbnails = [ this.myForm.value.thumbnail ];
 
-    let book = BookFactory.fromObject(this.book);
+    const book = BookFactory.fromObject(this.book);
 
     this.bs.create(book).subscribe(res => {
       this.book = BookFactory.empty();
@@ -35,8 +35,8 @@ export class BookFormComponent implements OnInit {
 
   updateErrorMessages() {
     this.errors = {};
-    for (let message of BookFormErrorMessages) {
-      let control = this.myForm.form.get(message.forControl);
+    for (const message of BookFormErrorMessages) {
+      const control = this.myForm.form.get(message.forControl);
       if (control &&
           control.dirty &&
           control.invalid &&

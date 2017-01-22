@@ -30,7 +30,7 @@ describe('BookListComponent', () => {
   let component: BookListComponent;
   let fixture: ComponentFixture<BookListComponent>;
 
-  let expectedBooks = [
+  const expectedBooks = [
     new Book('111', 'Book 1', [], new Date()),
     new Book('222', 'Book 2', [], new Date())
   ];

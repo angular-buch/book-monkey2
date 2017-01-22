@@ -28,7 +28,7 @@ export class BookFormComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    let data = this.route.snapshot.data;
+    const data = this.route.snapshot.data;
     if (data['book']) {
       this.isUpdatingBook = true;
       this.book = data['book'];
@@ -83,7 +83,7 @@ export class BookFormComponent implements OnInit {
     this.myForm.value.authors = this.myForm.value.authors.filter(author => author);
     this.myForm.value.thumbnails = this.myForm.value.thumbnails.filter(thumbnail => thumbnail.url);
 
-    let book: Book = BookFactory.fromObject(this.myForm.value);
+    const book: Book = BookFactory.fromObject(this.myForm.value);
 
     if (this.isUpdatingBook) {
       this.bs.update(book).subscribe(res => {
@@ -99,8 +99,8 @@ export class BookFormComponent implements OnInit {
 
   updateErrorMessages() {
     this.errors = {};
-    for (let message of BookFormErrorMessages) {
-      let control = this.myForm.get(message.forControl);
+    for (const message of BookFormErrorMessages) {
+      const control = this.myForm.get(message.forControl);
       if (control &&
           control.dirty &&
           control.invalid &&

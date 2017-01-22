@@ -9,7 +9,7 @@ describe('BookStoreService', () => {
   });
 
   it('should hold a hardcoded list of 2 books', () => {
-    let books  = service.getAll();
+    const books = service.getAll();
     expect(books.length).toBe(2);
   });
 });

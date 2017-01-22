@@ -8,7 +8,7 @@ export class BookValidators {
   static isbnFormat(control: FormControl): { [error: string]: any } {
     if (!control.value) { return null; }
 
-    let isolatedNumbers = control.value.replace(/-/g, '');
+    const isolatedNumbers = control.value.replace(/-/g, '');
     const isbnPattern = /(^\d{10}$)|(^\d{13}$)/;
     return isbnPattern.test(isolatedNumbers) ? null : {
       isbnFormat: { valid: false }
@@ -16,7 +16,7 @@ export class BookValidators {
   }
 
   static atLeastOneAuthor(controlArray: FormArray): { [error: string]: any } {
-    let check = controlArray.controls.some(el => {
+    const check = controlArray.controls.some(el => {
       return (el.value) ? true : false;
     });
     return check ? null : {

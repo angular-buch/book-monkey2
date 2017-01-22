@@ -20,15 +20,15 @@ export class AppComponent implements OnInit {
       .filter(e => e instanceof NavigationEnd)
       .subscribe(e => {
 
-        let url: string = (<any>e).urlAfterRedirects;
-        let amountOfSlashes = (url.match(/\//g) || []).length;
+        const url: string = (<any>e).urlAfterRedirects;
+        const amountOfSlashes = (url.match(/\//g) || []).length;
 
         if (amountOfSlashes < 2) {
           this.repoName = 'book-monkey2';
           this.repositoryUrl = 'https://github.com/angular-buch/book-monkey2';
           return;
         } else {
-          let parts = url.split('/');
+          const parts = url.split('/');
           this.repoName = parts[1] + '-' + parts[2];
         }
 

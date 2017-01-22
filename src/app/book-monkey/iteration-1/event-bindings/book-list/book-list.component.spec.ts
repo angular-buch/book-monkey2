@@ -16,7 +16,7 @@ describe('BookListComponent', () => {
 
   it('should trigger an event on "showDetails"', () => {
 
-    let sendBook = new Book('x', 'x', null, new Date());
+    const sendBook = new Book('x', 'x', null, new Date());
     let receivedBook: Book;
 
     component.showDetailsEvent.subscribe((book) => receivedBook = book);

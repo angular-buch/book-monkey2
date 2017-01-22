@@ -4,7 +4,7 @@ export class BookFormComponent implements OnInit {
   // ...
 
   ngOnInit() {
-    let isbn = this.route.snapshot.params['isbn'];
+    const isbn = this.route.snapshot.params['isbn'];
     if (isbn) {
       this.isUpdatingBook = true;
       this.bs.getSingle(isbn)

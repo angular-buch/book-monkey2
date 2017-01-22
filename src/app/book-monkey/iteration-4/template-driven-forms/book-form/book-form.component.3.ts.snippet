@@ -6,7 +6,7 @@ export class BookFormComponent implements OnInit {
     this.book.authors = this.myForm.value.authors.split(',');
     this.book.thumbnails = [ this.myForm.value.thumbnail ];
 
-    let book = BookFactory.fromObject(this.book);
+    const book = BookFactory.fromObject(this.book);
 
     this.bs.create(book).subscribe(res => {
       this.book = BookFactory.empty();
