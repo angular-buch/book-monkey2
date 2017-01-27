@@ -10,6 +10,7 @@ export const routes: Routes = [
     children: [
       { path: '', redirectTo: 'http', pathMatch: 'full' },
       { path: 'http', loadChildren: 'app/book-monkey/iteration-3/http/app.module#AppModule' },
+      { path: 'rxjs', loadChildren: 'app/book-monkey/iteration-3/rxjs/app.module#AppModule' },
     ]
   }
 ];
