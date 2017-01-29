@@ -7,9 +7,9 @@ language: node_js
 node_js:
   - 6.9.1
 
-cache:
-  directories:
-  - node_modules
+#cache:
+#  directories:
+#  - node_modules
 
 env:
   global:
@@ -44,7 +44,7 @@ env:
     - NAME="iteration-6-resolver"              BLUEPRINT="src/app/book-monkey/iteration-6/resolver"
 
 install:
-  - npm i --silent -g angular-cli@1.0.0-beta.25.5; npm i --silent -g angular-cli-ghpages;
+  - npm i --silent --no-optional -g angular-cli@1.0.0-beta.25.5; npm i --silent --no-optional -g angular-cli-ghpages;
 
 script:
   - echo "*** BUILDING $NAME ***"
@@ -54,7 +54,7 @@ script:
   # - sends compiled version to gh-pages
   # TODO: npm run ng test
   - if [ "$NAME" == "one-app" ]; then
-      npm i --silent;
+      npm i --silent --no-optional;
       ng build --prod --aot --no-vendor-chunk --progress=false;
 
       echo "book-monkey2.angular-buch.com" > dist/CNAME;
@@ -82,7 +82,7 @@ script:
       rm -rf src/app/*;
 
       cp -f "$TRAVIS_BUILD_DIR/package.mm.json" package.json;
-      npm i --silent;
+      npm i --silent --no-optional;
 
 
       cd "$TRAVIS_BUILD_DIR" || exit;
