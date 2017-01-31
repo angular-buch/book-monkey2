@@ -1,4 +1,7 @@
+import { Router, ActivatedRoute } from '@angular/router';
 import { Component } from '@angular/core';
+
+import { Book } from '../shared/book';
 
 @Component({
   selector: 'bm-home',
@@ -14,8 +17,15 @@ import { Component } from '@angular/core';
       </a>
     </div>
 
-    <bm-search class="right aligned column"></bm-search>
+    <bm-search (bookSelected)="bookSelected($event)" class="column"></bm-search>
   </div>
   `
 })
-export class HomeComponent { }
+export class HomeComponent {
+
+  constructor(private router: Router, private route: ActivatedRoute) { }
+
+  bookSelected(book: Book) {
+    this.router.navigate(['../books', book.isbn], { relativeTo: this.route });
+  }
+}
