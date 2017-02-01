@@ -25,7 +25,6 @@ export class SearchComponent implements OnInit {
   ngOnInit() {
 
     this.keyup
-      .asObservable()
       .debounceTime(400)
       .distinctUntilChanged()
       .do(() => this.isLoading = true)
