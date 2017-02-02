@@ -44,7 +44,7 @@ env:
     - NAME="iteration-6-resolver"              BLUEPRINT="src/app/book-monkey/iteration-6/resolver"
 
 install:
-  - npm i --silent --no-optional -g angular-cli@1.0.0-beta.25.5
+  - npm i --silent --no-optional -g @angular/cli@1.0.0-beta.29
   - npm i --silent --no-optional -g angular-cli-ghpages
 
 script:
