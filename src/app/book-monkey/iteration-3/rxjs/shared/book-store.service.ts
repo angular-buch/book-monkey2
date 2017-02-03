@@ -29,17 +29,6 @@ export class BookStoreService {
       .catch(this.errorHandler);
   }
 
-  getAllSearch(searchTerm: string): Observable<Array<Book>> {
-    return this.http
-      .get(`${this.api}/books/search/${searchTerm}`)
-      .retry(3)
-      .map(response => response.json())
-      .map(rawBooks => rawBooks
-        .map(rawBook => BookFactory.fromObject(rawBook))
-      )
-      .catch(this.errorHandler);
-  }
-
   getSingle(isbn: string): Observable<Book> {
     return this.http
       .get(`${this.api}/book/${isbn}`)
@@ -69,5 +58,17 @@ export class BookStoreService {
 
   private errorHandler(error: Error | any): Observable<any> {
     return Observable.throw(error);
+  }
+
+  // NEU
+  getAllSearch(searchTerm: string): Observable<Array<Book>> {
+    return this.http
+      .get(`${this.api}/books/search/${searchTerm}`)
+      .retry(3)
+      .map(response => response.json())
+      .map(rawBooks => rawBooks
+        .map(rawBook => BookFactory.fromObject(rawBook))
+      )
+      .catch(this.errorHandler);
   }
 }

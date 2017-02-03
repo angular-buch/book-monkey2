@@ -1,5 +1,4 @@
 import { Component, EventEmitter, Output, OnInit } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/debounceTime';
 import 'rxjs/add/operator/distinctUntilChanged';
 import 'rxjs/add/operator/do'; // do is supposed to be used with side-effecting behavior
