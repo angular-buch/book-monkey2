@@ -1,0 +1,20 @@
+// ...
+import { ActivatedRoute, Router } from '@angular/router';
+// ...
+export class BookDetailsComponent implements OnInit {
+  book: Book = BookFactory.empty();
+
+  constructor(
+    // ...
+    private router: Router
+  ) { }
+
+  // ...
+
+  removeBook() {
+    if (confirm('Buch wirklich löschen?')) {
+      this.bs.remove(this.book.isbn)
+        .subscribe(res => this.router.navigate(['../'], { relativeTo: this.route }));
+    }
+  }
+}

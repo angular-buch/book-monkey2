@@ -1,0 +1,25 @@
+describe('BookStoreService', () => {
+  // ...
+
+  beforeEach(() => {
+
+    httpMock = {
+      get: () => Observable.of({
+        json: () => expectedBooks
+      })
+    };
+
+    spyOn(httpMock, 'get').and.callThrough();
+
+    // ...
+  });
+
+  it('should GET a list of all books',
+    inject([BookStoreService], (service: BookStoreService) => {
+
+       // ...
+
+       expect(httpMock.get).toHaveBeenCalledTimes(1);
+       expect(httpMock.get).toHaveBeenCalledWith('https://book-monkey2-api.angular-buch.com/books');
+    }));
+});

@@ -2,10 +2,15 @@ import { Component } from '@angular/core';
 
 @Component({
   template: `
-    <div class="ui one small ordered steps">
+  <div class="ui two small ordered steps">
     <a routerLink="http" routerLinkActive="active" class="step">
       <div class="content">
         <div class="title">HTTP</div>
+      </div>
+    </a>
+    <a routerLink="rxjs" routerLinkActive="active" class="step">
+      <div class="content">
+        <div class="title">RxJS</div>
       </div>
     </a>
   </div>

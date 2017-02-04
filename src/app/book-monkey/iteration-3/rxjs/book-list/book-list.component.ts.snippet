@@ -1,0 +1,14 @@
+@Component({
+  // ...
+})
+export class BookListComponent implements OnInit {
+  books: Book[];
+
+  constructor(private bs: BookStoreService) { }
+
+  // im HTML:
+  // <a *ngFor="let b of books" [book]="b" [routerLink]="b.isbn"></a>
+  ngOnInit() {
+    this.bs.getAll().subscribe(res => this.books = res);
+  }
+}
