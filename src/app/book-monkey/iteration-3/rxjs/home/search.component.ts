@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Output, OnInit } from '@angular/core';
 import 'rxjs/add/operator/debounceTime';
 import 'rxjs/add/operator/distinctUntilChanged';
-import 'rxjs/add/operator/do'; // do is supposed to be used with side-effecting behavior
+import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/switchMap';
 
 import { Book } from '../shared/book';
