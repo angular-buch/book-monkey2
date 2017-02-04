@@ -1,0 +1,9 @@
+import 'rxjs/add/operator/debounceTime';
+import 'rxjs/add/operator/distinctUntilChanged';
+
+// ...
+
+this.keyup
+  .debounceTime(500)
+  .distinctUntilChanged()
+  .subscribe(value => console.log(value));

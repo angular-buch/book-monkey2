@@ -2,7 +2,7 @@ import { Component, EventEmitter, Output, OnInit } from '@angular/core';
 import 'rxjs/add/operator/debounceTime';
 import 'rxjs/add/operator/distinctUntilChanged';
 import 'rxjs/add/operator/do'; // do is supposed to be used with side-effecting behavior
-import 'rxjs/add/operator/mergeMap'; // flatMap is an alias of mergeMap
+import 'rxjs/add/operator/switchMap';
 
 import { Book } from '../shared/book';
 import { BookStoreService } from '../shared/book-store.service';
@@ -24,10 +24,10 @@ export class SearchComponent implements OnInit {
   ngOnInit() {
 
     this.keyup
-      .debounceTime(400)
+      .debounceTime(500)
       .distinctUntilChanged()
       .do(() => this.isLoading = true)
-      .mergeMap(value => this.bs.getAllSearch(value))
+      .switchMap(value => this.bs.getAllSearch(value))
       .do(() => this.isLoading = false)
       .subscribe(book => this.foundBooks = book);
   }

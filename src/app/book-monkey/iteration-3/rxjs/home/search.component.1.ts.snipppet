@@ -8,7 +8,7 @@ import { BookStoreService } from '../shared/book-store.service';
 })
 export class SearchComponent implements OnInit {
 
-  @Output() bookSelected = new EventEmitter<Book>(); // <-- Ziel
+  @Output() bookSelected = new EventEmitter<Book>(); // <-- unser Ziel
 
   keyup = new EventEmitter<string>();
 
