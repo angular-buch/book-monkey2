@@ -66,4 +66,15 @@ export class BookStoreService {
   private errorHandler(error: Error | any): Observable<any> {
     return Observable.throw(error);
   }
+
+  getAllSearch(searchTerm: string): Observable<Array<Book>> {
+    return this.http
+      .get(`${this.api}/books/search/${searchTerm}`)
+      .retry(3)
+      .map(response => response.json())
+      .map(rawBooks => rawBooks
+        .map(rawBook => BookFactory.fromObject(rawBook))
+      )
+      .catch(this.errorHandler);
+  }
 }

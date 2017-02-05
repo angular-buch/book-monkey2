@@ -1,0 +1,16 @@
+import 'rxjs/add/operator/debounceTime';
+import 'rxjs/add/operator/distinctUntilChanged';
+
+// ...
+export class SearchComponent implements OnInit {
+
+  // ...
+
+  ngOnInit() {
+
+    this.keyup
+      .debounceTime(500)
+      .distinctUntilChanged()
+      .subscribe(searchTerm => console.log(searchTerm));
+  }
+}

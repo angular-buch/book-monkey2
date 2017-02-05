@@ -8,7 +8,7 @@ import { HomeComponent } from './home/home.component';
 import { BookListComponent } from './book-list/book-list.component';
 import { BookListItemComponent } from './book-list-item/book-list-item.component';
 import { BookDetailsComponent } from './book-details/book-details.component';
-import { SearchComponent } from './home/search.component';
+import { SearchComponent } from './search/search.component';
 
 import { BookStoreService } from './shared/book-store.service';
 import { AppRoutingModule } from './app-routing.module.one-app';
