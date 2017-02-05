@@ -30,6 +30,7 @@ env:
     - NAME="iteration-2-navigation"            BLUEPRINT="src/app/book-monkey/iteration-2/navigation"
 
     - NAME="iteration-3-http"                  BLUEPRINT="src/app/book-monkey/iteration-3/http"
+    - NAME="iteration-3-rxjs"                  BLUEPRINT="src/app/book-monkey/iteration-3/rxjs"
 
     - NAME="iteration-4-template-driven-forms" BLUEPRINT="src/app/book-monkey/iteration-4/template-driven-forms"
     - NAME="iteration-4-reactive-forms"        BLUEPRINT="src/app/book-monkey/iteration-4/reactive-forms"
