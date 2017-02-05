@@ -9,13 +9,11 @@ import { BookStoreService } from '../shared/book-store.service';
 export class SearchComponent implements OnInit {
 
   // ...
+  foundBooks: Book[] = [];
 
   constructor(private bs: BookStoreService) { }
 
-  foundBooks: Book[] = [];
-
   ngOnInit() {
-
     this.keyup
       .debounceTime(500)
       .distinctUntilChanged()

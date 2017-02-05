@@ -1,6 +1,5 @@
 import { Component, EventEmitter, Output, OnInit } from '@angular/core';
 import { Book } from '../shared/book';
-import { BookStoreService } from '../shared/book-store.service';
 
 @Component({
   selector: 'bm-search',
@@ -8,14 +7,12 @@ import { BookStoreService } from '../shared/book-store.service';
 })
 export class SearchComponent implements OnInit {
 
-  @Output() bookSelected = new EventEmitter<Book>(); // <-- unser Ziel
+  // unser Ziel:
+  @Output() bookSelected = new EventEmitter<Book>();
 
   keyup = new EventEmitter<string>();
 
-  constructor(private bs: BookStoreService) { }
-
   ngOnInit() {
-
     this.keyup
       .subscribe(value => console.log(value));
   }
