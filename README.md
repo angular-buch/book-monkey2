@@ -20,8 +20,9 @@ Die einzelnen Schritte sind außerdem jeweils als einzelne Repositorys verfügba
 * __Iteration-2 - Services & Routing__
   1. _[Dependency Injection](https://book-monkey2.angular-buch.com/iteration-2/di)_
   2. _[Routing](https://book-monkey2.angular-buch.com/iteration-2/navigation)_
-* __Iteration-3 - Http__
+* __Iteration-3 - Http & RxJS__
   1. _[HTTP](https://book-monkey2.angular-buch.com/iteration-3/http)_
+  2. _[HTTP](https://book-monkey2.angular-buch.com/iteration-3/rxjs)_
 * __Iteration-4 - Formularverarbeitung & Validierung__
   1. _[Template Driven Forms](https://book-monkey2.angular-buch.com/iteration-4/template-driven-forms)_
   2. _[Reactive Forms](https://book-monkey2.angular-buch.com/iteration-4/reactive-forms)_
@@ -40,7 +41,7 @@ Die einzelnen Schritte sind außerdem jeweils als einzelne Repositorys verfügba
 
 Lesen Sie mehr auf [angular-buch.com](https://angular-buch.com/).
 
-[![Book](src/assets/images/book-thumbnail.png)](https://angular-buch.com/)
+[![Book](https://angular-buch.com/angular-buch_small.png)](https://angular-buch.com/)
 
 
 # Vollständige Demo

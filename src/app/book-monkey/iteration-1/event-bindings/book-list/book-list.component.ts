@@ -19,7 +19,7 @@ export class BookListComponent implements OnInit {
         new Date(2017, 3, 1),
         'Einstieg in die komponentenbasierte Entwicklung von Web- und Mobile-Anwendungen',
         5,
-        [new Thumbnail('https://angular-buch.com/angular-buch.jpg', 'Buchcover')],
+        [new Thumbnail('https://ng-buch.de/cover2.jpg', 'Buchcover')],
         'Dieses Buch vermittelt einen Schnelleinstieg in Angular...'
       ),
       new Book(
@@ -29,7 +29,7 @@ export class BookListComponent implements OnInit {
         new Date(2014, 5, 29),
         'Eine praktische Einführung',
         5,
-        [new Thumbnail('https://goo.gl/Y5lFVE', 'Buchcover')],
+        [new Thumbnail('https://ng-buch.de/cover1.jpg', 'Buchcover')],
         'Dieses Buch führt Sie anhand eines zusammenhängenden Beispielprojekts...'
       )
     ];
