@@ -10,7 +10,7 @@ describe('BookListComponent', () => {
   });
 
   it('should hold a hardcoded list of 2 books', () => {
-    component.ngOnInit(); // manual call!
+    component.<TEX>\bfseries ngOnInit()</TEX>; <TEX>\bfseries // manual call!</TEX>
     expect(component.books.length).toBe(2);
   });
 
@@ -19,8 +19,8 @@ describe('BookListComponent', () => {
     const sendBook = new Book('x', 'x', null, new Date());
     let receivedBook: Book;
 
-    component.showDetailsEvent.subscribe((book) => receivedBook = book);
-    component.showDetails(sendBook);
+    component.<TEX>\bfseries showDetailsEvent.subscribe</TEX>((book) => receivedBook = book);
+    component.<TEX>\bfseries showDetails</TEX>(sendBook);
 
     expect(sendBook).toBe(receivedBook);
   });

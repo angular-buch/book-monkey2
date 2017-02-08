@@ -5,11 +5,11 @@ describe('BookStoreService', () => {
   let service: BookStoreService;
 
   beforeEach(() => {
-    service = new BookStoreService();
+<TEX>\boldline</TEX>    service = new BookStoreService();
   });
 
   it('should hold a hardcoded list of 2 books', () => {
-    const books = service.getAll();
-    expect(books.length).toBe(2);
+<TEX>\boldline</TEX>    const books = service.getAll();
+<TEX>\boldline</TEX>    expect(books.length).toBe(2);
   });
 });

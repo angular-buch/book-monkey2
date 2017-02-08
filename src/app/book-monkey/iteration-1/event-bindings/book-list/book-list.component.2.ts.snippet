@@ -3,9 +3,9 @@
 })
 export class BookListComponent implements OnInit {
   books: Book[];
-  @Output() showDetailsEvent = new EventEmitter<Book>();
+  @Output() <TEX>\bfseries showDetailsEvent</TEX> = new EventEmitter<Book>();
 
-  ngOnInit() {
+  <TEX>\bfseries ngOnInit()</TEX> {
     this.books = [
       // ...
     ]
@@ -13,7 +13,7 @@ export class BookListComponent implements OnInit {
 
   // im HTML:
   // <a *ngFor="let b of books" [book]="b" (click)="showDetails(b)"></a>
-  showDetails(book: Book) {
+  <TEX>\bfseries showDetails</TEX>(book: Book) {
     this.showDetailsEvent.emit(book);
   }
 }
