@@ -1,7 +1,7 @@
 import { TestBed, inject } from '@angular/core/testing';
 import { Http } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/observable/of';
+<TEX>\boldline</TEX>import 'rxjs/add/observable/of';
 
 import { Book } from '../shared/book';
 import { BookStoreService } from './book-store.service';
@@ -17,17 +17,17 @@ describe('BookStoreService', () => {
 
   beforeEach(() => {
 
-    httpStub = {
-      get: () => Observable.of({
-        json: () => expectedBooks
-      })
+<TEX>\boldline</TEX>    httpStub = {
+<TEX>\boldline</TEX>      get: () => Observable.of({
+<TEX>\boldline</TEX>        json: () => expectedBooks
+<TEX>\boldline</TEX>      })
     };
 
     TestBed.configureTestingModule({
       providers: [
         {
-          provide: Http,
-          useValue: httpStub
+<TEX>\boldline</TEX>          provide: Http,
+<TEX>\boldline</TEX>          useValue: httpStub
         },
         BookStoreService
       ]
@@ -35,7 +35,7 @@ describe('BookStoreService', () => {
   });
 
   it('should GET a list of all books',
-    inject([BookStoreService], (service: BookStoreService) => {
+<TEX>\boldline</TEX>    inject([BookStoreService], (service: BookStoreService) => {
 
       let receivedBooks: Book[];
       service.getAll().subscribe(b => receivedBooks = b);

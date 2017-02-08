@@ -6,7 +6,7 @@ describe('BookListComponent', () => {
   let component: BookListComponent;
 
   beforeEach(() => {
-    component = new BookListComponent();
+<TEX>\boldline</TEX>    component = new BookListComponent();
   });
 
   it('should hold a hardcoded list of 2 books', () => {

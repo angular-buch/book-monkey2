@@ -9,7 +9,7 @@ describe('BookStoreService', () => {
       })
     };
 
-    spyOn(httpMock, 'get').and.callThrough();
+<TEX>\boldline</TEX>    spyOn(httpMock, 'get').and.callThrough();
 
     // ...
   });
@@ -19,7 +19,7 @@ describe('BookStoreService', () => {
 
        // ...
 
-       expect(httpMock.get).toHaveBeenCalledTimes(1);
-       expect(httpMock.get).toHaveBeenCalledWith('https://book-monkey2-api.angular-buch.com/books');
+       expect(httpMock.get).<TEX>\bfseries toHaveBeenCalledTimes</TEX>(1);
+       expect(httpMock.get).<TEX>\bfseries toHaveBeenCalledWith</TEX>('https://book-monkey2-api.angular-buch.com/books');
     }));
 });

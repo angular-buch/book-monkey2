@@ -13,18 +13,18 @@ import { BookStoreService } from '../shared/book-store.service';
 import { Book } from '../shared/book';
 
 @Component({ template: '<router-outlet></router-outlet>' })
-class DummyOutletComponent { }
+class <TEX>\bfseries DummyOutletComponent</TEX> { }
 
 @Component({
   selector: 'a.bm-book-list-item',
   template: 'Dummy'
 })
-class DummyBookListItemComponent {
+class <TEX>\bfseries DummyBookListItemComponent</TEX> {
   @Input() book: Book;
 }
 
 @Component({ template: 'Dummy' })
-class DummyDetailsComponent { }
+class <TEX>\bfseries DummyDetailsComponent</TEX> { }
 
 describe('BookListComponent', () => {
   let component: BookListComponent;
@@ -48,9 +48,9 @@ describe('BookListComponent', () => {
           useValue: { getAll: () => Observable.of(expectedBooks) }
         }],
         imports: [
-          RouterTestingModule.withRoutes([
-            { path: ':isbn', component: DummyDetailsComponent }
-          ])
+<TEX>\boldline</TEX>          RouterTestingModule.withRoutes([
+<TEX>\boldline</TEX>            { path: ':isbn', component: DummyDetailsComponent }
+<TEX>\boldline</TEX>          ])
         ]
       })
       .compileComponents();
@@ -74,8 +74,8 @@ describe('BookListComponent', () => {
 
     fixture.nativeElement.querySelector('a').click();
 
-    fixture.whenStable().then(() => {
-      expect(location.path()).toEqual('/111');
+    fixture.<TEX>\bfseries whenStable()</TEX>.then(() => {
+<TEX>\boldline</TEX>      expect(location.path()).toEqual('/111');
     });
   })));
 });

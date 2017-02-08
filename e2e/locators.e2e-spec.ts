@@ -12,19 +12,19 @@ describe('protractor locators', () => {
     browser.get('data:text/html,' + encodeURIComponent(html));
   });
 
-  it('should select by tag', () => {
-    expect(element(by.css('h1')).getText()).toBe('Heading');
+  it('should select <TEX>\bfseries by tag</TEX>', () => {
+    expect(element(by.css('<TEX>\bfseries h1</TEX>')).getText()).toBe('Heading');
     expect(element(by.tagName('h1')).getText()).toBe('Heading');
   });
 
-  it('should select by css class', () => {
-    expect(element(by.css('.myClass')).getText()).toBe('Heading');
-    expect(element(by.className('myClass')).getText()).toBe('Heading');
+  it('should select <TEX>\bfseries by css class</TEX>', () => {
+    expect(element(by.css('<TEX>\bfseries .myClass</TEX>')).getText()).toBe('Heading');
+    expect(element(by.className('<TEX>\bfseries myClass</TEX>')).getText()).toBe('Heading');
   });
 
-  it('should select by id', () => {
-    expect(element(by.css('#myId')).getText()).toBe('Heading');
-    expect(element(by.id('myId')).getText()).toBe('Heading');
+  it('should select <TEX>\bfseries by id</TEX>', () => {
+    expect(element(by.css('<TEX>\bfseries \#myId</TEX>')).getText()).toBe('Heading');
+    expect(element(by.id('<TEX>\bfseries myId</TEX>')).getText()).toBe('Heading');
   });
 
   it('should select via various other ways', () => {
@@ -32,9 +32,9 @@ describe('protractor locators', () => {
     expect(element(by.css('h1 span')).getText()).toBe('with child');
   });
 
-  it('should select via the $-shorthand', () => {
-    // is the same as element(by.css('#myId'));
-    expect($('#myId').getText()).toBe('Heading');
+  it('should select via the <TEX>\bfseries \$-shorthand</TEX>', () => {
+    // is the same as element(by.css('\#myId'));
+    expect(<TEX>\bfseries \$('\#myId')</TEX>.getText()).toBe('Heading');
   });
 
   afterAll(() => browser.ignoreSynchronization = false);
