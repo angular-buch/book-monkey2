@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { FormBuilder, FormGroup, FormArray, Validators } from '@angular/forms';
+<TEX>\boldline</TEX>import { ActivatedRoute, Router } from '@angular/router';
+<TEX>\boldline</TEX>import { FormBuilder, FormGroup, FormArray, Validators } from '@angular/forms';
 
 import { Book } from '../shared/book';
 import { BookFactory } from '../shared/book-factory';
@@ -14,15 +14,15 @@ import { BookFormErrorMessages } from './book-form-error-messages';
 export class BookFormComponent implements OnInit {
   book = BookFactory.empty();
   errors = {};
-  isUpdatingBook: boolean = false;
-  myForm: FormGroup;
-  authors: FormArray;
-  thumbnails: FormArray;
+<TEX>\boldline</TEX>  isUpdatingBook: boolean = false;
+<TEX>\boldline</TEX>  myForm: FormGroup;
+<TEX>\boldline</TEX>  authors: FormArray;
+<TEX>\boldline</TEX>  thumbnails: FormArray;
 
   constructor(
-    private fb: FormBuilder,
+<TEX>\boldline</TEX>    private fb: FormBuilder,
     private bs: BookStoreService,
-    private route: ActivatedRoute,
-    private router: Router
+<TEX>\boldline</TEX>    private route: ActivatedRoute,
+<TEX>\boldline</TEX>    private router: Router
   ) { }
 }
