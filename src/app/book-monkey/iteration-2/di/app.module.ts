@@ -19,7 +19,7 @@ import { BookStoreService } from './shared/book-store.service';
     CommonModule
   ],
   providers: [
-    BookStoreService // NEW!
+    BookStoreService
   ],
   bootstrap: [AppComponent]
 })
