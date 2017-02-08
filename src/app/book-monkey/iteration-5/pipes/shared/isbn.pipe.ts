@@ -5,7 +5,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class IsbnPipe implements PipeTransform {
 
-  transform(value: any, addPrefix: boolean): string {
+  transform(value: any, <TEX>\bfseries addPrefix: boolean</TEX>): <TEX>\bfseries string</TEX> {
     if (!value || value.length !== 10 && value.length !== 13) {
       return null;
     }
