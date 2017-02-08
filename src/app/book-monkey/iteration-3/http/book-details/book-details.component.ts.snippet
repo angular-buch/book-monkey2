@@ -1,21 +1,21 @@
 // ...
-import { ActivatedRoute, Router } from '@angular/router';
-import { BookFactory } from '../shared/book-factory';
+import { ActivatedRoute, <TEX>\bfseries Router</TEX> } from '@angular/router';
+<TEX>\boldline</TEX>import { BookFactory } from '../shared/book-factory';
 // ...
 export class BookDetailsComponent implements OnInit {
-  book: Book = BookFactory.empty();
+<TEX>\boldline</TEX>  book: Book = BookFactory.empty();
 
   constructor(
     // ...
-    private router: Router
+<TEX>\boldline</TEX>    private router: Router
   ) { }
 
   // ...
 
-  removeBook() {
-    if (confirm('Buch wirklich löschen?')) {
-      this.bs.remove(this.book.isbn)
-        .subscribe(res => this.router.navigate(['../'], { relativeTo: this.route }));
-    }
-  }
+<TEX>\boldline</TEX>  removeBook() {
+<TEX>\boldline</TEX>    if (confirm('Buch wirklich löschen?')) {
+<TEX>\boldline</TEX>      this.bs.remove(this.book.isbn)
+<TEX>\boldline</TEX>        .subscribe(res => this.router.navigate(['../'], { relativeTo: this.route }));
+<TEX>\boldline</TEX>    }
+<TEX>\boldline</TEX>  }
 }

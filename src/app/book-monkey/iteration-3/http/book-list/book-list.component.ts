@@ -13,6 +13,6 @@ export class BookListComponent implements OnInit {
   constructor(private bs: BookStoreService) { }
 
   ngOnInit() {
-    this.bs.getAll().subscribe(res => this.books = res);
+<TEX>\boldline</TEX>     this.bs.getAll().subscribe(res => this.books = res);
   }
 }

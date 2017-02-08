@@ -1,6 +1,6 @@
 import 'rxjs/add/operator/debounceTime';
 import 'rxjs/add/operator/distinctUntilChanged';
-import 'rxjs/add/operator/switchMap';
+<TEX>\boldline</TEX>import 'rxjs/add/operator/switchMap';
 
 import { Book } from '../shared/book';
 import { BookStoreService } from '../shared/book-store.service';
