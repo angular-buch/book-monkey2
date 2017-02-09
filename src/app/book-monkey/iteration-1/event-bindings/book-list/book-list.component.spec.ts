@@ -19,7 +19,8 @@ describe('BookListComponent', () => {
     const sendBook = new Book('x', 'x', null, new Date());
     let receivedBook: Book;
 
-    component.<TEX>\bfseries showDetailsEvent.subscribe</TEX>((book) => receivedBook = book);
+    component.<TEX>\bfseries showDetailsEvent</TEX>
+<TEX>\boldline</TEX>      .subscribe((book) => receivedBook = book);
     component.<TEX>\bfseries showDetails</TEX>(sendBook);
 
     expect(sendBook).toBe(receivedBook);

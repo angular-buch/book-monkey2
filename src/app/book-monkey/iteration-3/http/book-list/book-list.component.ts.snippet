@@ -7,7 +7,7 @@ export class BookListComponent implements OnInit {
   constructor(private bs: BookStoreService) { }
 
   // im HTML:
-  // <a *ngFor="let b of books" [book]="b" [routerLink]="b.isbn"></a>
+  // <a *ngFor="let b of books" [book]="b" <TEX>\bfseries [routerLink]="b.isbn"</TEX>></a>
   ngOnInit() {
     this.bs.getAll().subscribe(res => this.books = res);
   }

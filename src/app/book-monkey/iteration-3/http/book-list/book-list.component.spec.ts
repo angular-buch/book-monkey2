@@ -72,7 +72,7 @@ describe('BookListComponent', () => {
 
   it('should navigate to details page by ISBN', async(inject([Location], (location) => {
 
-    fixture.nativeElement.querySelector('a').click();
+<TEX>\boldline</TEX>    fixture.nativeElement.querySelector('a').click();
 
     fixture.<TEX>\bfseries whenStable()</TEX>.then(() => {
 <TEX>\boldline</TEX>      expect(location.path()).toEqual('/111');

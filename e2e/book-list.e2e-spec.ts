@@ -7,19 +7,19 @@ describe('Book List Page', function() {
 
   let listPage: BookListPage;
 
-  beforeEach(() => listPage = new BookListPage());
+<TEX>\bfseries </TEX>  beforeEach(() => listPage = new BookListPage());
 
   it('should display at least two books', () => {
 
-    const bookItems = listPage.navigateTo().getBookItems();
+<TEX>\boldline</TEX>    const bookItems = listPage.navigateTo().getBookItems();
     expect(bookItems.count()).toBeGreaterThan(1);
   });
 
   it('should navigate to details page by ISBN', () => {
 
-    const detailsPage = listPage.navigateTo().clickOnFirstBook();
+<TEX>\boldline</TEX>    const details = listPage.navigateTo().clickOnFirstBook();
 
-    expect(detailsPage.getUrl()).toContain('/books/9783864903571');
-    expect(detailsPage.getHeaderText()).toBe('Angular');
+    expect(details.getUrl()).toContain('/books/9783864903571');
+    expect(details.getHeaderText()).toBe('Angular');
   });
 });

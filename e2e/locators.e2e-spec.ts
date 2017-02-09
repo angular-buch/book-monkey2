@@ -2,8 +2,9 @@ import { browser, element, by, $ } from 'protractor';
 
 const html = `
   <h1 id="myId" class="myClass">Heading</h1>
-  <h1 class="anotherClass">Another Heading <span>with child</span></h1>
-`;
+  <h1 class="anotherClass">Another Heading
+    <span>with child</span>
+  </h1>`;
 
 describe('protractor locators', () => {
 
@@ -14,7 +15,7 @@ describe('protractor locators', () => {
 
   it('should select <TEX>\bfseries by tag</TEX>', () => {
     expect(element(by.css('<TEX>\bfseries h1</TEX>')).getText()).toBe('Heading');
-    expect(element(by.tagName('h1')).getText()).toBe('Heading');
+    expect(element(by.tagName(<TEX>\bfseries 'h1</TEX>')).getText()).toBe('Heading');
   });
 
   it('should select <TEX>\bfseries by css class</TEX>', () => {
@@ -34,7 +35,7 @@ describe('protractor locators', () => {
 
   it('should select via the <TEX>\bfseries \$-shorthand</TEX>', () => {
     // is the same as element(by.css('\#myId'));
-    expect(<TEX>\bfseries \$('\#myId')</TEX>.getText()).toBe('Heading');
+    expect(<TEX>\bfseries \$</TEX>('<TEX>\bfseries \#myId</TEX>').getText()).toBe('Heading');
   });
 
   afterAll(() => browser.ignoreSynchronization = false);
