@@ -14,7 +14,7 @@ import { BookFormErrorMessages } from './book-form-error-messages';
 export class BookFormComponent implements OnInit {
   book = BookFactory.empty();
   errors = {};
-  isUpdatingBook: boolean = false;
+  isUpdatingBook = false;
   myForm: FormGroup;
   authors: FormArray;
   thumbnails: FormArray;
