@@ -15,7 +15,7 @@ import { BookValidators } from '../shared/book.validators';
 export class BookFormComponent implements OnInit {
   book = BookFactory.empty();
   errors = {};
-  isUpdatingBook: boolean = false;
+  isUpdatingBook = false;
   myForm: FormGroup;
   authors: FormArray;
   thumbnails: FormArray;
