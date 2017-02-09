@@ -10,8 +10,8 @@ import 'rxjs/add/operator/filter';
 export class AppComponent implements OnInit {
   repositoryUrl: string;
   repoName: string;
-  mobileLayout: boolean = false;
-  showSidebar: boolean = false;
+  mobileLayout = false;
+  showSidebar = false;
 
   constructor(private r: Router) { }
 
