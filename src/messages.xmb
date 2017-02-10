@@ -21,4 +21,7 @@
 <!ELEMENT ex (#PCDATA)>
 ]>
 <messagebundle>
+  <msg id="2412258727484490982" desc="Text of the link to the home screen" meaning="AppComonent:home">Home</msg>
+  <msg id="2298270868839750975" desc="Text of the link to the books screen" meaning="AppComonent:book">Bücher</msg>
+  <msg id="3747185899919421965" desc="Text of the link to the admin screen" meaning="AppComonent:admin">Administration</msg>
 </messagebundle>
