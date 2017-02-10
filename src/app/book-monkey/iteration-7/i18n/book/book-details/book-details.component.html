@@ -41,10 +41,20 @@
 </div>
 
 <button class="ui tiny red labeled icon button"
-        (click)="removeBook()" i18n="BookDetailsComponent:book delete">
-  <i class="remove icon"></i> Buch löschen
+        (click)="removeBook()">
+  <i class="remove icon"></i>
+
+  <!--i18n: BookDetailsComponent:book delete -->
+  Buch löschen
+  <!--/i18n-->
+
 </button>
-<a class="ui tiny yellow labeled icon button" i18n="BookDetailsComponent:book edit"
+<a class="ui tiny yellow labeled icon button"
    [routerLink]="['../../admin', book.isbn]">
-  <i class="write icon"></i> Buch bearbeiten
+  <i class="write icon"></i>
+
+  <!--i18n: BookDetailsComponent:book edit -->
+  Buch bearbeiten
+  <!--/i18n-->
+
 </a>
