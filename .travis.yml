@@ -56,10 +56,9 @@ script:
   # [1] one-app:
   # - fills /dist folder and adds CNAME file as well as 404 file for gh-pages
   # - sends compiled version to gh-pages
-  # TODO: npm run ng test
   - if [ "$NAME" == "one-app" ]; then
       npm i --silent --no-optional;
-      ng build --prod --aot --no-vendor-chunk --progress=false;
+      ng build --prod --aot --no-vendor-chunk --progress=false --locale en --i18n-file src/messages.en.xtb --i18n-format xtb;
 
       echo "book-monkey2.angular-buch.com" > dist/CNAME;
       cp dist/index.html dist/404.html;

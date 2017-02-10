@@ -39,6 +39,7 @@
   <msg id="3954427690032516399" meaning="HomeComponent:header">Home</msg>
   <msg id="4494257079998639060" desc="a proud sentence about the project" meaning="HomeComponent:tagline">Das ist der BookMonkey.</msg>
   <msg id="3188981661383518427" desc="Text of the link to the books screen" meaning="HomeComponent:book list link">Buchliste ansehen</msg>
+  <msg id="699612688975760468" desc="SearchComponent:header">Suche...</msg>
   <msg id="8860567190320038063" desc="BookDetailsComponent:book isbn">ISBN</msg>
   <msg id="3102844068435797662" desc="BookDetailsComponent:book published date">Erschienen</msg>
   <msg id="3706222784708785028" desc="BookDetailsComponent:book rating">Rating</msg>

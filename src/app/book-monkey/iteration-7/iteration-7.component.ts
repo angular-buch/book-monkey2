@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 @Component({
   template: `
     <div class="ui four small ordered steps">
-    <a routerLink="modules" routerLinkActive="active" class="step">
+    <a routerLink="i18n" routerLinkActive="active" class="step">
       <div class="content">
         <div class="title">Internationalisierung (i18n)</div>
       </div>
