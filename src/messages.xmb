@@ -38,19 +38,12 @@
   <msg id="8486878414732266730" desc="Text of the link to the admin screen" meaning="AppComponent:admin">Administration</msg>
   <msg id="3954427690032516399" meaning="HomeComponent:header">Home</msg>
   <msg id="4494257079998639060" desc="a proud sentence about the project" meaning="HomeComponent:tagline">Das ist der BookMonkey.</msg>
-  <msg id="4922077499227364982" desc="Text of the link to the books screen" meaning="HomeComponent:book list link">
-        Buchliste ansehen
-        <ph name="START_ITALIC_TEXT"><ex>&lt;i&gt;</ex></ph><ph name="CLOSE_ITALIC_TEXT"><ex>&lt;/i&gt;</ex></ph>
-      </msg>
+  <msg id="3188981661383518427" desc="Text of the link to the books screen" meaning="HomeComponent:book list link">Buchliste ansehen</msg>
   <msg id="8860567190320038063" desc="BookDetailsComponent:book isbn">ISBN</msg>
   <msg id="3102844068435797662" desc="BookDetailsComponent:book published date">Erschienen</msg>
   <msg id="3706222784708785028" desc="BookDetailsComponent:book rating">Rating</msg>
-  <msg id="5380507688340366482" desc="BookDetailsComponent:book delete">
-  Buch löschen
-  </msg>
-  <msg id="1109721870326225214" desc="BookDetailsComponent:book edit">
-  Buch bearbeiten
-  </msg>
+  <msg id="5061803217164487407" desc="BookDetailsComponent:book delete">Buch löschen</msg>
+  <msg id="6122154040870620371" desc="BookDetailsComponent:book edit">Buch bearbeiten</msg>
   <msg id="7950677030813533844" desc="BookListComponent:no book">Es wurden noch keine Bücher eingetragen.</msg>
   <msg id="3642014628050914705" desc="BookListComponent:loading data">Daten werden geladen...</msg>
 </messagebundle>
