@@ -8,7 +8,10 @@
     "start": "ng serve",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "start-en": "ng serve --aot --locale en --i18n-file src/messages.en.xtb --i18n-format xtb",
+    "build-en": "ng build --aot --locale en --i18n-file src/messages.en.xtb --i18n-format xtb",
+    "extract-i18n": "ng-xi18n -p src/tsconfig.json --i18nFormat=xmb"
   },
   "private": true,
   "dependencies": {

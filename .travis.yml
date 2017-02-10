@@ -118,6 +118,7 @@ script:
         SEARCH[0]="app/book-monkey/iteration-6/lazy-loading/";
         SEARCH[1]="app/book-monkey/iteration-6/guards/";
         SEARCH[2]="app/book-monkey/iteration-6/resolver/";
+        SEARCH[3]="app/book-monkey/iteration-7/i18n/";
         for i in "${!SEARCH[@]}";
         do sed -i "s|${SEARCH[$i]}|app/|g" "$NEW_BOOKMONKEY/src/app/app-routing.module.ts";
         done;
