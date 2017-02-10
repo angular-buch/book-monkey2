@@ -1,0 +1,18 @@
+// ...
+import { BookResolver } from '../shared/book-resolver.service';
+
+const routes: Routes = [
+  // ...
+  {
+    path: ':isbn',
+    component: BookFormComponent,
+    resolve: {
+      book: BookResolver
+    }
+  }
+];
+
+@NgModule({
+  // ...
+})
+export class AdminRoutingModule { }

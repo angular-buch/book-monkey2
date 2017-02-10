@@ -44,8 +44,10 @@ env:
     - NAME="iteration-6-guards"                BLUEPRINT="src/app/book-monkey/iteration-6/guards"
     - NAME="iteration-6-resolver"              BLUEPRINT="src/app/book-monkey/iteration-6/resolver"
 
+    - NAME="iteration-7-i18n"                  BLUEPRINT="src/app/book-monkey/iteration-7/i18n"
+
 install:
-  - npm i --silent --no-optional -g @angular/cli@1.0.0-beta.29
+  - npm i --silent --no-optional -g @angular/cli@1.0.0-beta.30
   - npm i --silent --no-optional -g angular-cli-ghpages
 
 script:
@@ -163,3 +165,4 @@ matrix:
 branches:
   only:
     - master
+    - i18n

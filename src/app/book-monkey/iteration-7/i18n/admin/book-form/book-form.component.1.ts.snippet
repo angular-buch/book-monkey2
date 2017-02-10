@@ -1,0 +1,8 @@
+ngOnInit() {
+  let data = this.route.snapshot.data;
+  if (data['book']) {
+    this.isUpdatingBook = true;
+    this.book = data['book'];
+  }
+  this.initBook();
+}

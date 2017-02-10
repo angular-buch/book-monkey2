@@ -1,0 +1,50 @@
+<div class="ui grid" *ngIf="book">
+  <div class="four wide column">
+    <img class="ui large image" [src]="book.thumbnails && book.thumbnails[0].url">
+  </div>
+  <div class="twelve wide column">
+    <h1 class="ui header">{{ book.title }}</h1>
+    <h3 class="ui header">{{ book.subtitle }}</h3>
+    <div class="ui divider"></div>
+    <div class="ui grid">
+      <div class="four wide column">
+        <h4 class="ui header">Autoren</h4>
+        <span *ngFor="let author of book.authors; let l=last">
+          {{ author }}<span *ngIf="!l">, </span>
+        </span>
+      </div>
+      <div class="four wide column">
+        <h4 class="ui header">ISBN</h4>
+        {{ book.isbn | isbn:true }}
+      </div>
+      <div class="four wide column">
+        <h4 class="ui header">Erschienen</h4>
+        {{ book.published | date:'longDate'  }}
+      </div>
+      <div class="four wide column">
+        <h4 class="ui header">Rating</h4>
+        <span *ngFor="let r of getRating(book.rating); let i = index">
+          <i class="yellow star icon" *bmDelay="500 + i * 200"></i>
+        </span>
+      </div>
+    </div>
+  </div>
+  <div class="sixteen wide column">
+    <h3 class="ui header">Beschreibung</h3>
+    {{ book.description }}
+  </div>
+  <div class="sixteen wide column">
+    <div class="ui small images">
+      <img *ngFor="let thumbnail of book.thumbnails" [src]="thumbnail.url">
+    </div>
+  </div>
+</div>
+
+<button class="ui tiny red labeled icon button"
+        (click)="removeBook()">
+  <i class="remove icon"></i> Buch löschen
+</button>
+<a class="ui tiny yellow labeled icon button"
+   [routerLink]="['../../admin', book.isbn]">
+  <i class="write icon"></i> Buch bearbeiten
+</a>

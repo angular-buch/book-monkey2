@@ -1,0 +1,13 @@
+<div class="ui middle aligned selection divided list"
+     *ngIf="books$ | async; else loading; let books">
+  <a class="bm-book-list-item item"
+     *ngFor="let b of books"
+     [book]="b"
+     [routerLink]="b.isbn"></a>
+  <p *ngIf="!books.length">Es wurden noch keine Bücher eingetragen.</p>
+</div>
+<template #loading>
+  <div class="ui active dimmer">
+    <div class="ui large text loader">Daten werden geladen...</div>
+  </div>
+</template>

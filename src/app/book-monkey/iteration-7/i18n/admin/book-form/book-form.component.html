@@ -1,0 +1,71 @@
+<h1>Buchformular</h1>
+<form class="ui large form"
+      [formGroup]="myForm"
+      (ngSubmit)="submitForm()">
+
+  <div class="field">
+    <label>Buchtitel</label>
+    <input formControlName="title">
+    <div *ngIf="errors.title" class="ui negative message">
+      {{ errors.title }}
+    </div>
+  </div>
+  <div class="field">
+    <label>Untertitel</label>
+    <input formControlName="subtitle">
+  </div>
+  <div class="field" [class.disabled]="isUpdatingBook">
+    <label>ISBN-Nummer</label>
+    <input formControlName="isbn">
+    <div *ngIf="errors.isbn" class="ui negative message">
+      {{ errors.isbn }}
+    </div>
+  </div>
+  <div class="field">
+    <label>Erscheinungsdatum</label>
+    <input type="date"
+           useValueAsDate
+           formControlName="published">
+    <div *ngIf="errors.published" class="ui negative message">
+      {{ errors.published }}
+    </div>
+  </div>
+  <div class="field">
+    <label>Autoren</label>
+    <div class="fields" formArrayName="authors">
+      <div class="fifteen wide field" *ngFor="let control of authors.controls; let i = index">
+        <input [formControlName]="i" placeholder="Autor {{i+1}}">
+      </div>
+      <div class="one wide field">
+        <button (click)="addAuthorControl()" class="ui large button" type="button"> + </button>
+      </div>
+    </div>
+    <div *ngIf="errors.authors" class="ui negative message">
+      {{ errors.authors }}
+    </div>
+  </div>
+  <div class="field">
+    <label>Beschreibung</label>
+    <textarea formControlName="description" rows="3"></textarea>
+  </div>
+  <div class="field">
+    <label>Bilder</label>
+    <div formArrayName="thumbnails">
+      <div class="fields"
+          *ngFor="let control of thumbnails.controls; let i = index; let l = last"
+          [formGroupName]="i">
+        <div class="nine wide field">
+          <input formControlName="url" placeholder="http://bild{{i+1}}_Url">
+        </div>
+        <div class="six wide field">
+          <input formControlName="title" placeholder="Bild {{i+1}} Titel">
+        </div>
+        <div class="one wide field" *ngIf="l">
+          <button (click)="addThumbnailControl()" class="ui large button" type="button"> + </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <button type="submit" class="ui button" [disabled]="myForm.invalid">Speichern</button>
+</form>
