@@ -7,9 +7,9 @@ language: node_js
 node_js:
   - 6.9.1
 
-cache:
-  directories:
-  - node_modules
+#cache:
+#  directories:
+#  - node_modules
 
 env:
   global:
@@ -45,7 +45,7 @@ env:
     - NAME="iteration-6-resolver"              BLUEPRINT="src/app/book-monkey/iteration-6/resolver"
 
 install:
-  - npm i --silent --no-optional -g @angular/cli@1.0.0-beta.29
+  - npm i --silent --no-optional -g @angular/cli@1.0.0-beta.31
   - npm i --silent --no-optional -g angular-cli-ghpages
 
 script:
