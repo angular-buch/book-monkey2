@@ -34,7 +34,7 @@
     <label i18n="BookFormComponent:book published date">Autoren</label>
     <div class="fields" formArrayName="authors">
       <div class="fifteen wide field" *ngFor="let control of authors.controls; let i = index">
-        <input [formControlName]="i" placeholder="Autor {{i+1}}" i18n-placeholder="BookFormComponent:author placeholder">
+        <input [formControlName]="i" placeholder="Autor" i18n-placeholder="BookFormComponent:author placeholder">
       </div>
       <div class="one wide field">
         <button (click)="addAuthorControl()" class="ui large button" type="button"> + </button>
@@ -55,10 +55,10 @@
           *ngFor="let control of thumbnails.controls; let i = index; let l = last"
           [formGroupName]="i">
         <div class="nine wide field">
-          <input formControlName="url" placeholder="http://bild{{i+1}}_Url" i18n-placeholder="BookFormComponent:book url placeholder">
+          <input formControlName="url" placeholder="http://bild_Url" i18n-placeholder="BookFormComponent:book url placeholder">
         </div>
         <div class="six wide field">
-          <input formControlName="title" placeholder="Bild {{i+1}} Titel" i18n-placeholder="BookFormComponent:book thumbnail placeholder">
+          <input formControlName="title" placeholder="Bild Titel" i18n-placeholder="BookFormComponent:book thumbnail placeholder">
         </div>
         <div class="one wide field" *ngIf="l">
           <button (click)="addThumbnailControl()" class="ui large button" type="button"> + </button>
