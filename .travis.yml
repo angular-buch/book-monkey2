@@ -92,6 +92,9 @@ script:
 
       cp -f angular-cli.json                     "$NEW_BOOKMONKEY/";
       cp -f src/assets                           "$NEW_BOOKMONKEY/src/assets/";
+      cp -f src/messages.*                       "$NEW_BOOKMONKEY/src/";
+      cp -f src/tsconfig.json                    "$NEW_BOOKMONKEY/src/";
+      cp -f src/assets                           "$NEW_BOOKMONKEY/src/assets/";
       cp -rf "$TRAVIS_BUILD_DIR/$BLUEPRINT/."    "$NEW_BOOKMONKEY/src/app/";
 
 
@@ -136,11 +139,12 @@ script:
   # [2] single apps:
   # - compiles single apps
   # - sends them to gh-pages
+  # OLD dev build: ng build -dev --progress=false;
   - if [ "$NAME" != "one-app" ]; then
       cd "$NEW_BOOKMONKEY/";
 
       npm i --silent;
-      ng build -dev --progress=false;
+      ng build --prod --aot --no-vendor-chunk --progress=false --locale en --i18n-file src/messages.en.xtb --i18n-format xtb;
 
       echo "$NAME.angular-buch.com" > dist/CNAME;
       cp dist/index.html dist/404.html;
