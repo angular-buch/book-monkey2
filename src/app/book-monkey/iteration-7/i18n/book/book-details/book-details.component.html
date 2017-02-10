@@ -8,21 +8,21 @@
     <div class="ui divider"></div>
     <div class="ui grid">
       <div class="four wide column">
-        <h4 class="ui header">Autoren</h4>
+        <h4 class="ui header" i18n="BookDetailsComponent:book authors">Autoren</h4>
         <span *ngFor="let author of book.authors; let l=last">
           {{ author }}<span *ngIf="!l">, </span>
         </span>
       </div>
       <div class="four wide column">
-        <h4 class="ui header">ISBN</h4>
+        <h4 class="ui header" i18n="BookDetailsComponent:book isbn">ISBN</h4>
         {{ book.isbn | isbn:true }}
       </div>
       <div class="four wide column">
-        <h4 class="ui header">Erschienen</h4>
+        <h4 class="ui header" i18n="BookDetailsComponent:book published date">Erschienen</h4>
         {{ book.published | date:'longDate'  }}
       </div>
       <div class="four wide column">
-        <h4 class="ui header">Rating</h4>
+        <h4 class="ui header" i18n="BookDetailsComponent:book rating">Rating</h4>
         <span *ngFor="let r of getRating(book.rating); let i = index">
           <i class="yellow star icon" *bmDelay="500 + i * 200"></i>
         </span>
@@ -30,7 +30,7 @@
     </div>
   </div>
   <div class="sixteen wide column">
-    <h3 class="ui header">Beschreibung</h3>
+    <h3 class="ui header" i18n="BookDetailsComponent:book description">Beschreibung</h3>
     {{ book.description }}
   </div>
   <div class="sixteen wide column">
@@ -41,10 +41,10 @@
 </div>
 
 <button class="ui tiny red labeled icon button"
-        (click)="removeBook()">
+        (click)="removeBook()" i18n="BookDetailsComponent:book delete">
   <i class="remove icon"></i> Buch löschen
 </button>
-<a class="ui tiny yellow labeled icon button"
+<a class="ui tiny yellow labeled icon button" i18n="BookDetailsComponent:book edit"
    [routerLink]="['../../admin', book.isbn]">
   <i class="write icon"></i> Buch bearbeiten
 </a>

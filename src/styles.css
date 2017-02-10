@@ -1,1 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* helper for translation text
+[i18n] { border: 1px solid limegreen !important; }
+[i18n-placeholder] { border: 1px solid green !important; }
+*/
+
