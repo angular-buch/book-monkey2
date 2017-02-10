@@ -7,9 +7,9 @@ language: node_js
 node_js:
   - 6.9.1
 
-cache:
-  directories:
-  - node_modules
+#cache:
+#  directories:
+#  - node_modules
 
 env:
   global:
@@ -47,7 +47,7 @@ env:
     - NAME="iteration-7-i18n"                  BLUEPRINT="src/app/book-monkey/iteration-7/i18n"
 
 install:
-  - npm i --silent --no-optional -g @angular/cli@1.0.0-beta.30
+  - npm i --silent --no-optional -g @angular/cli@1.0.0-beta.31
   - npm i --silent --no-optional -g angular-cli-ghpages
 
 script:
