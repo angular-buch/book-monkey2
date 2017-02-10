@@ -14,4 +14,4 @@ import { Component } from '@angular/core';
   </div>
   `
 })
-export class Iteration6Component { }
+export class Iteration7Component { }

@@ -28,6 +28,10 @@ const routes: Routes = [
   {
     path: 'iteration-6',
     loadChildren: 'app/book-monkey/iteration-6/iteration-6.module#Iteration6Module'
+  },
+  {
+    path: 'iteration-7',
+    loadChildren: 'app/book-monkey/iteration-7/iteration-7.module#Iteration7Module'
   }
 ];
 
