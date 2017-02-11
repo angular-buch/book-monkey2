@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE translationbundle [
+<!ELEMENT translationbundle (translation)*>
+<!ATTLIST translationbundle lang CDATA #REQUIRED>
+
+<!ELEMENT translation (#PCDATA|ph)*>
+<!ATTLIST translation id CDATA #REQUIRED>
+<!ATTLIST translation desc CDATA #IMPLIED>
+<!ATTLIST translation meaning CDATA #IMPLIED>
+<!ATTLIST translation xml:space (default|preserve) "default">
+
+<!ELEMENT ph (#PCDATA|ex)*>
+<!ATTLIST ph name CDATA #REQUIRED>
+
+<!ELEMENT ex (#PCDATA)>
+]>
+<translationbundle lang="en">
+  <translation id="1113903738236098504" desc="BookFormComponent:book form">Book Form</translation>
+  <translation id="3612065257905492324" desc="BookFormComponent:book title">Book Title</translation>
+  <translation id="1763940721409433016" desc="BookFormComponent:book subtitle">Subtitle</translation>
+  <translation id="6547692319158386701" desc="BookFormComponent:book isbn">ISBN Number</translation>
+  <translation id="3845025460046577000" desc="BookFormComponent:book published date">Published Date</translation>
+  <translation id="3654953117544016353" desc="BookFormComponent:book published date">Authors</translation>
+  <translation id="5102041847876891222" desc="BookFormComponent:author placeholder">Author</translation>
+  <translation id="3282235563480269560" desc="BookFormComponent:book description">Description</translation>
+  <translation id="9045290048674217310" desc="BookFormComponent:book thumbnails">Thumbnails</translation>
+  <translation id="6796896943289143795" desc="BookFormComponent:book url placeholder">http://example_Url</translation>
+  <translation id="6170861708397308099" desc="BookFormComponent:book thumbnail placeholder">Book Title</translation>
+  <translation id="2854123663314832793" desc="BookFormComponent:book form save">Save</translation>
+  <translation id="4466084990257536322" desc="Text of the link to the home screen" meaning="AppComponent:home">Home</translation>
+  <translation id="545920752029439184" desc="Text of the link to the books screen" meaning="AppComponent:book">Books</translation>
+  <translation id="8486878414732266730" desc="Text of the link to the admin screen" meaning="AppComponent:admin">Administration</translation>
+  <translation id="3954427690032516399" meaning="HomeComponent:header">Home</translation>
+  <translation id="4494257079998639060" desc="a proud sentence about the project" meaning="HomeComponent:tagline">This is the BookMonkey.</translation>
+  <translation id="8860567190320038063" desc="BookDetailsComponent:book isbn">ISBN</translation>
+  <translation id="3102844068435797662" desc="BookDetailsComponent:book published date">Published</translation>
+  <translation id="3706222784708785028" desc="BookDetailsComponent:book rating">Rating</translation>
+  <translation id="7950677030813533844" desc="BookListComponent:no book">No books were found in database.</translation>
+  <translation id="3642014628050914705" desc="BookListComponent:loading data">Loading data...</translation>
+  <translation id="3188981661383518427" desc="Text of the link to the books screen" meaning="HomeComponent:book list link">See book list</translation>
+  <translation id="5061803217164487407" desc="BookDetailsComponent:book delete">Delete Book</translation>
+  <translation id="6122154040870620371" desc="BookDetailsComponent:book edit">Edit Book</translation>
+  <translation id="699612688975760468" desc="SearchComponent:header">Search...</translation>
+</translationbundle>

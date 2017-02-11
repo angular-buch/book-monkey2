@@ -7,9 +7,9 @@ language: node_js
 node_js:
   - 6.9.1
 
-#cache:
-#  directories:
-#  - node_modules
+cache:
+  directories:
+  - node_modules
 
 env:
   global:
@@ -44,6 +44,8 @@ env:
     - NAME="iteration-6-guards"                BLUEPRINT="src/app/book-monkey/iteration-6/guards"
     - NAME="iteration-6-resolver"              BLUEPRINT="src/app/book-monkey/iteration-6/resolver"
 
+    - NAME="iteration-7-i18n"                  BLUEPRINT="src/app/book-monkey/iteration-7/i18n"
+
 install:
   - npm i --silent --no-optional -g @angular/cli@1.0.0-beta.31
   - npm i --silent --no-optional -g angular-cli-ghpages
@@ -54,10 +56,9 @@ script:
   # [1] one-app:
   # - fills /dist folder and adds CNAME file as well as 404 file for gh-pages
   # - sends compiled version to gh-pages
-  # TODO: npm run ng test
   - if [ "$NAME" == "one-app" ]; then
       npm i --silent --no-optional;
-      ng build --prod --aot --no-vendor-chunk --progress=false;
+      ng build --prod --aot --no-vendor-chunk --progress=false --locale en --i18n-file src/messages.en.xtb --i18n-format xtb;
 
       echo "book-monkey2.angular-buch.com" > dist/CNAME;
       cp dist/index.html dist/404.html;
@@ -91,6 +92,9 @@ script:
 
       cp -f angular-cli.json                     "$NEW_BOOKMONKEY/";
       cp -f src/assets                           "$NEW_BOOKMONKEY/src/assets/";
+      cp -f src/messages.*                       "$NEW_BOOKMONKEY/src/";
+      cp -f src/tsconfig.json                    "$NEW_BOOKMONKEY/src/";
+      cp -f src/assets                           "$NEW_BOOKMONKEY/src/assets/";
       cp -rf "$TRAVIS_BUILD_DIR/$BLUEPRINT/."    "$NEW_BOOKMONKEY/src/app/";
 
 
@@ -117,6 +121,7 @@ script:
         SEARCH[0]="app/book-monkey/iteration-6/lazy-loading/";
         SEARCH[1]="app/book-monkey/iteration-6/guards/";
         SEARCH[2]="app/book-monkey/iteration-6/resolver/";
+        SEARCH[3]="app/book-monkey/iteration-7/i18n/";
         for i in "${!SEARCH[@]}";
         do sed -i "s|${SEARCH[$i]}|app/|g" "$NEW_BOOKMONKEY/src/app/app-routing.module.ts";
         done;
@@ -134,11 +139,12 @@ script:
   # [2] single apps:
   # - compiles single apps
   # - sends them to gh-pages
+  # OLD dev build: ng build -dev --progress=false;
   - if [ "$NAME" != "one-app" ]; then
       cd "$NEW_BOOKMONKEY/";
 
       npm i --silent;
-      ng build -dev --progress=false;
+      ng build --prod --aot --no-vendor-chunk --progress=false --locale en --i18n-file src/messages.en.xtb --i18n-format xtb;
 
       echo "$NAME.angular-buch.com" > dist/CNAME;
       cp dist/index.html dist/404.html;
