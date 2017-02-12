@@ -4,7 +4,7 @@ import { CanActivate } from '@angular/router';
 @Injectable()
 export class CanNavigateToAdminGuard implements CanActivate {
 
-  accessGranted = false;
+<TEX>\boldline</TEX>  accessGranted = false;
 
   canActivate() {
     if (!this.accessGranted) {
