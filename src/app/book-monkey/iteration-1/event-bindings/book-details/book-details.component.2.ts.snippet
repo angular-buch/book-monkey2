@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, <TEX>\bfseries Output, EventEmitter</TEX> } from '@angular/core';
 import { Book } from '../shared/book';
 
 @Component({
@@ -6,11 +6,11 @@ import { Book } from '../shared/book';
 })
 export class BookDetailsComponent {
   @Input() book: Book;
-  @Output() showListEvent = new EventEmitter<any>();
+<TEX>\boldline</TEX>  @Output() showListEvent = new EventEmitter<any>();
 
   // ...
 
-  showBookList() {
-    this.showListEvent.emit();
-  }
+<TEX>\boldline</TEX>  showBookList() {
+<TEX>\boldline</TEX>    this.showListEvent.emit();
+<TEX>\boldline</TEX>  }
 }

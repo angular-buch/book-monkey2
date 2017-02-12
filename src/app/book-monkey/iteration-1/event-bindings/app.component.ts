@@ -4,8 +4,8 @@ import { Book } from './shared/book';
 @Component({
   selector: 'bm-root',
   template: `
-    <bm-book-list *ngIf="listOn" (showDetailsEvent)="showDetails($event)"></bm-book-list>
-    <bm-book-details *ngIf="detailsOn" (showListEvent)="showList()" [book]="book"></bm-book-details>
+    <bm-book-list *ngIf="listOn" <TEX>\bfseries (showDetailsEvent)="showDetails(\$event)"</TEX>></bm-book-list>
+    <bm-book-details *ngIf="detailsOn" <TEX>\bfseries (showListEvent)="showList()" [book]="book"</TEX>></bm-book-details>
   `
 })
 export class AppComponent {
@@ -14,14 +14,14 @@ export class AppComponent {
 
   book: Book;
 
-  showList() {
-    this.listOn = true;
-    this.detailsOn = false;
-  }
+<TEX>\boldline</TEX>  showList() {
+<TEX>\boldline</TEX>    this.listOn = true;
+<TEX>\boldline</TEX>    this.detailsOn = false;
+<TEX>\boldline</TEX>  }
 
-  showDetails(book: Book) {
-    this.book = book;
-    this.listOn = false;
-    this.detailsOn = true;
-  }
+<TEX>\boldline</TEX>  showDetails(book: Book) {
+<TEX>\boldline</TEX>    this.book = book;
+<TEX>\boldline</TEX>    this.listOn = false;
+<TEX>\boldline</TEX>    this.detailsOn = true;
+<TEX>\boldline</TEX>  }
 }
