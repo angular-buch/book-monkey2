@@ -5,7 +5,7 @@ export class BookMonkeyPage {
     return browser.get('/');
   }
 
-  getParagraphText() {
-    return element(by.css('bm-root h1')).getText();
+  getHeaderText() {
+    return element(by.css('h1')).getText();
   }
 }

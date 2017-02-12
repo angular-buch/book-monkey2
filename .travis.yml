@@ -91,10 +91,9 @@ script:
       cd "$TRAVIS_BUILD_DIR" || exit;
 
       cp -f angular-cli.json                     "$NEW_BOOKMONKEY/";
-      cp -f src/assets                           "$NEW_BOOKMONKEY/src/assets/";
+      cp -rf e2e/.                               "$NEW_BOOKMONKEY/e2e/";
       cp -f src/messages.*                       "$NEW_BOOKMONKEY/src/";
       cp -f src/tsconfig.json                    "$NEW_BOOKMONKEY/src/";
-      cp -f src/assets                           "$NEW_BOOKMONKEY/src/assets/";
       cp -rf "$TRAVIS_BUILD_DIR/$BLUEPRINT/."    "$NEW_BOOKMONKEY/src/app/";
 
 
