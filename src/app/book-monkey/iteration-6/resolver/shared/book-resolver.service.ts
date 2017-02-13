@@ -6,11 +6,11 @@ import { Book } from './book';
 import { BookStoreService } from './book-store.service';
 
 @Injectable()
-export class BookResolver implements Resolve<Book> {
+export class BookResolver <TEX>\bfseries implements Resolve<Book></TEX> {
 
   constructor(private bs: BookStoreService) { }
 
-  resolve(route: ActivatedRouteSnapshot): Observable<Book> {
+  <TEX>\bfseries resolve(route: ActivatedRouteSnapshot): Observable<Book></TEX> {
     return this.bs.getSingle(route.params['isbn']);
   }
 
