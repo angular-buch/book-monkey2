@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="85e16de01d36bc90e6aeb000a6dfd0a4e902d03c" datatype="html">
+        <source>Buchformular</source>
+        <target/>
+        <note priority="1" from="description">BookFormComponent:book form</note>
+      </trans-unit>
+      <trans-unit id="b4c33d19f19cfa346f800ce0817ab11cf3c6e8dc" datatype="html">
+        <source>Buchtitel</source>
+        <target/>
+        <note priority="1" from="description">BookFormComponent:book title</note>
+      </trans-unit>
+      <trans-unit id="503b951dc9cc0a3ba44b73393cf8fb0fd03ca7b0" datatype="html">
+        <source>Untertitel</source>
+        <target/>
+        <note priority="1" from="description">BookFormComponent:book subtitle</note>
+      </trans-unit>
+      <trans-unit id="869778e483fde8357120b6cab6c7f38d117b2712" datatype="html">
+        <source>ISBN-Nummer</source>
+        <target/>
+        <note priority="1" from="description">BookFormComponent:book isbn</note>
+      </trans-unit>
+      <trans-unit id="5a2a5a853e64c7f94b6af03aecc486450f1ae068" datatype="html">
+        <source>Erscheinungsdatum</source>
+        <target/>
+        <note priority="1" from="description">BookFormComponent:book published date</note>
+      </trans-unit>
+      <trans-unit id="d5ce279a1c4682414a0e0a3d283580449f79d410" datatype="html">
+        <source>Autoren</source>
+        <target/>
+        <note priority="1" from="description">BookFormComponent:book published date</note>
+      </trans-unit>
+      <trans-unit id="e3409e9c1c468b07de71d123a086ccc6752962f1" datatype="html">
+        <source>Autor</source>
+        <target/>
+        <note priority="1" from="description">BookFormComponent:author placeholder</note>
+      </trans-unit>
+      <trans-unit id="f09ad66c1ebf16217ba1a1072be7a98de2d95eac" datatype="html">
+        <source>Beschreibung</source>
+        <target/>
+        <note priority="1" from="description">BookFormComponent:book description</note>
+      </trans-unit>
+      <trans-unit id="e7abc2e971ba9ac12751153ba7973e5cf0fea20b" datatype="html">
+        <source>Bilder</source>
+        <target/>
+        <note priority="1" from="description">BookFormComponent:book thumbnails</note>
+      </trans-unit>
+      <trans-unit id="4596c86ff9fa8608a74e1e7eb21680ea64effa33" datatype="html">
+        <source>http://bild_Url</source>
+        <target/>
+        <note priority="1" from="description">BookFormComponent:book url placeholder</note>
+      </trans-unit>
+      <trans-unit id="fe6b7d31558a89ce70d5ce89bad1ab5bb76175dc" datatype="html">
+        <source>Bild Titel</source>
+        <target/>
+        <note priority="1" from="description">BookFormComponent:book thumbnail placeholder</note>
+      </trans-unit>
+      <trans-unit id="05d6def11b80c405276ad18c4fc5183e8cea4f75" datatype="html">
+        <source>Speichern</source>
+        <target/>
+        <note priority="1" from="description">BookFormComponent:book form save</note>
+      </trans-unit>
+      <trans-unit id="55697d354afd534e39af4cae55f572e019286b3a" datatype="html">
+        <source>Home</source>
+        <target/>
+        <note priority="1" from="description">AppComponent:home</note>
+        <note priority="1" from="meaning">Text of the link to the home screen</note>
+      </trans-unit>
+      <trans-unit id="5f5d1cddf76b8a15ff37503d8cac8d1616b9f517" datatype="html">
+        <source>Bücher</source>
+        <target/>
+        <note priority="1" from="description">AppComponent:book</note>
+        <note priority="1" from="meaning">Text of the link to the books screen</note>
+      </trans-unit>
+      <trans-unit id="f0f3d02e5bb77d959e3813df08da5f16e760a295" datatype="html">
+        <source>Administration</source>
+        <target/>
+        <note priority="1" from="description">AppComponent:admin</note>
+        <note priority="1" from="meaning">Text of the link to the admin screen</note>
+      </trans-unit>
+      <trans-unit id="92eee6be6de0b11c924e3ab27db30257159c0a7c" datatype="html">
+        <source>Home</source>
+        <target/>
+        <note priority="1" from="description">HomeComponent:header</note>
+      </trans-unit>
+      <trans-unit id="c8a71255bbbeb795eca447c879c21c3ae1db9cd0" datatype="html">
+        <source>Das ist der BookMonkey.</source>
+        <target/>
+        <note priority="1" from="description">HomeComponent:tagline</note>
+        <note priority="1" from="meaning">a proud sentence about the project</note>
+      </trans-unit>
+      <trans-unit id="9532dc278c671b77334b12be5d43127295826217" datatype="html">
+        <source>Buchliste ansehen</source>
+        <target/>
+        <note priority="1" from="description">HomeComponent:book list link</note>
+        <note priority="1" from="meaning">Text of the link to the books screen</note>
+      </trans-unit>
+      <trans-unit id="12e2fef84debbe8c0adf9c81659a64d4b343062e" datatype="html">
+        <source>Suche...</source>
+        <target/>
+        <note priority="1" from="description">SearchComponent:header</note>
+      </trans-unit>
+      <trans-unit id="d579249e5fe296d2eb3d02d79cc19ebbca88ec1e" datatype="html">
+        <source>ISBN</source>
+        <target/>
+        <note priority="1" from="description">BookDetailsComponent:book isbn</note>
+      </trans-unit>
+      <trans-unit id="94566c81e78e685cc3434a4cf8d5b48304e35ff3" datatype="html">
+        <source>Erschienen</source>
+        <target/>
+        <note priority="1" from="description">BookDetailsComponent:book published date</note>
+      </trans-unit>
+      <trans-unit id="a9b941f25f425bd907b8e23cbaed9e96a85e7db7" datatype="html">
+        <source>Rating</source>
+        <target/>
+        <note priority="1" from="description">BookDetailsComponent:book rating</note>
+      </trans-unit>
+      <trans-unit id="de85d724f7f82c1482861c56313c0ccb9ba1c017" datatype="html">
+        <source>Buch löschen</source>
+        <target/>
+        <note priority="1" from="description">BookDetailsComponent:book delete</note>
+      </trans-unit>
+      <trans-unit id="04004aff9a85e778b1333c3f35d9660302da01ea" datatype="html">
+        <source>Buch bearbeiten</source>
+        <target/>
+        <note priority="1" from="description">BookDetailsComponent:book edit</note>
+      </trans-unit>
+      <trans-unit id="bc04e1ee73bd3f7c10552dca1b45ee694ec6dfc7" datatype="html">
+        <source>Es wurden noch keine Bücher eingetragen.</source>
+        <target/>
+        <note priority="1" from="description">BookListComponent:no book</note>
+      </trans-unit>
+      <trans-unit id="096570a2eb0cc0ba360286acd44c52c0152bfa89" datatype="html">
+        <source>Daten werden geladen...</source>
+        <target/>
+        <note priority="1" from="description">BookListComponent:loading data</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
