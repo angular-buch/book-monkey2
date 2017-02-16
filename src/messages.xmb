@@ -33,12 +33,12 @@
   <msg id="6796896943289143795" desc="BookFormComponent:book url placeholder">http://bild_Url</msg>
   <msg id="6170861708397308099" desc="BookFormComponent:book thumbnail placeholder">Bild Titel</msg>
   <msg id="2854123663314832793" desc="BookFormComponent:book form save">Speichern</msg>
-  <msg id="4466084990257536322" desc="Text of the link to the home screen" meaning="AppComponent:home">Home</msg>
-  <msg id="545920752029439184" desc="Text of the link to the books screen" meaning="AppComponent:book">Bücher</msg>
-  <msg id="8486878414732266730" desc="Text of the link to the admin screen" meaning="AppComponent:admin">Administration</msg>
-  <msg id="3954427690032516399" meaning="HomeComponent:header">Home</msg>
-  <msg id="4494257079998639060" desc="a proud sentence about the project" meaning="HomeComponent:tagline">Das ist der BookMonkey.</msg>
-  <msg id="3188981661383518427" desc="Text of the link to the books screen" meaning="HomeComponent:book list link">Buchliste ansehen</msg>
+  <msg id="4445166340237379231" desc="AppComponent:home" meaning="Text of the link to the home screen">Home</msg>
+  <msg id="8403806838373308861" desc="AppComponent:book" meaning="Text of the link to the books screen">Bücher</msg>
+  <msg id="7150595775291015342" desc="AppComponent:admin" meaning="Text of the link to the admin screen">Administration</msg>
+  <msg id="2821179408673282599" desc="HomeComponent:header">Home</msg>
+  <msg id="1872942941731983745" desc="HomeComponent:tagline" meaning="a proud sentence about the project">Das ist der BookMonkey.</msg>
+  <msg id="4106068155821045863" desc="HomeComponent:book list link" meaning="Text of the link to the books screen">Buchliste ansehen</msg>
   <msg id="699612688975760468" desc="SearchComponent:header">Suche...</msg>
   <msg id="8860567190320038063" desc="BookDetailsComponent:book isbn">ISBN</msg>
   <msg id="3102844068435797662" desc="BookDetailsComponent:book published date">Erschienen</msg>

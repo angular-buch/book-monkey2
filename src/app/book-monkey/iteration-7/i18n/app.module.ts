@@ -22,8 +22,7 @@ import { BookResolver } from './shared/book-resolver.service';
   ],
   providers: [
     BookStoreService,
-    BookResolver,
-    { provide: LOCALE_ID, useValue: 'de' }
+    BookResolver
   ],
   bootstrap: [AppComponent]
 })
