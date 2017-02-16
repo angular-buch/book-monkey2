@@ -1,0 +1,26 @@
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { enableProdMode } from '@angular/core';
+import { environment } from './environments/environment';
+import { AppModule } from './app/app.module';
+import { LOCALE_ID, NgModule, TRANSLATIONS, TRANSLATIONS_FORMAT } from '@angular/core';
+
+if (environment.production) {
+  enableProdMode();
+}
+
+const loadFile = function (filePath, done) {
+  const xhr = new XMLHttpRequest();
+  xhr.onload = () => done(xhr.responseText);
+  xhr.open('GET', filePath, true);
+  xhr.send();
+};
+
+loadFile('/assets/messages.en.xtb', (translations) => {
+
+  platformBrowserDynamic().bootstrapModule(AppModule, [
+    { provide: TRANSLATIONS, useValue: translations },
+    { provide: TRANSLATIONS_FORMAT, useValue: 'xtb' },
+    { provide: LOCALE_ID, useValue: 'de' }]
+  );
+});
+
