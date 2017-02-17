@@ -47,7 +47,7 @@ env:
     - NAME="iteration-7-i18n"                  BLUEPRINT="src/app/book-monkey/iteration-7/i18n"
 
 install:
-  - npm i --silent --no-optional -g @angular/cli@1.0.0-beta.31
+  - npm i --silent --no-optional -g @angular/cli@1.0.0-beta.32.3
   - npm i --silent --no-optional -g angular-cli-ghpages
 
 script:
@@ -77,7 +77,7 @@ script:
       mkdir TMP;
       cd TMP || exit;
 
-      ng new BookMonkey --routing --prefix=bm --skip-npm;
+      ng new BookMonkey --routing --prefix=bm --skip-install;
       cd "$NEW_BOOKMONKEY" || exit;
       mkdir -p src/{domain};
 
@@ -90,7 +90,7 @@ script:
 
       cd "$TRAVIS_BUILD_DIR" || exit;
 
-      cp -f angular-cli.json                     "$NEW_BOOKMONKEY/";
+      cp -f .angular-cli.json                    "$NEW_BOOKMONKEY/";
       cp -rf e2e/.                               "$NEW_BOOKMONKEY/e2e/";
       cp -f src/messages.*                       "$NEW_BOOKMONKEY/src/";
       cp -f src/tsconfig.json                    "$NEW_BOOKMONKEY/src/";
