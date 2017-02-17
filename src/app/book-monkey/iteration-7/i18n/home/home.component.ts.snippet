@@ -1,0 +1,29 @@
+// ...
+
+@Component({
+  // ..
+  template: `
+  <div class="ui container two column grid">
+
+    <div class="ui container column">
+      <h1 <TEX>\bfseries i18n="HomeComponent:header"</TEX>>Home</h1>
+      <p <TEX>\bfseries i18n="a proud sentence about the project|HomeComponent:tagline"</TEX>>
+        Das ist der BookMonkey.
+      </p>
+      <a routerLink="../books" class="ui red button">
+
+<TEX>\boldline</TEX>        <!--i18n: Text of the link to the books screen|HomeComponent:book list link -->
+        Buchliste ansehen
+<TEX>\boldline</TEX>        <!--/i18n-->
+
+        <i class="right arrow icon"></i>
+      </a>
+    </div>
+
+    <bm-search (bookSelected)="bookSelected($event)" class="column"></bm-search>
+  </div>
+  `
+})
+export class HomeComponent {
+  // ..
+}
