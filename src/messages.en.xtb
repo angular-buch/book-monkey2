@@ -27,18 +27,18 @@
   <translation id="6796896943289143795" desc="BookFormComponent:book url placeholder">http://example_Url</translation>
   <translation id="6170861708397308099" desc="BookFormComponent:book thumbnail placeholder">Book Title</translation>
   <translation id="2854123663314832793" desc="BookFormComponent:book form save">Save</translation>
-  <translation id="4466084990257536322" desc="Text of the link to the home screen" meaning="AppComponent:home">Home</translation>
-  <translation id="545920752029439184" desc="Text of the link to the books screen" meaning="AppComponent:book">Books</translation>
-  <translation id="8486878414732266730" desc="Text of the link to the admin screen" meaning="AppComponent:admin">Administration</translation>
-  <translation id="3954427690032516399" meaning="HomeComponent:header">Home</translation>
-  <translation id="4494257079998639060" desc="a proud sentence about the project" meaning="HomeComponent:tagline">This is the BookMonkey.</translation>
   <translation id="8860567190320038063" desc="BookDetailsComponent:book isbn">ISBN</translation>
   <translation id="3102844068435797662" desc="BookDetailsComponent:book published date">Published</translation>
   <translation id="3706222784708785028" desc="BookDetailsComponent:book rating">Rating</translation>
   <translation id="7950677030813533844" desc="BookListComponent:no book">No books were found in database.</translation>
   <translation id="3642014628050914705" desc="BookListComponent:loading data">Loading data...</translation>
-  <translation id="3188981661383518427" desc="Text of the link to the books screen" meaning="HomeComponent:book list link">See book list</translation>
   <translation id="5061803217164487407" desc="BookDetailsComponent:book delete">Delete Book</translation>
   <translation id="6122154040870620371" desc="BookDetailsComponent:book edit">Edit Book</translation>
   <translation id="699612688975760468" desc="SearchComponent:header">Search...</translation>
+  <translation id="4445166340237379231" desc="AppComponent:home" meaning="Text of the link to the home screen">Home</translation>
+  <translation id="8403806838373308861" desc="AppComponent:book" meaning="Text of the link to the books screen">Books</translation>
+  <translation id="7150595775291015342" desc="AppComponent:admin" meaning="Text of the link to the admin screen">Administration</translation>
+  <translation id="2821179408673282599" desc="HomeComponent:header">Home</translation>
+  <translation id="1872942941731983745" desc="HomeComponent:tagline" meaning="a proud sentence about the project">This is the BookMonkey.</translation>
+  <translation id="4106068155821045863" desc="HomeComponent:book list link" meaning="Text of the link to the books screen">See book list</translation>
 </translationbundle>
