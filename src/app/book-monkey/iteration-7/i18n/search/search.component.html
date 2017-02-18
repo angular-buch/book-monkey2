@@ -1,6 +1,6 @@
 <div class="ui search"  [ngClass]="{ loading: isLoading }">
   <div class="ui icon input">
-    <input (keyup)="keyup.emit(searchTerm.value)" #searchTerm class="prompt" type="text" placeholder="Suche..."  i18n-placeholder="SearchComponent:header">
+    <input (keyup)="keyup.emit(searchTerm.value)" #searchTerm class="prompt" type="text" placeholder="Suche..."  i18n-placeholder="@@SearchComponent:header">
     <i class="search icon"></i>
   </div>
   <div class="results transition" [ngClass]="{ visible: foundBooks.length }">
