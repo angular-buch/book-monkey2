@@ -10,8 +10,8 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "diff": "./step-diff.sh",
-    "start-en": "ng serve --aot --locale en --i18n-file src/messages.en.xtb --i18n-format xtb",
-    "build-en": "ng build --aot --locale en --i18n-file src/messages.en.xtb --i18n-format xtb",
+    "start-en": "ng serve --aot --locale=en --i18n-file=src/messages.en.xtb --i18n-format=xtb",
+    "build-en": "ng build --aot --locale=en --i18n-file=src/messages.en.xtb --i18n-format=xtb",
     "extract-i18n": "ng xi18n --i18nFormat=xmb"
   },
   "private": true,
