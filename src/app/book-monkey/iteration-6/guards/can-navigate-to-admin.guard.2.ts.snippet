@@ -4,7 +4,7 @@ import { CanActivate } from '@angular/router';
 @Injectable()
 export class CanNavigateToAdminGuard <TEX>\bfseries implements CanActivate</TEX> {
 
-  <TEX>\bfseries canActivate()</TEX> {
+  <TEX>\bfseries canActivate(): boolean</TEX> {
     return window.confirm('Mit großer Macht kommt große Verantwortung. Möchten Sie den Admin-Bereich betreten?');
   }
 }
