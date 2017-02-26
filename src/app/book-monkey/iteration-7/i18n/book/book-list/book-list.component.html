@@ -6,8 +6,8 @@
      [routerLink]="b.isbn"></a>
   <p *ngIf="!books.length" i18n="@@BookListComponent:no book">Es wurden noch keine Bücher eingetragen.</p>
 </div>
-<template #loading>
+<ng-template #loading>
   <div class="ui active dimmer">
     <div class="ui large text loader" i18n="@@BookListComponent:loading data">Daten werden geladen...</div>
   </div>
-</template>
+</ng-template>
