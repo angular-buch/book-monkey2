@@ -1,6 +1,12 @@
-import { Component, OnInit, HostListener } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/observable/fromEvent';
 import 'rxjs/add/operator/filter';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/debounceTime';
+import 'rxjs/add/operator/startWith';
+
 
 @Component({
   selector: 'bm-root',
@@ -34,16 +40,16 @@ export class AppComponent implements OnInit {
 
         this.repositoryUrl = 'https://github.com/book-monkey2-build/' + this.repoName;
       });
-    this.onResize();
+
+    Observable.fromEvent(window, 'resize')
+      .debounceTime(300)
+      .map(e => (e as any).target.innerWidth)
+      .startWith(window.innerWidth)
+      .subscribe(iw => this.mobileLayout = iw < 767);
   }
 
   toggleSidebar() {
     this.showSidebar = !this.showSidebar;
-  }
-
-  @HostListener('window:resize', ['$event'])
-  onResize() {
-    this.mobileLayout = window.innerWidth < 767;
   }
 }
 
