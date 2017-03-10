@@ -41,10 +41,11 @@ export class AppComponent implements OnInit {
         this.repositoryUrl = 'https://github.com/book-monkey2-build/' + this.repoName;
       });
 
-    Observable.fromEvent(window, 'resize')
-      .debounceTime(300)
-      .map(e => (e as any).target.innerWidth)
-      .startWith(window.innerWidth)
+    const windowRef = Function('return this')();
+    Observable.fromEvent(windowRef, 'resize')
+      .debounceTime(100)
+      .map((e: any) => e.target.innerWidth)
+      .startWith(windowRef.innerWidth)
       .subscribe(iw => this.mobileLayout = iw < 767);
   }
 
