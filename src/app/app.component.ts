@@ -7,6 +7,7 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/debounceTime';
 import 'rxjs/add/operator/startWith';
 
+declare var window: any;
 
 @Component({
   selector: 'bm-root',
@@ -41,11 +42,10 @@ export class AppComponent implements OnInit {
         this.repositoryUrl = 'https://github.com/book-monkey2-build/' + this.repoName;
       });
 
-    const windowRef = Function('return this')();
-    Observable.fromEvent(windowRef, 'resize')
+    Observable.fromEvent(window, 'resize')
       .debounceTime(100)
       .map((e: any) => e.target.innerWidth)
-      .startWith(windowRef.innerWidth)
+      .startWith(window.innerWidth)
       .subscribe(iw => this.mobileLayout = iw < 767);
   }
 
