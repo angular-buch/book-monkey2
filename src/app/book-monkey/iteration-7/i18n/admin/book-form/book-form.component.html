@@ -33,7 +33,7 @@
   <div class="field">
     <label i18n="@@BookFormComponent:book published date">Autoren</label>
     <div class="fields" formArrayName="authors">
-      <div class="fifteen wide field" *ngFor="let control of authors.controls; let i = index">
+      <div class="fifteen wide field" *ngFor="let control of authors.controls; index as i">
         <input [formControlName]="i" placeholder="Autor" i18n-placeholder="@@BookFormComponent:author placeholder">
       </div>
       <div class="one wide field">
@@ -52,7 +52,7 @@
     <label i18n="@@BookFormComponent:book thumbnails">Bilder</label>
     <div formArrayName="thumbnails">
       <div class="fields"
-          *ngFor="let control of thumbnails.controls; let i = index; let l = last"
+          *ngFor="let control of thumbnails.controls; index as i; last as l"
           [formGroupName]="i">
         <div class="nine wide field">
           <input formControlName="url" placeholder="http://bild_Url" i18n-placeholder="@@BookFormComponent:book url placeholder">
