@@ -9,7 +9,7 @@
     <div class="ui grid">
       <div class="four wide column">
         <h4 class="ui header" i18n="@@BookDetailsComponent:book authors">Autoren</h4>
-        <span *ngFor="let author of book.authors; let l=last">
+        <span *ngFor="let author of book.authors; last as l">
           {{ author }}<span *ngIf="!l">, </span>
         </span>
       </div>
@@ -23,7 +23,7 @@
       </div>
       <div class="four wide column">
         <h4 class="ui header" i18n="@@BookDetailsComponent:book rating">Rating</h4>
-        <span *ngFor="let r of getRating(book.rating); let i = index">
+        <span *ngFor="let r of getRating(book.rating); index as i">
           <i class="yellow star icon" *bmDelay="500 + i * 200"></i>
         </span>
       </div>

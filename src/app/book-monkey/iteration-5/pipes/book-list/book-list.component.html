@@ -1,5 +1,5 @@
 <div class="ui middle aligned selection divided list"
-     *ngIf="books$ | async; else loading; let books">
+     *ngIf="books$ | async as books; else loading">
   <a class="bm-book-list-item item"
      *ngFor="let b of books"
      [book]="b"
