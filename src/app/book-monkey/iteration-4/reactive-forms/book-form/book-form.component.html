@@ -33,7 +33,7 @@
   <div class="field">
 <TEX>\boldline</TEX>    <label>Autoren</label>
 <TEX>\boldline</TEX>    <div class="fields" formArrayName="authors">
-<TEX>\boldline</TEX>      <div class="fifteen wide field" *ngFor="let control of authors.controls; let i = index">
+<TEX>\boldline</TEX>      <div class="fifteen wide field" *ngFor="let control of authors.controls; index as i">
 <TEX>\boldline</TEX>        <input [formControlName]="i" placeholder="Autor {{i+1}}">
 <TEX>\boldline</TEX>      </div>
 <TEX>\boldline</TEX>      <div class="one wide field">
@@ -52,7 +52,7 @@
 <TEX>\boldline</TEX>    <label>Bilder</label>
 <TEX>\boldline</TEX>    <div formArrayName="thumbnails">
 <TEX>\boldline</TEX>      <div class="fields"
-<TEX>\boldline</TEX>          *ngFor="let control of thumbnails.controls; let i = index; let l = last"
+<TEX>\boldline</TEX>          *ngFor="let control of thumbnails.controls; index as i; last as l"
 <TEX>\boldline</TEX>          [formGroupName]="i">
 <TEX>\boldline</TEX>        <div class="nine wide field">
 <TEX>\boldline</TEX>          <input formControlName="url" placeholder="http://bild{{i+1}}_Url">
