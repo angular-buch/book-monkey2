@@ -16,27 +16,27 @@
   },
   "private": true,
   "dependencies": {
-    "@angular/common": "4.0.0-rc.6",
-    "@angular/compiler": "4.0.0-rc.6",
-    "@angular/core": "4.0.0-rc.6",
-    "@angular/forms": "4.0.0-rc.6",
-    "@angular/http": "4.0.0-rc.6",
-    "@angular/platform-browser": "4.0.0-rc.6",
-    "@angular/platform-browser-dynamic": "4.0.0-rc.6",
-    "@angular/router": "4.0.0-rc.6",
+    "@angular/common": "^4.0.0",
+    "@angular/compiler": "^4.0.0",
+    "@angular/core": "^4.0.0",
+    "@angular/forms": "^4.0.0",
+    "@angular/http": "^4.0.0",
+    "@angular/platform-browser": "^4.0.0",
+    "@angular/platform-browser-dynamic": "^4.0.0",
+    "@angular/router": "^4.0.0",
     "core-js": "^2.4.1",
     "rxjs": "^5.1.0",
-    "zone.js": "^0.7.6",
+    "zone.js": "^0.8.4",
     "angular-date-value-accessor": "0.0.2",
-    "semantic-ui-css": "2.2.4"
+    "semantic-ui-css": "2.2.9"
   },
   "devDependencies": {
-    "@angular/cli": "1.0.0-rc.4",
-    "@angular/compiler-cli": "4.0.0-rc.6",
+    "@angular/cli": "1.0.0",
+    "@angular/compiler-cli": "^4.0.0",
     "@types/jasmine": "2.5.38",
     "@types/node": "~6.0.60",
     "codelyzer": "~2.0.0",
-    "diff2html-cli": "^2.0.3",
+    "diff2html-cli": "^2.5.0",
     "jasmine-core": "~2.5.2",
     "jasmine-spec-reporter": "~3.2.0",
     "karma": "~1.4.1",
@@ -47,7 +47,7 @@
     "karma-coverage-istanbul-reporter": "^0.2.0",
     "protractor": "~5.1.0",
     "ts-node": "~2.0.0",
-    "tslint": "~4.4.2",
-    "typescript": "~2.1.0"
+    "tslint": "~4.5.0",
+    "typescript": "~2.2.0"
   }
 }
