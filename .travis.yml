@@ -47,7 +47,7 @@ env:
     - NAME="iteration-7-i18n"                  BLUEPRINT="src/app/book-monkey/iteration-7/i18n"
 
 install:
-  - npm i --silent --no-optional -g @angular/cli@1.0.0-rc.0
+  - npm i --silent --no-optional -g @angular/cli@1.0.0
   - npm i --silent --no-optional -g angular-cli-ghpages
 
 script:
