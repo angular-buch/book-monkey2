@@ -6,7 +6,7 @@
   <label
     <TEX>\bfseries i18n="@@BookFormComponent:book published date"</TEX>>Autoren</label>
   <div class="fields" formArrayName="authors">
-    <div class="fifteen wide field" *ngFor="let control of authors.controls; let i = index">
+    <div class="fifteen wide field" *ngFor="let control of authors.controls; index as i">
       <input [formControlName]="i" placeholder="Autor"
         <TEX>\bfseries i18n-placeholder="@@BookFormComponent:author placeholder"</TEX>>
     </div>
