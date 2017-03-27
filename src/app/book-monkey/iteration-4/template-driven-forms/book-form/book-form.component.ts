@@ -13,7 +13,7 @@ import { BookFormErrorMessages } from './book-form-error-messages';
 export class BookFormComponent implements OnInit {
   @ViewChild('myForm') myForm: NgForm;
   book = BookFactory.empty();
-  errors = {};
+  errors: { [key: string]: string } = {};
 
   constructor(private bs: BookStoreService) { }
 
