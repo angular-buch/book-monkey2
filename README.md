@@ -3,7 +3,7 @@
 
 [![Monkey](src/assets/images/monkey-thinking.png)](http://book-monkey2.angular-buch.com/)
 
-Der __"BookMonkey"__ ist das Demo-Projekt zum Buch ["Angular: Einstieg in die komponentenbasierte Entwicklung von Web- und Mobile-Anwendungen"](https://angular-buch.com/).
+Der __"BookMonkey"__ ist das Demo-Projekt zum Buch ["Angular: Grundlagen, fortgeschrittene Techniken und Best Practices mit TypeScript - ab Angular 4, inklusive NativeScript und Redux"](https://angular-buch.com/).
 Mithilfe dieses Buchs werden Sie Googles neuestes Framework kennenlernen.
 Wir laden Sie dazu ein, mit den aktuellsten Technologien moderne Single-Page-Anwendungen zu erstellen.
 
