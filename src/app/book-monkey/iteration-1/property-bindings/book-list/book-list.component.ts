@@ -16,7 +16,7 @@ export class BookListComponent implements OnInit {
         'Angular',
         ['Johannes Hoppe', 'Danny Koppenhagen', 'Ferdinand Malcher', 'Gregor Woiwode'],
         new Date(2017, 3, 1),
-        'Einstieg in die komponentenbasierte Entwicklung von Web- und Mobile-Anwendungen',
+        'Grundlagen, fortgeschrittene Techniken und Best Practices mit TypeScript - ab Angular 4, inklusive NativeScript und Redux',
         5,
         [new Thumbnail('https://ng-buch.de/cover2.jpg', 'Buchcover')],
         'Mit Angular setzen Sie auf ein modernes und modulares...'
