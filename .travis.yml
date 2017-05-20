@@ -93,6 +93,7 @@ script:
       cp -f .angular-cli.json                    "$NEW_BOOKMONKEY/";
       cp -rf e2e/.                               "$NEW_BOOKMONKEY/e2e/";
       cp -f src/messages.*                       "$NEW_BOOKMONKEY/src/";
+      cp -f src/polyfills.ts                     "$NEW_BOOKMONKEY/src/";
       cp -f src/tsconfig.json                    "$NEW_BOOKMONKEY/src/";
       cp -rf "$TRAVIS_BUILD_DIR/$BLUEPRINT/."    "$NEW_BOOKMONKEY/src/app/";
 
