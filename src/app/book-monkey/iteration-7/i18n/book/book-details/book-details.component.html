@@ -44,13 +44,13 @@
         (click)="removeBook()">
   <i class="remove icon"></i>
 
-  <!--i18n: @@BookDetailsComponent:book delete -->Buch löschen<!--/i18n-->
+  <ng-container i18n="@@BookDetailsComponent:book delete">Buch löschen</ng-container>
 
 </button>
 <a class="ui tiny yellow labeled icon button"
    [routerLink]="['../../admin', book.isbn]">
   <i class="write icon"></i>
 
-  <!--i18n: @@BookDetailsComponent:book edit -->Buch bearbeiten<!--/i18n-->
+  <ng-container i18n="@@BookDetailsComponent:book edit">Buch bearbeiten</ng-container>
 
 </a>
