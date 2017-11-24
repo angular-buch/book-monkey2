@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule, LOCALE_ID } from '@angular/core';
 
 import { AppComponent } from './app.component';
@@ -18,7 +18,7 @@ import { AdminModule } from './admin/admin.module';
   ],
   imports: [
     CommonModule,
-    HttpModule,
+    HttpClientModule,
     AppRoutingModule,
     BookModule,
     AdminModule
