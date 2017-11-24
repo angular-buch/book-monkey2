@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http'; // NEW
+import { HttpClientModule } from '@angular/common/http'; // NEW
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
@@ -23,7 +23,7 @@ import { AppRoutingModule } from './app-routing.module.one-app';
   imports: [
     CommonModule,
     FormsModule,
-    HttpModule, // NEW
+    HttpClientModule, // NEW
     AppRoutingModule
   ],
   providers: [

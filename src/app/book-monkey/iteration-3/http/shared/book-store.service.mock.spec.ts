@@ -1,5 +1,5 @@
 import { TestBed, inject } from '@angular/core/testing';
-import { Http } from '@angular/http';
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/of';
 

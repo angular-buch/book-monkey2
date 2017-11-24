@@ -2,15 +2,14 @@
 export class BookStoreService {
   // ...
 
-  constructor(private http: Http) {
+  constructor(private http: HttpClient) {
     // ...
   }
 
   getAll(): Observable<Array<Book>> {
     return this.http
-      .get(`${this.api}/books`)
+      .get<any[]>(`${this.api}/books`)
       .retry(3)
-      .map(response => response.json())
       .map(rawBooks => rawBooks
         .map(rawBook => BookFactory.fromObject(rawBook))
       )

@@ -1,13 +1,13 @@
 import { TestBed, inject } from '@angular/core/testing';
 import {
   BaseRequestOptions,
-  HttpModule,
+  HttpClientModule,
   Http,
   RequestMethod,
   Response,
   ResponseOptions
-} from '@angular/http';
-import { MockBackend, MockConnection } from '@angular/http/testing';
+} from '@angular/common/http';
+import { MockBackend, MockConnection } from '@angular/common/http/testing';
 
 import { Book } from '../shared/book';
 import { BookStoreService } from './book-store.service';
@@ -22,7 +22,7 @@ describe('BookStoreService', () => {
   beforeEach(() => {
 
     TestBed.configureTestingModule({
-      imports: [HttpModule],
+      imports: [HttpClientModule],
       providers: [
         {
           provide: Http,
