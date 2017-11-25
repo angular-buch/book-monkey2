@@ -6,6 +6,7 @@ import 'rxjs/add/operator/filter';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/debounceTime';
 import 'rxjs/add/operator/startWith';
+import { debounceTime, map, startWith } from 'rxjs/operators';
 
 declare var window: any;
 
@@ -42,11 +43,12 @@ export class AppComponent implements OnInit {
         this.repositoryUrl = 'https://github.com/book-monkey2-build/' + this.repoName;
       });
 
-    Observable.fromEvent(window, 'resize')
-      .debounceTime(100)
-      .map((e: any) => e.target.innerWidth)
-      .startWith(window.innerWidth)
-      .subscribe(iw => this.mobileLayout = iw < 767);
+    Observable.fromEvent(window, 'resize').pipe(
+      debounceTime(100),
+      map((e: any) => e.target.innerWidth),
+      startWith(window.innerWidth)
+    )
+    .subscribe(iw => this.mobileLayout = iw < 767);
   }
 
   toggleSidebar() {

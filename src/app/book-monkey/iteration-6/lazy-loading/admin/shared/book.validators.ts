@@ -1,5 +1,6 @@
 import { FormControl, FormArray } from '@angular/forms';
 import { Observable } from 'rxjs/Observable';
+import { map } from 'rxjs/operators';
 
 import { BookStoreService } from '../../shared/book-store.service';
 
@@ -26,10 +27,11 @@ export class BookValidators {
 
   static isbnExists(bs: BookStoreService) {
     return function(control: FormControl): Observable<{ [error: string]: any }> {
-      return bs.check(control.value)
-        .map(exists => (exists === false) ? null : {
+      return bs.check(control.value).pipe(
+        map(exists => (exists === false) ? null : {
             isbnExists: { valid: false }
-        });
+        })
+      );
     };
   }
 }
