@@ -1,12 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/observable/fromEvent';
-import 'rxjs/add/operator/filter';
-import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/debounceTime';
-import 'rxjs/add/operator/startWith';
 import { debounceTime, map, startWith } from 'rxjs/operators';
+import 'rxjs/add/observable/fromEvent';
 
 declare var window: any;
 
