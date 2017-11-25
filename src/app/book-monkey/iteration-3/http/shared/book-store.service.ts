@@ -5,6 +5,7 @@ import { retry, map, catchError } from 'rxjs/operators';
 import 'rxjs/add/observable/throw';
 
 import { Book } from './book';
+import { BookRaw } from './book-raw';
 import { BookFactory } from './book-factory';
 
 @Injectable()
@@ -15,7 +16,7 @@ export class BookStoreService {
 
   getAll(): Observable<Array<Book>> {
     return this.http
-      .get<any[]>(`${this.api}/books`)
+      .get<BookRaw[]>(`${this.api}/books`)
       .pipe(
         retry(3),
         map(rawBooks => rawBooks
@@ -27,7 +28,7 @@ export class BookStoreService {
 
   getSingle(isbn: string): Observable<Book> {
     return this.http
-      .get(`${this.api}/book/${isbn}`)
+      .get<BookRaw>(`${this.api}/book/${isbn}`)
       .pipe(
         retry(3),
         map(rawBook => BookFactory.fromObject(rawBook)),
