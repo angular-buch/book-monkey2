@@ -2,18 +2,21 @@
 # [1] the "one-app" of the Book Monkey2 - all components are tied togehter in one big app with explanations
 # [2] single apps for each iteration/increment
 
+# TODO: remove TODO line below, remove --dry-run
+
 language: node_js
 
 node_js:
-  - 6.9.1
+  - 9.2.0
 
 cache:
   directories:
-  - node_modules
+  # TODO -- DISABLED because of node.js version change
+  #- node_modules
 
 env:
   global:
-    # node-gyp: Node.js v4 (or io.js v3) compiler requirements
+    # node-gyp: to compile native modules
     # https://docs.travis-ci.com/user/languages/javascript-with-nodejs#Node.js-v4-(or-io.js-v3)-compiler-requirements
     - CXX=g++-4.8
     - GITHUB_ORG="https://GH_TOKEN@github.com/book-monkey2-build"
@@ -47,8 +50,8 @@ env:
     - NAME="iteration-7-i18n"                  BLUEPRINT="src/app/book-monkey/iteration-7/i18n"
 
 install:
-  - npm i --silent --no-optional -g @angular/cli@1.0.0
-  - npm i --silent --no-optional -g angular-cli-ghpages
+  - npm i --silent --no-optional -g @angular/cli@1.5.4
+  - npm i --silent --no-optional -g angular-cli-ghpages@0.5.2
 
 script:
   - echo "*** BUILDING $NAME ***"
@@ -61,9 +64,8 @@ script:
       ng build --prod --aot --no-vendor-chunk --progress=false --locale en --i18n-file src/messages.en.xtb --i18n-format xtb;
 
       echo "book-monkey2.angular-buch.com" > dist/CNAME;
-      cp dist/index.html dist/404.html;
 
-      ngh --repo="$GITHUB_ORG/$NAME.git" --name="$GITHUB_NAME" --email="$GITHUB_EMAIL";
+      ngh --dry-run --repo="$GITHUB_ORG/$NAME.git" --name="$GITHUB_NAME" --email="$GITHUB_EMAIL";
     fi
 
   # [2] single apps (mini monkeys)
@@ -79,12 +81,12 @@ script:
 
       ng new BookMonkey --routing --prefix=bm --skip-install;
       cd "$NEW_BOOKMONKEY" || exit;
-      mkdir -p src/{domain};
 
       rm -rf .git;
       rm -rf src/app/*;
 
-      cp -f "$TRAVIS_BUILD_DIR/package.mm.json" package.json;
+      cp -f "$TRAVIS_BUILD_DIR/package.json" package.json;
+      cp -f "$TRAVIS_BUILD_DIR/package-lock.json" package-lock.json;
       npm i --silent --no-optional;
 
 
@@ -133,7 +135,7 @@ script:
       echo "*** DIRECTORY LISTING OF $NEW_BOOKMONKEY ***";
       ls -a "$NEW_BOOKMONKEY";
 
-      ngh --repo="$GITHUB_ORG/$NAME.git" --name="$GITHUB_NAME" --email="$GITHUB_EMAIL" --dir=../TMP/BookMonkey --branch=master;
+      ngh --dry-run --repo="$GITHUB_ORG/$NAME.git" --name="$GITHUB_NAME" --email="$GITHUB_EMAIL" --dir=../TMP/BookMonkey --branch=master;
     fi
 
   # [2] single apps:
@@ -147,9 +149,8 @@ script:
       ng build --prod --aot --no-vendor-chunk --progress=false --locale en --i18n-file src/messages.en.xtb --i18n-format xtb;
 
       echo "$NAME.angular-buch.com" > dist/CNAME;
-      cp dist/index.html dist/404.html;
 
-      ngh --repo="$GITHUB_ORG/$NAME.git" --name="$GITHUB_NAME" --email="$GITHUB_EMAIL";
+      ngh --dry-run --repo="$GITHUB_ORG/$NAME.git" --name="$GITHUB_NAME" --email="$GITHUB_EMAIL";
     fi
 
 # ---- boilerplate ----
@@ -169,3 +170,4 @@ matrix:
 branches:
   only:
     - master
+    - ng5-update
