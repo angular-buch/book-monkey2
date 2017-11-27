@@ -1,8 +1,5 @@
 import { Component, EventEmitter, Output, OnInit } from '@angular/core';
-import 'rxjs/add/operator/debounceTime';
-import 'rxjs/add/operator/distinctUntilChanged';
-import 'rxjs/add/operator/do';
-import 'rxjs/add/operator/switchMap';
+import { debounceTime, distinctUntilChanged, tap, switchMap } from 'rxjs/operators';
 
 import { Book } from '../shared/book';
 import { BookStoreService } from '../shared/book-store.service';
@@ -23,12 +20,13 @@ export class SearchComponent implements OnInit {
 
   ngOnInit() {
 
-    this.keyup
-      .debounceTime(500)
-      .distinctUntilChanged()
-      .do(() => this.isLoading = true)
-      .switchMap(searchTerm => this.bs.getAllSearch(searchTerm))
-      .do(() => this.isLoading = false)
-      .subscribe(books => this.foundBooks = books);
+    this.keyup.pipe(
+      debounceTime(500),
+      distinctUntilChanged(),
+      tap(() => this.isLoading = true),
+      switchMap(searchTerm => this.bs.getAllSearch(searchTerm)),
+      tap(() => this.isLoading = false)
+    )
+    .subscribe(books => this.foundBooks = books);
   }
 }
