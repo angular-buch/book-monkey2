@@ -5,17 +5,14 @@
 language: node_js
 
 node_js:
-  - 6.9.1
+  - 9.2.0
 
 cache:
   directories:
-  - node_modules
+    - node_modules
 
 env:
   global:
-    # node-gyp: Node.js v4 (or io.js v3) compiler requirements
-    # https://docs.travis-ci.com/user/languages/javascript-with-nodejs#Node.js-v4-(or-io.js-v3)-compiler-requirements
-    - CXX=g++-4.8
     - GITHUB_ORG="https://GH_TOKEN@github.com/book-monkey2-build"
     - GITHUB_NAME="The Buildbot"
     - GITHUB_EMAIL="buildbot@angular2buch.de"
@@ -47,8 +44,8 @@ env:
     - NAME="iteration-7-i18n"                  BLUEPRINT="src/app/book-monkey/iteration-7/i18n"
 
 install:
-  - npm i --silent --no-optional -g @angular/cli@1.0.0
-  - npm i --silent --no-optional -g angular-cli-ghpages
+  - npm i --silent --no-optional -g @angular/cli@1.5.4
+  - npm i --silent --no-optional -g angular-cli-ghpages@0.5.2
 
 script:
   - echo "*** BUILDING $NAME ***"
@@ -61,7 +58,6 @@ script:
       ng build --prod --aot --no-vendor-chunk --progress=false --locale en --i18n-file src/messages.en.xtb --i18n-format xtb;
 
       echo "book-monkey2.angular-buch.com" > dist/CNAME;
-      cp dist/index.html dist/404.html;
 
       ngh --repo="$GITHUB_ORG/$NAME.git" --name="$GITHUB_NAME" --email="$GITHUB_EMAIL";
     fi
@@ -79,12 +75,12 @@ script:
 
       ng new BookMonkey --routing --prefix=bm --skip-install;
       cd "$NEW_BOOKMONKEY" || exit;
-      mkdir -p src/{domain};
 
       rm -rf .git;
       rm -rf src/app/*;
 
-      cp -f "$TRAVIS_BUILD_DIR/package.mm.json" package.json;
+      cp -f "$TRAVIS_BUILD_DIR/package.json" package.json;
+      cp -f "$TRAVIS_BUILD_DIR/package-lock.json" package-lock.json;
       npm i --silent --no-optional;
 
 
@@ -147,19 +143,9 @@ script:
       ng build --prod --aot --no-vendor-chunk --progress=false --locale en --i18n-file src/messages.en.xtb --i18n-format xtb;
 
       echo "$NAME.angular-buch.com" > dist/CNAME;
-      cp dist/index.html dist/404.html;
 
       ngh --repo="$GITHUB_ORG/$NAME.git" --name="$GITHUB_NAME" --email="$GITHUB_EMAIL";
     fi
-
-# ---- boilerplate ----
-
-addons:
-  apt:
-    sources:
-      - ubuntu-toolchain-r-test
-    packages:
-      - g++-4.8
 
 # a build will finish as soon as a job has failed
 matrix:
