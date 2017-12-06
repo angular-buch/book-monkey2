@@ -1,4 +1,4 @@
-# Book-Monkey 2
+# BookMonkey 2
 [![Build Status](https://travis-ci.org/angular-buch/book-monkey2.svg)](https://travis-ci.org/angular-buch/book-monkey2)
 
 [![Monkey](src/assets/images/monkey-thinking.png)](http://book-monkey2.angular-buch.com/)
@@ -58,7 +58,7 @@ npm start
 ```
 
 
-
+<!--
 ## Anzeige der Änderungen zwischen den einzelnen Schritten
 
 ** Achtung: aktuell nur unter Linux/Unix-Systemen verfügbar **
@@ -72,7 +72,7 @@ npm run diff
 Der Befehl führt das Skript `step-diff.sh` aus und erstellt einen neuen Ordner `diffs`.
 Dort liegen (sortiert nach Schritten) HTML-Dateien, die jeweils die Änderungen zwischen den BookMonkey-Versionen auflisten.
 Weiterhin wird eine Index-Datei mit Verweisen auf die Diffs erzeugt und ein Webserver zur Auslieferung (`http-server`) gestartet, sofern dieser auf dem System installiert ist.
-
+-->
 
 # License
 Code released under the [MIT license](https://opensource.org/licenses/MIT).
