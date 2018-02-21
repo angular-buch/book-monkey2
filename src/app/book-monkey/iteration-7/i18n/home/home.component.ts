@@ -13,7 +13,7 @@ import { Book } from '../shared/book';
       <p i18n="a proud sentence about the project@@HomeComponent:tagline">Das ist der BookMonkey.</p>
       <a routerLink="../books" class="ui red button">
 
-        <!--i18n: Text of the link to the books screen@@HomeComponent:book list link -->Buchliste ansehen<!--/i18n-->
+        <ng-container i18n="Text of the link to the books screen@@HomeComponent:book list link">Buchliste ansehen</ng-container>
 
         <i class="right arrow icon"></i>
       </a>

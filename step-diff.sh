@@ -1,4 +1,5 @@
 #!/bin/bash
+# before usage, please run: `npm i diff2html-cli`
 
 BASEDIR="src/app/book-monkey"
 OUTDIR="diffs"

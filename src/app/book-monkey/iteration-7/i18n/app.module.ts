@@ -1,6 +1,8 @@
 import { CommonModule } from '@angular/common';
-import { HttpModule } from '@angular/http';
+import { registerLocaleData } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule, LOCALE_ID } from '@angular/core';
+import localeDe from '@angular/common/locales/de';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -17,7 +19,7 @@ import { BookResolver } from './shared/book-resolver.service';
   ],
   imports: [
     CommonModule,
-    HttpModule,
+    HttpClientModule,
     AppRoutingModule
   ],
   providers: [
@@ -26,4 +28,8 @@ import { BookResolver } from './shared/book-resolver.service';
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor() {
+    registerLocaleData(localeDe);
+  }
+}
