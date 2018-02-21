@@ -13,18 +13,18 @@ import { BookStoreService } from '../shared/book-store.service';
 import { Book } from '../shared/book';
 
 @Component({ template: '<router-outlet></router-outlet>' })
-class <TEX>\bfseries DummyOutletComponent</TEX> { }
+class /*TEX:\bfs*/DummyOutletComponent/*TEX:\bfe*/ { }
 
 @Component({
   selector: 'a.bm-book-list-item',
   template: 'Dummy'
 })
-class <TEX>\bfseries DummyBookListItemComponent</TEX> {
+class /*TEX:\bfs*/DummyBookListItemComponent/*TEX:\bfe*/ {
   @Input() book: Book;
 }
 
 @Component({ template: 'Dummy' })
-class <TEX>\bfseries DummyDetailsComponent</TEX> { }
+class /*TEX:\bfs*/DummyDetailsComponent/*TEX:\bfe*/ { }
 
 describe('BookListComponent', () => {
   let component: BookListComponent;
@@ -47,10 +47,10 @@ describe('BookListComponent', () => {
           provide: BookStoreService,
           useValue: { getAll: () => Observable.of(expectedBooks) }
         }],
-        imports: [
-<TEX>\boldline</TEX>          RouterTestingModule.withRoutes([
-<TEX>\boldline</TEX>            { path: ':isbn', component: DummyDetailsComponent }
-<TEX>\boldline</TEX>          ])
+        imports: [/*TEX:\bfs*/
+          RouterTestingModule.withRoutes([
+            { path: ':isbn', component: DummyDetailsComponent }
+          ])/*TEX:\bfe*/
         ]
       })
       .compileComponents();
@@ -71,11 +71,11 @@ describe('BookListComponent', () => {
   });
 
   it('should navigate to details page by ISBN', async(inject([Location], (location) => {
+/*TEX:\bfs*/
+    fixture.nativeElement.querySelector('a').click();/*TEX:\bfe*/
 
-<TEX>\boldline</TEX>    fixture.nativeElement.querySelector('a').click();
-
-    fixture.<TEX>\bfseries whenStable()</TEX>.then(() => {
-<TEX>\boldline</TEX>      expect(location.path()).toEqual('/111');
+    fixture./*TEX:\bfs*/whenStable()/*TEX:\bfe*/.then(() => {/*TEX:\bfs*/
+      expect(location.path()).toEqual('/111');/*TEX:\bfe*/
     });
   })));
 });

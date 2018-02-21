@@ -1,14 +1,14 @@
-<h1 <TEX>\bfseries i18n="@@BookFormComponent:book form"</TEX>>Buchformular</h1>
+<h1 /*TEX:\bfs*/i18n="@@BookFormComponent:book form"/*TEX:\bfe*/>Buchformular</h1>
 
 <!-- ... -->
 
 <div class="field">
   <label
-    <TEX>\bfseries i18n="@@BookFormComponent:book published date"</TEX>>Autoren</label>
+    /*TEX:\bfs*/i18n="@@BookFormComponent:book published date"/*TEX:\bfe*/>Autoren</label>
   <div class="fields" formArrayName="authors">
     <div class="fifteen wide field" *ngFor="let control of authors.controls; index as i">
       <input [formControlName]="i" placeholder="Autor"
-        <TEX>\bfseries i18n-placeholder="@@BookFormComponent:author placeholder"</TEX>>
+        /*TEX:\bfs*/i18n-placeholder="@@BookFormComponent:author placeholder"/*TEX:\bfe*/>
     </div>
 </div>
 

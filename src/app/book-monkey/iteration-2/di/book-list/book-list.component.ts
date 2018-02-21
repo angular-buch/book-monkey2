@@ -1,7 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 import { Book } from '../shared/book';
-import { <TEX>\bfseries BookStoreService</TEX> } from '../shared/book-store.service';
+import { /*TEX:\bfs*/BookStoreService/*TEX:\bfe*/ } from '../shared/book-store.service';
 
 @Component({
   selector: 'bm-book-list',
@@ -10,11 +10,11 @@ import { <TEX>\bfseries BookStoreService</TEX> } from '../shared/book-store.serv
 export class BookListComponent implements OnInit {
   books: Book[];
   @Output() showDetailsEvent = new EventEmitter<Book>();
+/*TEX:\bfs*/
+  constructor(private bs: BookStoreService) { }/*TEX:\bfe*/
 
-<TEX>\boldline</TEX>  constructor(private bs: BookStoreService) { }
-
-  ngOnInit() {
-<TEX>\boldline</TEX>    this.books = this.bs.getAll();
+  ngOnInit() {/*TEX:\bfs*/
+    this.books = this.bs.getAll();/*TEX:\bfe*/
   }
 
   showDetails(book: Book) {

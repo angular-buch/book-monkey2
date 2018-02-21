@@ -1,16 +1,16 @@
-import { Component, Input, <TEX>\bfseries Output, EventEmitter</TEX> } from '@angular/core';
+import { Component, Input, /*TEX:\bfs*/Output, EventEmitter/*TEX:\bfe*/ } from '@angular/core';
 import { Book } from '../shared/book';
 
 @Component({
   // ...
 })
 export class BookDetailsComponent {
-  @Input() book: Book;
-<TEX>\boldline</TEX>  @Output() showListEvent = new EventEmitter<any>();
+  @Input() book: Book;/*TEX:\bfs*/
+  @Output() showListEvent = new EventEmitter<any>();/*TEX:\bfe*/
 
   // ...
-
-<TEX>\boldline</TEX>  showBookList() {
-<TEX>\boldline</TEX>    this.showListEvent.emit();
-<TEX>\boldline</TEX>  }
+/*TEX:\bfs*/
+  showBookList() {
+    this.showListEvent.emit();
+  }/*TEX:\bfe*/
 }

@@ -1,70 +1,70 @@
 <h1>Buchformular</h1>
-<form class="ui large form"
-<TEX>\boldline</TEX>      [formGroup]="myForm"
+<form class="ui large form"<!--TEX:\bfs-->
+      [formGroup]="myForm"<!--TEX:\bfe-->
       (ngSubmit)="submitForm()">
 
   <div class="field">
-    <label>Buchtitel</label>
-<TEX>\boldline</TEX>    <input formControlName="title">
+    <label>Buchtitel</label><!--TEX:\bfs-->
+    <input formControlName="title"><!--TEX:\bfe-->
     <div *ngIf="errors.title" class="ui negative message">
       {{ errors.title }}
     </div>
   </div>
   <div class="field">
-    <label>Untertitel</label>
-<TEX>\boldline</TEX>    <input formControlName="subtitle">
+    <label>Untertitel</label><!--TEX:\bfs-->
+    <input formControlName="subtitle"><!--TEX:\bfe-->
   </div>
-  <div class="field" <TEX>\bfseries [class.disabled]="isUpdatingBook"</TEX>>
-    <label>ISBN-Nummer</label>
-<TEX>\boldline</TEX>    <input formControlName="isbn">
+  <div class="field" <!--TEX:\bfs-->[class.disabled]="isUpdatingBook"<!--TEX:\bfe-->>
+    <label>ISBN-Nummer</label><!--TEX:\bfs-->
+    <input formControlName="isbn"><!--TEX:\bfe-->
     <div *ngIf="errors.isbn" class="ui negative message">
       {{ errors.isbn }}
     </div>
   </div>
   <div class="field">
-    <label>Erscheinungsdatum</label>
-<TEX>\boldline</TEX>    <input type="date"
-<TEX>\boldline</TEX>           useValueAsDate
-<TEX>\boldline</TEX>           formControlName="published">
+    <label>Erscheinungsdatum</label><!--TEX:\bfs-->
+    <input type="date"
+           useValueAsDate
+           formControlName="published"><!--TEX:\bfe-->
     <div *ngIf="errors.published" class="ui negative message">
       {{ errors.published }}
     </div>
   </div>
-  <div class="field">
-<TEX>\boldline</TEX>    <label>Autoren</label>
-<TEX>\boldline</TEX>    <div class="fields" formArrayName="authors">
-<TEX>\boldline</TEX>      <div class="fifteen wide field" *ngFor="let control of authors.controls; index as i">
-<TEX>\boldline</TEX>        <input [formControlName]="i" placeholder="Autor {{i+1}}">
-<TEX>\boldline</TEX>      </div>
-<TEX>\boldline</TEX>      <div class="one wide field">
-<TEX>\boldline</TEX>        <button (click)="addAuthorControl()" class="ui large button" type="button"> + </button>
-<TEX>\boldline</TEX>      </div>
-<TEX>\boldline</TEX>    </div>
+  <div class="field"><!--TEX:\bfs-->
+    <label>Autoren</label>
+    <div class="fields" formArrayName="authors">
+      <div class="fifteen wide field" *ngFor="let control of authors.controls; index as i">
+        <input [formControlName]="i" placeholder="Autor {{i+1}}">
+      </div>
+      <div class="one wide field">
+        <button (click)="addAuthorControl()" class="ui large button" type="button"> + </button>
+      </div>
+    </div><!--TEX:\bfe-->
     <div *ngIf="errors.authors" class="ui negative message">
       {{ errors.authors }}
     </div>
   </div>
   <div class="field">
-    <label>Beschreibung</label>
-<TEX>\boldline</TEX>    <textarea formControlName="description" rows="3"></textarea>
+    <label>Beschreibung</label><!--TEX:\bfs-->
+    <textarea formControlName="description" rows="3"></textarea><!--TEX:\bfe-->
   </div>
-  <div class="field">
-<TEX>\boldline</TEX>    <label>Bilder</label>
-<TEX>\boldline</TEX>    <div formArrayName="thumbnails">
-<TEX>\boldline</TEX>      <div class="fields"
-<TEX>\boldline</TEX>          *ngFor="let control of thumbnails.controls; index as i; last as l"
-<TEX>\boldline</TEX>          [formGroupName]="i">
-<TEX>\boldline</TEX>        <div class="nine wide field">
-<TEX>\boldline</TEX>          <input formControlName="url" placeholder="http://bild{{i+1}}_Url">
-<TEX>\boldline</TEX>        </div>
-<TEX>\boldline</TEX>        <div class="six wide field">
-<TEX>\boldline</TEX>          <input formControlName="title" placeholder="Bild {{i+1}} Titel">
-<TEX>\boldline</TEX>        </div>
-<TEX>\boldline</TEX>        <div class="one wide field" *ngIf="l">
-<TEX>\boldline</TEX>          <button (click)="addThumbnailControl()" class="ui large button" type="button"> + </button>
-<TEX>\boldline</TEX>        </div>
-<TEX>\boldline</TEX>      </div>
-<TEX>\boldline</TEX>    </div>
+  <div class="field"><!--TEX:\bfs-->
+    <label>Bilder</label>
+    <div formArrayName="thumbnails">
+      <div class="fields"
+          *ngFor="let control of thumbnails.controls; index as i; last as l"
+          [formGroupName]="i">
+        <div class="nine wide field">
+          <input formControlName="url" placeholder="http://bild{{i+1}}_Url">
+        </div>
+        <div class="six wide field">
+          <input formControlName="title" placeholder="Bild {{i+1}} Titel">
+        </div>
+        <div class="one wide field" *ngIf="l">
+          <button (click)="addThumbnailControl()" class="ui large button" type="button"> + </button>
+        </div>
+      </div>
+    </div><!--TEX:\bfe-->
   </div>
 
   <button type="submit" class="ui button" [disabled]="myForm.invalid">Speichern</button>

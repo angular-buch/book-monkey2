@@ -5,12 +5,12 @@ describe('BookListComponent', () => {
 
   let component: BookListComponent;
 
-  beforeEach(() => {
-<TEX>\boldline</TEX>    component = new BookListComponent();
+  beforeEach(() => {/*TEX:\bfs*/
+    component = new BookListComponent();/*TEX:\bfe*/
   });
 
   it('should hold a hardcoded list of 2 books', () => {
-    component.<TEX>\bfseries ngOnInit()</TEX>; <TEX>\bfseries // manual call!</TEX>
+    component./*TEX:\bfs*/ngOnInit()/*TEX:\bfe*/; /*TEX:\bfs*/// manual call!/*TEX:\bfe*/
     expect(component.books.length).toBe(2);
   });
 
@@ -19,9 +19,9 @@ describe('BookListComponent', () => {
     const sendBook = new Book('x', 'x', null, new Date());
     let receivedBook: Book;
 
-    component.<TEX>\bfseries showDetailsEvent</TEX>
-<TEX>\boldline</TEX>      .subscribe((book) => receivedBook = book);
-    component.<TEX>\bfseries showDetails</TEX>(sendBook);
+    component./*TEX:\bfs*/showDetailsEvent
+      .subscribe((book) => receivedBook = book);/*TEX:\bfe*/
+    component./*TEX:\bfs*/showDetails/*TEX:\bfe*/(sendBook);
 
     expect(sendBook).toBe(receivedBook);
   });

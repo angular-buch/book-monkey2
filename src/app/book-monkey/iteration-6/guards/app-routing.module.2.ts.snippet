@@ -5,8 +5,8 @@ export const routes: Routes = [
   // ...
   {
     path: 'admin',
-    loadChildren: 'app/admin/admin.module#AdminModule',
-<TEX>\boldline</TEX>    canActivate: [CanNavigateToAdminGuard]
+    loadChildren: 'app/admin/admin.module#AdminModule',/*TEX:\bfs*/
+    canActivate: [CanNavigateToAdminGuard]/*TEX:\bfe*/
   }
 ];
 

@@ -24,15 +24,15 @@ describe('BookStoreService', () => {
     TestBed.configureTestingModule({
       imports: [HttpModule],
       providers: [
-        {
-<TEX>\boldline</TEX>          provide: Http,
-<TEX>\boldline</TEX>          useFactory: (mockBackend, options) => {
-<TEX>\boldline</TEX>            return new Http(mockBackend, options);
-<TEX>\boldline</TEX>          },
-<TEX>\boldline</TEX>          deps: [MockBackend, BaseRequestOptions]
-<TEX>\boldline</TEX>        },
-<TEX>\boldline</TEX>        MockBackend,
-<TEX>\boldline</TEX>        BaseRequestOptions,
+        {/*TEX:\bfs*/
+          provide: Http,
+          useFactory: (mockBackend, options) => {
+            return new Http(mockBackend, options);
+          },
+          deps: [MockBackend, BaseRequestOptions]
+        },
+        MockBackend,
+        BaseRequestOptions,/*TEX:\bfe*/
         BookStoreService
       ]
     });
@@ -41,12 +41,12 @@ describe('BookStoreService', () => {
   it('should GET a list of all books from /books',
     inject([BookStoreService, MockBackend], (service: BookStoreService, backend: MockBackend) => {
 
-      let connection: MockConnection, receivedBooks: Book[];
-<TEX>\boldline</TEX>      backend.connections.subscribe(c => {
-<TEX>\boldline</TEX>        connection = c;
-<TEX>\boldline</TEX>        c.mockRespond(new Response(new ResponseOptions({
-<TEX>\boldline</TEX>          body: JSON.stringify(expectedBooks)
-<TEX>\boldline</TEX>        })));
+      let connection: MockConnection, receivedBooks: Book[];/*TEX:\bfs*/
+      backend.connections.subscribe(c => {
+        connection = c;
+        c.mockRespond(new Response(new ResponseOptions({
+          body: JSON.stringify(expectedBooks)
+        })));/*TEX:\bfe*/
       });
 
       service.getAll().subscribe(b => receivedBooks = b);

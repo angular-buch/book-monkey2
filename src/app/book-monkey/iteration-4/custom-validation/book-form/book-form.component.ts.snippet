@@ -1,5 +1,5 @@
-// ...
-<TEX>\boldline</TEX>import { BookValidators } from '../shared/book.validators';
+// .../*TEX:\bfs*/
+import { BookValidators } from '../shared/book.validators';/*TEX:\bfe*/
 
 @Component({
   selector: 'bm-book-form',
@@ -16,7 +16,7 @@ export class BookFormComponent implements OnInit {
       isbn: [this.book.isbn, [
         Validators.required,
         BookValidators.isbnFormat
-      ]<TEX>\bfseries , this.isUpdatingBook ? null : BookValidators.isbnExists(this.bs)</TEX>]
+      ]/*TEX:\bfs*/, this.isUpdatingBook ? null : BookValidators.isbnExists(this.bs)/*TEX:\bfe*/]
     });
     this.myForm.statusChanges.subscribe(() => this.updateErrorMessages());
   }
@@ -24,7 +24,7 @@ export class BookFormComponent implements OnInit {
   // ...
 
   buildAuthorsArray() {
-    this.authors = this.fb.array(this.book.authors<TEX>\bfseries , BookValidators.atLeastOneAuthor</TEX>);
+    this.authors = this.fb.array(this.book.authors/*TEX:\bfs*/, BookValidators.atLeastOneAuthor/*TEX:\bfe*/);
   }
 
   // ...

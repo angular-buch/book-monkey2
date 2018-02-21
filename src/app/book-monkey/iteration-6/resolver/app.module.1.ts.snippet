@@ -1,12 +1,12 @@
-// ...
-<TEX>\boldline</TEX>import { BookResolver } from './shared/book-resolver.service';
+// .../*TEX:\bfs*/
+import { BookResolver } from './shared/book-resolver.service';/*TEX:\bfe*/
 
 @NgModule({
   // ...
   providers: [
     BookStoreService,
-    { provide: LOCALE_ID, useValue: 'de' },
-<TEX>\boldline</TEX>    BookResolver
+    { provide: LOCALE_ID, useValue: 'de' },/*TEX:\bfs*/
+    BookResolver/*TEX:\bfe*/
   ]
 })
 export class AppModule { }

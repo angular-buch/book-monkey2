@@ -12,13 +12,13 @@ export class BookDetailsComponent implements OnInit {
   book: Book;
 
   constructor(
-    private bs: BookStoreService,
-<TEX>\boldline</TEX>    private route: ActivatedRoute
+    private bs: BookStoreService,/*TEX:\bfs*/
+    private route: ActivatedRoute/*TEX:\bfe*/
   ) { }
 
-  ngOnInit() {
-<TEX>\boldline</TEX>    const params = this.route.snapshot.params;
-<TEX>\boldline</TEX>    this.book = this.bs.getSingle(params['isbn']);
+  ngOnInit() {/*TEX:\bfs*/
+    const params = this.route.snapshot.params;
+    this.book = this.bs.getSingle(params['isbn']);/*TEX:\bfe*/
   }
 
   getRating() // ...

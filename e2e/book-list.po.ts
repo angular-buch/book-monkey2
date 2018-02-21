@@ -1,6 +1,6 @@
 import { browser, element, by } from 'protractor';
 
-export class <TEX>\bfseries BookDetailsPage</TEX> {
+export class /*TEX:\bfs*/BookDetailsPage/*TEX:\bfe*/ {
 
   getHeaderText() {
     return element(by.css('h1.header')).getText();
@@ -11,11 +11,11 @@ export class <TEX>\bfseries BookDetailsPage</TEX> {
   }
 }
 
-export class <TEX>\bfseries BookListPage</TEX> {
+export class /*TEX:\bfs*/BookListPage/*TEX:\bfe*/ {
 
   navigateTo() {
-    browser.get('/books');
-<TEX>\boldline</TEX>    return this;
+    browser.get('/books');/*TEX:\bfs*/
+    return this;/*TEX:\bfe*/
   }
 
   getBookItems() {

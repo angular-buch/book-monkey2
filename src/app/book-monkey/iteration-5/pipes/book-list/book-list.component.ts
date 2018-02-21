@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-<TEX>\boldline</TEX>import { Observable } from 'rxjs/Observable';
+import { Component, OnInit } from '@angular/core';/*TEX:\bfs*/
+import { Observable } from 'rxjs/Observable';/*TEX:\bfe*/
 
 import { Book } from '../shared/book';
 import { BookStoreService } from '../shared/book-store.service';
@@ -8,12 +8,12 @@ import { BookStoreService } from '../shared/book-store.service';
   selector: 'bm-book-list',
   templateUrl: './book-list.component.html'
 })
-export class BookListComponent implements OnInit {
-<TEX>\boldline</TEX>  books$: Observable<Book[]>;
+export class BookListComponent implements OnInit {/*TEX:\bfs*/
+  books$: Observable<Book[]>;/*TEX:\bfe*/
 
   constructor(private bs: BookStoreService) { }
 
-  ngOnInit() {
-<TEX>\boldline</TEX>    this.books$ = this.bs.getAll();
+  ngOnInit() {/*TEX:\bfs*/
+    this.books$ = this.bs.getAll();/*TEX:\bfe*/
   }
 }

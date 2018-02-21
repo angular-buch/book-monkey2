@@ -13,19 +13,19 @@ describe('protractor locators', () => {
     browser.get('data:text/html,' + encodeURIComponent(html));
   });
 
-  it('should select <TEX>\bfseries by tag</TEX>', () => {
-    expect(element(by.css('<TEX>\bfseries h1</TEX>')).getText()).toBe('Heading');
-    expect(element(by.tagName(<TEX>\bfseries 'h1</TEX>')).getText()).toBe('Heading');
+  it('should select /*TEX:\bfs*/by tag/*TEX:\bfe*/', () => {
+    expect(element(by.css('/*TEX:\bfs*/h1/*TEX:\bfe*/')).getText()).toBe('Heading');
+    expect(element(by.tagName(/*TEX:\bfs*/'h1/*TEX:\bfe*/')).getText()).toBe('Heading');
   });
 
-  it('should select <TEX>\bfseries by css class</TEX>', () => {
-    expect(element(by.css('<TEX>\bfseries .myClass</TEX>')).getText()).toBe('Heading');
-    expect(element(by.className('<TEX>\bfseries myClass</TEX>')).getText()).toBe('Heading');
+  it('should select /*TEX:\bfs*/by css class/*TEX:\bfe*/', () => {
+    expect(element(by.css('/*TEX:\bfs*/.myClass/*TEX:\bfe*/')).getText()).toBe('Heading');
+    expect(element(by.className('/*TEX:\bfs*/myClass/*TEX:\bfe*/')).getText()).toBe('Heading');
   });
 
-  it('should select <TEX>\bfseries by id</TEX>', () => {
-    expect(element(by.css('<TEX>\bfseries \#myId</TEX>')).getText()).toBe('Heading');
-    expect(element(by.id('<TEX>\bfseries myId</TEX>')).getText()).toBe('Heading');
+  it('should select /*TEX:\bfs*/by id/*TEX:\bfe*/', () => {
+    expect(element(by.css('/*TEX:\bfs*/\#myId/*TEX:\bfe*/')).getText()).toBe('Heading');
+    expect(element(by.id('/*TEX:\bfs*/myId/*TEX:\bfe*/')).getText()).toBe('Heading');
   });
 
   it('should select via various other ways', () => {
@@ -33,9 +33,9 @@ describe('protractor locators', () => {
     expect(element(by.css('h1 span')).getText()).toBe('with child');
   });
 
-  it('should select via the <TEX>\bfseries \$-shorthand</TEX>', () => {
+  it('should select via the /*TEX:\bfs*/\$-shorthand/*TEX:\bfe*/', () => {
     // is the same as element(by.css('\#myId'));
-    expect(<TEX>\bfseries \$</TEX>('<TEX>\bfseries \#myId</TEX>').getText()).toBe('Heading');
+    expect(/*TEX:\bfs*/\$/*TEX:\bfe*/('/*TEX:\bfs*/\#myId/*TEX:\bfe*/').getText()).toBe('Heading');
   });
 
   afterAll(() => browser.ignoreSynchronization = false);

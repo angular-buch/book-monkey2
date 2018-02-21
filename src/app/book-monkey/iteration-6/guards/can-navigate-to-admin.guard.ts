@@ -3,8 +3,8 @@ import { CanActivate } from '@angular/router';
 
 @Injectable()
 export class CanNavigateToAdminGuard implements CanActivate {
-
-<TEX>\boldline</TEX>  accessGranted = false;
+/*TEX:\bfs*/
+  accessGranted = false;/*TEX:\bfe*/
 
   canActivate(): boolean {
     if (!this.accessGranted) {

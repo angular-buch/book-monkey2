@@ -2,9 +2,9 @@
   <a class="bm-book-list-item item"
       *ngFor="let b of books"
       [book]="b"
-      [routerLink]="b.isbn"></a>
-<TEX>\boldline</TEX>  <div *ngIf="!books" class="ui active dimmer">
-<TEX>\boldline</TEX>    <div class="ui large text loader">Daten werden geladen...</div>
-<TEX>\boldline</TEX>  </div>
-<TEX>\boldline</TEX>  <p *ngIf="books && !books.length">Es wurden noch keine Bücher eingetragen.</p>
+      [routerLink]="b.isbn"></a><!--TEX:\bfs-->
+  <div *ngIf="!books" class="ui active dimmer">
+    <div class="ui large text loader">Daten werden geladen...</div>
+  </div>
+  <p *ngIf="books && !books.length">Es wurden noch keine Bücher eingetragen.</p><!--TEX:\bfe-->
 </div>

@@ -8,8 +8,8 @@ describe('BookStoreService', () => {
         json: () => expectedBooks
       })
     };
-
-<TEX>\boldline</TEX>    spyOn(httpMock, 'get').and.callThrough();
+/*TEX:\bfs*/
+    spyOn(httpMock, 'get').and.callThrough();/*TEX:\bfe*/
 
     // ...
   });
@@ -19,7 +19,7 @@ describe('BookStoreService', () => {
 
        // ...
 
-       expect(httpMock.get).<TEX>\bfseries toHaveBeenCalledTimes</TEX>(1);
-       expect(httpMock.get).<TEX>\bfseries toHaveBeenCalledWith</TEX>('https://book-monkey2-api.angular-buch.com/books');
+       expect(httpMock.get)./*TEX:\bfs*/toHaveBeenCalledTimes/*TEX:\bfe*/(1);
+       expect(httpMock.get)./*TEX:\bfs*/toHaveBeenCalledWith/*TEX:\bfe*/('https://book-monkey2-api.angular-buch.com/books');
     }));
 });

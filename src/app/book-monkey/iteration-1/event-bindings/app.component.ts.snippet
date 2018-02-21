@@ -1,16 +1,16 @@
 import { Component } from '@angular/core';
-<TEX>\boldline</TEX>import { Book } from './shared/book';
+import { Book } from './shared/book';
 
 @Component({
-  selector: 'bm-root',
-<TEX>\boldline</TEX>  template: `
-<TEX>\boldline</TEX>    <bm-book-list *ngIf="listOn"></bm-book-list>
-<TEX>\boldline</TEX>    <bm-book-details *ngIf="detailsOn" [book]="book"></bm-book-details>
-<TEX>\boldline</TEX>  `
+  selector: 'bm-root',/*TEX:\bfs*/
+  template: `
+    <bm-book-list *ngIf="listOn"></bm-book-list>
+    <bm-book-details *ngIf="detailsOn" [book]="book"></bm-book-details>
+  `/*TEX:\bfe*/
 })
-export class AppComponent {
-<TEX>\boldline</TEX>  listOn = true;
-<TEX>\boldline</TEX>  detailsOn = false;
+export class AppComponent {/*TEX:\bfs*/
+  listOn = true;
+  detailsOn = false;
 
-<TEX>\boldline</TEX>  book: Book;
+  book: Book;/*TEX:\bfe*/
 }

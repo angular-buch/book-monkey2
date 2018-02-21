@@ -1,7 +1,7 @@
 import { TestBed, inject } from '@angular/core/testing';
 import { Http } from '@angular/http';
-import { Observable } from 'rxjs/Observable';
-<TEX>\boldline</TEX>import 'rxjs/add/observable/of';
+import { Observable } from 'rxjs/Observable';/*TEX:\bfs*/
+import 'rxjs/add/observable/of';/*TEX:\bfe*/
 
 import { Book } from '../shared/book';
 import { BookStoreService } from './book-store.service';
@@ -16,26 +16,26 @@ describe('BookStoreService', () => {
   let httpStub;
 
   beforeEach(() => {
-
-<TEX>\boldline</TEX>    httpStub = {
-<TEX>\boldline</TEX>      get: () => Observable.of({
-<TEX>\boldline</TEX>        json: () => expectedBooks
-<TEX>\boldline</TEX>      })
+/*TEX:\bfs*/
+    httpStub = {
+      get: () => Observable.of({
+        json: () => expectedBooks
+      })/*TEX:\bfe*/
     };
 
     TestBed.configureTestingModule({
       providers: [
-        {
-<TEX>\boldline</TEX>          provide: Http,
-<TEX>\boldline</TEX>          useValue: httpStub
+        {/*TEX:\bfs*/
+          provide: Http,
+          useValue: httpStub/*TEX:\bfe*/
         },
         BookStoreService
       ]
     });
   });
 
-  it('should GET a list of all books',
-<TEX>\boldline</TEX>    inject([BookStoreService], (service: BookStoreService) => {
+  it('should GET a list of all books',/*TEX:\bfs*/
+    inject([BookStoreService], (service: BookStoreService) => {/*TEX:\bfe*/
 
       let receivedBooks: Book[];
       service.getAll().subscribe(b => receivedBooks = b);

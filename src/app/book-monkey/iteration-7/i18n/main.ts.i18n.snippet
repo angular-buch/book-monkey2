@@ -15,12 +15,12 @@ const loadFile = (filePath, done) => {
   xhr.send();
 };
 
-loadFile('/assets/<TEX>\bfseries messages.en.xtb</TEX>', (translations) => {
+loadFile('/assets//*TEX:\bfs*/messages.en.xtb/*TEX:\bfe*/', (translations) => {
   platformBrowserDynamic().bootstrapModule(AppModule, {
-    <TEX>\bfseries providers</TEX>: [
-      { provide: <TEX>\bfseries TRANSLATIONS</TEX>, useValue: translations },
-      { provide: <TEX>\bfseries TRANSLATIONS\_FORMAT</TEX>, useValue: 'xtb' },
-      { provide: <TEX>\bfseries LOCALE\_ID</TEX>, useValue: 'en' }]
+    /*TEX:\bfs*/providers/*TEX:\bfe*/: [
+      { provide: /*TEX:\bfs*/TRANSLATIONS/*TEX:\bfe*/, useValue: translations },
+      { provide: /*TEX:\bfs*/TRANSLATIONS\_FORMAT/*TEX:\bfe*/, useValue: 'xtb' },
+      { provide: /*TEX:\bfs*/LOCALE\_ID/*TEX:\bfe*/, useValue: 'en' }]
     }
   );
 });

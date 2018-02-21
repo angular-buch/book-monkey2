@@ -1,5 +1,6 @@
-<TEX>\boldline</TEX>import 'rxjs/add/operator/debounceTime';
-<TEX>\boldline</TEX>import 'rxjs/add/operator/distinctUntilChanged';
+/*TEX:\bfs*/
+import 'rxjs/add/operator/debounceTime';
+import 'rxjs/add/operator/distinctUntilChanged';/*TEX:\bfe*/
 
 // ...
 export class SearchComponent implements OnInit {

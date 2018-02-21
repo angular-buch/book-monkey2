@@ -6,15 +6,15 @@ import { BookListPage } from './book-list.po';
 describe('Book List Page', function() {
   let listPage: BookListPage;
 
-<TEX>\bfseries </TEX>  beforeEach(() => listPage = new BookListPage());
+/*TEX:\bfs*//*TEX:\bfe*/  beforeEach(() => listPage = new BookListPage());
 
-  it('should display at least two books', () => {
-<TEX>\boldline</TEX>    const bookItems = listPage.navigateTo().getBookItems();
+  it('should display at least two books', () => {/*TEX:\bfs*/
+    const bookItems = listPage.navigateTo().getBookItems();/*TEX:\bfe*/
     expect(bookItems.count()).toBeGreaterThan(1);
   });
 
-  it('should navigate to details page by ISBN', () => {
-<TEX>\boldline</TEX>    const detailsPage = listPage.navigateTo().clickOnFirstBook();
+  it('should navigate to details page by ISBN', () => {/*TEX:\bfs*/
+    const detailsPage = listPage.navigateTo().clickOnFirstBook();/*TEX:\bfe*/
     expect(detailsPage.getUrl()).toContain('/books/9783864903571');
     expect(detailsPage.getHeaderText()).toBe('Angular');
     const details = listPage.navigateTo().clickOnFirstBook();

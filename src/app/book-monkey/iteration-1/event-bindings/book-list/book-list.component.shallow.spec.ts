@@ -8,18 +8,18 @@ describe('BookListComponent', () => {
   let component: BookListComponent;
   let fixture: ComponentFixture<BookListComponent>;
 
-  beforeEach(<TEX>\bfseries async</TEX>(() => {
-<TEX>\boldline</TEX>    TestBed.configureTestingModule({
-<TEX>\boldline</TEX>        declarations: [BookListComponent],
-<TEX>\boldline</TEX>        schemas: [NO_ERRORS_SCHEMA]
-<TEX>\boldline</TEX>      })
-<TEX>\boldline</TEX>      .compileComponents();
+  beforeEach(/*TEX:\bfs*/async/*TEX:\bfe*/(() => {/*TEX:\bfs*/
+    TestBed.configureTestingModule({
+        declarations: [BookListComponent],
+        schemas: [NO_ERRORS_SCHEMA]
+      })
+      .compileComponents();/*TEX:\bfe*/
   }));
 
-  beforeEach(() => {
-<TEX>\boldline</TEX>    fixture = TestBed.createComponent(BookListComponent);
-<TEX>\boldline</TEX>    component = fixture.componentInstance;
-<TEX>\boldline</TEX>    fixture.detectChanges();
+  beforeEach(() => {/*TEX:\bfs*/
+    fixture = TestBed.createComponent(BookListComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();/*TEX:\bfe*/
   });
 
   it('should emit the showDetailsEvent on click', () => {

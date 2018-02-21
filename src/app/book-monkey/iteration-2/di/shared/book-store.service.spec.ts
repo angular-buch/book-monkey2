@@ -4,12 +4,12 @@ describe('BookStoreService', () => {
 
   let service: BookStoreService;
 
-  beforeEach(() => {
-<TEX>\boldline</TEX>    service = new BookStoreService();
+  beforeEach(() => {/*TEX:\bfs*/
+    service = new BookStoreService();/*TEX:\bfe*/
   });
 
-  it('should hold a hardcoded list of 2 books', () => {
-<TEX>\boldline</TEX>    const books = service.getAll();
-<TEX>\boldline</TEX>    expect(books.length).toBe(2);
+  it('should hold a hardcoded list of 2 books', () => {/*TEX:\bfs*/
+    const books = service.getAll();
+    expect(books.length).toBe(2);/*TEX:\bfe*/
   });
 });

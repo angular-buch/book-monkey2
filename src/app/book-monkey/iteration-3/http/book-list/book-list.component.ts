@@ -12,7 +12,7 @@ export class BookListComponent implements OnInit {
 
   constructor(private bs: BookStoreService) { }
 
-  ngOnInit() {
-<TEX>\boldline</TEX>     this.bs.getAll().subscribe(res => this.books = res);
+  ngOnInit() {/*TEX:\bfs*/
+     this.bs.getAll().subscribe(res => this.books = res);/*TEX:\bfe*/
   }
 }
