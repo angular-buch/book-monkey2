@@ -1,8 +1,9 @@
+
+import {throwError as observableThrowError,  Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs/Observable';
 import { retry, map, catchError } from 'rxjs/operators';
-import 'rxjs/add/observable/throw';
+
 
 import { Book } from './book';
 import { BookRaw } from './book-raw';
@@ -69,7 +70,7 @@ export class BookStoreService {
   }
 
   private errorHandler(error: Error | any): Observable<any> {
-    return Observable.throw(error);
+    return observableThrowError(error);
   }
 
   getAllSearch(searchTerm: string): Observable<Array<Book>> {

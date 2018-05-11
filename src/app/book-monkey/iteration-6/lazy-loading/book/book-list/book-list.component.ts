@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 
 import { Book } from '../../shared/book';
 import { BookStoreService } from '../../shared/book-store.service';

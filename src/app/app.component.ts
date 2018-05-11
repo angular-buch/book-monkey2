@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
-import { Observable } from 'rxjs/Observable';
+import { Observable, fromEvent } from 'rxjs';
 import { debounceTime, map, startWith, filter } from 'rxjs/operators';
-import 'rxjs/add/observable/fromEvent';
 
 declare var window: any;
 
@@ -39,7 +38,7 @@ export class AppComponent implements OnInit {
       this.repositoryUrl = 'https://github.com/book-monkey2-build/' + this.repoName;
     });
 
-    Observable.fromEvent(window, 'resize').pipe(
+    fromEvent(window, 'resize').pipe(
       debounceTime(100),
       map((e: any) => e.target.innerWidth),
       startWith(window.innerWidth)
