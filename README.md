@@ -1,3 +1,10 @@
+## ⚠️ Aktualisierungen
+
+> Seit dem Release des Angular-Buchs im Mai 2017 sind neue Major-Versionen von Angular erschienen.
+> Den aktualisierten Quellcode finden Sie **in separaten Branches** in diesem Repository (`ng5-update`, `ng6`).
+> Auf der [Website zum Buch](https://angular-buch.com/updates) finden Sie außerdem Infos zum Update auf neuere Versionen ab Angular 4.
+
+
 # BookMonkey 2
 [![Build Status](https://travis-ci.org/angular-buch/book-monkey2.svg)](https://travis-ci.org/angular-buch/book-monkey2)
 
